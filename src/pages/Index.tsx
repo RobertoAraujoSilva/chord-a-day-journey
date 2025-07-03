@@ -7,6 +7,7 @@ import { Progress } from '@/components/ui/progress';
 import { ChordDiagram } from '@/components/ChordDiagram';
 import { DaySelector } from '@/components/DaySelector';
 import { Header } from '@/components/Header';
+import { AudioPlayer } from '@/components/AudioPlayer';
 import { chords } from '@/data/chords';
 
 const Index = () => {
@@ -77,6 +78,12 @@ const Index = () => {
                 <p className="text-lg text-gray-600 mb-4">
                   {currentChord.fullName}
                 </p>
+                
+                {/* Audio Player */}
+                <div className="mb-4">
+                  <AudioPlayer chordName={currentChord.name} className="justify-center" />
+                </div>
+                
                 <div className="flex justify-center gap-2">
                   {currentChord.difficulty === 'Fácil' && (
                     <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
