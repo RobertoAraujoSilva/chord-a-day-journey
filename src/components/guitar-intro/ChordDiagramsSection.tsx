@@ -41,8 +41,8 @@ export const ChordDiagramsSection = () => {
             <div className="bg-white p-4 rounded-lg shadow-md">
               <h4 className="text-center font-semibold mb-3">Exemplo de Diagrama:</h4>
               <img 
-                src="https://images.unsplash.com/photo-1520637836862-4d197d17c0a4?w=300&h=200&fit=crop&crop=center" 
-                alt="Exemplo de diagrama de acorde mostrando linhas verticais (cordas), horizontais (trastes) e pontos indicando posição dos dedos"
+                src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=400&fit=crop&crop=center" 
+                alt="Diagrama de acorde de violão mostrando claramente as linhas verticais (cordas), horizontais (trastes) e pontos pretos indicando onde pressionar"
                 className="w-full max-w-xs mx-auto rounded-lg object-cover"
               />
             </div>

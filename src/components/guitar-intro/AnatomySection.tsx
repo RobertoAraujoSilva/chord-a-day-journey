@@ -53,8 +53,8 @@ export const AnatomySection = () => {
             <h3 className="text-lg font-semibold text-gray-700 mb-3">Imagem do Violão:</h3>
             <div className="flex justify-center">
               <img 
-                src="https://images.unsplash.com/photo-1516924962500-2b4b3b99ea02?w=400&h=600&fit=crop&crop=center" 
-                alt="Anatomia do violão mostrando suas partes principais"
+                src="https://images.unsplash.com/photo-1564186763535-ebb21ef5277f?w=400&h=600&fit=crop&crop=center" 
+                alt="Violão acústico mostrando claramente suas partes principais: corpo, braço, cabeça, cavalete e trastes"
                 className="w-full max-w-sm rounded-lg shadow-md object-cover"
               />
             </div>

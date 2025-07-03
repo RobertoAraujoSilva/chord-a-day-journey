@@ -36,8 +36,8 @@ export const CorrectPositionSection = () => {
             
             <div className="mt-4">
               <img 
-                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop&crop=center" 
-                alt="Pessoa tocando violão na posição correta"
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&crop=center" 
+                alt="Pessoa sentada tocando violão demonstrando a posição correta: costas retas, violão apoiado na perna direita, braço direito sobre o corpo"
                 className="w-full rounded-lg shadow-md object-cover"
               />
             </div>
@@ -48,8 +48,8 @@ export const CorrectPositionSection = () => {
             
             <div className="bg-white p-4 rounded-lg shadow-md">
               <img 
-                src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=300&h=200&fit=crop&crop=center" 
-                alt="Mão mostrando a numeração dos dedos: 1-indicador, 2-médio, 3-anelar, 4-mínimo"
+                src="/lovable-uploads/3b7e2e69-17b7-46ed-b5d7-177487c7a007.png" 
+                alt="Mão esquerda mostrando a numeração dos dedos: 1-indicador, 2-médio, 3-anelar, 4-mínimo"
                 className="w-full max-w-xs mx-auto rounded-lg object-cover"
               />
               <div className="mt-3 text-center">

@@ -63,8 +63,8 @@ export const StringNamesSection = () => {
             
             <div className="flex justify-center mb-4">
               <img 
-                src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=200&fit=crop&crop=center" 
-                alt="Diagrama mostrando as cordas do violão numeradas de 1 a 6"
+                src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=300&h=400&fit=crop&crop=center" 
+                alt="Mãos tocando violão mostrando as cordas numeradas de 1 a 6, com foco no braço do instrumento"
                 className="w-full max-w-xs rounded-lg shadow-md object-cover"
               />
             </div>
