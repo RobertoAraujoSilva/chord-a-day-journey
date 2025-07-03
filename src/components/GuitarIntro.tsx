@@ -1,11 +1,8 @@
 
 import React from 'react';
-import { Guitar, BookOpen } from 'lucide-react';
+import { Music, Hand, Eye, Volume2, Guitar } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { AnatomySection } from './guitar-intro/AnatomySection';
-import { StringNamesSection } from './guitar-intro/StringNamesSection';
-import { CorrectPositionSection } from './guitar-intro/CorrectPositionSection';
-import { ChordDiagramsSection } from './guitar-intro/ChordDiagramsSection';
 
 interface GuitarIntroProps {
   onComplete: () => void;
@@ -29,13 +26,220 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
         </p>
       </div>
 
-      {/* Sections */}
-      <AnatomySection />
-      <StringNamesSection />
-      <CorrectPositionSection />
-      <ChordDiagramsSection />
+      {/* Anatomia do Violão */}
+      <Card className="p-6 shadow-xl border-0 bg-white/80 backdrop-blur-sm">
+        <CardContent className="p-0">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+            <Eye className="h-6 w-6 text-orange-600" />
+            Anatomia do Violão
+          </h2>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold text-gray-700">Partes Principais:</h3>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-orange-400 rounded-full mt-2"></div>
+                  <div>
+                    <strong>Corpo (Body):</strong> A parte maior que amplifica o som
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-orange-400 rounded-full mt-2"></div>
+                  <div>
+                    <strong>Braço (Neck):</strong> Onde você pressiona as cordas
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-orange-400 rounded-full mt-2"></div>
+                  <div>
+                    <strong>Cavalete (Bridge):</strong> Onde as cordas se fixam no corpo
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-orange-400 rounded-full mt-2"></div>
+                  <div>
+                    <strong>Cabeça (Headstock):</strong> Onde ficam as tarraxas
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-orange-400 rounded-full mt-2"></div>
+                  <div>
+                    <strong>Trastes (Frets):</strong> As divisões metálicas no braço
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-gradient-to-br from-orange-50 to-red-50 p-4 rounded-lg">
+              <h3 className="text-lg font-semibold text-gray-700 mb-3">Dica Importante:</h3>
+              <p className="text-gray-600">
+                Familiarize-se com essas partes. Cada uma tem um papel importante 
+                na produção do som e na sua técnica de tocar.
+              </p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
 
-      {/* Completion Button */}
+      {/* Nome das Cordas */}
+      <Card className="p-6 shadow-xl border-0 bg-white/80 backdrop-blur-sm">
+        <CardContent className="p-0">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+            <Music className="h-6 w-6 text-orange-600" />
+            Nome das Cordas
+          </h2>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="text-lg font-semibold text-gray-700 mb-4">
+                Da mais grave (grossa) para a mais aguda (fina):
+              </h3>
+              
+              <div className="space-y-3">
+                <div className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg">
+                  <span className="text-2xl font-bold text-gray-800 w-8">6ª</span>
+                  <span className="text-xl font-semibold text-orange-600">E</span>
+                  <span className="text-gray-600">(Mi) - Mais grave</span>
+                </div>
+                <div className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg">
+                  <span className="text-2xl font-bold text-gray-800 w-8">5ª</span>
+                  <span className="text-xl font-semibold text-orange-600">A</span>
+                  <span className="text-gray-600">(Lá)</span>
+                </div>
+                <div className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg">
+                  <span className="text-2xl font-bold text-gray-800 w-8">4ª</span>
+                  <span className="text-xl font-semibold text-orange-600">D</span>
+                  <span className="text-gray-600">(Ré)</span>
+                </div>
+                <div className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg">
+                  <span className="text-2xl font-bold text-gray-800 w-8">3ª</span>
+                  <span className="text-xl font-semibold text-orange-600">G</span>
+                  <span className="text-gray-600">(Sol)</span>
+                </div>
+                <div className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg">
+                  <span className="text-2xl font-bold text-gray-800 w-8">2ª</span>
+                  <span className="text-xl font-semibold text-orange-600">B</span>
+                  <span className="text-gray-600">(Si)</span>
+                </div>
+                <div className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg">
+                  <span className="text-2xl font-bold text-gray-800 w-8">1ª</span>
+                  <span className="text-xl font-semibold text-orange-600">E</span>
+                  <span className="text-gray-600">(Mi) - Mais aguda</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-gradient-to-br from-orange-50 to-red-50 p-4 rounded-lg">
+              <h3 className="text-lg font-semibold text-gray-700 mb-3">Macete para Decorar:</h3>
+              <p className="text-gray-600 mb-3">
+                <strong>"Eu Aprendo Depois Guitarra, Baixo, Então"</strong>
+              </p>
+              <p className="text-sm text-gray-500">
+                (E-A-D-G-B-E)
+              </p>
+              <div className="mt-4 p-3 bg-white rounded border">
+                <p className="text-sm text-gray-600">
+                  💡 <strong>Dica:</strong> As cordas são contadas de baixo para cima 
+                  quando você está segurando o violão normalmente.
+                </p>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Posição Correta */}
+      <Card className="p-6 shadow-xl border-0 bg-white/80 backdrop-blur-sm">
+        <CardContent className="p-0">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+            <Hand className="h-6 w-6 text-orange-600" />
+            Posição Correta
+          </h2>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold text-gray-700">Como Segurar o Violão:</h3>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-orange-400 rounded-full mt-2"></div>
+                  <span>Sente-se com as costas retas</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-orange-400 rounded-full mt-2"></div>
+                  <span>Apoie o violão na perna direita (ou use uma banqueta)</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-orange-400 rounded-full mt-2"></div>
+                  <span>Braço direito sobre o corpo do violão</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-orange-400 rounded-full mt-2"></div>
+                  <span>Mão esquerda no braço, polegar atrás</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold text-gray-700">Posição das Mãos:</h3>
+              <div className="bg-gradient-to-br from-orange-50 to-red-50 p-4 rounded-lg">
+                <p className="text-sm text-gray-600 mb-2">
+                  <strong>Mão Esquerda:</strong> Forma um "C" com polegar atrás do braço
+                </p>
+                <p className="text-sm text-gray-600">
+                  <strong>Mão Direita:</strong> Relaxada, dedos curvados sobre as cordas
+                </p>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Como Ler Diagramas */}
+      <Card className="p-6 shadow-xl border-0 bg-white/80 backdrop-blur-sm">
+        <CardContent className="p-0">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+            <Volume2 className="h-6 w-6 text-orange-600" />
+            Como Ler Diagramas de Acordes
+          </h2>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="space-y-4">
+              <p className="text-gray-600">
+                Os diagramas mostram onde colocar os dedos no braço do violão:
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-orange-400 rounded-full mt-2"></div>
+                  <span><strong>Linhas verticais:</strong> Representam as cordas</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-orange-400 rounded-full mt-2"></div>
+                  <span><strong>Linhas horizontais:</strong> Representam os trastes</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-orange-400 rounded-full mt-2"></div>
+                  <span><strong>Pontos pretos:</strong> Onde pressionar as cordas</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-orange-400 rounded-full mt-2"></div>
+                  <span><strong>Números:</strong> Indicam qual dedo usar (1=indicador, 2=médio, 3=anelar, 4=mínimo)</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div className="bg-gradient-to-br from-orange-50 to-red-50 p-4 rounded-lg">
+              <h3 className="text-lg font-semibold text-gray-700 mb-3">Importante:</h3>
+              <p className="text-gray-600 text-sm">
+                Sempre pressione as cordas logo atrás do traste (não em cima dele) 
+                para obter um som limpo e claro.
+              </p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Botão de Conclusão */}
       <div className="text-center">
         <Button
           onClick={onComplete}
