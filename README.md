@@ -1,73 +1,89 @@
-# Welcome to your Lovable project
 
-## Project info
+# 30 Acordes em 30 Dias - Aprenda Violão 🎸
 
-**URL**: https://lovable.dev/projects/0ba5bd2f-e4be-427e-bae7-e75091c90b19
+Um aplicativo web interativo para aprender violão de forma gradual e consistente, com uma progressão estruturada de 30 acordes fundamentais.
 
-## How can I edit this code?
+## 🎯 Sobre o Projeto
 
-There are several ways of editing your application.
+Este é um curso online de violão que ensina os 30 acordes mais importantes em 30 dias. O aplicativo foi desenvolvido para iniciantes que querem aprender violão de forma sistemática e organizada.
 
-**Use Lovable**
+### ✨ Funcionalidades
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/0ba5bd2f-e4be-427e-bae7-e75091c90b19) and start prompting.
+- **Lição Introdutória**: Aprenda sobre anatomia do violão, posição das mãos e conceitos básicos
+- **30 Acordes Fundamentais**: Progressão estruturada de acordes do mais fácil ao mais difícil
+- **Diagramas Interativos**: Visualização clara de como posicionar os dedos
+- **Áudio de Referência**: Ouça como cada acorde deve soar
+- **Sistema de Progresso**: Acompanhe seu desenvolvimento dia a dia
+- **Dicas Práticas**: Instruções detalhadas e dicas para cada acorde
+- **Músicas de Exemplo**: Lista de músicas famosas que usam cada acorde
 
-Changes made via Lovable will be committed automatically to this repo.
+### 🎵 Progressão do Curso
 
-**Use your preferred IDE**
+1. **Lição 0**: Fundamentos do violão (anatomia, posição, conceitos básicos)
+2. **Dias 1-30**: Um acorde novo por dia com prática e consolidação
+3. **Sistema de Dificuldade**: Acordes organizados por nível (Fácil → Médio → Difícil)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### 🚀 Como Usar
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+1. Comece pela **Lição 0** para aprender os fundamentos
+2. Pratique um acorde por dia seguindo a sequência sugerida
+3. Use o áudio de referência para treinar o ouvido
+4. Marque cada dia como concluído para acompanhar seu progresso
+5. Revise acordes anteriores regularmente
 
-Follow these steps:
+### 💡 Dicas para Melhor Aprendizado
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- Pratique pelo menos 15-20 minutos por dia
+- Não pule a lição introdutória - ela é fundamental
+- Revise acordes dos dias anteriores regularmente
+- Use um metrônomo para manter o ritmo
+- Seja paciente - a coordenação vem com a prática
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 🛠️ Tecnologias Utilizadas
 
-# Step 3: Install the necessary dependencies.
-npm i
+- **Frontend**: React + TypeScript + Vite
+- **Styling**: Tailwind CSS + shadcn/ui
+- **Backend**: Supabase (armazenamento de áudio e dados)
+- **Ícones**: Lucide React
+- **Gráficos**: Recharts
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## 📱 Interface Responsiva
 
-**Edit a file directly in GitHub**
+O aplicativo foi desenvolvido com design responsivo, funcionando perfeitamente em:
+- Computadores desktop
+- Tablets
+- Smartphones
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🎸 Estrutura Pedagógica
 
-**Use GitHub Codespaces**
+### Lição 0 - Fundamentos
+- Anatomia do violão e nomes das partes
+- Nome e afinação das cordas (E-A-D-G-B-E)
+- Posição correta para tocar
+- Como ler diagramas de acordes
+- Dicas de cuidado e manutenção
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Acordes por Nível de Dificuldade
+- **Fácil**: Acordes básicos com poucos dedos
+- **Médio**: Acordes com maior complexidade
+- **Difícil**: Acordes avançados com pestanas
 
-## What technologies are used for this project?
+## 🎵 Músicas Incluídas
 
-This project is built with:
+Cada acorde vem com uma lista de músicas famosas onde é utilizado, facilitando a prática com repertório conhecido.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🚀 Deploy
 
-## How can I deploy this project?
+Este projeto pode ser facilmente publicado usando a plataforma Lovable:
 
-Simply open [Lovable](https://lovable.dev/projects/0ba5bd2f-e4be-427e-bae7-e75091c90b19) and click on Share -> Publish.
+1. Abra o projeto no Lovable
+2. Clique em "Share" → "Publish"
+3. Seu aplicativo estará disponível online
 
-## Can I connect a custom domain to my Lovable project?
+## 📞 Suporte
 
-Yes, you can!
+Para dúvidas ou sugestões sobre o curso de violão, utilize a funcionalidade de feedback do aplicativo.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+**Desenvolvido com ❤️ para ajudar pessoas a realizarem o sonho de tocar violão**
