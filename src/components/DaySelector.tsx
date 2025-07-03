@@ -1,0 +1,49 @@
+
+import { Button } from '@/components/ui/button';
+import { ScrollArea } from '@/components/ui/scroll-area';
+
+interface DaySelectorProps {
+  currentDay: number;
+  completedDays: number[];
+  onDaySelect: (day: number) => void;
+}
+
+export const DaySelector = ({ currentDay, completedDays, onDaySelect }: DaySelectorProps) => {
+  return (
+    <div className="mb-6">
+      <h2 className="text-lg font-semibold text-gray-800 mb-4 text-center">
+        Selecione o Dia
+      </h2>
+      <ScrollArea className="w-full">
+        <div className="flex gap-2 pb-4 px-2">
+          {Array.from({ length: 30 }, (_, i) => i + 1).map((day) => (
+            <Button
+              key={day}
+              variant={currentDay === day ? "default" : "outline"}
+              size="sm"
+              onClick={() => onDaySelect(day)}
+              className={`
+                min-w-[50px] h-12 relative transition-all duration-200
+                ${currentDay === day 
+                  ? 'bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg scale-105' 
+                  : completedDays.includes(day)
+                  ? 'bg-green-100 text-green-800 border-green-300 hover:bg-green-200'
+                  : 'hover:bg-orange-50 hover:border-orange-300'
+                }
+              `}
+            >
+              {day}
+              {completedDays.includes(day) && (
+                <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-white">
+                  <div className="w-full h-full flex items-center justify-center">
+                    <div className="w-1 h-1 bg-white rounded-full"></div>
+                  </div>
+                </div>
+              )}
+            </Button>
+          ))}
+        </div>
+      </ScrollArea>
+    </div>
+  );
+};
