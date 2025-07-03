@@ -72,8 +72,15 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
             </div>
             
             <div className="bg-gradient-to-br from-orange-50 to-red-50 p-4 rounded-lg">
-              <h3 className="text-lg font-semibold text-gray-700 mb-3">Dica Importante:</h3>
-              <p className="text-gray-600">
+              <h3 className="text-lg font-semibold text-gray-700 mb-3">Imagem do Violão:</h3>
+              <div className="flex justify-center">
+                <img 
+                  src="/placeholder.svg" 
+                  alt="Anatomia do violão mostrando suas partes principais"
+                  className="w-full max-w-sm rounded-lg shadow-md"
+                />
+              </div>
+              <p className="text-gray-600 text-center mt-3 text-sm">
                 Familiarize-se com essas partes. Cada uma tem um papel importante 
                 na produção do som e na sua técnica de tocar.
               </p>
@@ -135,10 +142,20 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
               <p className="text-gray-600 mb-3">
                 <strong>"Eu Aprendo Depois Guitarra, Baixo, Então"</strong>
               </p>
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-gray-500 mb-4">
                 (E-A-D-G-B-E)
               </p>
-              <div className="mt-4 p-3 bg-white rounded border">
+              
+              {/* Imagem ilustrativa das cordas */}
+              <div className="flex justify-center mb-4">
+                <img 
+                  src="/placeholder.svg" 
+                  alt="Diagrama mostrando as cordas do violão numeradas de 1 a 6"
+                  className="w-full max-w-xs rounded-lg shadow-md"
+                />
+              </div>
+              
+              <div className="p-3 bg-white rounded border">
                 <p className="text-sm text-gray-600">
                   💡 <strong>Dica:</strong> As cordas são contadas de baixo para cima 
                   quando você está segurando o violão normalmente.
@@ -178,11 +195,52 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
                   <span>Mão esquerda no braço, polegar atrás</span>
                 </li>
               </ul>
+              
+              {/* Imagem da posição correta */}
+              <div className="mt-4">
+                <img 
+                  src="/placeholder.svg" 
+                  alt="Pessoa tocando violão na posição correta"
+                  className="w-full rounded-lg shadow-md"
+                />
+              </div>
             </div>
             
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-700">Posição das Mãos:</h3>
+              <h3 className="text-lg font-semibold text-gray-700">Numeração dos Dedos:</h3>
+              
+              {/* Imagem da numeração dos dedos */}
+              <div className="bg-white p-4 rounded-lg shadow-md">
+                <img 
+                  src="/placeholder.svg" 
+                  alt="Mão mostrando a numeração dos dedos: 1-indicador, 2-médio, 3-anelar, 4-mínimo"
+                  className="w-full max-w-xs mx-auto rounded-lg"
+                />
+                <div className="mt-3 text-center">
+                  <p className="text-sm font-semibold text-gray-700">Numeração dos Dedos:</p>
+                  <div className="grid grid-cols-2 gap-2 mt-2 text-sm">
+                    <div className="flex items-center gap-2">
+                      <span className="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center text-xs font-bold">1</span>
+                      <span>Indicador</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center text-xs font-bold">2</span>
+                      <span>Médio</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center text-xs font-bold">3</span>
+                      <span>Anelar</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center text-xs font-bold">4</span>
+                      <span>Mínimo</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
               <div className="bg-gradient-to-br from-orange-50 to-red-50 p-4 rounded-lg">
+                <h4 className="text-md font-semibold text-gray-700 mb-2">Posição das Mãos:</h4>
                 <p className="text-sm text-gray-600 mb-2">
                   <strong>Mão Esquerda:</strong> Forma um "C" com polegar atrás do braço
                 </p>
@@ -228,12 +286,24 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
               </ul>
             </div>
             
-            <div className="bg-gradient-to-br from-orange-50 to-red-50 p-4 rounded-lg">
-              <h3 className="text-lg font-semibold text-gray-700 mb-3">Importante:</h3>
-              <p className="text-gray-600 text-sm">
-                Sempre pressione as cordas logo atrás do traste (não em cima dele) 
-                para obter um som limpo e claro.
-              </p>
+            <div className="space-y-4">
+              {/* Exemplo visual de diagrama */}
+              <div className="bg-white p-4 rounded-lg shadow-md">
+                <h4 className="text-center font-semibold mb-3">Exemplo de Diagrama:</h4>
+                <img 
+                  src="/placeholder.svg" 
+                  alt="Exemplo de diagrama de acorde mostrando linhas verticais (cordas), horizontais (trastes) e pontos indicando posição dos dedos"
+                  className="w-full max-w-xs mx-auto rounded-lg"
+                />
+              </div>
+              
+              <div className="bg-gradient-to-br from-orange-50 to-red-50 p-4 rounded-lg">
+                <h3 className="text-lg font-semibold text-gray-700 mb-3">Importante:</h3>
+                <p className="text-gray-600 text-sm">
+                  Sempre pressione as cordas logo atrás do traste (não em cima dele) 
+                  para obter um som limpo e claro.
+                </p>
+              </div>
             </div>
           </div>
         </CardContent>
