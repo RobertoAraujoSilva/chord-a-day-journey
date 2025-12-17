@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Background circle with gradient -->
+  <defs>
+    <linearGradient id="bodyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f97316;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="neckGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#92400e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#78350f;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Guitar body -->
+  <ellipse cx="32" cy="42" rx="18" ry="14" fill="url(#bodyGradient)" stroke="#7c2d12" stroke-width="1.5"/>
+  
+  <!-- Sound hole -->
+  <circle cx="32" cy="42" r="6" fill="#1c1917" opacity="0.8"/>
+  <circle cx="32" cy="42" r="5" fill="none" stroke="#78716c" stroke-width="0.5"/>
+  
+  <!-- Guitar neck -->
+  <rect x="28" y="8" width="8" height="32" rx="2" fill="url(#neckGradient)" stroke="#451a03" stroke-width="1"/>
+  
+  <!-- Frets -->
+  <line x1="30" y1="16" x2="34" y2="16" stroke="#451a03" stroke-width="1"/>
+  <line x1="30" y1="24" x2="34" y2="24" stroke="#451a03" stroke-width="1"/>
+  <line x1="30" y1="32" x2="34" y2="32" stroke="#451a03" stroke-width="1"/>
+  
+  <!-- Strings -->
+  <line x1="29" y1="12" x2="22" y2="42" stroke="#fbbf24" stroke-width="0.8" opacity="0.9"/>
+  <line x1="32" y1="12" x2="28" y2="42" stroke="#fbbf24" stroke-width="0.8" opacity="0.9"/>
+  <line x1="35" y1="12" x2="36" y2="42" stroke="#fbbf24" stroke-width="0.8" opacity="0.9"/>
+  
+  <!-- Guitar headstock -->
+  <path d="M 24 8 Q 32 4 40 8 L 40 12 Q 32 8 24 12 Z" fill="url(#neckGradient)" stroke="#451a03" stroke-width="1"/>
+  
+  <!-- Tuning pegs -->
+  <circle cx="26" cy="10" r="1.5" fill="#fbbf24"/>
+  <circle cx="38" cy="10" r="1.5" fill="#fbbf24"/>
+</svg>
+
