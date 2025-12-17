@@ -1,0 +1,11 @@
+{
+  "loading_failed": "Falha ao carregar conteúdo",
+  "translation_missing": "Tradução não encontrada",
+  "language_not_supported": "Idioma não suportado",
+  "network_error": "Erro de conexão",
+  "generic_error": "Ocorreu um erro inesperado",
+  "intro_required": "Complete primeiro a Lição Introdutória (Dia 0) antes de prosseguir para os acordes!",
+  "not_found_title": "404",
+  "not_found_message": "Ops! Página não encontrada",
+  "not_found_return": "Voltar para o Início"
+}

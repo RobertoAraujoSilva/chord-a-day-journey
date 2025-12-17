@@ -1,8 +1,9 @@
 
-import React from 'react';
+
 import { Music, Hand, Eye, Volume2, Guitar } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { useTranslation } from '@/i18n/context';
 
 interface GuitarIntroProps {
   onComplete: () => void;
@@ -10,6 +11,8 @@ interface GuitarIntroProps {
 }
 
 export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
+  const { t } = useTranslation();
+  
   return (
     <div className="space-y-8">
       {/* Header */}
@@ -17,12 +20,11 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
         <div className="flex items-center justify-center gap-3 mb-4">
           <Guitar className="h-8 w-8 text-orange-600" />
           <h1 className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-            Lição 0: Fundamentos do Violão
+            {t('lessons.intro.lesson_title')}
           </h1>
         </div>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Antes de aprendermos os acordes, vamos entender o básico sobre o violão. 
-          Esta lição é fundamental para seu sucesso!
+          {t('lessons.intro.lesson_description')}
         </p>
       </div>
 
@@ -31,51 +33,50 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
         <CardContent className="p-0">
           <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
             <Eye className="h-6 w-6 text-orange-600" />
-            Anatomia do Violão
+            {t('lessons.intro.anatomy_title')}
           </h2>
           
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-700">Partes Principais:</h3>
+              <h3 className="text-lg font-semibold text-gray-700">{t('lessons.intro.anatomy_parts')}</h3>
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-orange-400 rounded-full mt-2"></div>
                   <div>
-                    <strong>Corpo (Body):</strong> A parte maior que amplifica o som
+                    {t('lessons.intro.body')}
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-orange-400 rounded-full mt-2"></div>
                   <div>
-                    <strong>Braço (Neck):</strong> Onde você pressiona as cordas
+                    {t('lessons.intro.neck')}
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-orange-400 rounded-full mt-2"></div>
                   <div>
-                    <strong>Cavalete (Bridge):</strong> Onde as cordas se fixam no corpo
+                    {t('lessons.intro.bridge')}
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-orange-400 rounded-full mt-2"></div>
                   <div>
-                    <strong>Cabeça (Headstock):</strong> Onde ficam as tarraxas
+                    {t('lessons.intro.headstock')}
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-orange-400 rounded-full mt-2"></div>
                   <div>
-                    <strong>Trastes (Frets):</strong> As divisões metálicas no braço
+                    {t('lessons.intro.frets')}
                   </div>
                 </div>
               </div>
             </div>
             
             <div className="bg-gradient-to-br from-orange-50 to-red-50 p-4 rounded-lg">
-              <h3 className="text-lg font-semibold text-gray-700 mb-3">Dica Importante:</h3>
+              <h3 className="text-lg font-semibold text-gray-700 mb-3">{t('ui.labels.important_tip')}</h3>
               <p className="text-gray-600">
-                Familiarize-se com essas partes. Cada uma tem um papel importante 
-                na produção do som e na sua técnica de tocar.
+                {t('lessons.intro.anatomy_tip')}
               </p>
             </div>
           </div>
@@ -87,61 +88,60 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
         <CardContent className="p-0">
           <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
             <Music className="h-6 w-6 text-orange-600" />
-            Nome das Cordas
+            {t('lessons.intro.strings_title')}
           </h2>
           
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <h3 className="text-lg font-semibold text-gray-700 mb-4">
-                Da mais grave (grossa) para a mais aguda (fina):
+                {t('lessons.intro.strings_description')}
               </h3>
               
               <div className="space-y-3">
                 <div className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg">
                   <span className="text-2xl font-bold text-gray-800 w-8">6ª</span>
                   <span className="text-xl font-semibold text-orange-600">E</span>
-                  <span className="text-gray-600">(Mi) - Mais grave</span>
+                  <span className="text-gray-600">{t('lessons.intro.string_6')}</span>
                 </div>
                 <div className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg">
                   <span className="text-2xl font-bold text-gray-800 w-8">5ª</span>
                   <span className="text-xl font-semibold text-orange-600">A</span>
-                  <span className="text-gray-600">(Lá)</span>
+                  <span className="text-gray-600">{t('lessons.intro.string_5')}</span>
                 </div>
                 <div className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg">
                   <span className="text-2xl font-bold text-gray-800 w-8">4ª</span>
                   <span className="text-xl font-semibold text-orange-600">D</span>
-                  <span className="text-gray-600">(Ré)</span>
+                  <span className="text-gray-600">{t('lessons.intro.string_4')}</span>
                 </div>
                 <div className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg">
                   <span className="text-2xl font-bold text-gray-800 w-8">3ª</span>
                   <span className="text-xl font-semibold text-orange-600">G</span>
-                  <span className="text-gray-600">(Sol)</span>
+                  <span className="text-gray-600">{t('lessons.intro.string_3')}</span>
                 </div>
                 <div className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg">
                   <span className="text-2xl font-bold text-gray-800 w-8">2ª</span>
                   <span className="text-xl font-semibold text-orange-600">B</span>
-                  <span className="text-gray-600">(Si)</span>
+                  <span className="text-gray-600">{t('lessons.intro.string_2')}</span>
                 </div>
                 <div className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg">
                   <span className="text-2xl font-bold text-gray-800 w-8">1ª</span>
                   <span className="text-xl font-semibold text-orange-600">E</span>
-                  <span className="text-gray-600">(Mi) - Mais aguda</span>
+                  <span className="text-gray-600">{t('lessons.intro.string_1')}</span>
                 </div>
               </div>
             </div>
             
             <div className="bg-gradient-to-br from-orange-50 to-red-50 p-4 rounded-lg">
-              <h3 className="text-lg font-semibold text-gray-700 mb-3">Macete para Decorar:</h3>
+              <h3 className="text-lg font-semibold text-gray-700 mb-3">{t('lessons.intro.strings_mnemonic')}</h3>
               <p className="text-gray-600 mb-3">
-                <strong>"Eu Aprendo Depois Guitarra, Baixo, Então"</strong>
+                <strong>{t('lessons.intro.strings_phrase')}</strong>
               </p>
               <p className="text-sm text-gray-500">
                 (E-A-D-G-B-E)
               </p>
               <div className="mt-4 p-3 bg-white rounded border">
                 <p className="text-sm text-gray-600">
-                  💡 <strong>Dica:</strong> As cordas são contadas de baixo para cima 
-                  quando você está segurando o violão normalmente.
+                  💡 <strong>{t('ui.labels.important_tip').replace(':', '')}:</strong> {t('lessons.intro.strings_tip')}
                 </p>
               </div>
             </div>
@@ -154,40 +154,40 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
         <CardContent className="p-0">
           <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
             <Hand className="h-6 w-6 text-orange-600" />
-            Posição Correta
+            {t('lessons.intro.position_title')}
           </h2>
           
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-700">Como Segurar o Violão:</h3>
+              <h3 className="text-lg font-semibold text-gray-700">{t('lessons.intro.position_how')}</h3>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-orange-400 rounded-full mt-2"></div>
-                  <span>Sente-se com as costas retas</span>
+                  <span>{t('lessons.intro.position_sit')}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-orange-400 rounded-full mt-2"></div>
-                  <span>Apoie o violão na perna direita (ou use uma banqueta)</span>
+                  <span>{t('lessons.intro.position_leg')}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-orange-400 rounded-full mt-2"></div>
-                  <span>Braço direito sobre o corpo do violão</span>
+                  <span>{t('lessons.intro.position_right_arm')}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-orange-400 rounded-full mt-2"></div>
-                  <span>Mão esquerda no braço, polegar atrás</span>
+                  <span>{t('lessons.intro.position_left_hand')}</span>
                 </li>
               </ul>
             </div>
             
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-700">Posição das Mãos:</h3>
+              <h3 className="text-lg font-semibold text-gray-700">{t('lessons.intro.position_hands')}</h3>
               <div className="bg-gradient-to-br from-orange-50 to-red-50 p-4 rounded-lg">
                 <p className="text-sm text-gray-600 mb-2">
-                  <strong>Mão Esquerda:</strong> Forma um "C" com polegar atrás do braço
+                  <strong>{t('lessons.intro.position_left_desc')}</strong>
                 </p>
                 <p className="text-sm text-gray-600">
-                  <strong>Mão Direita:</strong> Relaxada, dedos curvados sobre as cordas
+                  <strong>{t('lessons.intro.position_right_desc')}</strong>
                 </p>
               </div>
             </div>
@@ -200,39 +200,38 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
         <CardContent className="p-0">
           <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
             <Volume2 className="h-6 w-6 text-orange-600" />
-            Como Ler Diagramas de Acordes
+            {t('lessons.intro.diagrams_title')}
           </h2>
           
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">
               <p className="text-gray-600">
-                Os diagramas mostram onde colocar os dedos no braço do violão:
+                {t('lessons.intro.diagrams_description')}
               </p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-orange-400 rounded-full mt-2"></div>
-                  <span><strong>Linhas verticais:</strong> Representam as cordas</span>
+                  <span><strong>{t('lessons.intro.diagrams_vertical')}</strong></span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-orange-400 rounded-full mt-2"></div>
-                  <span><strong>Linhas horizontais:</strong> Representam os trastes</span>
+                  <span><strong>{t('lessons.intro.diagrams_horizontal')}</strong></span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-orange-400 rounded-full mt-2"></div>
-                  <span><strong>Pontos pretos:</strong> Onde pressionar as cordas</span>
+                  <span><strong>{t('lessons.intro.diagrams_dots')}</strong></span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-orange-400 rounded-full mt-2"></div>
-                  <span><strong>Números:</strong> Indicam qual dedo usar (1=indicador, 2=médio, 3=anelar, 4=mínimo)</span>
+                  <span><strong>{t('lessons.intro.diagrams_numbers')}</strong></span>
                 </li>
               </ul>
             </div>
             
             <div className="bg-gradient-to-br from-orange-50 to-red-50 p-4 rounded-lg">
-              <h3 className="text-lg font-semibold text-gray-700 mb-3">Importante:</h3>
+              <h3 className="text-lg font-semibold text-gray-700 mb-3">{t('ui.labels.important_tip').replace(':', '')}:</h3>
               <p className="text-gray-600 text-sm">
-                Sempre pressione as cordas logo atrás do traste (não em cima dele) 
-                para obter um som limpo e claro.
+                {t('lessons.intro.diagrams_tip')}
               </p>
             </div>
           </div>
@@ -246,12 +245,12 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
           disabled={isCompleted}
           className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-3 text-lg"
         >
-          {isCompleted ? '✓ Lição Concluída' : 'Concluir Lição Introdutória'}
+          {isCompleted ? t('ui.buttons.intro_completed') : t('ui.buttons.complete_intro')}
         </Button>
         
         {isCompleted && (
           <p className="text-green-600 mt-4 font-medium">
-            ✅ Parabéns! Agora você pode começar a aprender os acordes.
+            ✅ {t('lessons.intro.congratulations')}
           </p>
         )}
       </div>

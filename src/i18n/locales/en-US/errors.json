@@ -1,0 +1,11 @@
+{
+  "loading_failed": "Failed to load content",
+  "translation_missing": "Translation not found",
+  "language_not_supported": "Language not supported",
+  "network_error": "Network error",
+  "generic_error": "An unexpected error occurred",
+  "intro_required": "Complete the Introductory Lesson (Day 0) first before proceeding to chords!",
+  "not_found_title": "404",
+  "not_found_message": "Oops! Page not found",
+  "not_found_return": "Return to Home"
+}

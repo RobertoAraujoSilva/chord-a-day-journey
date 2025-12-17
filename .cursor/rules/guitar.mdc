@@ -1,0 +1,217 @@
+globs:
+  - "**/*"
+alwaysApply: true
+---
+# Project Rules – Guitar (Chord a Day Journey)
+
+This file defines the **mandatory specific rules** for the **Chord a Day Journey** project. It acts as the source of truth for code generation, content creation, and technical decisions.
+
+---
+
+## 🎯 Project Objective
+
+Create a daily acoustic/electric guitar learning journey based on **1 chord a day**, focusing on:
+* Clear pedagogical progression.
+* Short, consistent practice (Micro-learning).
+* Simple, motivating visuals.
+* Content accessible to absolute beginners but scalable.
+
+---
+
+## 👤 Target Audience
+
+* **Absolute beginners.**
+* People who have tried to learn before and quit due to information overload.
+* Users who prefer **short daily routines (5–10 min).**
+
+**Constraint:** Assume **zero** prior musical knowledge. Avoid unexplained jargon.
+
+---
+
+## 🎸 Musical Guidelines
+
+### Chords
+* **Priority:** Open chords first (C, G, D, A, E, Am, Em, Dm).
+* **Constraint:** Introduce **Barre chords (Pestanas)** only after a consolidated foundation.
+* **Mandatory Info:**
+    * Chord Name.
+    * Diagram (Finger position).
+    * Strings played vs. Strings muted.
+
+### Progression
+* One chord per day.
+* Frequent review of previous chords.
+* Simple combinations (e.g., C → G → Am → F [simplified]).
+
+### Rhythm
+* Simple strumming patterns first (e.g., ↓ ↓↑).
+* Gradual introduction of variations.
+* **Always** indicate suggested BPM.
+
+---
+
+## 🧠 Teaching Methodology
+
+* **Micro-lessons:** Short and direct.
+* **Spaced Repetition:** Revisit concepts.
+* **Daily Structure (Mandatory):**
+    1.  **What to practice today.**
+    2.  **Common Mistake.**
+    3.  **Practical Tip.**
+
+*Example:*
+> "Today, focus only on switching from Am to C without stopping the rhythm."
+
+---
+
+## 🧩 Content Structure
+
+Each Day/Chord lesson must contain:
+1.  Chord Name.
+2.  Diagram (ASCII or Image reference).
+3.  Simple explanation.
+4.  Practical Exercise (1–3 minutes).
+5.  Optional Challenge.
+
+**Constraint:** Avoid long texts. Keep it actionable.
+
+---
+
+## ✍️ Tone of Voice
+
+* Friendly.
+* Motivating.
+* **NOT** academic or professorial.
+
+*Acceptable:* "You don't need to play perfectly, just consistently." / "If it hurts, stop. Pain is not progress."
+*Avoid:* Excessive technical language, performance pressure, comparisons to professional musicians.
+
+---
+
+## 🧑‍💻 Engineering & Development Rules (MANDATORY)
+
+These rules are strict constraints to avoid errors, rework, and bad UX.
+
+### 1. 📱 Total Responsiveness
+The system **MUST** work perfectly on:
+* Mobile (Android/iOS)
+* Tablets
+* Laptops
+* Large Monitors
+* Smart TVs
+
+**Technical Constraints:**
+* Use **real responsive layouts** (Flexbox/CSS Grid).
+* Use flexible units: `rem`, `%`, `vw`, `vh`.
+* ❌ **PROHIBITED:** Fixed pixel widths that break on small screens.
+* ❌ **PROHIBITED:** Desktop-only layouts or clipped content.
+
+### 2. 🧩 Code Organization (DRY Principle)
+* ❌ **Do not** create files that already exist.
+* ❌ **Do not** duplicate components or functions.
+* **Protocol:**
+    1.  Check if it exists.
+    2.  Reuse.
+    3.  Refactor if necessary.
+* **Structure:** Small components, single-responsibility functions, clear naming conventions (e.g., `ChordDiagram`, `DailyPractice`).
+
+### 3. 🚀 Server Rules (Node.js)
+* ❌ **Do not** run `npm run dev` repeatedly. Use **Nodemon**.
+* **Port Management:** If starting a new server:
+    1.  Identify the port in use.
+    2.  Run `killport`.
+    3.  Only then start the new instance.
+
+### 4. 🛑 General Prohibitions
+* **No "Gambiarras" (Kludges/Hacks):** Do not use temporary fixes as final solutions.
+* **No Ignored Errors:** Console errors must be understood and fixed.
+* **No Commented Dead Code:** Fix it or delete it.
+
+---
+
+## 🖼️ Media Quality Standards
+
+### Visuals
+* **High Quality:** No pixelated or stretched images.
+* **Mandatory Lesson Angles:**
+    * Full Guitar.
+    * Player form **Front**.
+    * Player from **Side**.
+* **Clarity:** Body posture and arm positioning must be obvious.
+
+### Audio
+* Clean, noise-free, balanced volume.
+* ❌ **PROHIBITED:** Low volume, clipping/distorted audio, untested video sound.
+
+---
+
+## ✋ Didactics (No Assumptions)
+
+Never assume the user knows anatomy or music theory. Always explain:
+* **Finger Mapping:** Thumb (Polegar), Index (Indicador), Middle (Médio), Ring (Anelar), Pinky (Mindinho).
+* **Contact Points:** Exact string and fret.
+
+---
+
+## 🌍 Internationalization (i18n) – MANDATORY ARCHITECTURE
+
+The app **MUST be bilingual** (PT-BR / EN-US) from the start, with architecture ready for ES, FR, IT, DE, ZH.
+
+### 1. strict i18n Rules
+* Use `i18next` / `react-i18next`.
+* ❌ **PROHIBITED:** Hardcoded text in JSX/TSX/HTML.
+* ✅ **REQUIRED:** All visible text must come from JSON locales.
+
+*Bad:* `<button>Next Chord</button>`
+*Good:* `<button>{t('common.nextChord')}</button>`
+
+### 2. Folder Structure
+Must match the current repository pattern:
+```text
+/src/i18n
+  ├─ index.ts            # Configuration (Single entry point)
+  └─ locales
+     ├─ pt
+     │  ├─ common.json
+     │  ├─ lessons.json
+     │  └─ ui.json
+     └─ en
+        ├─ common.json
+        ├─ lessons.json
+        └─ ui.json
+
+```
+
+### 3. File & Expansion Constraints
+
+* **Limit:** No language file > 500 lines. Split by context if necessary.
+* **Adding Languages:**
+* Create the folder in `locales`.
+* Translate the JSONs.
+* Register in `index.ts`.
+* ❌ **You MUST NOT touch any Component or Page code to add a language.**
+
+
+
+### 4. Golden Rule of i18n
+
+> "If adding a language requires changing a React component, the architecture is wrong."
+
+---
+
+## ✅ Definition of "Done"
+
+A feature/screen is only **DONE** when:
+
+1. It works on all resolutions (Mobile to TV).
+2. Code is clean and logic is not duplicated.
+3. It is crystal clear for a beginner.
+4. Images and Audio are tested and working.
+5. All text is fully internationalized.
+
+---
+
+📌 **Final Principle:**
+
+> Clean code, clear screen, user understanding.
+> If any of these fail, the work is **not ready**.

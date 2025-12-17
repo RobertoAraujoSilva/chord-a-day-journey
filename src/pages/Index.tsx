@@ -10,8 +10,10 @@ import { Header } from '@/components/Header';
 import { AudioPlayer } from '@/components/AudioPlayer';
 import { GuitarIntro } from '@/components/GuitarIntro';
 import { chords } from '@/data/chords';
+import { useTranslation } from '@/i18n/context';
 
 const Index = () => {
+  const { t } = useTranslation();
   const [currentDay, setCurrentDay] = useState(0); // Agora começa no 0 (Lição Introdutória)
   const [completedDays, setCompletedDays] = useState<number[]>([]);
   const [showIntro, setShowIntro] = useState(true);
@@ -58,7 +60,7 @@ const Index = () => {
       setCurrentDay(0);
     } else {
       if (!introCompleted) {
-        alert('Complete primeiro a Lição Introdutória (Dia 0) antes de prosseguir para os acordes!');
+        alert(t('errors.intro_required'));
         return;
       }
       setShowIntro(false);
@@ -81,7 +83,7 @@ const Index = () => {
             <div className="flex items-center justify-center gap-2 mb-4">
               <BookOpen className="h-5 w-5 text-orange-600" />
               <span className="text-lg font-semibold text-gray-800">
-                Lição Introdutória - Fundamentos do Violão
+                {t('content.titles.intro_lesson')}
               </span>
             </div>
             
@@ -95,7 +97,7 @@ const Index = () => {
                   }}
                   className="mb-4"
                 >
-                  Ir para os Acordes →
+                  {t('ui.navigation.go_to_chords')} →
                 </Button>
               </div>
             )}
@@ -123,7 +125,7 @@ const Index = () => {
             className="flex items-center gap-2 mx-auto"
           >
             <BookOpen className="h-4 w-4" />
-            Revisar Lição Introdutória
+            {t('ui.navigation.review_intro')}
           </Button>
         </div>
 
@@ -133,11 +135,11 @@ const Index = () => {
             <div className="flex items-center gap-2">
               <Trophy className="h-5 w-5 text-amber-600" />
               <span className="text-lg font-semibold text-gray-800">
-                Progresso: {completedDays.length}/30 acordes
+                {t('ui.labels.progress')}: {completedDays.length}/30 {t('ui.labels.chords_progress')}
               </span>
             </div>
             <span className="text-sm text-gray-600">
-              {Math.round(progress)}% concluído
+              {Math.round(progress)}{t('ui.labels.percent_complete')}
             </span>
           </div>
           <Progress value={progress} className="h-3" />
@@ -162,14 +164,14 @@ const Index = () => {
                   <div className="flex items-center justify-center gap-2 mb-2">
                     <Calendar className="h-5 w-5 text-orange-600" />
                     <span className="text-sm font-medium text-gray-600">
-                      Dia {currentDay}
+                      {t('ui.labels.day')} {currentDay}
                     </span>
                   </div>
                   <h1 className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-2">
                     {currentChord.name}
                   </h1>
                   <p className="text-lg text-gray-600 mb-4">
-                    {currentChord.fullName}
+                    {t(`content.chords.${currentChord.name}.fullName`)}
                   </p>
                   
                   {/* Audio Player */}
@@ -178,21 +180,29 @@ const Index = () => {
                   </div>
                   
                   <div className="flex justify-center gap-2">
-                    {currentChord.difficulty === 'Fácil' && (
-                      <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
-                        Fácil
-                      </span>
-                    )}
-                    {currentChord.difficulty === 'Médio' && (
-                      <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">
-                        Médio
-                      </span>
-                    )}
-                    {currentChord.difficulty === 'Difícil' && (
-                      <span className="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm font-medium">
-                        Difícil
-                      </span>
-                    )}
+                    {(() => {
+                      const difficulty = t(`content.chords.${currentChord.name}.difficulty`);
+                      const difficultyLower = difficulty.toLowerCase();
+                      if (difficultyLower === 'fácil' || difficultyLower === 'easy') {
+                        return (
+                          <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+                            {difficulty}
+                          </span>
+                        );
+                      } else if (difficultyLower === 'médio' || difficultyLower === 'medium') {
+                        return (
+                          <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">
+                            {difficulty}
+                          </span>
+                        );
+                      } else {
+                        return (
+                          <span className="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm font-medium">
+                            {difficulty}
+                          </span>
+                        );
+                      }
+                    })()}
                   </div>
                 </div>
 
@@ -200,27 +210,27 @@ const Index = () => {
                   <div>
                     <h3 className="font-semibold text-gray-800 mb-2 flex items-center gap-2">
                       <Target className="h-4 w-4" />
-                      Como tocar:
+                      {t('ui.labels.how_to_play')}
                     </h3>
                     <p className="text-gray-700 leading-relaxed">
-                      {currentChord.instructions}
+                      {t(`content.chords.${currentChord.name}.instructions`)}
                     </p>
                   </div>
 
                   <div>
                     <h3 className="font-semibold text-gray-800 mb-2 flex items-center gap-2">
                       <Music className="h-4 w-4" />
-                      Dica importante:
+                      {t('ui.labels.important_tip')}
                     </h3>
                     <p className="text-gray-700 leading-relaxed">
-                      {currentChord.tip}
+                      {t(`content.chords.${currentChord.name}.tip`)}
                     </p>
                   </div>
 
                   {currentChord.commonSongs && (
                     <div>
                       <h3 className="font-semibold text-gray-800 mb-2">
-                        Músicas famosas que usam este acorde:
+                        {t('ui.labels.famous_songs')}
                       </h3>
                       <ul className="text-gray-700 space-y-1">
                         {currentChord.commonSongs.map((song, index) => (
@@ -240,7 +250,7 @@ const Index = () => {
             <Card className="p-6 shadow-xl border-0 bg-white/80 backdrop-blur-sm">
               <CardContent className="p-0">
                 <h2 className="text-xl font-semibold text-center mb-6 text-gray-800">
-                  Diagrama do Acorde
+                  {t('ui.labels.chord_diagram')}
                 </h2>
                 <ChordDiagram chord={currentChord} />
               </CardContent>
@@ -257,7 +267,7 @@ const Index = () => {
             className="flex items-center gap-2"
           >
             <ChevronLeft className="h-4 w-4" />
-            Anterior
+            {t('ui.buttons.previous')}
           </Button>
 
           <Button
@@ -265,7 +275,7 @@ const Index = () => {
             disabled={completedDays.includes(currentDay)}
             className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-2"
           >
-            {completedDays.includes(currentDay) ? '✓ Concluído' : 'Marcar como Aprendido'}
+            {completedDays.includes(currentDay) ? t('ui.buttons.completed') : t('ui.buttons.complete')}
           </Button>
 
           <Button
@@ -274,7 +284,7 @@ const Index = () => {
             disabled={currentDay === 30}
             className="flex items-center gap-2"
           >
-            Próximo
+            {t('ui.buttons.next')}
             <ChevronRight className="h-4 w-4" />
           </Button>
         </div>

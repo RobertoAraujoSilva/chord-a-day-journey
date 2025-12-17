@@ -1,0 +1,199 @@
+{
+  "titles": {
+    "app": "30 Acordes em 30 Dias",
+    "app_subtitle": "Aprenda violão de forma gradual e consistente",
+    "daily_chord": "Acorde Diário",
+    "progress_tracker": "Acompanhamento de Progresso",
+    "guitar_fundamentals": "Fundamentos do Violão",
+    "important": "Importante:",
+    "intro_lesson": "Lição Introdutória - Fundamentos do Violão"
+  },
+  "descriptions": {
+    "app": "Sua jornada diária de aprendizado de violão",
+    "chord_practice": "Pratique e domine novos acordes",
+    "progress": "Acompanhe seu progresso diário",
+    "intro_required": "Complete primeiro a Lição Introdutória (Dia 0) antes de prosseguir para os acordes!"
+  },
+  "tips": {
+    "finger_position": "Posicione os dedos corretamente",
+    "practice_daily": "Pratique todos os dias para melhores resultados",
+    "be_patient": "Seja paciente, o progresso vem com o tempo",
+    "tip": "Dica"
+  },
+  "chords": {
+    "Em": {
+      "fullName": "Mi menor",
+      "difficulty": "Fácil",
+      "instructions": "Coloque o dedo 2 na segunda casa da corda A (5ª corda) e o dedo 3 na segunda casa da corda D (4ª corda). As outras cordas ficam soltas.",
+      "tip": "Este é um dos acordes mais fáceis! Certifique-se de que os dedos estão curvados e não tocam nas outras cordas."
+    },
+    "Am": {
+      "fullName": "Lá menor",
+      "difficulty": "Fácil",
+      "instructions": "Coloque o dedo 1 na primeira casa da corda B, dedo 2 na segunda casa da corda D, e dedo 3 na segunda casa da corda G. Não toque a corda E grave.",
+      "tip": "Mantenha o polegar atrás do braço do violão para ter melhor apoio. Este acorde aparece em milhares de músicas!"
+    },
+    "C": {
+      "fullName": "Dó maior",
+      "difficulty": "Médio",
+      "instructions": "Dedo 1 na primeira casa da corda B, dedo 2 na segunda casa da corda D, dedo 3 na terceira casa da corda A. Corda G e E aguda ficam soltas.",
+      "tip": "Este acorde pode ser um pouco desafiador no início. Certifique-se de pressionar bem as cordas e que cada nota soe limpa."
+    },
+    "G": {
+      "fullName": "Sol maior",
+      "difficulty": "Médio",
+      "instructions": "Dedo 1 na segunda casa da corda A, dedo 2 na terceira casa da corda E grave, dedo 3 na terceira casa da corda B, dedo 4 na terceira casa da corda E aguda.",
+      "tip": "Use a ponta dos dedos e mantenha-os curvados. É normal este acorde ser difícil no começo, mas com prática fica natural."
+    },
+    "D": {
+      "fullName": "Ré maior",
+      "difficulty": "Médio",
+      "instructions": "Dedo 1 na segunda casa da corda G, dedo 2 na segunda casa da corda E aguda, dedo 3 na terceira casa da corda B. Só toque as 4 cordas mais agudas.",
+      "tip": "Concentre-se em tocar apenas as cordas que devem soar. As duas cordas mais graves (E e A) não devem ser tocadas neste acorde."
+    },
+    "E": {
+      "fullName": "Mi maior",
+      "difficulty": "Fácil",
+      "instructions": "Dedo 1 na primeira casa da corda G, dedo 2 na segunda casa da corda A, dedo 3 na segunda casa da corda D. As cordas E ficam soltas.",
+      "tip": "Este é um acorde fundamental! Certifique-se de que o dedo 1 não toque na corda B acidentalmente."
+    },
+    "A": {
+      "fullName": "Lá maior",
+      "difficulty": "Médio",
+      "instructions": "Coloque os dedos 1, 2 e 3 todos na segunda casa das cordas D, G e B respectivamente. A corda A fica solta, E aguda solta.",
+      "tip": "Tente usar apenas um dedo (como uma pestana) para pressionar as três cordas na segunda casa - isso facilitará a transição para outros acordes."
+    },
+    "Dm": {
+      "fullName": "Ré menor",
+      "difficulty": "Médio",
+      "instructions": "Dedo 1 na primeira casa da corda E aguda, dedo 2 na segunda casa da corda G, dedo 3 na terceira casa da corda B. Toque apenas as 4 cordas mais agudas.",
+      "tip": "Como o acorde de D maior, evite tocar as cordas E grave e A. O som deve ser mais melancólico que o D maior."
+    },
+    "F": {
+      "fullName": "Fá maior",
+      "difficulty": "Difícil",
+      "instructions": "Este é um acorde com pestana. Use o dedo 1 para pressionar todas as cordas na primeira casa, depois coloque os outros dedos: dedo 2 na segunda casa da corda G, dedos 3 e 4 na terceira casa das cordas A e D.",
+      "tip": "Este é o primeiro acorde realmente desafiador! A pestana requer força e prática. Comece praticando apenas a pestana, depois adicione os outros dedos."
+    },
+    "B7": {
+      "fullName": "Si com sétima",
+      "difficulty": "Médio",
+      "instructions": "Dedo 1 na primeira casa da corda D, dedo 2 na segunda casa da corda A, dedo 3 na segunda casa da corda G, dedo 4 na segunda casa da corda E aguda.",
+      "tip": "Este acorde tem uma sonoridade jazzy e é muito usado em blues. A corda B fica solta, criando um som interessante."
+    },
+    "Bm": {
+      "fullName": "Si menor",
+      "difficulty": "Difícil",
+      "instructions": "Use uma mini-pestana com o dedo 1 na segunda casa (cordas A e E aguda), dedo 2 na terceira casa da corda B, dedos 3 e 4 na quarta casa das cordas D e G.",
+      "tip": "Este é outro acorde desafiador. Você pode usar uma pestana completa na segunda casa se for mais confortável."
+    },
+    "G7": {
+      "fullName": "Sol com sétima",
+      "difficulty": "Fácil",
+      "instructions": "Dedo 1 na primeira casa da corda E aguda, dedo 2 na segunda casa da corda A, dedo 3 na terceira casa da corda E grave. As cordas D, G e B ficam soltas.",
+      "tip": "Este acorde é muito parecido com o G maior, mas com o dedo mindinho na primeira casa da corda E aguda. Dá um som mais bluesy."
+    },
+    "C7": {
+      "fullName": "Dó com sétima",
+      "difficulty": "Médio",
+      "instructions": "Dedo 1 na primeira casa da corda B, dedo 2 na segunda casa da corda D, dedo 3 na terceira casa da corda A, dedo 4 na terceira casa da corda G.",
+      "tip": "Baseado no acorde C maior, mas com uma nota adicional que cria tensão. Muito usado em progressões que vão para F."
+    },
+    "A7": {
+      "fullName": "Lá com sétima",
+      "difficulty": "Fácil",
+      "instructions": "Dedo 2 na segunda casa da corda D, dedo 3 na segunda casa da corda B. As cordas A, G e E ficam soltas.",
+      "tip": "Um dos acordes de sétima mais fáceis! Muito usado em blues e country. Tem um som aberto e resoluto."
+    },
+    "D7": {
+      "fullName": "Ré com sétima",
+      "difficulty": "Fácil",
+      "instructions": "Dedo 1 na primeira casa da corda B, dedo 2 na segunda casa da corda G, dedo 3 na segunda casa da corda E aguda. Corda D fica solta.",
+      "tip": "Muito similar ao D maior, mas com o dedo 1 na primeira casa da corda B. Cria uma tensão que resolve bem no G."
+    },
+    "E7": {
+      "fullName": "Mi com sétima",
+      "difficulty": "Fácil",
+      "instructions": "Dedo 1 na primeira casa da corda G, dedo 2 na segunda casa da corda A. Todas as outras cordas ficam soltas.",
+      "tip": "Ainda mais fácil que o E maior! Remove apenas um dedo do acorde de E. Muito usado em blues e rock."
+    },
+    "Am7": {
+      "fullName": "Lá menor com sétima",
+      "difficulty": "Fácil",
+      "instructions": "Dedo 1 na primeira casa da corda B, dedo 2 na segunda casa da corda D. As cordas A, G e E ficam soltas.",
+      "tip": "Uma versão mais suave do Am. Muito usado em jazz e bossa nova. Tem um som mais sofisticado e relaxante."
+    },
+    "Em7": {
+      "fullName": "Mi menor com sétima",
+      "difficulty": "Fácil",
+      "instructions": "Apenas o dedo 2 na segunda casa da corda A. Todas as outras cordas ficam soltas.",
+      "tip": "O acorde mais fácil de todos! Apenas um dedo. Tem um som muito aberto e etéreo, perfeito para baladas."
+    },
+    "Dm7": {
+      "fullName": "Ré menor com sétima",
+      "difficulty": "Médio",
+      "instructions": "Use o dedo 1 para fazer uma mini-pestana na primeira casa (cordas B e E aguda), dedo 2 na segunda casa da corda G.",
+      "tip": "Uma sonoridade jazzy e sofisticada. A mini-pestana pode ser desafiadora no início, mas é muito útil de dominar."
+    },
+    "Cmaj7": {
+      "fullName": "Dó maior com sétima maior",
+      "difficulty": "Fácil",
+      "instructions": "Dedo 1 na segunda casa da corda D, dedo 2 na terceira casa da corda A. As cordas G, B e E ficam soltas.",
+      "tip": "Um acorde muito bonito e sofisticado. Mais suave que o C7, tem uma sonoridade dreamy perfeita para baladas."
+    },
+    "Fmaj7": {
+      "fullName": "Fá maior com sétima maior",
+      "difficulty": "Difícil",
+      "instructions": "Pestana com dedo 1 na primeira casa (cordas E grave e B), dedo 2 na segunda casa da corda G, dedos 3 e 4 na terceira casa das cordas A e D.",
+      "tip": "Similar ao F maior, mas sem pressionar a corda E aguda na pestana. Cria um som mais aberto e jazz."
+    },
+    "Gsus4": {
+      "fullName": "Sol suspenso quarta",
+      "difficulty": "Médio",
+      "instructions": "Dedo 1 na primeira casa da corda B, dedo 2 na terceira casa da corda E grave, dedo 3 na terceira casa da corda A, dedo 4 na terceira casa da corda E aguda.",
+      "tip": "Acorde de passagem muito usado. Cria suspense e tensão que resolve bem no G maior. Muito usado no rock."
+    },
+    "Dsus4": {
+      "fullName": "Ré suspenso quarta",
+      "difficulty": "Médio",
+      "instructions": "Dedo 1 na segunda casa da corda G, dedo 2 na terceira casa da corda B, dedo 3 na terceira casa da corda E aguda.",
+      "tip": "Cria uma bela tensão que resolve no D maior. Muito usado em músicas folk e country para adicionar movimento."
+    },
+    "Cadd9": {
+      "fullName": "Dó maior com nona adicionada",
+      "difficulty": "Médio",
+      "instructions": "Dedo 1 na segunda casa da corda D, dedo 2 na terceira casa da corda A, dedo 3 na terceira casa da corda B.",
+      "tip": "Uma versão mais colorida do C maior. Adiciona uma nota que dá um som mais moderno e interessante."
+    },
+    "G/B": {
+      "fullName": "Sol com baixo em Si",
+      "difficulty": "Médio",
+      "instructions": "Dedo 1 na segunda casa da corda A, dedo 2 na terceira casa da corda B, dedo 3 na terceira casa da corda E aguda.",
+      "tip": "Acorde de passagem muito útil. O baixo diferente cria uma linha melódica no baixo, muito usado em progressões descendentes."
+    },
+    "F#m": {
+      "fullName": "Fá sustenido menor",
+      "difficulty": "Difícil",
+      "instructions": "Pestana completa com dedo 1 na segunda casa, dedo 3 na quarta casa da corda A, dedo 4 na quarta casa da corda D.",
+      "tip": "Baseado na forma do Em, mas com pestana na segunda casa. Este é um bom exercício para dominar pestanas."
+    },
+    "Bb": {
+      "fullName": "Si bemol maior",
+      "difficulty": "Difícil",
+      "instructions": "Pestana com dedo 1 na primeira casa (cordas A e E aguda), dedo 2 na terceira casa da corda D, dedos 3 e 4 na terceira casa das cordas G e B.",
+      "tip": "Outro acorde com pestana. Muito comum em músicas em tonalidades com bemóis. Pratique a pestana separadamente primeiro."
+    },
+    "A#dim": {
+      "fullName": "Lá sustenido diminuto",
+      "difficulty": "Médio",
+      "instructions": "Dedo 1 na primeira casa da corda A, dedo 2 na segunda casa da corda D, dedo 3 na segunda casa da corda B.",
+      "tip": "Acorde de passagem com sonoridade única e misteriosa. Muito usado para criar tensão e movimento harmônico interessante."
+    },
+    "Esus4": {
+      "fullName": "Mi suspenso quarta",
+      "difficulty": "Fácil",
+      "instructions": "Dedo 1 na segunda casa da corda A, dedo 2 na segunda casa da corda D, dedo 3 na segunda casa da corda G.",
+      "tip": "Cria uma bela tensão que resolve no E maior. Muito usado no final de frases musicais para adicionar drama."
+    }
+  }
+}

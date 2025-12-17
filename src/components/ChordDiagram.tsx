@@ -1,11 +1,13 @@
 
 import { Chord } from '@/data/chords';
+import { useTranslation } from '@/i18n/context';
 
 interface ChordDiagramProps {
   chord: Chord;
 }
 
 export const ChordDiagram = ({ chord }: ChordDiagramProps) => {
+  const { t } = useTranslation();
   const frets = 5;
   const strings = 6;
 
@@ -131,15 +133,15 @@ export const ChordDiagram = ({ chord }: ChordDiagramProps) => {
       <div className="mt-4 flex gap-6 text-sm text-gray-600">
         <div className="flex items-center gap-2">
           <div className="w-4 h-4 rounded-full bg-red-500"></div>
-          <span>Dedo pressionado</span>
+          <span>{t('ui.labels.finger_pressed')}</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="w-4 h-4 rounded-full border-2 border-green-500"></div>
-          <span>Corda solta</span>
+          <span>{t('ui.labels.open_string')}</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="w-4 h-4 flex items-center justify-center text-red-500 font-bold">×</div>
-          <span>Não tocar</span>
+          <span>{t('ui.labels.do_not_play')}</span>
         </div>
       </div>
     </div>

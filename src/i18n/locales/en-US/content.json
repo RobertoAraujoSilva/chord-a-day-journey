@@ -1,0 +1,199 @@
+{
+  "titles": {
+    "app": "30 Chords in 30 Days",
+    "app_subtitle": "Learn guitar gradually and consistently",
+    "daily_chord": "Daily Chord",
+    "progress_tracker": "Progress Tracker",
+    "guitar_fundamentals": "Guitar Fundamentals",
+    "important": "Important:",
+    "intro_lesson": "Introductory Lesson - Guitar Fundamentals"
+  },
+  "descriptions": {
+    "app": "Your daily guitar learning journey",
+    "chord_practice": "Practice and master new chords",
+    "progress": "Track your daily progress",
+    "intro_required": "Complete the Introductory Lesson (Day 0) first before proceeding to chords!"
+  },
+  "tips": {
+    "finger_position": "Position your fingers correctly",
+    "practice_daily": "Practice daily for best results",
+    "be_patient": "Be patient, progress comes with time",
+    "tip": "Tip"
+  },
+  "chords": {
+    "Em": {
+      "fullName": "E minor",
+      "difficulty": "Easy",
+      "instructions": "Place finger 2 on the second fret of the A string (5th string) and finger 3 on the second fret of the D string (4th string). Leave the other strings open.",
+      "tip": "This is one of the easiest chords! Make sure your fingers are curved and don't touch the other strings."
+    },
+    "Am": {
+      "fullName": "A minor",
+      "difficulty": "Easy",
+      "instructions": "Place finger 1 on the first fret of the B string, finger 2 on the second fret of the D string, and finger 3 on the second fret of the G string. Don't play the low E string.",
+      "tip": "Keep your thumb behind the guitar neck for better support. This chord appears in thousands of songs!"
+    },
+    "C": {
+      "fullName": "C major",
+      "difficulty": "Medium",
+      "instructions": "Finger 1 on the first fret of the B string, finger 2 on the second fret of the D string, finger 3 on the third fret of the A string. G and high E strings remain open.",
+      "tip": "This chord can be a bit challenging at first. Make sure to press the strings firmly and that each note sounds clean."
+    },
+    "G": {
+      "fullName": "G major",
+      "difficulty": "Medium",
+      "instructions": "Finger 1 on the second fret of the A string, finger 2 on the third fret of the low E string, finger 3 on the third fret of the B string, finger 4 on the third fret of the high E string.",
+      "tip": "Use your fingertips and keep them curved. It's normal for this chord to be difficult at first, but with practice it becomes natural."
+    },
+    "D": {
+      "fullName": "D major",
+      "difficulty": "Medium",
+      "instructions": "Finger 1 on the second fret of the G string, finger 2 on the second fret of the high E string, finger 3 on the third fret of the B string. Only play the top 4 strings.",
+      "tip": "Focus on playing only the strings that should sound. The two lowest strings (E and A) should not be played in this chord."
+    },
+    "E": {
+      "fullName": "E major",
+      "difficulty": "Easy",
+      "instructions": "Finger 1 on the first fret of the G string, finger 2 on the second fret of the A string, finger 3 on the second fret of the D string. The E strings remain open.",
+      "tip": "This is a fundamental chord! Make sure finger 1 doesn't accidentally touch the B string."
+    },
+    "A": {
+      "fullName": "A major",
+      "difficulty": "Medium",
+      "instructions": "Place fingers 1, 2, and 3 all on the second fret of the D, G, and B strings respectively. The A string stays open, high E open.",
+      "tip": "Try using just one finger (like a barre) to press the three strings on the second fret - this will make transitions to other chords easier."
+    },
+    "Dm": {
+      "fullName": "D minor",
+      "difficulty": "Medium",
+      "instructions": "Finger 1 on the first fret of the high E string, finger 2 on the second fret of the G string, finger 3 on the third fret of the B string. Play only the top 4 strings.",
+      "tip": "Like the D major chord, avoid playing the low E and A strings. The sound should be more melancholic than D major."
+    },
+    "F": {
+      "fullName": "F major",
+      "difficulty": "Hard",
+      "instructions": "This is a barre chord. Use finger 1 to press all strings on the first fret, then place the other fingers: finger 2 on the second fret of the G string, fingers 3 and 4 on the third fret of the A and D strings.",
+      "tip": "This is the first really challenging chord! The barre requires strength and practice. Start by practicing just the barre, then add the other fingers."
+    },
+    "B7": {
+      "fullName": "B seventh",
+      "difficulty": "Medium",
+      "instructions": "Finger 1 on the first fret of the D string, finger 2 on the second fret of the A string, finger 3 on the second fret of the G string, finger 4 on the second fret of the high E string.",
+      "tip": "This chord has a jazzy sound and is widely used in blues. The B string stays open, creating an interesting sound."
+    },
+    "Bm": {
+      "fullName": "B minor",
+      "difficulty": "Hard",
+      "instructions": "Use a mini-barre with finger 1 on the second fret (A and high E strings), finger 2 on the third fret of the B string, fingers 3 and 4 on the fourth fret of the D and G strings.",
+      "tip": "This is another challenging chord. You can use a full barre on the second fret if it's more comfortable."
+    },
+    "G7": {
+      "fullName": "G seventh",
+      "difficulty": "Easy",
+      "instructions": "Finger 1 on the first fret of the high E string, finger 2 on the second fret of the A string, finger 3 on the third fret of the low E string. The D, G, and B strings remain open.",
+      "tip": "This chord is very similar to G major, but with the pinky on the first fret of the high E string. It gives a more bluesy sound."
+    },
+    "C7": {
+      "fullName": "C seventh",
+      "difficulty": "Medium",
+      "instructions": "Finger 1 on the first fret of the B string, finger 2 on the second fret of the D string, finger 3 on the third fret of the A string, finger 4 on the third fret of the G string.",
+      "tip": "Based on the C major chord, but with an additional note that creates tension. Widely used in progressions going to F."
+    },
+    "A7": {
+      "fullName": "A seventh",
+      "difficulty": "Easy",
+      "instructions": "Finger 2 on the second fret of the D string, finger 3 on the second fret of the B string. The A, G, and E strings remain open.",
+      "tip": "One of the easiest seventh chords! Widely used in blues and country. It has an open and resolute sound."
+    },
+    "D7": {
+      "fullName": "D seventh",
+      "difficulty": "Easy",
+      "instructions": "Finger 1 on the first fret of the B string, finger 2 on the second fret of the G string, finger 3 on the second fret of the high E string. D string stays open.",
+      "tip": "Very similar to D major, but with finger 1 on the first fret of the B string. Creates tension that resolves well to G."
+    },
+    "E7": {
+      "fullName": "E seventh",
+      "difficulty": "Easy",
+      "instructions": "Finger 1 on the first fret of the G string, finger 2 on the second fret of the A string. All other strings remain open.",
+      "tip": "Even easier than E major! Just remove one finger from the E chord. Widely used in blues and rock."
+    },
+    "Am7": {
+      "fullName": "A minor seventh",
+      "difficulty": "Easy",
+      "instructions": "Finger 1 on the first fret of the B string, finger 2 on the second fret of the D string. The A, G, and E strings remain open.",
+      "tip": "A softer version of Am. Widely used in jazz and bossa nova. It has a more sophisticated and relaxing sound."
+    },
+    "Em7": {
+      "fullName": "E minor seventh",
+      "difficulty": "Easy",
+      "instructions": "Only finger 2 on the second fret of the A string. All other strings remain open.",
+      "tip": "The easiest chord of all! Just one finger. It has a very open and ethereal sound, perfect for ballads."
+    },
+    "Dm7": {
+      "fullName": "D minor seventh",
+      "difficulty": "Medium",
+      "instructions": "Use finger 1 to make a mini-barre on the first fret (B and high E strings), finger 2 on the second fret of the G string.",
+      "tip": "A jazzy and sophisticated sound. The mini-barre can be challenging at first, but it's very useful to master."
+    },
+    "Cmaj7": {
+      "fullName": "C major seventh",
+      "difficulty": "Easy",
+      "instructions": "Finger 1 on the second fret of the D string, finger 2 on the third fret of the A string. The G, B, and E strings remain open.",
+      "tip": "A very beautiful and sophisticated chord. Softer than C7, it has a dreamy sound perfect for ballads."
+    },
+    "Fmaj7": {
+      "fullName": "F major seventh",
+      "difficulty": "Hard",
+      "instructions": "Barre with finger 1 on the first fret (low E and B strings), finger 2 on the second fret of the G string, fingers 3 and 4 on the third fret of the A and D strings.",
+      "tip": "Similar to F major, but without pressing the high E string in the barre. Creates a more open and jazzy sound."
+    },
+    "Gsus4": {
+      "fullName": "G suspended fourth",
+      "difficulty": "Medium",
+      "instructions": "Finger 1 on the first fret of the B string, finger 2 on the third fret of the low E string, finger 3 on the third fret of the A string, finger 4 on the third fret of the high E string.",
+      "tip": "A widely used passing chord. Creates suspense and tension that resolves well to G major. Widely used in rock."
+    },
+    "Dsus4": {
+      "fullName": "D suspended fourth",
+      "difficulty": "Medium",
+      "instructions": "Finger 1 on the second fret of the G string, finger 2 on the third fret of the B string, finger 3 on the third fret of the high E string.",
+      "tip": "Creates beautiful tension that resolves to D major. Widely used in folk and country songs to add movement."
+    },
+    "Cadd9": {
+      "fullName": "C major add ninth",
+      "difficulty": "Medium",
+      "instructions": "Finger 1 on the second fret of the D string, finger 2 on the third fret of the A string, finger 3 on the third fret of the B string.",
+      "tip": "A more colorful version of C major. Adds a note that gives a more modern and interesting sound."
+    },
+    "G/B": {
+      "fullName": "G over B",
+      "difficulty": "Medium",
+      "instructions": "Finger 1 on the second fret of the A string, finger 2 on the third fret of the B string, finger 3 on the third fret of the high E string.",
+      "tip": "A very useful passing chord. The different bass creates a melodic line in the bass, widely used in descending progressions."
+    },
+    "F#m": {
+      "fullName": "F sharp minor",
+      "difficulty": "Hard",
+      "instructions": "Full barre with finger 1 on the second fret, finger 3 on the fourth fret of the A string, finger 4 on the fourth fret of the D string.",
+      "tip": "Based on the Em shape, but with a barre on the second fret. This is good practice for mastering barres."
+    },
+    "Bb": {
+      "fullName": "B flat major",
+      "difficulty": "Hard",
+      "instructions": "Barre with finger 1 on the first fret (A and high E strings), finger 2 on the third fret of the D string, fingers 3 and 4 on the third fret of the G and B strings.",
+      "tip": "Another barre chord. Very common in songs in flat keys. Practice the barre separately first."
+    },
+    "A#dim": {
+      "fullName": "A sharp diminished",
+      "difficulty": "Medium",
+      "instructions": "Finger 1 on the first fret of the A string, finger 2 on the second fret of the D string, finger 3 on the second fret of the B string.",
+      "tip": "A passing chord with a unique and mysterious sound. Widely used to create tension and interesting harmonic movement."
+    },
+    "Esus4": {
+      "fullName": "E suspended fourth",
+      "difficulty": "Easy",
+      "instructions": "Finger 1 on the second fret of the A string, finger 2 on the second fret of the D string, finger 3 on the second fret of the G string.",
+      "tip": "Creates beautiful tension that resolves to E major. Widely used at the end of musical phrases to add drama."
+    }
+  }
+}

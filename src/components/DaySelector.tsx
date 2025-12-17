@@ -2,6 +2,7 @@
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { BookOpen } from 'lucide-react';
+import { useTranslation } from '@/i18n/context';
 
 interface DaySelectorProps {
   currentDay: number;
@@ -18,14 +19,16 @@ export const DaySelector = ({
   includeIntro = false, 
   introCompleted = false 
 }: DaySelectorProps) => {
+  const { t } = useTranslation();
+
   return (
     <div className="mb-6">
       <h2 className="text-lg font-semibold text-gray-800 mb-4 text-center">
-        Selecione o Dia
+        {t('ui.navigation.select_day')}
       </h2>
       <ScrollArea className="w-full">
         <div className="flex gap-2 pb-4 px-2">
-          {/* Lição Introdutória (Dia 0) */}
+          {/* Introductory Lesson (Day 0) */}
           {includeIntro && (
             <Button
               variant={currentDay === 0 ? "default" : "outline"}
@@ -42,7 +45,7 @@ export const DaySelector = ({
               `}
             >
               <BookOpen className="h-3 w-3" />
-              <span className="text-xs">Intro</span>
+              <span className="text-xs">{t('ui.labels.intro')}</span>
               {introCompleted && (
                 <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-white">
                   <div className="w-full h-full flex items-center justify-center">
@@ -53,7 +56,7 @@ export const DaySelector = ({
             </Button>
           )}
           
-          {/* Dias dos Acordes (1-30) */}
+          {/* Chord Days (1-30) */}
           {Array.from({ length: 30 }, (_, i) => i + 1).map((day) => (
             <Button
               key={day}

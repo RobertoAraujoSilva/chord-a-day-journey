@@ -3,6 +3,7 @@ import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { supabase } from '@/integrations/supabase/client';
 import { playGeneratedChord, normalizeChordName } from '@/utils/audioGenerator';
+import { useTranslation } from '@/i18n/context';
 
 interface AudioPlayerProps {
   chordName: string;
@@ -10,6 +11,7 @@ interface AudioPlayerProps {
 }
 
 export const AudioPlayer = ({ chordName, className = '' }: AudioPlayerProps) => {
+  const { t } = useTranslation();
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
@@ -68,7 +70,7 @@ export const AudioPlayer = ({ chordName, className = '' }: AudioPlayerProps) => 
         }
       }
     } catch (error) {
-      console.error('Erro ao tocar áudio:', error);
+      console.error('Error playing audio:', error);
     } finally {
       setIsLoading(false);
     }
@@ -111,7 +113,7 @@ export const AudioPlayer = ({ chordName, className = '' }: AudioPlayerProps) => 
         ) : (
           <Play className="h-4 w-4" />
         )}
-        {isPlaying ? 'Pausar' : 'Tocar Acorde'}
+        {isPlaying ? t('ui.labels.pause') : t('ui.labels.play_chord')}
       </Button>
 
       {!useGenerated && (
@@ -126,7 +128,7 @@ export const AudioPlayer = ({ chordName, className = '' }: AudioPlayerProps) => 
       )}
       
       <span className="text-xs text-muted-foreground">
-        {useGenerated ? '🔊 Áudio gerado' : '🎵 Áudio real'}
+        {useGenerated ? t('ui.labels.generated_audio') : t('ui.labels.real_audio')}
       </span>
     </div>
   );

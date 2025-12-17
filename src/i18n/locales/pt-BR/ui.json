@@ -1,0 +1,57 @@
+{
+  "header": {
+    "title": "30 Acordes em 30 Dias",
+    "subtitle": "Aprenda violão de forma gradual e consistente"
+  },
+  "navigation": {
+    "home": "Início",
+    "lessons": "Lições",
+    "progress": "Progresso",
+    "select_day": "Selecione o Dia",
+    "intro_lesson": "Lição Introdutória",
+    "review_intro": "Revisar Lição Introdutória",
+    "go_to_chords": "Ir para os Acordes"
+  },
+  "buttons": {
+    "start": "Começar",
+    "next": "Próximo",
+    "previous": "Anterior",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "complete": "Marcar como Aprendido",
+    "completed": "✓ Concluído",
+    "complete_intro": "Concluir Lição Introdutória",
+    "intro_completed": "✓ Lição Concluída"
+  },
+  "labels": {
+    "language": "Idioma",
+    "day": "Dia",
+    "progress": "Progresso",
+    "completed": "Concluído",
+    "difficulty": "Dificuldade",
+    "chord_diagram": "Diagrama do Acorde",
+    "finger_pressed": "Dedo pressionado",
+    "open_string": "Corda solta",
+    "do_not_play": "Não tocar",
+    "intro": "Intro",
+    "percent_complete": "% concluído",
+    "chords_progress": "acordes",
+    "how_to_play": "Como tocar:",
+    "important_tip": "Dica importante:",
+    "famous_songs": "Músicas famosas que usam este acorde:",
+    "play_chord": "Tocar Acorde",
+    "pause": "Pausar",
+    "generated_audio": "🔊 Áudio gerado",
+    "real_audio": "🎵 Áudio real"
+  },
+  "languages": {
+    "pt-BR": "Português",
+    "en-US": "English",
+    "switch_language": "Alterar idioma"
+  },
+  "difficulty": {
+    "easy": "Fácil",
+    "medium": "Médio",
+    "hard": "Difícil"
+  }
+}

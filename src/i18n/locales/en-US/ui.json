@@ -1,0 +1,57 @@
+{
+  "header": {
+    "title": "30 Chords in 30 Days",
+    "subtitle": "Learn guitar gradually and consistently"
+  },
+  "navigation": {
+    "home": "Home",
+    "lessons": "Lessons",
+    "progress": "Progress",
+    "select_day": "Select Day",
+    "intro_lesson": "Introductory Lesson",
+    "review_intro": "Review Introductory Lesson",
+    "go_to_chords": "Go to Chords"
+  },
+  "buttons": {
+    "start": "Start",
+    "next": "Next",
+    "previous": "Previous",
+    "save": "Save",
+    "cancel": "Cancel",
+    "complete": "Mark as Learned",
+    "completed": "✓ Completed",
+    "complete_intro": "Complete Introductory Lesson",
+    "intro_completed": "✓ Lesson Completed"
+  },
+  "labels": {
+    "language": "Language",
+    "day": "Day",
+    "progress": "Progress",
+    "completed": "Completed",
+    "difficulty": "Difficulty",
+    "chord_diagram": "Chord Diagram",
+    "finger_pressed": "Finger pressed",
+    "open_string": "Open string",
+    "do_not_play": "Do not play",
+    "intro": "Intro",
+    "percent_complete": "% complete",
+    "chords_progress": "chords",
+    "how_to_play": "How to play:",
+    "important_tip": "Important tip:",
+    "famous_songs": "Famous songs that use this chord:",
+    "play_chord": "Play Chord",
+    "pause": "Pause",
+    "generated_audio": "🔊 Generated audio",
+    "real_audio": "🎵 Real audio"
+  },
+  "languages": {
+    "pt-BR": "Português",
+    "en-US": "English",
+    "switch_language": "Switch language"
+  },
+  "difficulty": {
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard"
+  }
+}
