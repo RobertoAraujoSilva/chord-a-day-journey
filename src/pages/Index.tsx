@@ -77,12 +77,12 @@ const Index = () => {
       <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50">
         <Header />
         
-        <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto px-4 md:px-8 lg:px-16 2xl:px-24 3xl:px-32 py-8 2xl:py-12 3xl:py-16">
           {/* Navegação para lição introdutória */}
-          <div className="mb-8">
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <BookOpen className="h-5 w-5 text-orange-600" />
-              <span className="text-lg font-semibold text-gray-800">
+          <div className="mb-8 2xl:mb-12 3xl:mb-16">
+            <div className="flex items-center justify-center gap-2 2xl:gap-3 mb-4 2xl:mb-6">
+              <BookOpen className="h-5 w-5 2xl:h-6 2xl:w-6 3xl:h-8 3xl:w-8 text-orange-600" />
+              <span className="text-lg 2xl:text-xl 3xl:text-2xl font-semibold text-gray-800">
                 {t('content.titles.intro_lesson')}
               </span>
             </div>
@@ -113,9 +113,9 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50">
       <Header />
       
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 md:px-8 lg:px-16 2xl:px-24 3xl:px-32 py-8 2xl:py-12 3xl:py-16">
         {/* Botão para voltar à introdução */}
-        <div className="mb-6 text-center">
+        <div className="mb-6 2xl:mb-8 3xl:mb-12 text-center">
           <Button
             variant="outline"
             onClick={() => {
@@ -130,19 +130,19 @@ const Index = () => {
         </div>
 
         {/* Progress Section */}
-        <div className="mb-8">
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center gap-2">
-              <Trophy className="h-5 w-5 text-amber-600" />
-              <span className="text-lg font-semibold text-gray-800">
+        <div className="mb-8 2xl:mb-12 3xl:mb-16">
+          <div className="flex items-center justify-between mb-4 2xl:mb-6">
+            <div className="flex items-center gap-2 2xl:gap-3">
+              <Trophy className="h-5 w-5 2xl:h-6 2xl:w-6 3xl:h-8 3xl:w-8 text-amber-600" />
+              <span className="text-lg 2xl:text-xl 3xl:text-2xl font-semibold text-gray-800">
                 {t('ui.labels.progress')}: {completedDays.length}/30 {t('ui.labels.chords_progress')}
               </span>
             </div>
-            <span className="text-sm text-gray-600">
+            <span className="text-sm 2xl:text-base 3xl:text-lg text-gray-600">
               {Math.round(progress)}{t('ui.labels.percent_complete')}
             </span>
           </div>
-          <Progress value={progress} className="h-3" />
+          <Progress value={progress} className="h-3 2xl:h-4 3xl:h-6" />
         </div>
 
         {/* Day Selector - agora inclui Dia 0 */}
@@ -156,7 +156,7 @@ const Index = () => {
 
         {/* Main Content */}
         {currentChord && (
-          <div className="grid lg:grid-cols-2 gap-8 mt-8">
+          <div className="grid lg:grid-cols-2 gap-8 2xl:gap-12 3xl:gap-16 mt-8 2xl:mt-12 3xl:mt-16">
             {/* Chord Information */}
             <Card className="p-6 shadow-xl border-0 bg-white/80 backdrop-blur-sm">
               <CardContent className="p-0">
@@ -167,10 +167,10 @@ const Index = () => {
                       {t('ui.labels.day')} {currentDay}
                     </span>
                   </div>
-                  <h1 className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-2">
+                  <h1 className="text-4xl 2xl:text-5xl 3xl:text-6xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-2 2xl:mb-3 3xl:mb-4">
                     {currentChord.name}
                   </h1>
-                  <p className="text-lg text-gray-600 mb-4">
+                  <p className="text-lg 2xl:text-xl 3xl:text-2xl text-gray-600 mb-4 2xl:mb-6">
                     {t(`content.chords.${currentChord.name}.fullName`)}
                   </p>
                   
@@ -206,36 +206,36 @@ const Index = () => {
                   </div>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-4 2xl:space-y-6 3xl:space-y-8">
                   <div>
-                    <h3 className="font-semibold text-gray-800 mb-2 flex items-center gap-2">
-                      <Target className="h-4 w-4" />
+                    <h3 className="font-semibold text-base 2xl:text-lg 3xl:text-xl text-gray-800 mb-2 2xl:mb-3 flex items-center gap-2">
+                      <Target className="h-4 w-4 2xl:h-5 2xl:w-5 3xl:h-6 3xl:w-6" />
                       {t('ui.labels.how_to_play')}
                     </h3>
-                    <p className="text-gray-700 leading-relaxed">
+                    <p className="text-sm 2xl:text-base 3xl:text-lg text-gray-700 leading-relaxed">
                       {t(`content.chords.${currentChord.name}.instructions`)}
                     </p>
                   </div>
 
                   <div>
-                    <h3 className="font-semibold text-gray-800 mb-2 flex items-center gap-2">
-                      <Music className="h-4 w-4" />
+                    <h3 className="font-semibold text-base 2xl:text-lg 3xl:text-xl text-gray-800 mb-2 2xl:mb-3 flex items-center gap-2">
+                      <Music className="h-4 w-4 2xl:h-5 2xl:w-5 3xl:h-6 3xl:w-6" />
                       {t('ui.labels.important_tip')}
                     </h3>
-                    <p className="text-gray-700 leading-relaxed">
+                    <p className="text-sm 2xl:text-base 3xl:text-lg text-gray-700 leading-relaxed">
                       {t(`content.chords.${currentChord.name}.tip`)}
                     </p>
                   </div>
 
                   {currentChord.commonSongs && (
                     <div>
-                      <h3 className="font-semibold text-gray-800 mb-2">
+                      <h3 className="font-semibold text-base 2xl:text-lg 3xl:text-xl text-gray-800 mb-2 2xl:mb-3">
                         {t('ui.labels.famous_songs')}
                       </h3>
-                      <ul className="text-gray-700 space-y-1">
+                      <ul className="text-sm 2xl:text-base 3xl:text-lg text-gray-700 space-y-1 2xl:space-y-2">
                         {currentChord.commonSongs.map((song, index) => (
                           <li key={index} className="flex items-center gap-2">
-                            <div className="w-1.5 h-1.5 bg-orange-400 rounded-full"></div>
+                            <div className="w-1.5 h-1.5 2xl:w-2 2xl:h-2 3xl:w-3 3xl:h-3 bg-orange-400 rounded-full"></div>
                             {song}
                           </li>
                         ))}
@@ -247,9 +247,9 @@ const Index = () => {
             </Card>
 
             {/* Chord Diagram */}
-            <Card className="p-6 shadow-xl border-0 bg-white/80 backdrop-blur-sm">
+            <Card className="p-6 2xl:p-8 3xl:p-12 shadow-xl border-0 bg-white/80 backdrop-blur-sm">
               <CardContent className="p-0">
-                <h2 className="text-xl font-semibold text-center mb-6 text-gray-800">
+                <h2 className="text-xl 2xl:text-2xl 3xl:text-3xl font-semibold text-center mb-6 2xl:mb-8 3xl:mb-12 text-gray-800">
                   {t('ui.labels.chord_diagram')}
                 </h2>
                 <ChordDiagram chord={currentChord} />
@@ -259,21 +259,21 @@ const Index = () => {
         )}
 
         {/* Navigation and Actions */}
-        <div className="flex justify-between items-center mt-8">
+        <div className="flex justify-between items-center mt-8 2xl:mt-12 3xl:mt-16">
           <Button
             variant="outline"
             onClick={() => setCurrentDay(Math.max(1, currentDay - 1))}
             disabled={currentDay === 1}
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 h-10 2xl:h-14 3xl:h-16 px-4 2xl:px-6 3xl:px-8 text-sm 2xl:text-base 3xl:text-lg"
           >
-            <ChevronLeft className="h-4 w-4" />
+            <ChevronLeft className="h-4 w-4 2xl:h-5 2xl:w-5 3xl:h-6 3xl:w-6" />
             {t('ui.buttons.previous')}
           </Button>
 
           <Button
             onClick={markDayComplete}
             disabled={completedDays.includes(currentDay)}
-            className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-2"
+            className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white h-10 2xl:h-14 3xl:h-16 px-8 2xl:px-12 3xl:px-16 text-sm 2xl:text-base 3xl:text-lg"
           >
             {completedDays.includes(currentDay) ? t('ui.buttons.completed') : t('ui.buttons.complete')}
           </Button>
@@ -282,10 +282,10 @@ const Index = () => {
             variant="outline"
             onClick={() => setCurrentDay(Math.min(30, currentDay + 1))}
             disabled={currentDay === 30}
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 h-10 2xl:h-14 3xl:h-16 px-4 2xl:px-6 3xl:px-8 text-sm 2xl:text-base 3xl:text-lg"
           >
             {t('ui.buttons.next')}
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRight className="h-4 w-4 2xl:h-5 2xl:w-5 3xl:h-6 3xl:w-6" />
           </Button>
         </div>
       </div>

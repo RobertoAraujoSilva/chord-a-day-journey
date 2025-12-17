@@ -14,17 +14,20 @@ export const ChordDiagram = ({ chord }: ChordDiagramProps) => {
   return (
     <div className="flex flex-col items-center">
       {/* String names */}
-      <div className="flex justify-between w-64 mb-2 text-sm font-medium text-gray-600">
+      <div className="flex justify-between w-64 2xl:w-96 3xl:w-[480px] mb-2 text-sm 2xl:text-base 3xl:text-lg font-medium text-gray-600">
         {['E', 'A', 'D', 'G', 'B', 'E'].map((string, index) => (
-          <span key={index} className="text-center w-8">
+          <span key={index} className="text-center w-8 2xl:w-12 3xl:w-16">
             {string}
           </span>
         ))}
       </div>
       
       {/* Fretboard */}
-      <div className="relative bg-amber-100 p-4 rounded-lg border-2 border-amber-200">
-        <svg width="240" height="200" className="overflow-visible">
+      <div className="relative bg-amber-100 p-4 2xl:p-6 3xl:p-8 rounded-lg border-2 border-amber-200">
+        <svg 
+          viewBox="0 0 240 200" 
+          className="w-60 2xl:w-96 3xl:w-[480px] h-auto overflow-visible"
+        >
           {/* Frets */}
           {Array.from({ length: frets + 1 }, (_, fret) => (
             <line
@@ -130,17 +133,17 @@ export const ChordDiagram = ({ chord }: ChordDiagramProps) => {
       </div>
       
       {/* Legend */}
-      <div className="mt-4 flex gap-6 text-sm text-gray-600">
+      <div className="mt-4 2xl:mt-6 3xl:mt-8 flex gap-4 2xl:gap-6 3xl:gap-8 text-sm 2xl:text-base 3xl:text-lg text-gray-600">
         <div className="flex items-center gap-2">
-          <div className="w-4 h-4 rounded-full bg-red-500"></div>
+          <div className="w-4 h-4 2xl:w-6 2xl:h-6 3xl:w-8 3xl:h-8 rounded-full bg-red-500"></div>
           <span>{t('ui.labels.finger_pressed')}</span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="w-4 h-4 rounded-full border-2 border-green-500"></div>
+          <div className="w-4 h-4 2xl:w-6 2xl:h-6 3xl:w-8 3xl:h-8 rounded-full border-2 2xl:border-3 3xl:border-4 border-green-500"></div>
           <span>{t('ui.labels.open_string')}</span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="w-4 h-4 flex items-center justify-center text-red-500 font-bold">×</div>
+          <div className="w-4 h-4 2xl:w-6 2xl:h-6 3xl:w-8 3xl:h-8 flex items-center justify-center text-red-500 font-bold text-lg 2xl:text-xl 3xl:text-2xl">×</div>
           <span>{t('ui.labels.do_not_play')}</span>
         </div>
       </div>

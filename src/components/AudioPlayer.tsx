@@ -30,17 +30,23 @@ export const AudioPlayer = ({ chordName, className = '' }: AudioPlayerProps) => 
         
         if (data?.publicUrl) {
           // Verificar se o arquivo existe
-          const response = await fetch(data.publicUrl, { method: 'HEAD' });
-          if (response.ok) {
-            setAudioUrl(data.publicUrl);
-            setUseGenerated(false);
-          } else {
-            setUseGenerated(true);
+          try {
+            const response = await fetch(data.publicUrl, { method: 'HEAD' });
+            if (response.ok) {
+              setAudioUrl(data.publicUrl);
+              setUseGenerated(false);
+              return;
+            }
+          } catch (error) {
+            // Silently handle fetch errors - file doesn't exist
           }
-        } else {
-          setUseGenerated(true);
         }
-      } catch {
+        
+        // Use generated audio as fallback
+        console.info(`Audio file not found for ${chordName}, using generated sound`);
+        setUseGenerated(true);
+      } catch (error) {
+        console.info(`Audio file not found for ${chordName}, using generated sound`);
         setUseGenerated(true);
       }
     };
