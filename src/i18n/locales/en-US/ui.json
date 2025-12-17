@@ -43,7 +43,23 @@
     "play": "Play",
     "pause": "Pause",
     "generated_audio": "🔊 Generated audio",
-    "real_audio": "🎵 Real audio"
+    "real_audio": "🎵 Real audio",
+    "complete": "complete",
+    "chords": "chords",
+    "streak": "Streak",
+    "days": "days",
+    "current_day": "Current Day",
+    "locked": "Locked"
+  },
+  "motivation": {
+    "start": "🎸 Start your musical journey today!",
+    "first_steps": "🌟 Great start! Keep practicing!",
+    "keep_going": "🔥 You're doing great! Keep it up!",
+    "milestone_10": "🎉 Congratulations! 10 chords mastered!",
+    "milestone_20": "🏆 Amazing! You've mastered 20 chords!",
+    "almost_there": "💪 Almost there! Don't give up now!",
+    "complete": "🎊 Congratulations! You've completed all 30 chords!",
+    "remaining": "Only {{count}} chords left to complete the challenge! 🎯"
   },
   "languages": {
     "pt-BR": "Português",
@@ -54,5 +70,14 @@
     "easy": "Easy",
     "medium": "Medium",
     "hard": "Hard"
+  },
+  "celebration": {
+    "title": "Congratulations!",
+    "message": "You've completed 30 Chords in 30 Days! You're now ready to play hundreds of songs. Keep practicing – the guitar world is yours!",
+    "chords_learned": "Chords Learned",
+    "days_completed": "Days Completed",
+    "progress": "Progress",
+    "next_steps": "You've mastered the fundamentals! Now explore songs, practice chord transitions, and keep building your skills. The journey has just begun! 🎸",
+    "continue": "Continue Practicing"
   }
 }

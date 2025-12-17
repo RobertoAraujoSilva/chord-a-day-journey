@@ -1,14 +1,15 @@
 
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Calendar, Music, Target, Trophy, BookOpen } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Calendar, Music, Target, BookOpen } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Progress } from '@/components/ui/progress';
 import { ChordDiagram } from '@/components/ChordDiagram';
 import { DaySelector } from '@/components/DaySelector';
+import { ProgressCircle } from '@/components/ProgressCircle';
 import { Header } from '@/components/Header';
 import { AudioPlayer } from '@/components/AudioPlayer';
 import { GuitarIntro } from '@/components/GuitarIntro';
+import { CompletionCelebration } from '@/components/CompletionCelebration';
 import { chords } from '@/data/chords';
 import { useTranslation } from '@/i18n/context';
 
@@ -18,10 +19,15 @@ const Index = () => {
   const [completedDays, setCompletedDays] = useState<number[]>([]);
   const [showIntro, setShowIntro] = useState(true);
   const [introCompleted, setIntroCompleted] = useState(false);
+  const [streak, setStreak] = useState(0);
+  const [lastCompletedDate, setLastCompletedDate] = useState<string | null>(null);
+  const [showCelebration, setShowCelebration] = useState(false);
 
   useEffect(() => {
     const saved = localStorage.getItem('completedDays');
     const savedIntro = localStorage.getItem('introCompleted');
+    const savedStreak = localStorage.getItem('streak');
+    const savedLastDate = localStorage.getItem('lastCompletedDate');
     
     if (saved) {
       setCompletedDays(JSON.parse(saved));
@@ -35,23 +41,73 @@ const Index = () => {
         setCurrentDay(1);
       }
     }
+
+    if (savedStreak) {
+      setStreak(parseInt(savedStreak, 10));
+    }
+
+    if (savedLastDate) {
+      setLastCompletedDate(savedLastDate);
+      // Check if streak should be reset (more than 1 day gap)
+      const today = new Date().toDateString();
+      const lastDate = new Date(savedLastDate).toDateString();
+      const yesterday = new Date(Date.now() - 86400000).toDateString();
+      
+      if (lastDate !== today && lastDate !== yesterday) {
+        // Reset streak if more than 1 day has passed
+        setStreak(0);
+        localStorage.setItem('streak', '0');
+      }
+    }
   }, []);
 
   const markDayComplete = () => {
+    const today = new Date().toDateString();
+    
     if (currentDay === 0) {
       // Completar lição introdutória
       setIntroCompleted(true);
       localStorage.setItem('introCompleted', 'true');
       setShowIntro(false);
       setCurrentDay(1);
+      updateStreak(today);
     } else {
       // Completar acorde do dia
       if (!completedDays.includes(currentDay)) {
         const newCompleted = [...completedDays, currentDay];
         setCompletedDays(newCompleted);
         localStorage.setItem('completedDays', JSON.stringify(newCompleted));
+        updateStreak(today);
+        
+        // Show celebration if completing Day 30
+        if (currentDay === 30) {
+          setTimeout(() => setShowCelebration(true), 500);
+        }
       }
     }
+  };
+
+  const updateStreak = (today: string) => {
+    // Check if user already completed something today
+    if (lastCompletedDate === today) {
+      return; // Don't increment streak if already completed today
+    }
+
+    const yesterday = new Date(Date.now() - 86400000).toDateString();
+    let newStreak = streak;
+
+    if (lastCompletedDate === yesterday || lastCompletedDate === null) {
+      // Continue or start streak
+      newStreak = streak + 1;
+    } else if (lastCompletedDate !== today) {
+      // Reset streak if more than 1 day gap
+      newStreak = 1;
+    }
+
+    setStreak(newStreak);
+    setLastCompletedDate(today);
+    localStorage.setItem('streak', newStreak.toString());
+    localStorage.setItem('lastCompletedDate', today);
   };
 
   const handleDaySelect = (day: number) => {
@@ -113,6 +169,12 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50">
       <Header />
       
+      {/* Completion Celebration Modal */}
+      <CompletionCelebration 
+        isOpen={showCelebration} 
+        onClose={() => setShowCelebration(false)} 
+      />
+      
       <div className="container mx-auto px-4 md:px-8 lg:px-16 2xl:px-24 3xl:px-32 py-8 2xl:py-12 3xl:py-16">
         {/* Botão para voltar à introdução */}
         <div className="mb-6 2xl:mb-8 3xl:mb-12 text-center">
@@ -129,21 +191,13 @@ const Index = () => {
           </Button>
         </div>
 
-        {/* Progress Section */}
-        <div className="mb-8 2xl:mb-12 3xl:mb-16">
-          <div className="flex items-center justify-between mb-4 2xl:mb-6">
-            <div className="flex items-center gap-2 2xl:gap-3">
-              <Trophy className="h-5 w-5 2xl:h-6 2xl:w-6 3xl:h-8 3xl:w-8 text-amber-600" />
-              <span className="text-lg 2xl:text-xl 3xl:text-2xl font-semibold text-gray-800">
-                {t('ui.labels.progress')}: {completedDays.length}/30 {t('ui.labels.chords_progress')}
-              </span>
-            </div>
-            <span className="text-sm 2xl:text-base 3xl:text-lg text-gray-600">
-              {Math.round(progress)}{t('ui.labels.percent_complete')}
-            </span>
-          </div>
-          <Progress value={progress} className="h-3 2xl:h-4 3xl:h-6" />
-        </div>
+        {/* Progress Section with Circular Indicator */}
+        <ProgressCircle 
+          completedDays={completedDays.length}
+          totalDays={30}
+          currentDay={currentDay}
+          streak={streak}
+        />
 
         {/* Day Selector - agora inclui Dia 0 */}
         <DaySelector 

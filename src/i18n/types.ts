@@ -10,6 +10,8 @@ export interface TranslationObject {
     labels: Record<string, string>;
     languages: Record<string, string>;
     difficulty: Record<string, string>;
+    motivation: Record<string, string>;
+    celebration: Record<string, string>;
   };
   lessons: {
     intro: Record<string, string>;
@@ -38,6 +40,8 @@ export type TranslationKey =
   | `ui.labels.${string}`
   | `ui.languages.${string}`
   | `ui.difficulty.${string}`
+  | `ui.motivation.${string}`
+  | `ui.celebration.${string}`
   | `lessons.intro.${string}`
   | `lessons.chords.${string}`
   | `lessons.instructions.${string}`

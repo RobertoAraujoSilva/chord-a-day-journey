@@ -180,5 +180,11 @@ export const chords: Chord[] = [
     fingering: ['0', '2', '2', '2', '0', '0'],
     fingers: ['', '1', '2', '3', '', ''],
     commonSongs: ['The Who - Pinball Wizard', 'Pink Floyd - Wish You Were Here']
+  },
+  {
+    name: 'Asus4',
+    fingering: ['x', '0', '2', '2', '3', '0'],
+    fingers: ['', '', '1', '2', '3', ''],
+    commonSongs: ['Free Fallin\' - Tom Petty', 'Wonderwall - Oasis', 'Champagne Supernova - Oasis']
   }
 ];

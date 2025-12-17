@@ -194,6 +194,12 @@
       "difficulty": "Easy",
       "instructions": "Finger 1 on the second fret of the A string, finger 2 on the second fret of the D string, finger 3 on the second fret of the G string.",
       "tip": "Creates beautiful tension that resolves to E major. Widely used at the end of musical phrases to add drama."
+    },
+    "Asus4": {
+      "fullName": "A suspended fourth",
+      "difficulty": "Easy",
+      "instructions": "Finger 1 on the second fret of the D string, finger 2 on the second fret of the G string, finger 3 on the third fret of the B string. The A and high E strings remain open.",
+      "tip": "🎉 Congratulations on reaching Day 30! This chord is perfect for 'Free Fallin'' by Tom Petty. It creates beautiful tension that resolves to A major. Practice switching between D, Dsus4, and Asus4 - this is the entire song! Try with a capo on fret 3 to match the original recording."
     }
   }
 }

@@ -43,7 +43,23 @@
     "play": "Tocar",
     "pause": "Pausar",
     "generated_audio": "🔊 Áudio gerado",
-    "real_audio": "🎵 Áudio real"
+    "real_audio": "🎵 Áudio real",
+    "complete": "completo",
+    "chords": "acordes",
+    "streak": "Sequência",
+    "days": "dias",
+    "current_day": "Dia Atual",
+    "locked": "Bloqueado"
+  },
+  "motivation": {
+    "start": "🎸 Comece sua jornada musical hoje!",
+    "first_steps": "🌟 Ótimo começo! Continue praticando!",
+    "keep_going": "🔥 Você está indo muito bem! Continue assim!",
+    "milestone_10": "🎉 Parabéns! 10 acordes dominados!",
+    "milestone_20": "🏆 Incrível! Você já dominou 20 acordes!",
+    "almost_there": "💪 Quase lá! Não desista agora!",
+    "complete": "🎊 Parabéns! Você completou os 30 acordes!",
+    "remaining": "Faltam apenas {{count}} acordes para completar o desafio! 🎯"
   },
   "languages": {
     "pt-BR": "Português",
@@ -54,5 +70,14 @@
     "easy": "Fácil",
     "medium": "Médio",
     "hard": "Difícil"
+  },
+  "celebration": {
+    "title": "Parabéns!",
+    "message": "Você completou 30 Acordes em 30 Dias! Agora você está pronto para tocar centenas de músicas. Continue praticando – o mundo do violão é seu!",
+    "chords_learned": "Acordes Aprendidos",
+    "days_completed": "Dias Completados",
+    "progress": "Progresso",
+    "next_steps": "Você dominou os fundamentos! Agora explore músicas, pratique transições entre acordes e continue desenvolvendo suas habilidades. A jornada está apenas começando! 🎸",
+    "continue": "Continuar Praticando"
   }
 }
