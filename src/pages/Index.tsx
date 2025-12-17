@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Calendar, Music, Target, BookOpen } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Calendar, Music, Target, BookOpen, Trophy } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ChordDiagram } from '@/components/ChordDiagram';
@@ -10,6 +10,7 @@ import { Header } from '@/components/Header';
 import { AudioPlayer } from '@/components/AudioPlayer';
 import { GuitarIntro } from '@/components/GuitarIntro';
 import { CompletionCelebration } from '@/components/CompletionCelebration';
+import { LoveMeDoLesson } from '@/components/LoveMeDoLesson';
 import { chords } from '@/data/chords';
 import { useTranslation } from '@/i18n/context';
 
@@ -22,12 +23,15 @@ const Index = () => {
   const [streak, setStreak] = useState(0);
   const [lastCompletedDate, setLastCompletedDate] = useState<string | null>(null);
   const [showCelebration, setShowCelebration] = useState(false);
+  const [showBonusLesson, setShowBonusLesson] = useState(false);
 
   useEffect(() => {
+    // Load all persisted data from localStorage
     const saved = localStorage.getItem('completedDays');
     const savedIntro = localStorage.getItem('introCompleted');
     const savedStreak = localStorage.getItem('streak');
     const savedLastDate = localStorage.getItem('lastCompletedDate');
+    const savedCurrentDay = localStorage.getItem('currentDay');
     
     if (saved) {
       setCompletedDays(JSON.parse(saved));
@@ -38,7 +42,28 @@ const Index = () => {
       setIntroCompleted(introComplete);
       if (introComplete) {
         setShowIntro(false);
-        setCurrentDay(1);
+        // Restore saved currentDay, or default to 1 if not saved
+        if (savedCurrentDay) {
+          const day = parseInt(savedCurrentDay, 10);
+          // Validate: day must be between 0 and 30
+          if (day >= 0 && day <= 30) {
+            setCurrentDay(day);
+          } else {
+            setCurrentDay(1);
+          }
+        } else {
+          setCurrentDay(1);
+        }
+      }
+    } else if (savedCurrentDay) {
+      // Even if intro not completed, restore the day (user might be reviewing)
+      const day = parseInt(savedCurrentDay, 10);
+      if (day === 0) {
+        setShowIntro(true);
+        setCurrentDay(0);
+      } else if (day >= 1 && day <= 30) {
+        setShowIntro(false);
+        setCurrentDay(day);
       }
     }
 
@@ -59,6 +84,9 @@ const Index = () => {
         localStorage.setItem('streak', '0');
       }
     }
+
+    // Save last access timestamp
+    localStorage.setItem('lastAccess', new Date().toISOString());
   }, []);
 
   const markDayComplete = () => {
@@ -110,6 +138,13 @@ const Index = () => {
     localStorage.setItem('lastCompletedDate', today);
   };
 
+  // Save currentDay to localStorage whenever it changes
+  useEffect(() => {
+    if (currentDay !== null && currentDay !== undefined) {
+      localStorage.setItem('currentDay', currentDay.toString());
+    }
+  }, [currentDay]);
+
   const handleDaySelect = (day: number) => {
     if (day === 0) {
       setShowIntro(true);
@@ -126,6 +161,17 @@ const Index = () => {
 
   const currentChord = currentDay > 0 ? chords[currentDay - 1] : null;
   const progress = (completedDays.length / 30) * 100;
+  const isDay30Completed = completedDays.includes(30);
+
+  // Se estamos mostrando a lição bônus
+  if (showBonusLesson) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50">
+        <Header />
+        <LoveMeDoLesson onBack={() => setShowBonusLesson(false)} />
+      </div>
+    );
+  }
 
   // Se estamos mostrando a introdução
   if (showIntro || currentDay === 0) {
@@ -198,6 +244,22 @@ const Index = () => {
           currentDay={currentDay}
           streak={streak}
         />
+
+        {/* Bonus Lesson Button - Show after Day 30 is completed */}
+        {isDay30Completed && (
+          <div className="text-center my-8 2xl:my-12 3xl:my-16">
+            <Button
+              onClick={() => setShowBonusLesson(true)}
+              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white h-14 2xl:h-18 3xl:h-22 px-10 2xl:px-14 3xl:px-18 text-lg 2xl:text-xl 3xl:text-2xl font-bold shadow-xl animate-pulse"
+            >
+              <Trophy className="h-6 w-6 2xl:h-7 2xl:w-7 3xl:h-8 3xl:w-8 mr-3" />
+              {t('ui.navigation.next_bonus_song')}
+            </Button>
+            <p className="mt-4 text-sm 2xl:text-base 3xl:text-lg text-gray-600">
+              🎉 {t('content.bonus.subtitle')}
+            </p>
+          </div>
+        )}
 
         {/* Day Selector - agora inclui Dia 0 */}
         <DaySelector 

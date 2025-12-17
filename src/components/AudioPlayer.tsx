@@ -20,38 +20,35 @@ export const AudioPlayer = ({ chordName, className = '' }: AudioPlayerProps) => 
   const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
+    // For now, always use generated audio since files don't exist in Supabase storage
+    // If audio files are added to Supabase in the future, we can add verification here
+    setUseGenerated(true);
+    
+    // Optional: Keep this code commented for future use when audio files are available
+    /*
     const loadAudio = async () => {
       try {
         const fileName = `${normalizeChordName(chordName)}.mp3`;
-        
         const { data } = supabase.storage
           .from('chord-audio')
           .getPublicUrl(fileName);
         
         if (data?.publicUrl) {
-          // Verificar se o arquivo existe
-          try {
-            const response = await fetch(data.publicUrl, { method: 'HEAD' });
-            if (response.ok) {
-              setAudioUrl(data.publicUrl);
-              setUseGenerated(false);
-              return;
-            }
-          } catch (error) {
-            // Silently handle fetch errors - file doesn't exist
+          // Verify file exists before using it
+          const response = await fetch(data.publicUrl, { method: 'HEAD' });
+          if (response.ok) {
+            setAudioUrl(data.publicUrl);
+            setUseGenerated(false);
+            return;
           }
         }
-        
-        // Use generated audio as fallback
-        console.info(`Audio file not found for ${chordName}, using generated sound`);
         setUseGenerated(true);
       } catch (error) {
-        console.info(`Audio file not found for ${chordName}, using generated sound`);
         setUseGenerated(true);
       }
     };
-
     loadAudio();
+    */
   }, [chordName]);
 
   const togglePlay = async () => {

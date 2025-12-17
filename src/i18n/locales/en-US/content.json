@@ -201,5 +201,31 @@
       "instructions": "Finger 1 on the second fret of the D string, finger 2 on the second fret of the G string, finger 3 on the third fret of the B string. The A and high E strings remain open.",
       "tip": "🎉 Congratulations on reaching Day 30! This chord is perfect for 'Free Fallin'' by Tom Petty. It creates beautiful tension that resolves to A major. Practice switching between D, Dsus4, and Asus4 - this is the entire song! Try with a capo on fret 3 to match the original recording."
     }
+  },
+  "bonus": {
+    "title": "Bonus Final Lesson: Course Completion – Play \"Love Me Do\" by The Beatles! 🎉",
+    "subtitle": "You've done it! You've mastered 30 essential chords in 30 days through gradual, consistent practice.",
+    "description": "This foundation means you can now play hundreds of songs – and to celebrate, here's one of the simplest and most iconic full songs you can play right now: \"Love Me Do\" by The Beatles (their very first single!).",
+    "why_perfect": "This song is perfect for beginners finishing a chord course: it uses only 3 basic open chords (G, C, D – some of the first ones you likely learned), has a fun, upbeat rhythm, and includes the famous harmonica riff (which you can play on guitar if you want). It's energetic, instantly recognizable, and will make you feel like a true Beatle!",
+    "chord_review": "Chord Review Diagrams",
+    "chord_review_desc": "These are core chords from your 30-day journey:",
+    "chord_g": "G: 320003",
+    "chord_c": "C: x32010",
+    "chord_d": "D: xx0232 (optional for the bridge – the main song is mostly G and C!)",
+    "how_to_play": "How to Play",
+    "no_capo": "No capo needed – play in standard tuning.",
+    "strumming_pattern": "Easy Strumming Pattern:",
+    "strumming_pattern_desc": "Down-Down-Up-Up-Down-Up (D DU UDU) – keep it steady and fun, like a 60s rock beat. Start slow!",
+    "structure": "The song is mostly verse + chorus repeating G and C, with a short bridge.",
+    "verse_chorus": "Verse/Chorus (Chords over Lyrics):",
+    "bridge": "Bridge (optional – adds D):",
+    "harmonica_riff": "Harmonica Riff on Guitar (Bonus Fun):",
+    "harmonica_riff_desc": "The famous intro riff is simple single notes on the guitar – easy to add once you're comfortable with the chords.",
+    "important_tips": "Important Tips",
+    "tip_1": "Focus on quick changes between G and C – you've practiced these tons!",
+    "tip_2": "Sing along loudly – it's a feel-good song that encourages energy.",
+    "tip_3": "This proves how far you've come: just a few basic chords create a worldwide hit!",
+    "play_audio": "Play Audio",
+    "final_message": "Congratulations! You've completed 30 Chords in 30 Days + this bonus song. You're now a real guitarist – keep playing every day and share your version of 'Love Me Do'! 🎸"
   }
 }

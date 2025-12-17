@@ -201,5 +201,31 @@
       "instructions": "Dedo 1 na segunda casa da corda D, dedo 2 na segunda casa da corda G, dedo 3 na terceira casa da corda B. As cordas A e E aguda ficam soltas.",
       "tip": "🎉 Parabéns por chegar ao Dia 30! Este acorde é perfeito para 'Free Fallin'' de Tom Petty. Cria uma bela tensão que resolve no A maior. Pratique alternando entre D, Dsus4 e Asus4 - essa é a música inteira! Experimente com capotraste no traste 3 para tocar igual à gravação original."
     }
+  },
+  "bonus": {
+    "title": "Lição Bônus Final: Conclusão do Curso – Toque \"Love Me Do\" dos Beatles! 🎉",
+    "subtitle": "Você conseguiu! Você dominou 30 acordes essenciais em 30 dias através de prática gradual e consistente.",
+    "description": "Essa base significa que agora você pode tocar centenas de músicas – e para celebrar, aqui está uma das músicas completas mais simples e icônicas que você pode tocar agora: \"Love Me Do\" dos Beatles (o primeiro single deles!).",
+    "why_perfect": "Esta música é perfeita para iniciantes terminando um curso de acordes: usa apenas 3 acordes abertos básicos (G, C, D – alguns dos primeiros que você provavelmente aprendeu), tem um ritmo divertido e animado, e inclui o famoso riff de gaita (que você pode tocar no violão se quiser). É energética, instantaneamente reconhecível e fará você se sentir como um verdadeiro Beatle!",
+    "chord_review": "Diagramas de Revisão de Acordes",
+    "chord_review_desc": "Estes são acordes essenciais da sua jornada de 30 dias:",
+    "chord_g": "G: 320003",
+    "chord_c": "C: x32010",
+    "chord_d": "D: xx0232 (opcional para a ponte – a música principal é principalmente G e C!)",
+    "how_to_play": "Como Tocar",
+    "no_capo": "Não precisa de capotraste – toque na afinação padrão.",
+    "strumming_pattern": "Padrão de Dedilhado Fácil:",
+    "strumming_pattern_desc": "Baixo-Baixo-Alto-Alto-Baixo-Alto (D DU UDU) – mantenha constante e divertido, como um beat rock dos anos 60. Comece devagar!",
+    "structure": "A música é principalmente verso + refrão repetindo G e C, com uma ponte curta.",
+    "verse_chorus": "Verso/Refrão (Acordes sobre a Letra):",
+    "bridge": "Ponte (opcional – adiciona D):",
+    "harmonica_riff": "Riff de Gaita no Violão (Bônus Divertido):",
+    "harmonica_riff_desc": "O famoso riff de introdução são notas simples no violão – fácil de adicionar quando você estiver confortável com os acordes.",
+    "important_tips": "Dicas Importantes",
+    "tip_1": "Foque nas mudanças rápidas entre G e C – você praticou muito isso!",
+    "tip_2": "Cante junto alto – é uma música que transmite energia positiva.",
+    "tip_3": "Isso prova o quanto você chegou: apenas alguns acordes básicos criam um hit mundial!",
+    "play_audio": "Tocar Áudio",
+    "final_message": "Parabéns! Você completou 30 Acordes em 30 Dias + esta música bônus. Agora você é um verdadeiro guitarrista – continue tocando todos os dias e compartilhe sua versão de 'Love Me Do'! 🎸"
   }
 }

@@ -10,7 +10,9 @@
     "select_day": "Select Day",
     "intro_lesson": "Introductory Lesson",
     "review_intro": "Review Introductory Lesson",
-    "go_to_chords": "Go to Chords"
+    "go_to_chords": "Go to Chords",
+    "next_bonus_song": "Next: Bonus Song!",
+    "back_to_chords": "Back to Chords"
   },
   "buttons": {
     "start": "Start",

@@ -10,7 +10,9 @@
     "select_day": "Selecione o Dia",
     "intro_lesson": "Lição Introdutória",
     "review_intro": "Revisar Lição Introdutória",
-    "go_to_chords": "Ir para os Acordes"
+    "go_to_chords": "Ir para os Acordes",
+    "next_bonus_song": "Próximo: Música Bônus!",
+    "back_to_chords": "Voltar aos Acordes"
   },
   "buttons": {
     "start": "Começar",
