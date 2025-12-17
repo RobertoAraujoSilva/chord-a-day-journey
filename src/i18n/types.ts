@@ -28,6 +28,7 @@ export interface TranslationObject {
       instructions: string;
       tip: string;
     }>;
+    bonus: Record<string, string>;
   };
   errors: Record<string, string>;
 }
@@ -52,6 +53,7 @@ export type TranslationKey =
   | `content.chords.${string}.difficulty`
   | `content.chords.${string}.instructions`
   | `content.chords.${string}.tip`
+  | `content.bonus.${string}`
   | `errors.${string}`;
 
 // Translation function type
