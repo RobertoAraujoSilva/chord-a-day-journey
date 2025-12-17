@@ -39,7 +39,13 @@
     "diagrams_dots": "Black dots: Where to press the strings",
     "diagrams_numbers": "Numbers: Indicate which finger to use (1=index, 2=middle, 3=ring, 4=pinky)",
     "diagrams_tip": "Always press the strings just behind the fret (not on top of it) to get a clean, clear sound.",
-    "congratulations": "Congratulations! Now you can start learning chords."
+    "congratulations": "Congratulations! Now you can start learning chords.",
+    "checklist_anatomy": "I know the parts of the guitar",
+    "checklist_strings": "I know the names of the strings",
+    "checklist_position": "I know how to hold the guitar correctly",
+    "checklist_diagrams": "I know how to read chord diagrams",
+    "next_lesson_title": "Next Lesson:",
+    "next_lesson_preview": "Your first chord - clean sound from the start"
   },
   "chords": {
     "title": "Chord of the Day",

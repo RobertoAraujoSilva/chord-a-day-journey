@@ -39,7 +39,13 @@
     "diagrams_dots": "Pontos pretos: Onde pressionar as cordas",
     "diagrams_numbers": "Números: Indicam qual dedo usar (1=indicador, 2=médio, 3=anelar, 4=mínimo)",
     "diagrams_tip": "Sempre pressione as cordas logo atrás do traste (não em cima dele) para obter um som limpo e claro.",
-    "congratulations": "Parabéns! Agora você pode começar a aprender os acordes."
+    "congratulations": "Parabéns! Agora você pode começar a aprender os acordes.",
+    "checklist_anatomy": "Conheço as partes do violão",
+    "checklist_strings": "Sei os nomes das cordas",
+    "checklist_position": "Sei como segurar o violão corretamente",
+    "checklist_diagrams": "Sei como ler diagramas de acordes",
+    "next_lesson_title": "Próxima Lição:",
+    "next_lesson_preview": "Seu primeiro acorde - som limpo desde o início"
   },
   "chords": {
     "title": "Acorde do Dia",
