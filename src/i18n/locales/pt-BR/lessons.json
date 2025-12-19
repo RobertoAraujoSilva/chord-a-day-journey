@@ -46,7 +46,51 @@
     "checklist_diagrams": "Sei interpretar diagramas de acordes",
     "checklist_hint": "Marque todos os itens acima para completar a lição e desbloquear os acordes",
     "next_lesson_title": "Próxima Lição: Dia 1",
-    "next_lesson_preview": "Acorde Em (Mi menor) - O acorde mais fácil para começar! Apenas 2 dedos e um som bonito garantido."
+    "next_lesson_preview": "Acorde Em (Mi menor) - O acorde mais fácil para começar! Apenas 2 dedos e um som bonito garantido.",
+    "anatomy_labels": {
+      "body": "Corpo",
+      "neck": "Braço",
+      "bridge": "Cavalete",
+      "headstock": "Mão/Tarraxas",
+      "frets": "Trastes",
+      "sound_hole": "Boca",
+      "nut": "Pestana",
+      "strings": "Cordas",
+      "position_markers": "Marcadores",
+      "fingerboard": "Escala",
+      "first_string": "1ª Corda",
+      "upper_bout": "Cintura Superior",
+      "lower_bout": "Cintura Inferior",
+      "saddle": "Rastilho",
+      "pick_guard": "Escudo",
+      "bridge_pins": "Pinos do Cavalete",
+      "waist": "Cintura",
+      "rosette": "Roseta",
+      "tuning_pegs": "Tarraxas",
+      "first_fret": "1º Traste",
+      "capstan": "Pino da Tarraxa"
+    },
+    "posture_labels": {
+      "back_straight": "Costas Retas",
+      "relaxed_shoulders": "Ombros Relaxados",
+      "feet_flat": "Pés no Chão",
+      "guitar_on_leg": "Violão na Perna",
+      "right_arm_relaxed": "Braço Direito Relaxado",
+      "left_hand_curved": "Mão Esquerda Curvada",
+      "thumb_behind": "Polegar Atrás",
+      "fingertips": "Pontas dos Dedos",
+      "wrist_straight": "Pulso Reto"
+    },
+    "diagram_labels": {
+      "strings": "Cordas",
+      "frets": "Trastes",
+      "nut": "Pestana",
+      "finger_position": "Posição do Dedo",
+      "finger_number": "Número do Dedo",
+      "open_string": "Corda Solta (O)",
+      "muted_string": "Não Tocar (X)",
+      "press_here": "Pressione Aqui"
+    }
   },
   "chords": {
     "title": "Acorde do Dia",

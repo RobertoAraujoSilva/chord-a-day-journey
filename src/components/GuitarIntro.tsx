@@ -1,7 +1,7 @@
 
 
 import { Music, Hand, Eye, Volume2, Guitar, Play, CheckCircle2, ArrowRight } from 'lucide-react';
-import guitarAnatomyImg from '@/assets/guitar-anatomy.png';
+import guitarAnatomyImg from '@/assets/guitar-anatomy.webp';
 import postureSittingImg from '@/assets/posture-sitting.png';
 import leftHandPositionImg from '@/assets/left-hand-position.png';
 import chordDiagramGuideImg from '@/assets/chord-diagram-guide.png';
@@ -11,6 +11,8 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Progress } from '@/components/ui/progress';
 import { useTranslation } from '@/i18n/context';
 import { useState } from 'react';
+import { LabeledImage } from '@/components/LabeledImage';
+import type { ImageLabel } from '@/components/LabeledImage';
 
 interface GuitarIntroProps {
   onComplete: () => void;
@@ -36,6 +38,62 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
     position: false,
     diagrams: false,
   });
+
+  // ============================================================================
+  // LABEL DEFINITIONS FOR MULTILINGUAL IMAGES
+  // ============================================================================
+  // NOTE: Current images have embedded English text labels. The dynamic label system
+  // is designed to work with CLEAN BASE IMAGES (no embedded text).
+  //
+  // OPTIONS:
+  // 1. Generate new clean base images without text, then enable and position labels
+  // 2. Keep labels disabled (empty arrays) until clean images are available
+  // 3. Use minimal labels positioned to avoid overlap (current approach)
+  //
+  // To generate clean base images, see: docs/MULTILINGUAL_IMAGE_LABELS.md
+  // ============================================================================
+
+  // Guitar Anatomy Labels - Using The-Parts-of-an-Acoustic-Guitar.webp
+  // Initial positions - will adjust based on actual image layout
+  const anatomyLabels: ImageLabel[] = [
+    { key: 'lessons.intro.anatomy_labels.headstock', position: { top: '5%', right: '15%' } },
+    { key: 'lessons.intro.anatomy_labels.tuning_pegs', position: { top: '10%', right: '5%' } },
+    { key: 'lessons.intro.anatomy_labels.nut', position: { top: '16%', left: '32%' } },
+    { key: 'lessons.intro.anatomy_labels.neck', position: { bottom: '8%', right: '25%' } },
+    { key: 'lessons.intro.anatomy_labels.frets', position: { top: '40%', right: '35%' } },
+    { key: 'lessons.intro.anatomy_labels.body', position: { top: '55%', left: '8%' } },
+    { key: 'lessons.intro.anatomy_labels.sound_hole', position: { top: '50%', left: '30%' } },
+    { key: 'lessons.intro.anatomy_labels.bridge', position: { top: '28%', right: '10%' } },
+    { key: 'lessons.intro.anatomy_labels.strings', position: { bottom: '35%', right: '15%' } },
+  ];
+
+  // Posture Sitting Labels - Positioned around the edges
+  const postureSittingLabels: ImageLabel[] = [
+    // Uncomment and adjust based on actual image content
+    // { key: 'lessons.intro.posture_labels.back_straight', position: { top: '10%', right: '5%' } },
+    // { key: 'lessons.intro.posture_labels.relaxed_shoulders', position: { top: '22%', left: '5%' } },
+    // { key: 'lessons.intro.posture_labels.guitar_on_leg', position: { top: '55%', right: '5%' } },
+    // { key: 'lessons.intro.posture_labels.feet_flat', position: { bottom: '8%', left: '15%' } },
+  ];
+
+  // Left Hand Position Labels
+  const leftHandLabels: ImageLabel[] = [
+    // Uncomment and adjust based on actual image content
+    // { key: 'lessons.intro.posture_labels.thumb_behind', position: { top: '35%', left: '5%' } },
+    // { key: 'lessons.intro.posture_labels.fingertips', position: { top: '25%', right: '5%' } },
+    // { key: 'lessons.intro.posture_labels.wrist_straight', position: { bottom: '15%', left: '10%' } },
+  ];
+
+  // Chord Diagram Labels - Positioned around the diagram
+  const chordDiagramLabels: ImageLabel[] = [
+    // Uncomment and adjust based on actual image content
+    // { key: 'lessons.intro.diagram_labels.nut', position: { top: '5%', left: '8%' } },
+    // { key: 'lessons.intro.diagram_labels.strings', position: { top: '12%', right: '8%' } },
+    // { key: 'lessons.intro.diagram_labels.frets', position: { top: '35%', left: '3%' } },
+    // { key: 'lessons.intro.diagram_labels.finger_position', position: { top: '50%', right: '8%' } },
+    // { key: 'lessons.intro.diagram_labels.open_string', position: { top: '3%', left: '28%' } },
+    // { key: 'lessons.intro.diagram_labels.muted_string', position: { top: '3%', right: '28%' } },
+  ];
 
   // Karplus-Strong algorithm for realistic plucked string sound
   const createPluckedString = (
@@ -192,12 +250,13 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
             {t('lessons.intro.anatomy_title')}
           </h2>
           
-          {/* Guitar Anatomy Image */}
-          <div className="mb-6 2xl:mb-8">
-            <img 
-              src={guitarAnatomyImg} 
-              alt="Guitar Anatomy Diagram"
-              className="w-full max-w-3xl mx-auto rounded-lg shadow-lg"
+          {/* Guitar Anatomy Image with Dynamic Labels */}
+          <div className="mb-6 2xl:mb-8 max-w-3xl mx-auto">
+            <LabeledImage
+              src={guitarAnatomyImg}
+              alt={t('lessons.intro.anatomy_title')}
+              imageClassName="w-full rounded-lg shadow-lg"
+              labels={anatomyLabels}
             />
           </div>
           
@@ -436,21 +495,23 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
             {t('lessons.intro.position_title')}
           </h2>
           
-          {/* Posture Images */}
+          {/* Posture Images with Dynamic Labels */}
           <div className="grid md:grid-cols-2 gap-6 2xl:gap-8 mb-6">
             <div>
-              <img 
-                src={postureSittingImg} 
-                alt="Correct sitting posture"
-                className="w-full rounded-lg shadow-lg"
+              <LabeledImage
+                src={postureSittingImg}
+                alt={t('lessons.intro.position_sit')}
+                imageClassName="w-full rounded-lg shadow-lg"
+                labels={postureSittingLabels}
               />
               <p className="text-center text-sm 2xl:text-base text-gray-600 mt-2">✔️ {t('lessons.intro.position_sit')}</p>
             </div>
             <div>
-              <img 
-                src={leftHandPositionImg} 
-                alt="Left hand position"
-                className="w-full rounded-lg shadow-lg"
+              <LabeledImage
+                src={leftHandPositionImg}
+                alt={t('lessons.intro.position_left_hand')}
+                imageClassName="w-full rounded-lg shadow-lg"
+                labels={leftHandLabels}
               />
               <p className="text-center text-sm 2xl:text-base text-gray-600 mt-2">✔️ {t('lessons.intro.position_left_hand')}</p>
             </div>
@@ -514,12 +575,13 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
             {t('lessons.intro.diagrams_title')}
           </h2>
           
-          {/* Diagram Example Image */}
-          <div className="mb-6 2xl:mb-8">
-            <img 
-              src={chordDiagramGuideImg} 
-              alt="Chord Diagram Example"
-              className="w-full max-w-md mx-auto rounded-lg shadow-lg"
+          {/* Diagram Example Image with Dynamic Labels */}
+          <div className="mb-6 2xl:mb-8 max-w-md mx-auto">
+            <LabeledImage
+              src={chordDiagramGuideImg}
+              alt={t('lessons.intro.diagrams_title')}
+              imageClassName="w-full rounded-lg shadow-lg"
+              labels={chordDiagramLabels}
             />
           </div>
           

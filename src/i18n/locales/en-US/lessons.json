@@ -46,7 +46,51 @@
     "checklist_diagrams": "I can interpret chord diagrams",
     "checklist_hint": "Check all items above to complete the lesson and unlock the chords",
     "next_lesson_title": "Next Lesson: Day 1",
-    "next_lesson_preview": "Em chord (E minor) - The easiest chord to start! Just 2 fingers and a beautiful sound guaranteed."
+    "next_lesson_preview": "Em chord (E minor) - The easiest chord to start! Just 2 fingers and a beautiful sound guaranteed.",
+    "anatomy_labels": {
+      "body": "Body",
+      "neck": "Neck",
+      "bridge": "Bridge",
+      "headstock": "Headstock",
+      "frets": "Frets",
+      "sound_hole": "Sound Hole",
+      "nut": "Nut",
+      "strings": "Strings",
+      "position_markers": "Position Markers",
+      "fingerboard": "Fingerboard",
+      "first_string": "First String",
+      "upper_bout": "Upper Bout",
+      "lower_bout": "Lower Bout",
+      "saddle": "Saddle",
+      "pick_guard": "Pick Guard",
+      "bridge_pins": "Bridge Pins",
+      "waist": "Waist",
+      "rosette": "Rosette",
+      "tuning_pegs": "Tuning Pegs",
+      "first_fret": "First Fret",
+      "capstan": "Capstan"
+    },
+    "posture_labels": {
+      "back_straight": "Back Straight",
+      "relaxed_shoulders": "Relaxed Shoulders",
+      "feet_flat": "Feet Flat",
+      "guitar_on_leg": "Guitar on Leg",
+      "right_arm_relaxed": "Right Arm Relaxed",
+      "left_hand_curved": "Left Hand Curved",
+      "thumb_behind": "Thumb Behind",
+      "fingertips": "Fingertips",
+      "wrist_straight": "Wrist Straight"
+    },
+    "diagram_labels": {
+      "strings": "Strings",
+      "frets": "Frets",
+      "nut": "Nut",
+      "finger_position": "Finger Position",
+      "finger_number": "Finger Number",
+      "open_string": "Open String (O)",
+      "muted_string": "Don't Play (X)",
+      "press_here": "Press Here"
+    }
   },
   "chords": {
     "title": "Chord of the Day",
