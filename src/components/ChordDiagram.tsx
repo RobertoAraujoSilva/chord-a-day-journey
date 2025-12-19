@@ -10,130 +10,151 @@ export const ChordDiagram = ({ chord }: ChordDiagramProps) => {
   const { t } = useTranslation();
   const frets = 5;
   const strings = 6;
+  const stringNames = ['E', 'A', 'D', 'G', 'B', 'e'];
 
   return (
     <div className="flex flex-col items-center">
-      {/* String names */}
-      <div className="flex justify-between w-64 2xl:w-96 3xl:w-[480px] mb-2 text-sm 2xl:text-base 3xl:text-lg font-medium text-gray-600">
-        {['E', 'A', 'D', 'G', 'B', 'E'].map((string, index) => (
-          <span key={index} className="text-center w-8 2xl:w-12 3xl:w-16">
-            {string}
-          </span>
-        ))}
-      </div>
-      
-      {/* Fretboard */}
-      <div className="relative bg-amber-100 p-4 2xl:p-6 3xl:p-8 rounded-lg border-2 border-amber-200">
-        <svg 
-          viewBox="0 0 240 200" 
-          className="w-60 2xl:w-96 3xl:w-[480px] h-auto overflow-visible"
-        >
-          {/* Frets */}
-          {Array.from({ length: frets + 1 }, (_, fret) => (
+      {/* Fretboard with string labels */}
+      <div className="flex items-center gap-2">
+        {/* String names - vertical on the left */}
+        <div className="flex flex-col justify-between h-48 2xl:h-72 3xl:h-96 text-sm 2xl:text-base 3xl:text-lg font-medium text-gray-600">
+          {stringNames.map((name, index) => (
+            <span key={index} className="text-right w-4 2xl:w-6">
+              {name}
+            </span>
+          ))}
+        </div>
+
+        {/* Fretboard */}
+        <div className="relative bg-amber-100 p-4 2xl:p-6 3xl:p-8 rounded-lg border-2 border-amber-200">
+          <svg 
+            viewBox="0 0 220 180" 
+            className="w-72 2xl:w-[400px] 3xl:w-[500px] h-48 2xl:h-72 3xl:h-96 overflow-visible"
+          >
+            {/* Nut (first fret - thick line on left) */}
             <line
-              key={`fret-${fret}`}
               x1="20"
-              y1={20 + fret * 30}
-              x2="220"
-              y2={20 + fret * 30}
-              stroke="#8B4513"
-              strokeWidth={fret === 0 ? "4" : "2"}
-            />
-          ))}
-          
-          {/* Strings */}
-          {Array.from({ length: strings }, (_, string) => (
-            <line
-              key={`string-${string}`}
-              x1={20 + string * 33.33}
-              y1="20"
-              x2={20 + string * 33.33}
+              y1="10"
+              x2="20"
               y2="170"
-              stroke="#C0C0C0"
-              strokeWidth="2"
+              stroke="#8B4513"
+              strokeWidth="6"
             />
-          ))}
-          
-          {/* Finger positions */}
-          {chord.fingering.map((fret, string) => {
-            if (fret === 'x') return null;
-            if (fret === '0') {
-              return (
-                <circle
-                  key={`open-${string}`}
-                  cx={20 + string * 33.33}
-                  cy="5"
-                  r="8"
-                  fill="none"
-                  stroke="#22C55E"
-                  strokeWidth="3"
-                />
-              );
-            }
-            return (
-              <circle
-                key={`finger-${string}`}
-                cx={20 + string * 33.33}
-                cy={20 + (parseInt(fret) - 0.5) * 30}
-                r="12"
-                fill="#EF4444"
-                stroke="#DC2626"
+            
+            {/* Frets - vertical lines */}
+            {Array.from({ length: frets }, (_, fret) => (
+              <line
+                key={`fret-${fret}`}
+                x1={50 + fret * 35}
+                y1="10"
+                x2={50 + fret * 35}
+                y2="170"
+                stroke="#8B4513"
                 strokeWidth="2"
               />
-            );
-          })}
-          
-          {/* X marks for muted strings */}
-          {chord.fingering.map((fret, string) => {
-            if (fret === 'x') {
+            ))}
+            
+            {/* Strings - horizontal lines */}
+            {Array.from({ length: strings }, (_, string) => (
+              <line
+                key={`string-${string}`}
+                x1="20"
+                y1={10 + string * 32}
+                x2="200"
+                y2={10 + string * 32}
+                stroke="#C0C0C0"
+                strokeWidth={3 - string * 0.3}
+              />
+            ))}
+            
+            {/* Open strings (O) - to the left of nut */}
+            {chord.fingering.map((fret, string) => {
+              if (fret === '0') {
+                return (
+                  <circle
+                    key={`open-${string}`}
+                    cx="8"
+                    cy={10 + string * 32}
+                    r="7"
+                    fill="none"
+                    stroke="#22C55E"
+                    strokeWidth="3"
+                  />
+                );
+              }
+              return null;
+            })}
+            
+            {/* X marks for muted strings - to the left of nut */}
+            {chord.fingering.map((fret, string) => {
+              if (fret === 'x') {
+                return (
+                  <g key={`muted-${string}`}>
+                    <line
+                      x1="2"
+                      y1={10 + string * 32 - 5}
+                      x2="14"
+                      y2={10 + string * 32 + 5}
+                      stroke="#EF4444"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                    />
+                    <line
+                      x1="14"
+                      y1={10 + string * 32 - 5}
+                      x2="2"
+                      y2={10 + string * 32 + 5}
+                      stroke="#EF4444"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                    />
+                  </g>
+                );
+              }
+              return null;
+            })}
+            
+            {/* Finger positions */}
+            {chord.fingering.map((fret, string) => {
+              if (fret === 'x' || fret === '0') return null;
+              const fretNum = parseInt(fret);
               return (
-                <g key={`muted-${string}`}>
-                  <line
-                    x1={20 + string * 33.33 - 6}
-                    y1="-1"
-                    x2={20 + string * 33.33 + 6}
-                    y2="11"
-                    stroke="#EF4444"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                  />
-                  <line
-                    x1={20 + string * 33.33 + 6}
-                    y1="-1"
-                    x2={20 + string * 33.33 - 6}
-                    y2="11"
-                    stroke="#EF4444"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                  />
-                </g>
+                <circle
+                  key={`finger-${string}`}
+                  cx={20 + (fretNum - 0.5) * 35}
+                  cy={10 + string * 32}
+                  r="12"
+                  fill="#EF4444"
+                  stroke="#DC2626"
+                  strokeWidth="2"
+                />
               );
-            }
-            return null;
-          })}
-          
-          {/* Finger numbers */}
-          {chord.fingering.map((fret, string) => {
-            if (fret === 'x' || fret === '0') return null;
-            return (
-              <text
-                key={`number-${string}`}
-                x={20 + string * 33.33}
-                y={20 + (parseInt(fret) - 0.5) * 30 + 5}
-                textAnchor="middle"
-                fill="white"
-                fontSize="12"
-                fontWeight="bold"
-              >
-                {chord.fingers[string]}
-              </text>
-            );
-          })}
-        </svg>
+            })}
+            
+            {/* Finger numbers */}
+            {chord.fingering.map((fret, string) => {
+              if (fret === 'x' || fret === '0') return null;
+              const fretNum = parseInt(fret);
+              return (
+                <text
+                  key={`number-${string}`}
+                  x={20 + (fretNum - 0.5) * 35}
+                  y={10 + string * 32 + 5}
+                  textAnchor="middle"
+                  fill="white"
+                  fontSize="12"
+                  fontWeight="bold"
+                >
+                  {chord.fingers[string]}
+                </text>
+              );
+            })}
+          </svg>
+        </div>
       </div>
       
       {/* Legend */}
-      <div className="mt-4 2xl:mt-6 3xl:mt-8 flex gap-4 2xl:gap-6 3xl:gap-8 text-sm 2xl:text-base 3xl:text-lg text-gray-600">
+      <div className="mt-4 2xl:mt-6 3xl:mt-8 flex flex-wrap justify-center gap-4 2xl:gap-6 3xl:gap-8 text-sm 2xl:text-base 3xl:text-lg text-gray-600">
         <div className="flex items-center gap-2">
           <div className="w-4 h-4 2xl:w-6 2xl:h-6 3xl:w-8 3xl:h-8 rounded-full bg-red-500"></div>
           <span>{t('ui.labels.finger_pressed')}</span>
