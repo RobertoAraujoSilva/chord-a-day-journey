@@ -1,6 +1,10 @@
 
 
 import { Music, Hand, Eye, Volume2, Guitar, Play, CheckCircle2, ArrowRight } from 'lucide-react';
+import guitarAnatomyImg from '@/assets/guitar-anatomy.png';
+import postureSittingImg from '@/assets/posture-sitting.png';
+import leftHandPositionImg from '@/assets/left-hand-position.png';
+import chordDiagramGuideImg from '@/assets/chord-diagram-guide.png';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
@@ -191,7 +195,7 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
           {/* Guitar Anatomy Image */}
           <div className="mb-6 2xl:mb-8">
             <img 
-              src="/The-Parts-of-an-Acoustic-Guitar.jpg" 
+              src={guitarAnatomyImg} 
               alt="Guitar Anatomy Diagram"
               className="w-full max-w-3xl mx-auto rounded-lg shadow-lg"
             />
@@ -436,7 +440,7 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
           <div className="grid md:grid-cols-2 gap-6 2xl:gap-8 mb-6">
             <div>
               <img 
-                src="/Playing-the-guitar-while-sitting-scaled.jpg" 
+                src={postureSittingImg} 
                 alt="Correct sitting posture"
                 className="w-full rounded-lg shadow-lg"
               />
@@ -444,7 +448,7 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
             </div>
             <div>
               <img 
-                src="/brad-left-3-diagram-2016.jpg" 
+                src={leftHandPositionImg} 
                 alt="Left hand position"
                 className="w-full rounded-lg shadow-lg"
               />
@@ -513,7 +517,7 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
           {/* Diagram Example Image */}
           <div className="mb-6 2xl:mb-8">
             <img 
-              src="/ow_haley-blog_tab_AM-v2.webp" 
+              src={chordDiagramGuideImg} 
               alt="Chord Diagram Example"
               className="w-full max-w-md mx-auto rounded-lg shadow-lg"
             />
