@@ -31,41 +31,29 @@ const Index = () => {
     const savedIntro = localStorage.getItem('introCompleted');
     const savedStreak = localStorage.getItem('streak');
     const savedLastDate = localStorage.getItem('lastCompletedDate');
-    const savedCurrentDay = localStorage.getItem('currentDay');
     
-    if (saved) {
-      setCompletedDays(JSON.parse(saved));
-    }
+    // Parse completed days
+    const parsedCompletedDays: number[] = saved ? JSON.parse(saved) : [];
+    setCompletedDays(parsedCompletedDays);
+    
+    // Calculate the next uncompleted lesson
+    const calculateNextLesson = (completed: number[]): number => {
+      if (completed.length === 0) return 1;
+      const maxCompleted = Math.max(...completed);
+      return Math.min(maxCompleted + 1, 30);
+    };
     
     if (savedIntro) {
       const introComplete = JSON.parse(savedIntro);
       setIntroCompleted(introComplete);
       if (introComplete) {
         setShowIntro(false);
-        // Restore saved currentDay, or default to 1 if not saved
-        if (savedCurrentDay) {
-          const day = parseInt(savedCurrentDay, 10);
-          // Validate: day must be between 0 and 30
-          if (day >= 0 && day <= 30) {
-            setCurrentDay(day);
-          } else {
-            setCurrentDay(1);
-          }
-        } else {
-          setCurrentDay(1);
-        }
-      }
-    } else if (savedCurrentDay) {
-      // Even if intro not completed, restore the day (user might be reviewing)
-      const day = parseInt(savedCurrentDay, 10);
-      if (day === 0) {
-        setShowIntro(true);
-        setCurrentDay(0);
-      } else if (day >= 1 && day <= 30) {
-        setShowIntro(false);
-        setCurrentDay(day);
+        // Go to next uncompleted lesson
+        const nextLesson = calculateNextLesson(parsedCompletedDays);
+        setCurrentDay(nextLesson);
       }
     }
+    // If intro not completed, stay on intro (day 0)
 
     if (savedStreak) {
       setStreak(parseInt(savedStreak, 10));
