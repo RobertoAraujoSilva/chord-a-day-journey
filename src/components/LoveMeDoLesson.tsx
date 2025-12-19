@@ -6,6 +6,9 @@ import { AudioPlayer } from '@/components/AudioPlayer';
 import { Music, Sparkles, ArrowLeft, Play } from 'lucide-react';
 import { useTranslation } from '@/i18n/context';
 import { Chord } from '@/data/chords';
+import lovemedoChordG from '@/assets/lovemedo-chord-g.png';
+import lovemedoChordC from '@/assets/lovemedo-chord-c.png';
+import lovemedoChordD from '@/assets/lovemedo-chord-d.png';
 
 interface LoveMeDoLessonProps {
   onBack: () => void;
@@ -151,18 +154,18 @@ export const LoveMeDoLesson = ({ onBack }: LoveMeDoLessonProps) => {
         {/* Images Section */}
         <div className="grid md:grid-cols-3 gap-4 2xl:gap-6 3xl:gap-8 mb-8 2xl:mb-12 3xl:mb-16">
           <img 
-            src="/lovemedo1.png" 
-            alt="Love Me Do Chord Diagram 1" 
+            src={lovemedoChordG} 
+            alt="Love Me Do - G Chord" 
             className="w-full rounded-lg shadow-xl border-2 border-orange-200"
           />
           <img 
-            src="/lovemedo2.png" 
-            alt="Love Me Do Chord Diagram 2" 
+            src={lovemedoChordC} 
+            alt="Love Me Do - C Chord" 
             className="w-full rounded-lg shadow-xl border-2 border-orange-200"
           />
           <img 
-            src="/lovemedo3.png" 
-            alt="Love Me Do Chord Diagram 3" 
+            src={lovemedoChordD} 
+            alt="Love Me Do - D Chord" 
             className="w-full rounded-lg shadow-xl border-2 border-orange-200"
           />
         </div>
