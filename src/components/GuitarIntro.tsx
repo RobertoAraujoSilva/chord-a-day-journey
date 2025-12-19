@@ -33,31 +33,122 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
     diagrams: false,
   });
 
+  // Karplus-Strong algorithm for realistic plucked string sound
+  const createPluckedString = (
+    audioContext: AudioContext,
+    frequency: number,
+    duration: number = 2.0,
+    volume: number = 0.4
+  ) => {
+    const sampleRate = audioContext.sampleRate;
+    const bufferSize = Math.round(sampleRate / frequency);
+    const outputSamples = Math.round(sampleRate * duration);
+    
+    // Create buffer for the plucked string
+    const buffer = audioContext.createBuffer(1, outputSamples, sampleRate);
+    const data = buffer.getChannelData(0);
+    
+    // Initialize with noise burst (simulates the pluck)
+    const noiseBuffer = new Float32Array(bufferSize);
+    for (let i = 0; i < bufferSize; i++) {
+      noiseBuffer[i] = Math.random() * 2 - 1;
+    }
+    
+    // Karplus-Strong synthesis with low-pass filtering
+    let prevSample = 0;
+    const decay = 0.996; // Decay factor for string vibration
+    const smoothing = 0.5; // Low-pass filter coefficient
+    
+    for (let i = 0; i < outputSamples; i++) {
+      if (i < bufferSize) {
+        data[i] = noiseBuffer[i];
+      } else {
+        // Average current and previous sample (low-pass filter) with decay
+        const current = data[i - bufferSize];
+        const averaged = smoothing * current + (1 - smoothing) * prevSample;
+        data[i] = averaged * decay;
+        prevSample = current;
+      }
+    }
+    
+    return buffer;
+  };
+
+  // Add harmonics for richer guitar tone
+  const createHarmonics = (
+    audioContext: AudioContext,
+    frequency: number,
+    startTime: number,
+    duration: number = 1.5
+  ) => {
+    const harmonicRatios = [1, 2, 3, 4]; // Fundamental + overtones
+    const harmonicGains = [0.25, 0.12, 0.06, 0.03]; // Decreasing volume
+    
+    harmonicRatios.forEach((ratio, index) => {
+      const oscillator = audioContext.createOscillator();
+      const gainNode = audioContext.createGain();
+      const filterNode = audioContext.createBiquadFilter();
+      
+      // Use triangle wave for warmer sound
+      oscillator.type = 'triangle';
+      oscillator.frequency.setValueAtTime(frequency * ratio, startTime);
+      
+      // Low-pass filter to simulate guitar body resonance
+      filterNode.type = 'lowpass';
+      filterNode.frequency.setValueAtTime(2500, startTime);
+      filterNode.Q.setValueAtTime(1, startTime);
+      
+      // Envelope for natural attack and decay
+      const gain = harmonicGains[index];
+      gainNode.gain.setValueAtTime(0, startTime);
+      gainNode.gain.linearRampToValueAtTime(gain, startTime + 0.003);
+      gainNode.gain.exponentialRampToValueAtTime(0.001, startTime + duration);
+      
+      oscillator.connect(filterNode);
+      filterNode.connect(gainNode);
+      gainNode.connect(audioContext.destination);
+      
+      oscillator.start(startTime);
+      oscillator.stop(startTime + duration);
+    });
+  };
+
   const playString = async (stringName: string, frequency: number) => {
     setPlayingString(stringName);
     
     try {
       const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+      const startTime = audioContext.currentTime;
+      const duration = 2.0;
       
-      // Create oscillator for the string sound
-      const oscillator = audioContext.createOscillator();
-      const gainNode = audioContext.createGain();
+      // Create master gain
+      const masterGain = audioContext.createGain();
+      masterGain.gain.setValueAtTime(0.6, startTime);
+      masterGain.connect(audioContext.destination);
       
-      oscillator.connect(gainNode);
-      gainNode.connect(audioContext.destination);
+      // Play Karplus-Strong plucked string
+      const pluckBuffer = createPluckedString(audioContext, frequency, duration, 0.5);
+      const pluckSource = audioContext.createBufferSource();
+      pluckSource.buffer = pluckBuffer;
       
-      oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
-      oscillator.type = 'triangle'; // Softer sound
+      // Add body resonance filter
+      const bodyFilter = audioContext.createBiquadFilter();
+      bodyFilter.type = 'peaking';
+      bodyFilter.frequency.setValueAtTime(200, startTime); // Guitar body resonance
+      bodyFilter.Q.setValueAtTime(2, startTime);
+      bodyFilter.gain.setValueAtTime(3, startTime);
       
-      // Envelope for plucked string effect
-      gainNode.gain.setValueAtTime(0, audioContext.currentTime);
-      gainNode.gain.linearRampToValueAtTime(0.3, audioContext.currentTime + 0.01);
-      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 1.5);
+      pluckSource.connect(bodyFilter);
+      bodyFilter.connect(masterGain);
+      pluckSource.start(startTime);
       
-      oscillator.start(audioContext.currentTime);
-      oscillator.stop(audioContext.currentTime + 1.5);
+      // Add harmonics for richness
+      createHarmonics(audioContext, frequency, startTime, duration);
       
-      setTimeout(() => setPlayingString(null), 1500);
+      setTimeout(() => {
+        setPlayingString(null);
+        audioContext.close();
+      }, duration * 1000);
     } catch (error) {
       console.error('Error playing string sound:', error);
       setPlayingString(null);
