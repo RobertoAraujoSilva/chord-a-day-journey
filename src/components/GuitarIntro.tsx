@@ -55,17 +55,7 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
 
   // Guitar Anatomy Labels - Using The-Parts-of-an-Acoustic-Guitar.webp
   // Initial positions - will adjust based on actual image layout
-  const anatomyLabels: ImageLabel[] = [
-    { key: 'lessons.intro.anatomy_labels.headstock', position: { top: '5%', right: '15%' } },
-    { key: 'lessons.intro.anatomy_labels.tuning_pegs', position: { top: '10%', right: '5%' } },
-    { key: 'lessons.intro.anatomy_labels.nut', position: { top: '16%', left: '32%' } },
-    { key: 'lessons.intro.anatomy_labels.neck', position: { bottom: '8%', right: '25%' } },
-    { key: 'lessons.intro.anatomy_labels.frets', position: { top: '40%', right: '35%' } },
-    { key: 'lessons.intro.anatomy_labels.body', position: { top: '55%', left: '8%' } },
-    { key: 'lessons.intro.anatomy_labels.sound_hole', position: { top: '50%', left: '30%' } },
-    { key: 'lessons.intro.anatomy_labels.bridge', position: { top: '28%', right: '10%' } },
-    { key: 'lessons.intro.anatomy_labels.strings', position: { bottom: '35%', right: '15%' } },
-  ];
+  const anatomyLabels: ImageLabel[] = [];
 
   // Posture Sitting Labels - Positioned around the edges
   const postureSittingLabels: ImageLabel[] = [
