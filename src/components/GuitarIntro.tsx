@@ -1,10 +1,10 @@
 
 
 import { Music, Hand, Eye, Volume2, Guitar, Play, CheckCircle2, ArrowRight } from 'lucide-react';
-import guitarAnatomyImg from '@/assets/guitar-anatomy.webp';
-import postureSittingImg from '@/assets/posture-sitting.png';
-import leftHandPositionImg from '@/assets/left-hand-position.png';
-import chordDiagramGuideImg from '@/assets/chord-diagram-guide.png';
+import guitarAnatomyImg from '@/assets/guitar-anatomy-base.png';
+import postureSittingImg from '@/assets/posture-sitting-base.png';
+import leftHandPositionImg from '@/assets/left-hand-position-base.png';
+import chordDiagramGuideImg from '@/assets/chord-diagram-base.png';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
