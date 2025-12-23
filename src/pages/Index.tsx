@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Calendar, Music, Target, BookOpen, Trophy } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Calendar, Music, Target, BookOpen, Trophy, Play } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ChordDiagram } from '@/components/ChordDiagram';
@@ -11,6 +11,7 @@ import { AudioPlayer } from '@/components/AudioPlayer';
 import { GuitarIntro } from '@/components/GuitarIntro';
 import { CompletionCelebration } from '@/components/CompletionCelebration';
 import { LoveMeDoLesson } from '@/components/LoveMeDoLesson';
+import { ChordSlideshow } from '@/components/ChordSlideshow';
 import { chords } from '@/data/chords';
 import { useTranslation } from '@/i18n/context';
 
@@ -24,6 +25,7 @@ const Index = () => {
   const [lastCompletedDate, setLastCompletedDate] = useState<string | null>(null);
   const [showCelebration, setShowCelebration] = useState(false);
   const [showBonusLesson, setShowBonusLesson] = useState(false);
+  const [showSlideshow, setShowSlideshow] = useState(false);
 
   useEffect(() => {
     // Load all persisted data from localStorage
@@ -151,6 +153,18 @@ const Index = () => {
   const progress = (completedDays.length / 30) * 100;
   const isDay30Completed = completedDays.includes(30);
 
+  // Se estamos mostrando o slideshow
+  if (showSlideshow) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50">
+        <Header />
+        <div className="container mx-auto px-4 py-8">
+          <ChordSlideshow onClose={() => setShowSlideshow(false)} />
+        </div>
+      </div>
+    );
+  }
+
   // Se estamos mostrando a lição bônus
   if (showBonusLesson) {
     return (
@@ -212,17 +226,28 @@ const Index = () => {
       <div className="container mx-auto px-4 md:px-8 lg:px-16 2xl:px-24 3xl:px-32 py-8 2xl:py-12 3xl:py-16">
         {/* Botão para voltar à introdução */}
         <div className="mb-6 2xl:mb-8 3xl:mb-12 text-center">
-          <Button
-            variant="outline"
-            onClick={() => {
-              setShowIntro(true);
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button
+              variant="outline"
+              onClick={() => {
+                setShowIntro(true);
               setCurrentDay(0);
             }}
-            className="flex items-center gap-2 mx-auto"
+            className="flex items-center gap-2"
           >
             <BookOpen className="h-4 w-4" />
             {t('ui.navigation.review_intro')}
           </Button>
+
+          <Button
+            variant="outline"
+            onClick={() => setShowSlideshow(true)}
+            className="flex items-center gap-2 bg-gradient-to-r from-orange-100 to-red-100 hover:from-orange-200 hover:to-red-200 border-orange-300"
+          >
+            <Play className="h-4 w-4" />
+            {t('ui.slideshow.open')}
+          </Button>
+          </div>
         </div>
 
         {/* Progress Section with Circular Indicator */}

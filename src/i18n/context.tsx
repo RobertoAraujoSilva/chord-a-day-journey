@@ -112,7 +112,8 @@ export function I18nProvider({ children }: I18nProviderProps) {
               languages: { 'pt-BR': 'Português', 'en-US': 'English' },
               difficulty: {},
               motivation: {},
-              celebration: {}
+              celebration: {},
+              slideshow: {}
             },
             lessons: { intro: {}, chords: {}, instructions: {} },
             content: { titles: {}, descriptions: {}, tips: {}, chords: {}, bonus: {} },
@@ -131,7 +132,8 @@ export function I18nProvider({ children }: I18nProviderProps) {
             languages: { 'pt-BR': 'Português', 'en-US': 'English' },
             difficulty: {},
             motivation: {},
-            celebration: {}
+            celebration: {},
+            slideshow: {}
           },
           lessons: { intro: {}, chords: {}, instructions: {} },
           content: { titles: {}, descriptions: {}, tips: {}, chords: {}, bonus: {} },

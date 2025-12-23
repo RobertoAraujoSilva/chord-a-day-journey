@@ -81,5 +81,14 @@
     "progress": "Progresso",
     "next_steps": "Você dominou os fundamentos! Agora explore músicas, pratique transições entre acordes e continue desenvolvendo suas habilidades. A jornada está apenas começando! 🎸",
     "continue": "Continuar Praticando"
+  },
+  "slideshow": {
+    "title": "Slideshow de Acordes",
+    "chord_of": "Acorde {{current}} de {{total}}",
+    "speed": "Velocidade",
+    "reset": "Reiniciar",
+    "keyboard_hint": "Teclado: Espaço = Play/Pause | ← → = Navegar | + - = Velocidade",
+    "close": "Fechar",
+    "open": "Slideshow de Acordes"
   }
 }

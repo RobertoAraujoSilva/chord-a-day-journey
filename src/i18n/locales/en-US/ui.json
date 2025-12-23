@@ -81,5 +81,14 @@
     "progress": "Progress",
     "next_steps": "You've mastered the fundamentals! Now explore songs, practice chord transitions, and keep building your skills. The journey has just begun! 🎸",
     "continue": "Continue Practicing"
+  },
+  "slideshow": {
+    "title": "Chord Slideshow",
+    "chord_of": "Chord {{current}} of {{total}}",
+    "speed": "Speed",
+    "reset": "Reset",
+    "keyboard_hint": "Keyboard: Space = Play/Pause | ← → = Navigate | + - = Speed",
+    "close": "Close",
+    "open": "Chord Slideshow"
   }
 }

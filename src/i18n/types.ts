@@ -12,6 +12,7 @@ export interface TranslationObject {
     difficulty: Record<string, string>;
     motivation: Record<string, string>;
     celebration: Record<string, string>;
+    slideshow: Record<string, string>;
   };
   lessons: {
     intro: Record<string, string>;
@@ -43,6 +44,7 @@ export type TranslationKey =
   | `ui.difficulty.${string}`
   | `ui.motivation.${string}`
   | `ui.celebration.${string}`
+  | `ui.slideshow.${string}`
   | `lessons.intro.${string}`
   | `lessons.chords.${string}`
   | `lessons.instructions.${string}`
