@@ -87,8 +87,10 @@
     "chord_of": "Chord {{current}} of {{total}}",
     "speed": "Speed",
     "reset": "Reset",
-    "keyboard_hint": "Keyboard: Space = Play/Pause | ← → = Navigate | + - = Speed",
+    "keyboard_hint": "Keyboard: Space = Play/Pause | ← → = Navigate | + - = Speed | M = Sound",
     "close": "Close",
-    "open": "Chord Slideshow"
+    "open": "Chord Slideshow",
+    "sound_on": "Sound on",
+    "sound_off": "Sound off"
   }
 }
