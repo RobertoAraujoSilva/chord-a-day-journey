@@ -1,30 +1,57 @@
 // Frequências base dos acordes de violão (em Hz)
+// Calculadas com base nas notas reais de cada acorde em afinação padrão (E2-B4)
 const CHORD_FREQUENCIES: Record<string, number[]> = {
-  // Acordes menores
-  'em': [82.41, 123.47, 164.81, 196.00, 246.94, 329.63],
-  'am': [110.00, 164.81, 220.00, 261.63, 329.63, 440.00],
-  'dm': [146.83, 220.00, 293.66, 349.23, 440.00],
+  // Acordes menores abertos
+  'em': [82.41, 123.47, 164.81, 196.00, 246.94, 329.63],   // E2, B2, E3, G3, B3, E4
+  'am': [110.00, 164.81, 220.00, 261.63, 329.63],           // A2, E3, A3, C4, E4 (corda 6 muda)
+  'dm': [146.83, 220.00, 293.66, 349.23, 440.00],           // D3, A3, D4, F4, A4 (cordas 5-6 mudas)
   
-  // Acordes maiores
-  'c': [130.81, 164.81, 196.00, 261.63, 329.63],
-  'g': [98.00, 123.47, 146.83, 196.00, 246.94, 392.00],
-  'd': [146.83, 220.00, 293.66, 369.99, 440.00],
-  'e': [82.41, 123.47, 164.81, 207.65, 246.94, 329.63],
-  'a': [110.00, 164.81, 220.00, 277.18, 329.63],
-  'f': [87.31, 130.81, 174.61, 220.00, 261.63, 349.23],
+  // Acordes maiores abertos
+  'c': [130.81, 164.81, 196.00, 261.63, 329.63],            // C3, E3, G3, C4, E4 (corda 6 muda)
+  'g': [98.00, 123.47, 146.83, 196.00, 246.94, 392.00],     // G2, B2, D3, G3, B3, G4
+  'd': [146.83, 220.00, 293.66, 369.99, 440.00],            // D3, A3, D4, F#4, A4 (cordas 5-6 mudas)
+  'e': [82.41, 123.47, 164.81, 207.65, 246.94, 329.63],     // E2, B2, E3, G#3, B3, E4
+  'a': [110.00, 164.81, 220.00, 277.18, 329.63],            // A2, E3, A3, C#4, E4 (corda 6 muda)
+  'f': [87.31, 130.81, 174.61, 220.00, 261.63, 349.23],     // F2, C3, F3, A3, C4, F4 (pestana)
   
-  // Acordes com sétima
-  'a7': [110.00, 164.81, 220.00, 277.18, 329.63, 392.00],
-  'e7': [82.41, 123.47, 164.81, 196.00, 246.94, 329.63],
-  'd7': [146.83, 220.00, 261.63, 369.99, 440.00],
-  'g7': [98.00, 123.47, 146.83, 196.00, 246.94, 349.23],
-  'c7': [130.81, 164.81, 196.00, 233.08, 329.63],
-  'b7': [123.47, 184.99, 246.94, 293.66, 369.99],
+  // Acordes com sétima dominante
+  'a7': [110.00, 164.81, 196.00, 277.18, 329.63],           // A2, E3, G3, C#4, E4
+  'e7': [82.41, 123.47, 146.83, 207.65, 246.94, 329.63],    // E2, B2, D3, G#3, B3, E4
+  'd7': [146.83, 220.00, 261.63, 369.99, 440.00],           // D3, A3, C4, F#4, A4
+  'g7': [98.00, 123.47, 146.83, 174.61, 246.94, 349.23],    // G2, B2, D3, F3, B3, F4
+  'c7': [130.81, 164.81, 233.08, 261.63, 329.63],           // C3, E3, Bb3, C4, E4
+  'b7': [123.47, 184.99, 220.00, 293.66, 369.99],           // B2, F#3, A3, D4, F#4
   
   // Acordes menores com sétima
-  'em7': [82.41, 123.47, 164.81, 196.00, 246.94, 293.66],
-  'am7': [110.00, 164.81, 196.00, 261.63, 329.63],
-  'dm7': [146.83, 220.00, 261.63, 349.23, 440.00],
+  'em7': [82.41, 123.47, 146.83, 196.00, 246.94, 329.63],   // E2, B2, D3, G3, B3, E4
+  'am7': [110.00, 164.81, 196.00, 261.63, 329.63],          // A2, E3, G3, C4, E4
+  'dm7': [146.83, 220.00, 261.63, 349.23, 440.00],          // D3, A3, C4, F4, A4
+  
+  // Acordes menores com barra/pestana
+  'bm': [123.47, 184.99, 246.94, 293.66, 369.99, 493.88],   // B2, F#3, B3, D4, F#4, B4
+  'f_m': [92.50, 138.59, 184.99, 220.00, 277.18, 369.99],   // F#2, C#3, F#3, A3, C#4, F#4
+  
+  // Acordes maiores com 7ª maior
+  'cmaj7': [130.81, 164.81, 196.00, 246.94, 329.63],        // C3, E3, G3, B3, E4
+  'fmaj7': [87.31, 130.81, 174.61, 220.00, 261.63, 329.63], // F2, C3, F3, A3, C4, E4
+  
+  // Acordes sus4 (suspensão)
+  'gsus4': [98.00, 130.81, 146.83, 196.00, 261.63, 392.00], // G2, C3, D3, G3, C4, G4
+  'dsus4': [146.83, 220.00, 293.66, 392.00, 440.00],        // D3, A3, D4, G4, A4
+  'esus4': [82.41, 123.47, 164.81, 220.00, 246.94, 329.63], // E2, B2, E3, A3, B3, E4
+  'asus4': [110.00, 164.81, 220.00, 293.66, 329.63],        // A2, E3, A3, D4, E4
+  
+  // Acordes add9
+  'cadd9': [130.81, 164.81, 196.00, 293.66, 329.63],        // C3, E3, G3, D4, E4
+  
+  // Acordes com baixo invertido
+  'g_b': [123.47, 146.83, 196.00, 246.94, 392.00],          // B2, D3, G3, B3, G4
+  
+  // Acordes barra maiores
+  'bb': [116.54, 174.61, 233.08, 293.66, 349.23, 466.16],   // Bb2, F3, Bb3, D4, F4, Bb4
+  
+  // Acordes diminutos
+  'a_dim': [116.54, 146.83, 207.65, 293.66, 329.63],        // A#2, D3, G#3, D4, E4 (A#dim)
 };
 
 const DEFAULT_FREQUENCIES = [110.00, 164.81, 220.00, 261.63, 329.63];
@@ -43,8 +70,33 @@ export function normalizeChordName(name: string): string {
 }
 
 function getChordFrequencies(chordName: string): number[] {
-  const normalized = normalizeChordName(chordName).replace(/_/g, '');
-  return CHORD_FREQUENCIES[normalized] || DEFAULT_FREQUENCIES;
+  const normalized = normalizeChordName(chordName);
+  
+  // Mapeamento especial para acordes com caracteres especiais
+  const chordMap: Record<string, string> = {
+    'f_m': 'f_m',       // F#m
+    'g_b': 'g_b',       // G/B
+    'a_dim': 'a_dim',   // A#dim
+  };
+  
+  // Tentar o nome normalizado diretamente
+  if (CHORD_FREQUENCIES[normalized]) {
+    return CHORD_FREQUENCIES[normalized];
+  }
+  
+  // Tentar sem underscores para acordes simples
+  const withoutUnderscores = normalized.replace(/_/g, '');
+  if (CHORD_FREQUENCIES[withoutUnderscores]) {
+    return CHORD_FREQUENCIES[withoutUnderscores];
+  }
+  
+  // Mapeamento especial
+  if (chordMap[normalized] && CHORD_FREQUENCIES[chordMap[normalized]]) {
+    return CHORD_FREQUENCIES[chordMap[normalized]];
+  }
+  
+  console.warn(`Chord "${name}" (normalized: "${normalized}") not found, using default frequencies`);
+  return DEFAULT_FREQUENCIES;
 }
 
 // Algoritmo Karplus-Strong para simular corda dedilhada
