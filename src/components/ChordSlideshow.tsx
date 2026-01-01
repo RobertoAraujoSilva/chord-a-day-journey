@@ -7,7 +7,7 @@ import { chords } from '@/data/chords';
 import { useTranslation } from '@/i18n/context';
 import { playGeneratedChord, stopAllAudio } from '@/utils/audioGenerator';
 
-const SPEED_OPTIONS = [1000, 2000, 3000, 5000, 7000, 10000];
+const SPEED_OPTIONS = [1000, 2000, 3000, 5000, 7000, 10000, 15000, 20000, 30000];
 
 interface ChordSlideshowProps {
   onClose?: () => void;
