@@ -1,10 +1,11 @@
-import { useState, useEffect, useCallback } from 'react';
-import { Play, Pause, ChevronLeft, ChevronRight, Minus, Plus, RotateCcw } from 'lucide-react';
+import { useState, useEffect, useCallback, useRef } from 'react';
+import { Play, Pause, ChevronLeft, ChevronRight, Minus, Plus, RotateCcw, Volume2, VolumeX } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ChordDiagram } from '@/components/ChordDiagram';
 import { chords } from '@/data/chords';
 import { useTranslation } from '@/i18n/context';
+import { playGeneratedChord, stopAllAudio } from '@/utils/audioGenerator';
 
 const SPEED_OPTIONS = [1000, 2000, 3000, 5000, 7000, 10000];
 
@@ -17,10 +18,42 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [speedIndex, setSpeedIndex] = useState(2); // Default: 3000ms (3s)
+  const [soundEnabled, setSoundEnabled] = useState(true);
+  const [isPlayingSound, setIsPlayingSound] = useState(false);
+  const lastPlayedIndexRef = useRef<number>(-1);
   
   const speed = SPEED_OPTIONS[speedIndex];
   const currentChord = chords[currentIndex];
   const totalChords = chords.length;
+
+  // Play chord sound when index changes
+  const playChordSound = useCallback(async (chordName: string) => {
+    if (!soundEnabled || isPlayingSound) return;
+    
+    setIsPlayingSound(true);
+    try {
+      await playGeneratedChord(chordName, Math.min(speed / 1000, 2.5));
+    } catch (error) {
+      console.error('Error playing chord:', error);
+    } finally {
+      setIsPlayingSound(false);
+    }
+  }, [soundEnabled, isPlayingSound, speed]);
+
+  // Trigger sound on chord change
+  useEffect(() => {
+    if (currentIndex !== lastPlayedIndexRef.current && soundEnabled) {
+      lastPlayedIndexRef.current = currentIndex;
+      playChordSound(currentChord.name);
+    }
+  }, [currentIndex, currentChord.name, soundEnabled, playChordSound]);
+
+  // Cleanup audio on unmount
+  useEffect(() => {
+    return () => {
+      stopAllAudio();
+    };
+  }, []);
 
   // Auto-advance effect
   useEffect(() => {
@@ -53,6 +86,10 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
       case '-':
         setSpeedIndex((prev) => Math.min(SPEED_OPTIONS.length - 1, prev + 1)); // Slower = higher index
         break;
+      case 'm':
+      case 'M':
+        setSoundEnabled((prev) => !prev);
+        break;
     }
   }, [totalChords]);
 
@@ -80,6 +117,14 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
   const resetSlideshow = () => {
     setCurrentIndex(0);
     setIsPlaying(false);
+    lastPlayedIndexRef.current = -1;
+  };
+
+  const toggleSound = () => {
+    setSoundEnabled((prev) => !prev);
+    if (soundEnabled) {
+      stopAllAudio();
+    }
   };
 
   return (
@@ -169,6 +214,16 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
                 title={t('ui.slideshow.reset')}
               >
                 <RotateCcw className="h-5 w-5" />
+              </Button>
+
+              <Button
+                variant={soundEnabled ? "default" : "ghost"}
+                size="icon"
+                onClick={toggleSound}
+                className={`h-10 w-10 ${soundEnabled ? 'bg-orange-500 hover:bg-orange-600 text-white' : ''}`}
+                title={soundEnabled ? t('ui.slideshow.sound_on') : t('ui.slideshow.sound_off')}
+              >
+                {soundEnabled ? <Volume2 className="h-5 w-5" /> : <VolumeX className="h-5 w-5" />}
               </Button>
             </div>
 

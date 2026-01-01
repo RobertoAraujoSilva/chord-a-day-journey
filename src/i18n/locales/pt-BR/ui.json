@@ -87,8 +87,10 @@
     "chord_of": "Acorde {{current}} de {{total}}",
     "speed": "Velocidade",
     "reset": "Reiniciar",
-    "keyboard_hint": "Teclado: Espaço = Play/Pause | ← → = Navegar | + - = Velocidade",
+    "keyboard_hint": "Teclado: Espaço = Play/Pause | ← → = Navegar | + - = Velocidade | M = Som",
     "close": "Fechar",
-    "open": "Slideshow de Acordes"
+    "open": "Slideshow de Acordes",
+    "sound_on": "Som ligado",
+    "sound_off": "Som desligado"
   }
 }
