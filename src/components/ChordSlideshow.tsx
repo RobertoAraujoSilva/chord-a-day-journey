@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ChordDiagram } from '@/components/ChordDiagram';
 import { chords } from '@/data/chords';
-import { useTranslation } from '@/i18n/context';
+import { useTranslation, useI18n } from '@/i18n/context';
 import { playGeneratedChord, stopAllAudio } from '@/utils/audioGenerator';
 
 const SPEED_OPTIONS = [1000, 2000, 3000, 5000, 7000, 10000, 15000, 20000, 30000];
@@ -15,6 +15,17 @@ interface ChordSlideshowProps {
 
 export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
   const { t } = useTranslation();
+  const { translations } = useI18n();
+
+  // Get full chord name from translations
+  const getChordFullName = (chordName: string): string => {
+    try {
+      const chordData = translations?.content?.chords?.[chordName];
+      return chordData?.fullName || chordName;
+    } catch {
+      return chordName;
+    }
+  };
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [speedIndex, setSpeedIndex] = useState(2); // Default: 3000ms (3s)
@@ -143,9 +154,12 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
 
           {/* Chord Display */}
           <div className="text-center mb-6">
-            <h3 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-4">
+            <h3 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-1">
               {currentChord.name}
             </h3>
+            <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-4 italic">
+              {getChordFullName(currentChord.name)}
+            </p>
             <div className="max-w-md mx-auto">
               <ChordDiagram chord={currentChord} />
             </div>
