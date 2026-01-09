@@ -378,6 +378,11 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
             <Metronome
               isActive={metronomeEnabled}
               onToggle={() => setMetronomeEnabled((prev) => !prev)}
+              labels={{
+                metronome_on: t('ui.slideshow.metronome_on'),
+                metronome_off: t('ui.slideshow.metronome_off'),
+                bpm: t('ui.slideshow.bpm')
+              }}
             />
           </div>
 
