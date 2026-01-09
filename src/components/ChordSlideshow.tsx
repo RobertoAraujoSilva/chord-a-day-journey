@@ -3,6 +3,7 @@ import { Play, Pause, ChevronLeft, ChevronRight, Minus, Plus, RotateCcw, Volume2
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ChordDiagram } from '@/components/ChordDiagram';
+import { Metronome } from '@/components/Metronome';
 import { chords } from '@/data/chords';
 import { useTranslation, useI18n } from '@/i18n/context';
 import { playGeneratedChord, stopAllAudio } from '@/utils/audioGenerator';
@@ -33,6 +34,7 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
   const [isPlayingSound, setIsPlayingSound] = useState(false);
   const [progress, setProgress] = useState(100);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [metronomeEnabled, setMetronomeEnabled] = useState(false);
   const lastPlayedIndexRef = useRef<number>(-1);
   const progressIntervalRef = useRef<NodeJS.Timeout | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -168,6 +170,10 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
       case 'f':
       case 'F':
         toggleFullscreen();
+        break;
+      case 'b':
+      case 'B':
+        setMetronomeEnabled((prev) => !prev);
         break;
     }
   }, [totalChords, toggleFullscreen]);
@@ -365,6 +371,14 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
                 <Plus className="h-4 w-4" />
               </Button>
             </div>
+          </div>
+
+          {/* Metronome */}
+          <div className="mt-6">
+            <Metronome
+              isActive={metronomeEnabled}
+              onToggle={() => setMetronomeEnabled((prev) => !prev)}
+            />
           </div>
 
           {/* Keyboard Shortcuts Hint */}

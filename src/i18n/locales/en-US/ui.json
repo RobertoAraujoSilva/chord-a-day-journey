@@ -87,12 +87,15 @@
     "chord_of": "Chord {{current}} of {{total}}",
     "speed": "Speed",
     "reset": "Reset",
-    "keyboard_hint": "Keyboard: Space = Play/Pause | ← → = Navigate | + - = Speed | M = Sound | F = Fullscreen",
+    "keyboard_hint": "Keyboard: Space = Play/Pause | ← → = Navigate | + - = Speed | M = Sound | F = Fullscreen | B = Metronome",
     "close": "Close",
     "open": "Chord Slideshow",
     "sound_on": "Sound on",
     "sound_off": "Sound off",
     "fullscreen": "Fullscreen",
-    "exit_fullscreen": "Exit fullscreen"
+    "exit_fullscreen": "Exit fullscreen",
+    "metronome_on": "Metronome on",
+    "metronome_off": "Metronome off",
+    "bpm": "BPM"
   }
 }
