@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { Timer, TimerOff } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useTranslation } from '@/i18n/context';
 
 const BPM_OPTIONS = [40, 60, 80, 100, 120, 140, 160];
 
@@ -9,6 +8,11 @@ interface MetronomeProps {
   isActive: boolean;
   onToggle: () => void;
   beatsPerMeasure?: number;
+  labels?: {
+    metronome_on: string;
+    metronome_off: string;
+    bpm: string;
+  };
 }
 
 // Create audio context for metronome clicks
@@ -44,8 +48,13 @@ const playClick = (isAccent: boolean = false) => {
   }
 };
 
-export const Metronome = ({ isActive, onToggle, beatsPerMeasure = 4 }: MetronomeProps) => {
-  const { t } = useTranslation();
+export const Metronome = ({ isActive, onToggle, beatsPerMeasure = 4, labels }: MetronomeProps) => {
+  const defaultLabels = {
+    metronome_on: 'Metronome on',
+    metronome_off: 'Metronome off',
+    bpm: 'BPM'
+  };
+  const l = labels || defaultLabels;
   const [bpmIndex, setBpmIndex] = useState(2); // Default: 80 BPM
   const [currentBeat, setCurrentBeat] = useState(0);
   const [isFlashing, setIsFlashing] = useState(false);
@@ -133,13 +142,13 @@ export const Metronome = ({ isActive, onToggle, beatsPerMeasure = 4 }: Metronome
           size="icon"
           onClick={onToggle}
           className={`h-10 w-10 ${isActive ? 'bg-orange-500 hover:bg-orange-600 text-white' : ''}`}
-          title={isActive ? t('ui.slideshow.metronome_on') : t('ui.slideshow.metronome_off')}
+          title={isActive ? l.metronome_on : l.metronome_off}
         >
           {isActive ? <Timer className="h-5 w-5" /> : <TimerOff className="h-5 w-5" />}
         </Button>
         
         <span className="text-sm font-medium text-muted-foreground">
-          {t('ui.slideshow.bpm')}:
+          {l.bpm}:
         </span>
         
         <Button
