@@ -31,7 +31,9 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
   const [speedIndex, setSpeedIndex] = useState(2); // Default: 3000ms (3s)
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [isPlayingSound, setIsPlayingSound] = useState(false);
+  const [progress, setProgress] = useState(100);
   const lastPlayedIndexRef = useRef<number>(-1);
+  const progressIntervalRef = useRef<NodeJS.Timeout | null>(null);
   
   const speed = SPEED_OPTIONS[speedIndex];
   const currentChord = chords[currentIndex];
@@ -66,15 +68,46 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
     };
   }, []);
 
-  // Auto-advance effect
+  // Auto-advance effect with progress bar
   useEffect(() => {
-    if (!isPlaying) return;
+    if (!isPlaying) {
+      setProgress(100);
+      if (progressIntervalRef.current) {
+        clearInterval(progressIntervalRef.current);
+        progressIntervalRef.current = null;
+      }
+      return;
+    }
 
-    const interval = setInterval(() => {
+    // Reset progress when starting or changing chord
+    setProgress(100);
+
+    // Update progress bar every 50ms for smooth animation
+    const updateInterval = 50;
+    const decrementPerUpdate = (100 * updateInterval) / speed;
+
+    progressIntervalRef.current = setInterval(() => {
+      setProgress((prev) => {
+        const newProgress = prev - decrementPerUpdate;
+        if (newProgress <= 0) {
+          return 100; // Reset when reaching 0
+        }
+        return newProgress;
+      });
+    }, updateInterval);
+
+    // Auto-advance to next chord
+    const advanceInterval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % totalChords);
+      setProgress(100); // Reset progress on chord change
     }, speed);
 
-    return () => clearInterval(interval);
+    return () => {
+      if (progressIntervalRef.current) {
+        clearInterval(progressIntervalRef.current);
+      }
+      clearInterval(advanceInterval);
+    };
   }, [isPlaying, speed, totalChords]);
 
   // Keyboard controls
@@ -151,6 +184,16 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
               {t('ui.slideshow.chord_of', { current: currentIndex + 1, total: totalChords })}
             </p>
           </div>
+
+          {/* Progress Bar */}
+          {isPlaying && (
+            <div className="w-full h-2 bg-secondary rounded-full mb-6 overflow-hidden">
+              <div
+                className="h-full bg-gradient-to-r from-orange-500 to-red-500 rounded-full transition-all duration-75 ease-linear"
+                style={{ width: `${progress}%` }}
+              />
+            </div>
+          )}
 
           {/* Chord Display */}
           <div className="text-center mb-6">
