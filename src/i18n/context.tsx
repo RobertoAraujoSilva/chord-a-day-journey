@@ -17,8 +17,23 @@ import {
   validateTranslationCompleteness
 } from './utils';
 
-// Create the context
-const I18nContext = createContext<I18nContextType | undefined>(undefined);
+// Default fallback for when context is not yet available
+const defaultTranslationFunction = (key: string, variables?: Record<string, any>): string => key;
+
+const defaultContextValue: I18nContextType = {
+  currentLanguage: 'pt-BR' as Locale,
+  translations: {} as TranslationObject,
+  changeLanguage: () => {},
+  t: defaultTranslationFunction as any,
+  formatNumber: (value: number) => String(value),
+  formatDate: (date: Date) => date.toLocaleDateString(),
+  formatPlural: (count: number, forms: any) => String(count),
+  isLoading: true,
+  error: null
+};
+
+// Create the context with default value
+const I18nContext = createContext<I18nContextType>(defaultContextValue);
 
 // Storage key for localStorage
 const LANGUAGE_STORAGE_KEY = 'chord-a-day-language';
@@ -232,9 +247,6 @@ export function I18nProvider({ children }: I18nProviderProps) {
  */
 export function useI18n(): I18nContextType {
   const context = useContext(I18nContext);
-  if (context === undefined) {
-    throw new Error('useI18n must be used within an I18nProvider');
-  }
   return context;
 }
 
