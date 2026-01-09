@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { Play, Pause, ChevronLeft, ChevronRight, Minus, Plus, RotateCcw, Volume2, VolumeX } from 'lucide-react';
+import { Play, Pause, ChevronLeft, ChevronRight, Minus, Plus, RotateCcw, Volume2, VolumeX, Maximize, Minimize } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ChordDiagram } from '@/components/ChordDiagram';
@@ -32,8 +32,10 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [isPlayingSound, setIsPlayingSound] = useState(false);
   const [progress, setProgress] = useState(100);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const lastPlayedIndexRef = useRef<number>(-1);
   const progressIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   
   const speed = SPEED_OPTIONS[speedIndex];
   const currentChord = chords[currentIndex];
@@ -110,6 +112,35 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
     };
   }, [isPlaying, speed, totalChords]);
 
+  // Fullscreen toggle
+  const toggleFullscreen = useCallback(() => {
+    if (!containerRef.current) return;
+
+    if (!document.fullscreenElement) {
+      containerRef.current.requestFullscreen().then(() => {
+        setIsFullscreen(true);
+      }).catch((err) => {
+        console.error('Error entering fullscreen:', err);
+      });
+    } else {
+      document.exitFullscreen().then(() => {
+        setIsFullscreen(false);
+      }).catch((err) => {
+        console.error('Error exiting fullscreen:', err);
+      });
+    }
+  }, []);
+
+  // Listen for fullscreen changes (e.g., user presses Escape)
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
+  }, []);
+
   // Keyboard controls
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
     switch (e.key) {
@@ -134,8 +165,12 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
       case 'M':
         setSoundEnabled((prev) => !prev);
         break;
+      case 'f':
+      case 'F':
+        toggleFullscreen();
+        break;
     }
-  }, [totalChords]);
+  }, [totalChords, toggleFullscreen]);
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
@@ -172,9 +207,18 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto">
-      <Card className="shadow-2xl border-0 bg-white/90 backdrop-blur-sm overflow-hidden">
-        <CardContent className="p-6 md:p-8 lg:p-10">
+    <div 
+      ref={containerRef}
+      className={`w-full mx-auto ${
+        isFullscreen 
+          ? 'fixed inset-0 z-50 flex items-center justify-center bg-background p-4 overflow-auto' 
+          : 'max-w-4xl'
+      }`}
+    >
+      <Card className={`shadow-2xl border-0 bg-white/90 backdrop-blur-sm overflow-hidden ${
+        isFullscreen ? 'w-full max-w-5xl' : ''
+      }`}>
+        <CardContent className={`${isFullscreen ? 'p-8 md:p-12' : 'p-6 md:p-8 lg:p-10'}`}>
           {/* Header */}
           <div className="text-center mb-6">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
@@ -281,6 +325,16 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
                 title={soundEnabled ? t('ui.slideshow.sound_on') : t('ui.slideshow.sound_off')}
               >
                 {soundEnabled ? <Volume2 className="h-5 w-5" /> : <VolumeX className="h-5 w-5" />}
+              </Button>
+
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={toggleFullscreen}
+                className="h-10 w-10"
+                title={isFullscreen ? t('ui.slideshow.exit_fullscreen') : t('ui.slideshow.fullscreen')}
+              >
+                {isFullscreen ? <Minimize className="h-5 w-5" /> : <Maximize className="h-5 w-5" />}
               </Button>
             </div>
 
