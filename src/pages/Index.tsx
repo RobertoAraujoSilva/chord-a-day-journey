@@ -1,19 +1,27 @@
-
-import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Calendar, Music, Target, BookOpen, Trophy, Play } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { ChordDiagram } from '@/components/ChordDiagram';
-import { DaySelector } from '@/components/DaySelector';
-import { ProgressCircle } from '@/components/ProgressCircle';
-import { Header } from '@/components/Header';
-import { AudioPlayer } from '@/components/AudioPlayer';
-import { GuitarIntro } from '@/components/GuitarIntro';
-import { CompletionCelebration } from '@/components/CompletionCelebration';
-import { LoveMeDoLesson } from '@/components/LoveMeDoLesson';
-import { ChordSlideshow } from '@/components/ChordSlideshow';
-import { chords } from '@/data/chords';
-import { useTranslation } from '@/i18n/context';
+import { useState, useEffect } from "react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  Calendar,
+  Music,
+  Target,
+  BookOpen,
+  Trophy,
+  Play,
+} from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ChordDiagram } from "@/components/ChordDiagram";
+import { DaySelector } from "@/components/DaySelector";
+import { ProgressCircle } from "@/components/ProgressCircle";
+import { Header } from "@/components/Header";
+import { AudioPlayer } from "@/components/AudioPlayer";
+import { GuitarIntro } from "@/components/GuitarIntro";
+import { CompletionCelebration } from "@/components/CompletionCelebration";
+import { LoveMeDoLesson } from "@/components/LoveMeDoLesson";
+import { ChordSlideshow } from "@/components/ChordSlideshow";
+import { chords } from "@/data/chords";
+import { useTranslation } from "@/i18n/context";
 
 const Index = () => {
   const { t } = useTranslation();
@@ -22,29 +30,31 @@ const Index = () => {
   const [showIntro, setShowIntro] = useState(true);
   const [introCompleted, setIntroCompleted] = useState(false);
   const [streak, setStreak] = useState(0);
-  const [lastCompletedDate, setLastCompletedDate] = useState<string | null>(null);
+  const [lastCompletedDate, setLastCompletedDate] = useState<string | null>(
+    null
+  );
   const [showCelebration, setShowCelebration] = useState(false);
   const [showBonusLesson, setShowBonusLesson] = useState(false);
   const [showSlideshow, setShowSlideshow] = useState(false);
 
   useEffect(() => {
     // Load all persisted data from localStorage
-    const saved = localStorage.getItem('completedDays');
-    const savedIntro = localStorage.getItem('introCompleted');
-    const savedStreak = localStorage.getItem('streak');
-    const savedLastDate = localStorage.getItem('lastCompletedDate');
-    
+    const saved = localStorage.getItem("completedDays");
+    const savedIntro = localStorage.getItem("introCompleted");
+    const savedStreak = localStorage.getItem("streak");
+    const savedLastDate = localStorage.getItem("lastCompletedDate");
+
     // Parse completed days
     const parsedCompletedDays: number[] = saved ? JSON.parse(saved) : [];
     setCompletedDays(parsedCompletedDays);
-    
+
     // Calculate the next uncompleted lesson
     const calculateNextLesson = (completed: number[]): number => {
       if (completed.length === 0) return 1;
       const maxCompleted = Math.max(...completed);
       return Math.min(maxCompleted + 1, 30);
     };
-    
+
     if (savedIntro) {
       const introComplete = JSON.parse(savedIntro);
       setIntroCompleted(introComplete);
@@ -67,25 +77,25 @@ const Index = () => {
       const today = new Date().toDateString();
       const lastDate = new Date(savedLastDate).toDateString();
       const yesterday = new Date(Date.now() - 86400000).toDateString();
-      
+
       if (lastDate !== today && lastDate !== yesterday) {
         // Reset streak if more than 1 day has passed
         setStreak(0);
-        localStorage.setItem('streak', '0');
+        localStorage.setItem("streak", "0");
       }
     }
 
     // Save last access timestamp
-    localStorage.setItem('lastAccess', new Date().toISOString());
+    localStorage.setItem("lastAccess", new Date().toISOString());
   }, []);
 
   const markDayComplete = () => {
     const today = new Date().toDateString();
-    
+
     if (currentDay === 0) {
       // Completar lição introdutória
       setIntroCompleted(true);
-      localStorage.setItem('introCompleted', 'true');
+      localStorage.setItem("introCompleted", "true");
       setShowIntro(false);
       setCurrentDay(1);
       updateStreak(today);
@@ -94,9 +104,9 @@ const Index = () => {
       if (!completedDays.includes(currentDay)) {
         const newCompleted = [...completedDays, currentDay];
         setCompletedDays(newCompleted);
-        localStorage.setItem('completedDays', JSON.stringify(newCompleted));
+        localStorage.setItem("completedDays", JSON.stringify(newCompleted));
         updateStreak(today);
-        
+
         // Show celebration if completing Day 30
         if (currentDay === 30) {
           setTimeout(() => setShowCelebration(true), 500);
@@ -124,14 +134,14 @@ const Index = () => {
 
     setStreak(newStreak);
     setLastCompletedDate(today);
-    localStorage.setItem('streak', newStreak.toString());
-    localStorage.setItem('lastCompletedDate', today);
+    localStorage.setItem("streak", newStreak.toString());
+    localStorage.setItem("lastCompletedDate", today);
   };
 
   // Save currentDay to localStorage whenever it changes
   useEffect(() => {
     if (currentDay !== null && currentDay !== undefined) {
-      localStorage.setItem('currentDay', currentDay.toString());
+      localStorage.setItem("currentDay", currentDay.toString());
     }
   }, [currentDay]);
 
@@ -141,7 +151,7 @@ const Index = () => {
       setCurrentDay(0);
     } else {
       if (!introCompleted) {
-        alert(t('errors.intro_required'));
+        alert(t("errors.intro_required"));
         return;
       }
       setShowIntro(false);
@@ -175,22 +185,22 @@ const Index = () => {
     );
   }
 
-  // Se estamos mostrando a introdução
+  //========== TRANSFORMAR NA SEGUNDA PÁGINA (index.tsx) ========= //
+
   if (showIntro || currentDay === 0) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50">
         <Header />
-        
+
         <div className="container mx-auto px-4 md:px-8 lg:px-16 2xl:px-24 3xl:px-32 py-8 2xl:py-12 3xl:py-16">
-          {/* Navegação para lição introdutória */}
           <div className="mb-8 2xl:mb-12 3xl:mb-16">
             <div className="flex items-center justify-center gap-2 2xl:gap-3 mb-4 2xl:mb-6">
               <BookOpen className="h-5 w-5 2xl:h-6 2xl:w-6 3xl:h-8 3xl:w-8 text-orange-600" />
               <span className="text-lg 2xl:text-xl 3xl:text-2xl font-semibold text-gray-800">
-                {t('content.titles.intro_lesson')}
+                {t("content.titles.intro_lesson")}
               </span>
             </div>
-            
+
             {introCompleted && (
               <div className="text-center">
                 <Button
@@ -201,64 +211,64 @@ const Index = () => {
                   }}
                   className="mb-4"
                 >
-                  {t('ui.navigation.go_to_chords')} →
+                  {t("ui.navigation.go_to_chords")} →
                 </Button>
               </div>
             )}
           </div>
 
-          <GuitarIntro onComplete={markDayComplete} isCompleted={introCompleted} />
+          <GuitarIntro
+            onComplete={markDayComplete}
+            isCompleted={introCompleted}
+          />
         </div>
       </div>
     );
   }
 
+  //========== TRANSFORMAR NA SEGUNDA PÁGINA (chords.tsx) ========= //
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50">
       <Header />
-      
-      {/* Completion Celebration Modal */}
-      <CompletionCelebration 
-        isOpen={showCelebration} 
-        onClose={() => setShowCelebration(false)} 
+
+      <CompletionCelebration
+        isOpen={showCelebration}
+        onClose={() => setShowCelebration(false)}
       />
-      
+
       <div className="container mx-auto px-4 md:px-8 lg:px-16 2xl:px-24 3xl:px-32 py-8 2xl:py-12 3xl:py-16">
-        {/* Botão para voltar à introdução */}
         <div className="mb-6 2xl:mb-8 3xl:mb-12 text-center">
           <div className="flex flex-wrap justify-center gap-4">
             <Button
               variant="outline"
               onClick={() => {
                 setShowIntro(true);
-              setCurrentDay(0);
-            }}
-            className="flex items-center gap-2"
-          >
-            <BookOpen className="h-4 w-4" />
-            {t('ui.navigation.review_intro')}
-          </Button>
+                setCurrentDay(0);
+              }}
+              className="flex items-center gap-2"
+            >
+              <BookOpen className="h-4 w-4" />
+              {t("ui.navigation.review_intro")}
+            </Button>
 
-          <Button
-            variant="outline"
-            onClick={() => setShowSlideshow(true)}
-            className="flex items-center gap-2 bg-gradient-to-r from-orange-100 to-red-100 hover:from-orange-200 hover:to-red-200 border-orange-300"
-          >
-            <Play className="h-4 w-4" />
-            {t('ui.slideshow.open')}
-          </Button>
+            <Button
+              variant="outline"
+              onClick={() => setShowSlideshow(true)}
+              className="flex items-center gap-2 bg-gradient-to-r from-orange-100 to-red-100 hover:from-orange-200 hover:to-red-200 border-orange-300"
+            >
+              <Play className="h-4 w-4" />
+              {t("ui.slideshow.open")}
+            </Button>
           </div>
         </div>
 
-        {/* Progress Section with Circular Indicator */}
-        <ProgressCircle 
+        <ProgressCircle
           completedDays={completedDays.length}
           totalDays={30}
           currentDay={currentDay}
           streak={streak}
         />
 
-        {/* Bonus Lesson Button - Show after Day 30 is completed */}
         {isDay30Completed && (
           <div className="text-center my-8 2xl:my-12 3xl:my-16">
             <Button
@@ -266,34 +276,30 @@ const Index = () => {
               className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white h-14 2xl:h-18 3xl:h-22 px-10 2xl:px-14 3xl:px-18 text-lg 2xl:text-xl 3xl:text-2xl font-bold shadow-xl animate-pulse"
             >
               <Trophy className="h-6 w-6 2xl:h-7 2xl:w-7 3xl:h-8 3xl:w-8 mr-3" />
-              {t('ui.navigation.next_bonus_song')}
+              {t("ui.navigation.next_bonus_song")}
             </Button>
             <p className="mt-4 text-sm 2xl:text-base 3xl:text-lg text-gray-600">
-              🎉 {t('content.bonus.subtitle')}
+              🎉 {t("content.bonus.subtitle")}
             </p>
           </div>
         )}
-
-        {/* Day Selector - agora inclui Dia 0 */}
-        <DaySelector 
-          currentDay={currentDay} 
+        <DaySelector
+          currentDay={currentDay}
           completedDays={completedDays}
           onDaySelect={handleDaySelect}
           includeIntro={true}
           introCompleted={introCompleted}
         />
 
-        {/* Main Content */}
         {currentChord && (
           <div className="grid lg:grid-cols-2 gap-8 2xl:gap-12 3xl:gap-16 mt-8 2xl:mt-12 3xl:mt-16">
-            {/* Chord Information */}
             <Card className="p-6 shadow-xl border-0 bg-white/80 backdrop-blur-sm">
               <CardContent className="p-0">
                 <div className="text-center mb-6">
                   <div className="flex items-center justify-center gap-2 mb-2">
                     <Calendar className="h-5 w-5 text-orange-600" />
                     <span className="text-sm font-medium text-gray-600">
-                      {t('ui.labels.day')} {currentDay}
+                      {t("ui.labels.day")} {currentDay}
                     </span>
                   </div>
                   <h1 className="text-4xl 2xl:text-5xl 3xl:text-6xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-2 2xl:mb-3 3xl:mb-4">
@@ -302,23 +308,33 @@ const Index = () => {
                   <p className="text-lg 2xl:text-xl 3xl:text-2xl text-gray-600 mb-4 2xl:mb-6">
                     {t(`content.chords.${currentChord.name}.fullName`)}
                   </p>
-                  
-                  {/* Audio Player */}
+
                   <div className="mb-4">
-                    <AudioPlayer chordName={currentChord.name} className="justify-center" />
+                    <AudioPlayer
+                      chordName={currentChord.name}
+                      className="justify-center"
+                    />
                   </div>
-                  
+
                   <div className="flex justify-center gap-2">
                     {(() => {
-                      const difficulty = t(`content.chords.${currentChord.name}.difficulty`);
+                      const difficulty = t(
+                        `content.chords.${currentChord.name}.difficulty`
+                      );
                       const difficultyLower = difficulty.toLowerCase();
-                      if (difficultyLower === 'fácil' || difficultyLower === 'easy') {
+                      if (
+                        difficultyLower === "fácil" ||
+                        difficultyLower === "easy"
+                      ) {
                         return (
                           <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
                             {difficulty}
                           </span>
                         );
-                      } else if (difficultyLower === 'médio' || difficultyLower === 'medium') {
+                      } else if (
+                        difficultyLower === "médio" ||
+                        difficultyLower === "medium"
+                      ) {
                         return (
                           <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">
                             {difficulty}
@@ -339,7 +355,7 @@ const Index = () => {
                   <div>
                     <h3 className="font-semibold text-base 2xl:text-lg 3xl:text-xl text-gray-800 mb-2 2xl:mb-3 flex items-center gap-2">
                       <Target className="h-4 w-4 2xl:h-5 2xl:w-5 3xl:h-6 3xl:w-6" />
-                      {t('ui.labels.how_to_play')}
+                      {t("ui.labels.how_to_play")}
                     </h3>
                     <p className="text-sm 2xl:text-base 3xl:text-lg text-gray-700 leading-relaxed">
                       {t(`content.chords.${currentChord.name}.instructions`)}
@@ -349,7 +365,7 @@ const Index = () => {
                   <div>
                     <h3 className="font-semibold text-base 2xl:text-lg 3xl:text-xl text-gray-800 mb-2 2xl:mb-3 flex items-center gap-2">
                       <Music className="h-4 w-4 2xl:h-5 2xl:w-5 3xl:h-6 3xl:w-6" />
-                      {t('ui.labels.important_tip')}
+                      {t("ui.labels.important_tip")}
                     </h3>
                     <p className="text-sm 2xl:text-base 3xl:text-lg text-gray-700 leading-relaxed">
                       {t(`content.chords.${currentChord.name}.tip`)}
@@ -359,7 +375,7 @@ const Index = () => {
                   {currentChord.commonSongs && (
                     <div>
                       <h3 className="font-semibold text-base 2xl:text-lg 3xl:text-xl text-gray-800 mb-2 2xl:mb-3">
-                        {t('ui.labels.famous_songs')}
+                        {t("ui.labels.famous_songs")}
                       </h3>
                       <ul className="text-sm 2xl:text-base 3xl:text-lg text-gray-700 space-y-1 2xl:space-y-2">
                         {currentChord.commonSongs.map((song, index) => (
@@ -375,19 +391,16 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            {/* Chord Diagram */}
             <Card className="p-6 2xl:p-8 3xl:p-12 shadow-xl border-0 bg-white/80 backdrop-blur-sm">
               <CardContent className="p-0">
                 <h2 className="text-xl 2xl:text-2xl 3xl:text-3xl font-semibold text-center mb-6 2xl:mb-8 3xl:mb-12 text-gray-800">
-                  {t('ui.labels.chord_diagram')}
+                  {t("ui.labels.chord_diagram")}
                 </h2>
                 <ChordDiagram chord={currentChord} />
               </CardContent>
             </Card>
           </div>
         )}
-
-        {/* Navigation and Actions */}
         <div className="flex justify-between items-center mt-8 2xl:mt-12 3xl:mt-16">
           <Button
             variant="outline"
@@ -396,7 +409,7 @@ const Index = () => {
             className="flex items-center gap-2 h-10 2xl:h-14 3xl:h-16 px-4 2xl:px-6 3xl:px-8 text-sm 2xl:text-base 3xl:text-lg"
           >
             <ChevronLeft className="h-4 w-4 2xl:h-5 2xl:w-5 3xl:h-6 3xl:w-6" />
-            {t('ui.buttons.previous')}
+            {t("ui.buttons.previous")}
           </Button>
 
           <Button
@@ -404,7 +417,9 @@ const Index = () => {
             disabled={completedDays.includes(currentDay)}
             className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white h-10 2xl:h-14 3xl:h-16 px-8 2xl:px-12 3xl:px-16 text-sm 2xl:text-base 3xl:text-lg"
           >
-            {completedDays.includes(currentDay) ? t('ui.buttons.completed') : t('ui.buttons.complete')}
+            {completedDays.includes(currentDay)
+              ? t("ui.buttons.completed")
+              : t("ui.buttons.complete")}
           </Button>
 
           <Button
@@ -413,7 +428,7 @@ const Index = () => {
             disabled={currentDay === 30}
             className="flex items-center gap-2 h-10 2xl:h-14 3xl:h-16 px-4 2xl:px-6 3xl:px-8 text-sm 2xl:text-base 3xl:text-lg"
           >
-            {t('ui.buttons.next')}
+            {t("ui.buttons.next")}
             <ChevronRight className="h-4 w-4 2xl:h-5 2xl:w-5 3xl:h-6 3xl:w-6" />
           </Button>
         </div>

@@ -1,7 +1,6 @@
-
-import { Music, Guitar } from 'lucide-react';
-import { LanguageSwitcher } from './LanguageSwitcher';
-import { useTranslation } from '../i18n/context';
+import { Music, Guitar } from "lucide-react";
+import { LanguageSwitcher } from "./LanguageSwitcher";
+import { useTranslation } from "../i18n/context";
 
 export const Header = () => {
   const { t } = useTranslation();
@@ -16,8 +15,12 @@ export const Header = () => {
               <Music className="h-4 w-4 2xl:h-5 2xl:w-5 3xl:h-7 3xl:w-7 absolute -top-1 -right-1 text-yellow-300" />
             </div>
             <div className="text-center">
-              <h1 className="text-3xl 2xl:text-4xl 3xl:text-5xl font-bold">{t('ui.header.title')}</h1>
-              <p className="text-orange-100 mt-1 2xl:mt-2 text-sm 2xl:text-base 3xl:text-lg">{t('ui.header.subtitle')}</p>
+              <h1 className="text-3xl 2xl:text-4xl 3xl:text-5xl font-bold">
+                {t("ui.header.title")}
+              </h1>
+              <p className="text-orange-100 mt-1 2xl:mt-2 text-sm 2xl:text-base 3xl:text-lg">
+                {t("ui.header.subtitle")}
+              </p>
             </div>
           </div>
           <div className="flex items-center">

@@ -1,11 +1,18 @@
-// App component - main entry point
+import { Routes, Route } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { I18nProvider } from "./i18n/context";
-import Index from "./pages/Index";
+
+import MainLayout from "./layouts/MainLayout";
+
+import Home from "./pages/Home";
+import IntroLesson from "./pages/IntroLesson";
+import Lesson from "./pages/Lesson";
+import BonusLesson from "./pages/BonusLesson";
+import Slideshow from "./pages/Slideshow";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -16,13 +23,20 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
+
+        <Routes>
+          {/* Layout principal */}
+          <Route element={<MainLayout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/intro" element={<IntroLesson />} />
+            <Route path="/lesson/:day" element={<Lesson />} />
+            <Route path="/bonus" element={<BonusLesson />} />
+            <Route path="/slideshow" element={<Slideshow />} />
+          </Route>
+
+          {/* 404 */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </TooltipProvider>
     </I18nProvider>
   </QueryClientProvider>
