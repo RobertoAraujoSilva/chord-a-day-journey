@@ -1,28 +1,22 @@
-import { Header } from "@/components/Header";
 import { GuitarIntro } from "@/components/GuitarIntro";
 import { BookOpen } from "lucide-react";
+import { useProgress } from "@/contexts/ProgressContext";
+import { useTranslation } from "@/i18n/context";
 
-interface IntroLessonProps {
-  onComplete: () => void;
-  introCompleted: boolean;
-}
+export default function IntroLesson() {
+  const { introCompleted, markIntroComplete } = useProgress();
+  const { t } = useTranslation();
 
-export default function IntroLesson({
-  onComplete,
-  introCompleted,
-}: IntroLessonProps) {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50">
-      <div className="container mx-auto px-4 py-8">
-        <div className="text-center mb-8">
-          <div className="flex justify-center gap-2 mb-4">
-            <BookOpen className="h-6 w-6 text-orange-600" />
-            <h1 className="text-2xl font-bold">Lição Introdutória</h1>
-          </div>
+    <div className="space-y-8">
+      <div className="text-center">
+        <div className="flex justify-center gap-2 mb-4">
+          <BookOpen className="h-6 w-6 text-orange-600" />
+          <h1 className="text-2xl font-bold">{t("ui.navigation.intro_lesson")}</h1>
         </div>
-
-        <GuitarIntro onComplete={onComplete} isCompleted={introCompleted} />
       </div>
+
+      <GuitarIntro onComplete={markIntroComplete} isCompleted={introCompleted} />
     </div>
   );
 }

@@ -25,7 +25,6 @@ const App = () => (
         <Sonner />
 
         <Routes>
-          {/* Layout principal */}
           <Route element={<MainLayout />}>
             <Route path="/" element={<Home />} />
             <Route path="/intro" element={<IntroLesson />} />
@@ -34,7 +33,6 @@ const App = () => (
             <Route path="/slideshow" element={<Slideshow />} />
           </Route>
 
-          {/* 404 */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </TooltipProvider>
