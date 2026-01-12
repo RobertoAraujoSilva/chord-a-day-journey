@@ -2,6 +2,7 @@ import { Metronome } from "@/components/Metronome";
 import { useState } from "react";
 import { useTranslation } from "@/i18n/context";
 import { NavigationPanel } from "@/components/NavigationPanel";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import st from "./rythm.module.css";
 
 export default function RythmModule() {
@@ -10,25 +11,24 @@ export default function RythmModule() {
 
   return (
     <main className="flex flex-col gap-[2rem]">
+      <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '10px' }}>
+        <LanguageSwitcher />
+      </div>
       <NavigationPanel />
       <br />
       <section className={st.content}>
-        <h1 className="font-bold text-xl">Batidas Rítmicas</h1>
+        <h1 className="font-bold text-xl">{t("rythm.introduction.title")}</h1>
         <p>
-          Agora que você já dominou a mão esquerda com a montagem de acordes.
-          Está na hora de ir para a função da mão direita. A mão direita no
-          violão cumpre o papel de realizar as Batidas Rítmicas e Arpejos.
+          {t("rythm.introduction.concept-1")}
           <br />
-          <strong>Batida Rítmica</strong> é o nome dado as sequencias de
-          movimentos na mão direita (ou a mão oposta a que você monta acordes).
+          {t("rythm.introduction.concept-2")}
+          <br />
+          <strong>{t("rythm.introduction.title")}</strong> {t("rythm.introduction.concept-3")}
         </p>
         <br />
-        <h1 className="font-bold text-xl">
-          Antes de começarmos a ação, precisamos entender alguns conceitos
-        </h1>
+        <h1 className="font-bold text-xl">{t("rythm.get-start.title")}</h1>
         <p>
-          Durante esse módulo, iremos usar indicações com letras de seus dedos.
-          Eles são representados da seguinte forma:
+          {t("rythm.get-start.concept-1")}
         </p>
         <br />
         <ul className="font-bold">

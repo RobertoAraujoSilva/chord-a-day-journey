@@ -32,6 +32,18 @@ export interface TranslationObject {
     bonus: Record<string, string>;
   };
   errors: Record<string, string>;
+  rythm: {
+    introduction: {
+      title: string;
+      "concept-1": string;
+      "concept-2": string;
+      "concept-3": string;
+    };
+    "get-start": {
+      title: string;
+      "concept-1": string;
+    };
+  };
 }
 
 // Translation key type for type safety
@@ -56,7 +68,13 @@ export type TranslationKey =
   | `content.chords.${string}.instructions`
   | `content.chords.${string}.tip`
   | `content.bonus.${string}`
-  | `errors.${string}`;
+  | `errors.${string}`
+  | `rythm.introduction.title`
+  | `rythm.introduction.concept-1`
+  | `rythm.introduction.concept-2`
+  | `rythm.introduction.concept-3`
+  | `rythm.get-start.title`
+  | `rythm.get-start.concept-1`;
 
 // Translation function type
 export type TranslationFunction = (
@@ -86,5 +104,5 @@ export const SUPPORTED_LOCALES: Locale[] = ['pt-BR', 'en-US'];
 export const DEFAULT_LOCALE: Locale = 'pt-BR';
 
 // Translation file categories
-export const TRANSLATION_CATEGORIES = ['ui', 'lessons', 'content', 'errors'] as const;
+export const TRANSLATION_CATEGORIES = ['ui', 'lessons', 'content', 'errors', 'rythm'] as const;
 export type TranslationCategory = typeof TRANSLATION_CATEGORIES[number];
