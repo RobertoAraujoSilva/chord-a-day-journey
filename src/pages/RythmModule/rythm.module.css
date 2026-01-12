@@ -1,7 +1,9 @@
 .content {
-  box-shadow: 2px 5px 10px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 5px 25px 1px rgba(0, 0, 0, 0.12);
   padding: 2rem;
+  background-color: #fff;
   border-radius: 15px;
+  border: 1px solid rgba(255, 196, 0, 0.37);
 }
 
 .setas {

@@ -11,11 +11,7 @@ export default function RythmModule() {
 
   return (
     <main className="flex flex-col gap-[2rem]">
-      <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '10px' }}>
-        <LanguageSwitcher />
-      </div>
       <NavigationPanel />
-      <br />
       <section className={st.content}>
         <h1 className="font-bold text-xl">{t("rythm.introduction.title")}</h1>
         <p>
@@ -23,13 +19,12 @@ export default function RythmModule() {
           <br />
           {t("rythm.introduction.concept-2")}
           <br />
-          <strong>{t("rythm.introduction.title")}</strong> {t("rythm.introduction.concept-3")}
+          <strong>{t("rythm.introduction.title")}</strong>{" "}
+          {t("rythm.introduction.concept-3")}
         </p>
         <br />
         <h1 className="font-bold text-xl">{t("rythm.get-start.title")}</h1>
-        <p>
-          {t("rythm.get-start.concept-1")}
-        </p>
+        <p>{t("rythm.get-start.concept-1")}</p>
         <br />
         <ul className="font-bold">
           <li>{t("rythm.finger-notation.thumb")}</li>
@@ -44,11 +39,14 @@ export default function RythmModule() {
         </p>
         <br />
         <p>
-          {t("rythm.basic-movements.title")} <br /> {t("rythm.basic-movements.description")}
+          {t("rythm.basic-movements.title")} <br />{" "}
+          {t("rythm.basic-movements.description")}
         </p>
         <ul className={st.setas}>
           <li className="flex gap-2">
-            <h2 className="font-bold text-2xl flex-1">{t("rythm.strumming-directions.down-title")}</h2>
+            <h2 className="font-bold text-2xl flex-1">
+              {t("rythm.strumming-directions.down-title")}
+            </h2>
             <img
               className="size-[120px] object-contain "
               src="/setas/seta_baixo.png"
@@ -56,7 +54,9 @@ export default function RythmModule() {
             />
           </li>
           <li className="flex gap-2">
-            <h2 className="font-bold text-2xl">{t("rythm.strumming-directions.up-title")}</h2>
+            <h2 className="font-bold text-2xl">
+              {t("rythm.strumming-directions.up-title")}
+            </h2>
             <img
               className="size-[120px] object-contain "
               src="/setas/seta_cima.png"
@@ -65,14 +65,12 @@ export default function RythmModule() {
           </li>
         </ul>
         <br />
-        <p>
-          {t("rythm.muted-strumming.explanation")}
-        </p>
+        <p>{t("rythm.muted-strumming.explanation")}</p>
         <br />
         <ul className={st.setas}>
           <li className="flex gap-2">
             <h2 className="font-bold text-2xl flex-1">
-{t("rythm.muted-strumming.down-muted-title")}
+              {t("rythm.muted-strumming.down-muted-title")}
             </h2>
             <img
               className="size-[120px] object-contain "
@@ -81,7 +79,9 @@ export default function RythmModule() {
             />
           </li>
           <li className="flex gap-2">
-            <h2 className="font-bold text-2xl">Batida para Cima Abafada</h2>
+            <h2 className="font-bold text-2xl">
+              {t("rythm.muted-strumming.up-muted-alt")}
+            </h2>
             <img
               className="size-[120px] object-contain "
               src="/setas/seta_cima_ab.png"
@@ -90,27 +90,23 @@ export default function RythmModule() {
           </li>
         </ul>
         <br />
-        <p>
-          {t("rythm.muted-strumming.technique-note")}
-        </p>
+        <p>{t("rythm.muted-strumming.technique-note")}</p>
         <br />
-        <p>
-          {t("rythm.muted-strumming.conclusion")}
-        </p>
+        <p>{t("rythm.muted-strumming.conclusion")}</p>
       </section>
       <section className={st.content}>
-        <h1 className="font-bold text-xl">{t("rythm.rhythmic-sequences.title")}</h1>
-        <p>
-          {t("rythm.rhythmic-sequences.intro")}
-        </p>
+        <h1 className="font-bold text-xl">
+          {t("rythm.rhythmic-sequences.title")}
+        </h1>
+        <p>{t("rythm.rhythmic-sequences.intro")}</p>
         <br />
-        <p>
-          {t("rythm.rhythmic-sequences.styles")}
-        </p>
+        <p>{t("rythm.rhythmic-sequences.styles")}</p>
         <br />
         <p>{t("rythm.rhythmic-sequences.practice")}</p>
         <br />
-        <h1 className="font-bold text-xl mb-[2rem]">{t("rythm.music-styles.rock-pop")}</h1>
+        <h1 className="font-bold text-xl mb-[2rem]">
+          {t("rythm.music-styles.rock-pop")}
+        </h1>
         <ul className="flex justify-center">
           <li className="mr-[1.5rem]">
             <img
@@ -195,7 +191,9 @@ export default function RythmModule() {
             />
           </li>
         </ul>
-        <h1 className="font-bold text-xl mt-[2rem] mb-[2rem]">{t("rythm.music-styles.reggae")}</h1>
+        <h1 className="font-bold text-xl mt-[2rem] mb-[2rem]">
+          {t("rythm.music-styles.reggae")}
+        </h1>
         <ul className="flex justify-center">
           <li className="">
             <img
@@ -228,9 +226,7 @@ export default function RythmModule() {
           </li>
         </ul>
         <h1 className="font-bold text-xl mt-[2rem] mb-[15px]">Bolero</h1>
-        <p className="mb-[2rem]">
-          {t("rythm.music-styles.bolero-intro")}
-        </p>
+        <p className="mb-[2rem]">{t("rythm.music-styles.bolero-intro")}</p>
         <ul className="flex justify-center">
           <li className="mr-[2rem]">
             <img
@@ -263,41 +259,27 @@ export default function RythmModule() {
         </ul>
         <br />
         <p className="flex justify-center mt-[2rem]">
-          <strong>
-            {t("rythm.music-styles.spacing-note")}
-          </strong>
+          <strong>{t("rythm.music-styles.spacing-note")}</strong>
         </p>
       </section>
       <section className={st.content}>
-        <h1 className="font-bold text-xl">
-          {t("rythm.metronome.title")}
-        </h1>
+        <h1 className="font-bold text-xl">{t("rythm.metronome.title")}</h1>
         <br />
-        <p>
-          {t("rythm.metronome.definition")}
-        </p>
-        <p>
-          {t("rythm.metronome.function")}
-        </p>
+        <p>{t("rythm.metronome.definition")}</p>
+        <p>{t("rythm.metronome.function")}</p>
         <br />
-        <p>
-          {t("rythm.metronome.problem")}
-        </p>
+        <p>{t("rythm.metronome.problem")}</p>
         <br />
-        <p>
-          {t("rythm.metronome.measurement")}
-        </p>
+        <p>{t("rythm.metronome.measurement")}</p>
         <br />
-        <p>
-          {t("rythm.metronome.importance")}
-        </p>
+        <p>{t("rythm.metronome.importance")}</p>
         <br />
-        <p>
-          {t("rythm.metronome.practice-instructions")}
-        </p>
+        <p>{t("rythm.metronome.practice-instructions")}</p>
         <br />
         <p>{t("rythm.metronome.video-instruction")}</p>
-        <div className={st.caixavideo}>{t("rythm.metronome.video-placeholder")}</div>
+        <div className={st.caixavideo}>
+          {t("rythm.metronome.video-placeholder")}
+        </div>
       </section>
     </main>
   );
