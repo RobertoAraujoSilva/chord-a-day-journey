@@ -18,10 +18,14 @@ export async function loadTranslations(locale: Locale): Promise<TranslationObjec
     }
     
     // Load all translation categories for the locale
+    console.log(`Loading translations for locale: ${locale}`);
     for (const category of TRANSLATION_CATEGORIES) {
       try {
+        console.log(`Loading category: ${category}`);
         const module = await import(`./locales/${locale}/${category}.json`);
         const categoryData = module.default || module;
+        
+        console.log(`Loaded ${category}:`, Object.keys(categoryData || {}).slice(0, 5));
         
         // Validate the loaded data structure
         if (!validateTranslationData(categoryData, category)) {
@@ -29,6 +33,7 @@ export async function loadTranslations(locale: Locale): Promise<TranslationObjec
         }
         
         (translations as any)[category] = categoryData;
+        console.log(`Successfully loaded category ${category}`);
       } catch (categoryError) {
         const errorMessage = categoryError instanceof Error ? categoryError.message : 'Unknown error';
         loadingErrors.push(`Failed to load ${category}: ${errorMessage}`);

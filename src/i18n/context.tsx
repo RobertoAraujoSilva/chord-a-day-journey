@@ -132,7 +132,8 @@ export function I18nProvider({ children }: I18nProviderProps) {
             },
             lessons: { intro: {}, chords: {}, instructions: {} },
             content: { titles: {}, descriptions: {}, tips: {}, chords: {}, bonus: {} },
-            errors: { loading_failed: 'Failed to load translations' }
+            errors: { loading_failed: 'Failed to load translations' },
+            rythm: { introduction: { title: '', 'concept-1': '', 'concept-2': '', 'concept-3': '' }, 'get-start': { title: '', 'concept-1': '' } }
           };
           setTranslations(minimalTranslations);
         }
@@ -152,7 +153,8 @@ export function I18nProvider({ children }: I18nProviderProps) {
           },
           lessons: { intro: {}, chords: {}, instructions: {} },
           content: { titles: {}, descriptions: {}, tips: {}, chords: {}, bonus: {} },
-          errors: { loading_failed: 'Failed to load translations' }
+          errors: { loading_failed: 'Failed to load translations' },
+          rythm: { introduction: { title: '', 'concept-1': '', 'concept-2': '', 'concept-3': '' }, 'get-start': { title: '', 'concept-1': '' } }
         };
         setTranslations(minimalTranslations);
       }
@@ -179,22 +181,28 @@ export function I18nProvider({ children }: I18nProviderProps) {
    */
   function t(key: TranslationKey, variables?: Record<string, any>): string {
     try {
+      // If still loading, return loading indicator or key
+      if (isLoading) {
+        console.debug(`Translation system still loading, returning key: ${key}`);
+        return `[${key}]`;
+      }
+      
       const value = getNestedValue(translations, key);
       
       if (value === undefined) {
         console.warn(`Translation key not found: ${key}`);
-        return key; // Return key as fallback
+        return `[MISSING: ${key}]`; // Return key with indicator
       }
       
       if (typeof value !== 'string') {
         console.warn(`Translation value is not a string for key: ${key}`, value);
-        return key;
+        return `[INVALID: ${key}]`;
       }
       
       return interpolateVariables(value, variables);
     } catch (error) {
       console.error(`Error in translation function for key ${key}:`, error);
-      return key; // Return key as safe fallback
+      return `[ERROR: ${key}]`; // Return key as safe fallback
     }
   }
 
