@@ -50,6 +50,19 @@ export function NavigationPanel() {
         <Play className="h-4 w-4" />
         {t("ui.slideshow.open")}
       </Button>
+
+      {/* Rythm Module */}
+      <Button
+        variant={isActive("/RythmModule/rythm") ? "default" : "outline"}
+        onClick={() => navigate("/RythmModule/rythm")}
+        className={clsx(
+          "flex gap-2",
+          isActive("/RythmModule/rythm") && "bg-blue-500 text-white"
+        )}
+      >
+        <Play className="h-4 w-4" />
+        {t("ui.navigation.go_to_rythm")}
+      </Button>
     </div>
   );
 }

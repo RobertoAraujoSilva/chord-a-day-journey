@@ -14,6 +14,7 @@ import Lesson from "./pages/Lesson";
 import BonusLesson from "./pages/BonusLesson";
 import Slideshow from "./pages/Slideshow";
 import NotFound from "./pages/NotFound";
+import RythmModule from "./pages/RythmModule/rythm";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
             <Route path="/lesson/:day" element={<Lesson />} />
             <Route path="/bonus" element={<BonusLesson />} />
             <Route path="/slideshow" element={<Slideshow />} />
+            <Route path="/RythmModule/rythm" element={<RythmModule />} />
           </Route>
 
           <Route path="*" element={<NotFound />} />

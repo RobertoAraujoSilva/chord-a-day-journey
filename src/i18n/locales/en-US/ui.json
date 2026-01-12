@@ -4,15 +4,16 @@
     "subtitle": "Learn guitar gradually and consistently"
   },
   "navigation": {
-    "home": "Home",
+    "home": "Chords",
     "lessons": "Lessons",
     "progress": "Progress",
     "select_day": "Select Day",
     "intro_lesson": "Introductory Lesson",
-    "review_intro": "Review Introductory Lesson",
+    "review_intro": "Introductory Lesson",
     "go_to_chords": "Go to Chords",
     "next_bonus_song": "Next: Bonus Song!",
-    "back_to_chords": "Back to Chords"
+    "back_to_chords": "Back to Chords",
+    "go_to_rythm": "Rythm Module"
   },
   "buttons": {
     "start": "Start",

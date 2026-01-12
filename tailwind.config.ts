@@ -27,7 +27,9 @@ export default {
     },
     extend: {
       screens: {
-        "3xl": "1920px",
+        "3xl": "1920px", // Full HD / TVs grandes
+        "4xl": "2560px", // QHD
+        tv: "3840px", // 4K TVs
       },
       colors: {
         border: "hsl(var(--border))",

@@ -249,7 +249,13 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
           : "max-w-4xl"
       }`}
     >
-      <NavigationPanel />
+      {!isFullscreen && (
+        <>
+          <NavigationPanel />
+          <br />
+        </>
+      )}
+
       <Card
         className={`shadow-2xl border-0 bg-white/90 backdrop-blur-sm overflow-hidden ${
           isFullscreen ? "w-full max-w-5xl" : ""
