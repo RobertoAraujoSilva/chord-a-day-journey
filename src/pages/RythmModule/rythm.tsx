@@ -289,6 +289,51 @@ export default function RythmModule() {
           </strong>
         </p>
       </section>
+      <section className={st.content}>
+        <h1 className="font-bold text-xl">
+          Uso do metrônomo para batidas rítmicas
+        </h1>
+        <br />
+        <p>
+          O metrônomo funciona como uma espécie de
+          <strong> relógio musical</strong>.
+        </p>
+        <p>
+          Ele emite pulsos sonoros (cliques ou bipes) em intervalos
+          perfeitamente regulares para ajudar o músico a manter uma velocidade
+          constante.
+        </p>
+        <br />
+        <p>
+          Sem essa referência, é natural que a gente acelere ou atrase o ritmo
+          involuntariamente, dependendo da empolgação ou da dificuldade de uma
+          parte da música.
+        </p>
+        <br />
+        <p>
+          Na prática, ele mede as <strong>Batidas Por Minuto (BPM)</strong>. Se
+          você configurar para 60 BPM, ele soará exatamente uma vez por segundo;
+          se aumentar para 120 BPM, ele soará duas vezes mais rápido.
+        </p>
+        <br />
+        <p>
+          Usá-lo é essencial para treinar a precisão e garantir que todos os
+          músicos de uma banda estejam "falando a mesma língua" rítmica, criando
+          uma base sólida para qualquer batida.
+        </p>
+        <br />
+        <p>
+          Em cada exercício, vai estar a indicação de quantos BPM você por o
+          metrônomo. Seu objetivo vai ser encaixar todos os movimentos dentro
+          dos 4 bips do metrônomo, sempre se concentrando em encaixar a primeira
+          batida com o primeiro Bip. Comece sempre treinando as batidas (sem o
+          metrônomo) e quando se sentir confortável ative o metrônomo e tente
+          sincronizar.
+        </p>
+        <br />
+        <p>Veja o vídeo de como sincronizar o metrônomo com a sua batida.</p>
+        <div className={st.caixavideo}>Vou adicionar o vídeo aqui</div>
+      </section>
     </main>
   );
 }
