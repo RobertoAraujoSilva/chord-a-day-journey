@@ -1,37 +1,20 @@
 import { ProgressCircle } from "@/components/ProgressCircle";
 import { DaySelector } from "@/components/DaySelector";
-import { Button } from "@/components/ui/button";
-import { BookOpen, Play } from "lucide-react";
+import { NavigationPanel } from "@/components/NavigationPanel";
+
 import { useNavigate } from "react-router-dom";
 import { useProgress } from "@/contexts/ProgressContext";
-import { useTranslation } from "@/i18n/context";
+
+import { LessonContent } from "@/components/LessonContent";
 
 export default function Home() {
   const navigate = useNavigate();
-  const { currentDay, completedDays, introCompleted, streak } = useProgress();
-  const { t } = useTranslation();
+  const { currentDay, completedDays, introCompleted, streak, setCurrentDay } =
+    useProgress();
 
   return (
     <div className="space-y-8">
-      <div className="flex justify-center gap-4">
-        <Button
-          variant="outline"
-          onClick={() => navigate("/intro")}
-          className="flex gap-2"
-        >
-          <BookOpen className="h-4 w-4" />
-          {t("ui.navigation.review_intro")}
-        </Button>
-
-        <Button
-          variant="outline"
-          onClick={() => navigate("/slideshow")}
-          className="flex gap-2"
-        >
-          <Play className="h-4 w-4" />
-          {t("ui.slideshow.open")}
-        </Button>
-      </div>
+      <NavigationPanel />
 
       <ProgressCircle
         completedDays={completedDays.length}
@@ -45,10 +28,16 @@ export default function Home() {
         completedDays={completedDays}
         includeIntro
         introCompleted={introCompleted}
-        onDaySelect={(day) =>
-          day === 0 ? navigate("/intro") : navigate(`/lesson/${day}`)
-        }
+        onDaySelect={(day) => {
+          if (day === 0) {
+            navigate("/intro");
+          } else {
+            setCurrentDay(day);
+          }
+        }}
       />
+
+      <LessonContent day={currentDay} />
     </div>
   );
 }

@@ -1,14 +1,29 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
-import { Play, Pause, ChevronLeft, ChevronRight, Minus, Plus, RotateCcw, Volume2, VolumeX, Maximize, Minimize } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { ChordDiagram } from '@/components/ChordDiagram';
-import { Metronome } from '@/components/Metronome';
-import { chords } from '@/data/chords';
-import { useTranslation, useI18n } from '@/i18n/context';
-import { playGeneratedChord, stopAllAudio } from '@/utils/audioGenerator';
+import { useState, useEffect, useCallback, useRef } from "react";
+import {
+  Play,
+  Pause,
+  ChevronLeft,
+  ChevronRight,
+  Minus,
+  Plus,
+  RotateCcw,
+  Volume2,
+  VolumeX,
+  Maximize,
+  Minimize,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { ChordDiagram } from "@/components/ChordDiagram";
+import { Metronome } from "@/components/Metronome";
+import { chords } from "@/data/chords";
+import { useTranslation, useI18n } from "@/i18n/context";
+import { playGeneratedChord, stopAllAudio } from "@/utils/audioGenerator";
+import { NavigationPanel } from "./NavigationPanel";
 
-const SPEED_OPTIONS = [1000, 2000, 3000, 5000, 7000, 10000, 15000, 20000, 30000];
+const SPEED_OPTIONS = [
+  1000, 2000, 3000, 5000, 7000, 10000, 15000, 20000, 30000,
+];
 
 interface ChordSlideshowProps {
   onClose?: () => void;
@@ -38,24 +53,27 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
   const lastPlayedIndexRef = useRef<number>(-1);
   const progressIntervalRef = useRef<NodeJS.Timeout | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  
+
   const speed = SPEED_OPTIONS[speedIndex];
   const currentChord = chords[currentIndex];
   const totalChords = chords.length;
 
   // Play chord sound when index changes
-  const playChordSound = useCallback(async (chordName: string) => {
-    if (!soundEnabled || isPlayingSound) return;
-    
-    setIsPlayingSound(true);
-    try {
-      await playGeneratedChord(chordName, Math.min(speed / 1000, 2.5));
-    } catch (error) {
-      console.error('Error playing chord:', error);
-    } finally {
-      setIsPlayingSound(false);
-    }
-  }, [soundEnabled, isPlayingSound, speed]);
+  const playChordSound = useCallback(
+    async (chordName: string) => {
+      if (!soundEnabled || isPlayingSound) return;
+
+      setIsPlayingSound(true);
+      try {
+        await playGeneratedChord(chordName, Math.min(speed / 1000, 2.5));
+      } catch (error) {
+        console.error("Error playing chord:", error);
+      } finally {
+        setIsPlayingSound(false);
+      }
+    },
+    [soundEnabled, isPlayingSound, speed]
+  );
 
   // Trigger sound on chord change
   useEffect(() => {
@@ -119,17 +137,23 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
     if (!containerRef.current) return;
 
     if (!document.fullscreenElement) {
-      containerRef.current.requestFullscreen().then(() => {
-        setIsFullscreen(true);
-      }).catch((err) => {
-        console.error('Error entering fullscreen:', err);
-      });
+      containerRef.current
+        .requestFullscreen()
+        .then(() => {
+          setIsFullscreen(true);
+        })
+        .catch((err) => {
+          console.error("Error entering fullscreen:", err);
+        });
     } else {
-      document.exitFullscreen().then(() => {
-        setIsFullscreen(false);
-      }).catch((err) => {
-        console.error('Error exiting fullscreen:', err);
-      });
+      document
+        .exitFullscreen()
+        .then(() => {
+          setIsFullscreen(false);
+        })
+        .catch((err) => {
+          console.error("Error exiting fullscreen:", err);
+        });
     }
   }, []);
 
@@ -139,48 +163,52 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
       setIsFullscreen(!!document.fullscreenElement);
     };
 
-    document.addEventListener('fullscreenchange', handleFullscreenChange);
-    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    return () =>
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
   }, []);
 
   // Keyboard controls
-  const handleKeyDown = useCallback((e: KeyboardEvent) => {
-    switch (e.key) {
-      case ' ':
-        e.preventDefault();
-        setIsPlaying((prev) => !prev);
-        break;
-      case 'ArrowLeft':
-        setCurrentIndex((prev) => (prev - 1 + totalChords) % totalChords);
-        break;
-      case 'ArrowRight':
-        setCurrentIndex((prev) => (prev + 1) % totalChords);
-        break;
-      case '+':
-      case '=':
-        setSpeedIndex((prev) => Math.max(0, prev - 1)); // Faster = lower index
-        break;
-      case '-':
-        setSpeedIndex((prev) => Math.min(SPEED_OPTIONS.length - 1, prev + 1)); // Slower = higher index
-        break;
-      case 'm':
-      case 'M':
-        setSoundEnabled((prev) => !prev);
-        break;
-      case 'f':
-      case 'F':
-        toggleFullscreen();
-        break;
-      case 'b':
-      case 'B':
-        setMetronomeEnabled((prev) => !prev);
-        break;
-    }
-  }, [totalChords, toggleFullscreen]);
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      switch (e.key) {
+        case " ":
+          e.preventDefault();
+          setIsPlaying((prev) => !prev);
+          break;
+        case "ArrowLeft":
+          setCurrentIndex((prev) => (prev - 1 + totalChords) % totalChords);
+          break;
+        case "ArrowRight":
+          setCurrentIndex((prev) => (prev + 1) % totalChords);
+          break;
+        case "+":
+        case "=":
+          setSpeedIndex((prev) => Math.max(0, prev - 1)); // Faster = lower index
+          break;
+        case "-":
+          setSpeedIndex((prev) => Math.min(SPEED_OPTIONS.length - 1, prev + 1)); // Slower = higher index
+          break;
+        case "m":
+        case "M":
+          setSoundEnabled((prev) => !prev);
+          break;
+        case "f":
+        case "F":
+          toggleFullscreen();
+          break;
+        case "b":
+        case "B":
+          setMetronomeEnabled((prev) => !prev);
+          break;
+      }
+    },
+    [totalChords, toggleFullscreen]
+  );
 
   useEffect(() => {
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, [handleKeyDown]);
 
   const goToPrevious = () => {
@@ -213,25 +241,33 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
   };
 
   return (
-    <div 
+    <div
       ref={containerRef}
       className={`w-full mx-auto ${
-        isFullscreen 
-          ? 'fixed inset-0 z-50 flex items-center justify-center bg-background p-4 overflow-auto' 
-          : 'max-w-4xl'
+        isFullscreen
+          ? "fixed inset-0 z-50 flex items-center justify-center bg-background p-4 overflow-auto"
+          : "max-w-4xl"
       }`}
     >
-      <Card className={`shadow-2xl border-0 bg-white/90 backdrop-blur-sm overflow-hidden ${
-        isFullscreen ? 'w-full max-w-5xl' : ''
-      }`}>
-        <CardContent className={`${isFullscreen ? 'p-8 md:p-12' : 'p-6 md:p-8 lg:p-10'}`}>
+      <NavigationPanel />
+      <Card
+        className={`shadow-2xl border-0 bg-white/90 backdrop-blur-sm overflow-hidden ${
+          isFullscreen ? "w-full max-w-5xl" : ""
+        }`}
+      >
+        <CardContent
+          className={`${isFullscreen ? "p-8 md:p-12" : "p-6 md:p-8 lg:p-10"}`}
+        >
           {/* Header */}
           <div className="text-center mb-6">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-              {t('ui.slideshow.title')}
+              {t("ui.slideshow.title")}
             </h2>
             <p className="text-muted-foreground mt-2">
-              {t('ui.slideshow.chord_of', { current: currentIndex + 1, total: totalChords })}
+              {t("ui.slideshow.chord_of", {
+                current: currentIndex + 1,
+                total: totalChords,
+              })}
             </p>
           </div>
 
@@ -266,10 +302,10 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
                 onClick={() => setCurrentIndex(index)}
                 className={`w-2.5 h-2.5 rounded-full transition-all duration-200 ${
                   index === currentIndex
-                    ? 'bg-orange-500 scale-125'
+                    ? "bg-orange-500 scale-125"
                     : index < currentIndex
-                    ? 'bg-orange-300'
-                    : 'bg-gray-300'
+                    ? "bg-orange-300"
+                    : "bg-gray-300"
                 }`}
                 aria-label={`Go to chord ${index + 1}`}
               />
@@ -293,8 +329,8 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
                 onClick={() => setIsPlaying(!isPlaying)}
                 className={`h-14 w-14 rounded-full ${
                   isPlaying
-                    ? 'bg-red-500 hover:bg-red-600'
-                    : 'bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600'
+                    ? "bg-red-500 hover:bg-red-600"
+                    : "bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600"
                 }`}
               >
                 {isPlaying ? (
@@ -318,7 +354,7 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
                 size="icon"
                 onClick={resetSlideshow}
                 className="h-10 w-10"
-                title={t('ui.slideshow.reset')}
+                title={t("ui.slideshow.reset")}
               >
                 <RotateCcw className="h-5 w-5" />
               </Button>
@@ -327,10 +363,22 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
                 variant={soundEnabled ? "default" : "ghost"}
                 size="icon"
                 onClick={toggleSound}
-                className={`h-10 w-10 ${soundEnabled ? 'bg-orange-500 hover:bg-orange-600 text-white' : ''}`}
-                title={soundEnabled ? t('ui.slideshow.sound_on') : t('ui.slideshow.sound_off')}
+                className={`h-10 w-10 ${
+                  soundEnabled
+                    ? "bg-orange-500 hover:bg-orange-600 text-white"
+                    : ""
+                }`}
+                title={
+                  soundEnabled
+                    ? t("ui.slideshow.sound_on")
+                    : t("ui.slideshow.sound_off")
+                }
               >
-                {soundEnabled ? <Volume2 className="h-5 w-5" /> : <VolumeX className="h-5 w-5" />}
+                {soundEnabled ? (
+                  <Volume2 className="h-5 w-5" />
+                ) : (
+                  <VolumeX className="h-5 w-5" />
+                )}
               </Button>
 
               <Button
@@ -338,16 +386,24 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
                 size="icon"
                 onClick={toggleFullscreen}
                 className="h-10 w-10"
-                title={isFullscreen ? t('ui.slideshow.exit_fullscreen') : t('ui.slideshow.fullscreen')}
+                title={
+                  isFullscreen
+                    ? t("ui.slideshow.exit_fullscreen")
+                    : t("ui.slideshow.fullscreen")
+                }
               >
-                {isFullscreen ? <Minimize className="h-5 w-5" /> : <Maximize className="h-5 w-5" />}
+                {isFullscreen ? (
+                  <Minimize className="h-5 w-5" />
+                ) : (
+                  <Maximize className="h-5 w-5" />
+                )}
               </Button>
             </div>
 
             {/* Speed Controls */}
             <div className="flex items-center gap-3 bg-secondary/50 rounded-full px-4 py-2">
               <span className="text-sm font-medium text-muted-foreground">
-                {t('ui.slideshow.speed')}:
+                {t("ui.slideshow.speed")}:
               </span>
               <Button
                 variant="ghost"
@@ -379,23 +435,23 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
               isActive={metronomeEnabled}
               onToggle={() => setMetronomeEnabled((prev) => !prev)}
               labels={{
-                metronome_on: t('ui.slideshow.metronome_on'),
-                metronome_off: t('ui.slideshow.metronome_off'),
-                bpm: t('ui.slideshow.bpm')
+                metronome_on: t("ui.slideshow.metronome_on"),
+                metronome_off: t("ui.slideshow.metronome_off"),
+                bpm: t("ui.slideshow.bpm"),
               }}
             />
           </div>
 
           {/* Keyboard Shortcuts Hint */}
           <p className="text-center text-xs text-muted-foreground mt-6">
-            {t('ui.slideshow.keyboard_hint')}
+            {t("ui.slideshow.keyboard_hint")}
           </p>
 
           {/* Close Button */}
           {onClose && (
             <div className="text-center mt-6">
               <Button variant="outline" onClick={onClose}>
-                {t('ui.slideshow.close')}
+                {t("ui.slideshow.close")}
               </Button>
             </div>
           )}

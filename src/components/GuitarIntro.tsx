@@ -18,6 +18,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Progress } from "@/components/ui/progress";
 import { useTranslation } from "@/i18n/context";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 interface GuitarIntroProps {
   onComplete: () => void;
