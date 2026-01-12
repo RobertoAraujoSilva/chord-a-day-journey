@@ -74,7 +74,44 @@ export type TranslationKey =
   | `rythm.introduction.concept-2`
   | `rythm.introduction.concept-3`
   | `rythm.get-start.title`
-  | `rythm.get-start.concept-1`;
+  | `rythm.get-start.concept-1`
+  | `rythm.finger-notation.thumb`
+  | `rythm.finger-notation.index`
+  | `rythm.finger-notation.middle`
+  | `rythm.finger-notation.ring`
+  | `rythm.hand-terminology.attack-hand`
+  | `rythm.hand-terminology.chord-hand`
+  | `rythm.basic-movements.title`
+  | `rythm.basic-movements.description`
+  | `rythm.strumming-directions.down-title`
+  | `rythm.strumming-directions.down-alt`
+  | `rythm.strumming-directions.up-title`
+  | `rythm.strumming-directions.up-alt`
+  | `rythm.muted-strumming.explanation`
+  | `rythm.muted-strumming.down-muted-title`
+  | `rythm.muted-strumming.down-muted-alt`
+  | `rythm.muted-strumming.up-muted-title`
+  | `rythm.muted-strumming.up-muted-alt`
+  | `rythm.muted-strumming.technique-note`
+  | `rythm.muted-strumming.conclusion`
+  | `rythm.rhythmic-sequences.title`
+  | `rythm.rhythmic-sequences.intro`
+  | `rythm.rhythmic-sequences.styles`
+  | `rythm.rhythmic-sequences.practice`
+  | `rythm.music-styles.rock-pop`
+  | `rythm.music-styles.sertanejo`
+  | `rythm.music-styles.reggae`
+  | `rythm.music-styles.bolero-intro`
+  | `rythm.music-styles.spacing-note`
+  | `rythm.metronome.title`
+  | `rythm.metronome.definition`
+  | `rythm.metronome.function`
+  | `rythm.metronome.problem`
+  | `rythm.metronome.measurement`
+  | `rythm.metronome.importance`
+  | `rythm.metronome.practice-instructions`
+  | `rythm.metronome.video-instruction`
+  | `rythm.metronome.video-placeholder`;
 
 // Translation function type
 export type TranslationFunction = (

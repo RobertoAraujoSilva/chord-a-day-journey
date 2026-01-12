@@ -32,61 +32,52 @@ export default function RythmModule() {
         </p>
         <br />
         <ul className="font-bold">
-          <li>P = Polegar</li>
-          <li>I = Indicador</li>
-          <li>M = Médio</li>
-          <li>A = Anelar</li>
+          <li>{t("rythm.finger-notation.thumb")}</li>
+          <li>{t("rythm.finger-notation.index")}</li>
+          <li>{t("rythm.finger-notation.middle")}</li>
+          <li>{t("rythm.finger-notation.ring")}</li>
         </ul>
         <br />
         <p>
-          Além disso, a mão que você usa para tocar as cordas (não montar
-          acordes) será chamada de <strong>Mão de Ataque.</strong> <br />
-          Enquanto a mão que você usa para montar um acorde será chamada de
-          <strong> Mão de Acordes.</strong> <br />
+          {t("rythm.hand-terminology.attack-hand")} <br />
+          {t("rythm.hand-terminology.chord-hand")} <br />
         </p>
         <br />
         <p>
-          Os dois movimentos principais são a “Descida” e “Subida” que vão ser
-          identificadas simplesmente como “Para baixo” ou “Para cima”. <br /> E
-          representadas por setas em cada momento que deverá ser aplicada.
+          {t("rythm.basic-movements.title")} <br /> {t("rythm.basic-movements.description")}
         </p>
         <ul className={st.setas}>
           <li className="flex gap-2">
-            <h2 className="font-bold text-2xl flex-1">Batida para Baixo</h2>
+            <h2 className="font-bold text-2xl flex-1">{t("rythm.strumming-directions.down-title")}</h2>
             <img
               className="size-[120px] object-contain "
               src="/setas/seta_baixo.png"
-              alt="Seta para baixo"
+              alt={t("rythm.strumming-directions.down-alt")}
             />
           </li>
           <li className="flex gap-2">
-            <h2 className="font-bold text-2xl">Batida para Cima</h2>
+            <h2 className="font-bold text-2xl">{t("rythm.strumming-directions.up-title")}</h2>
             <img
               className="size-[120px] object-contain "
               src="/setas/seta_cima.png"
-              alt="Seta para cima"
+              alt={t("rythm.strumming-directions.up-alt")}
             />
           </li>
         </ul>
         <br />
         <p>
-          Além dessas duas indicações também poderemos encontrar a batida
-          abafada. Que você realiza uma batida em para cima ou para baixo, mas
-          afrouxando a mão de acordes, sem tirar completamente, deixando ela
-          levemente sobre as cordas. Dessa forma, o som das cordas não vai sair
-          e você realizar uma batida percussiva. Essa batida especial é
-          representada por:
+          {t("rythm.muted-strumming.explanation")}
         </p>
         <br />
         <ul className={st.setas}>
           <li className="flex gap-2">
             <h2 className="font-bold text-2xl flex-1">
-              Batida para Baixo Abafada
+{t("rythm.muted-strumming.down-muted-title")}
             </h2>
             <img
               className="size-[120px] object-contain "
               src="/setas/seta_baixo_ab.png"
-              alt="Seta para baixo abafada"
+              alt={t("rythm.muted-strumming.down-muted-alt")}
             />
           </li>
           <li className="flex gap-2">
@@ -94,40 +85,32 @@ export default function RythmModule() {
             <img
               className="size-[120px] object-contain "
               src="/setas/seta_cima_ab.png"
-              alt="Seta para cima abafada"
+              alt={t("rythm.muted-strumming.up-muted-alt")}
             />
           </li>
         </ul>
         <br />
         <p>
-          Sendo que normalmente para uma batida para baixo, você normalmente
-          deve usar a unha do Indicador, Médio e Anelar (I, M, A) e em batidas
-          para cima a Unha do Polegar (P), embora isso possa variar em alguns
-          casos.
+          {t("rythm.muted-strumming.technique-note")}
         </p>
         <br />
         <p>
-          Existem outras técnicas, mas vamos nos ater a essas nesse primeiro
-          momento.
+          {t("rythm.muted-strumming.conclusion")}
         </p>
       </section>
       <section className={st.content}>
-        <h1 className="font-bold text-xl">Sequências Rítmicas</h1>
+        <h1 className="font-bold text-xl">{t("rythm.rhythmic-sequences.title")}</h1>
         <p>
-          Finalmente, vamos ver alguma ação. Embora o ideal seja você dominar
-          essas técnicas de batidas e deixar sua criatividade interpretar a
-          música, existem alguns <i>“templates”</i> aos quais você pode se
-          apegar nesse início.
+          {t("rythm.rhythmic-sequences.intro")}
         </p>
         <br />
         <p>
-          Existem inúmeras sequências rítmicas que são usadas em diversos
-          estilos de música. Como no Rock, Sertanejo, Reggae e Bolero.
+          {t("rythm.rhythmic-sequences.styles")}
         </p>
         <br />
-        <p>Vamos ver e praticar essas sequências.</p>
+        <p>{t("rythm.rhythmic-sequences.practice")}</p>
         <br />
-        <h1 className="font-bold text-xl mb-[2rem]">Rock/Pop</h1>
+        <h1 className="font-bold text-xl mb-[2rem]">{t("rythm.music-styles.rock-pop")}</h1>
         <ul className="flex justify-center">
           <li className="mr-[1.5rem]">
             <img
@@ -173,7 +156,7 @@ export default function RythmModule() {
           </li>
         </ul>
         <h1 className="font-bold text-xl mt-[2rem] mb-[2rem]">
-          Sertanejo (Guarânia)
+          {t("rythm.music-styles.sertanejo")}
         </h1>
         <ul className="flex justify-center">
           <li className="">
@@ -212,7 +195,7 @@ export default function RythmModule() {
             />
           </li>
         </ul>
-        <h1 className="font-bold text-xl mt-[2rem] mb-[2rem]">Reggae</h1>
+        <h1 className="font-bold text-xl mt-[2rem] mb-[2rem]">{t("rythm.music-styles.reggae")}</h1>
         <ul className="flex justify-center">
           <li className="">
             <img
@@ -246,10 +229,7 @@ export default function RythmModule() {
         </ul>
         <h1 className="font-bold text-xl mt-[2rem] mb-[15px]">Bolero</h1>
         <p className="mb-[2rem]">
-          Esse é um pouco diferente dos outros. Você vai fazer o ataque, mas
-          usando o polegar (dessa vez com a parte debaixo) e as unhas dos dedos
-          I, M, A (que irei resumir usando apenas I). Isso estará indicado acima
-          das setas.
+          {t("rythm.music-styles.bolero-intro")}
         </p>
         <ul className="flex justify-center">
           <li className="mr-[2rem]">
@@ -284,55 +264,40 @@ export default function RythmModule() {
         <br />
         <p className="flex justify-center mt-[2rem]">
           <strong>
-            Note que entre algumas setas temos um espaçamento maior. Isso indica
-            uma pausa maior entre as batidas.
+            {t("rythm.music-styles.spacing-note")}
           </strong>
         </p>
       </section>
       <section className={st.content}>
         <h1 className="font-bold text-xl">
-          Uso do metrônomo para batidas rítmicas
+          {t("rythm.metronome.title")}
         </h1>
         <br />
         <p>
-          O metrônomo funciona como uma espécie de
-          <strong> relógio musical</strong>.
+          {t("rythm.metronome.definition")}
         </p>
         <p>
-          Ele emite pulsos sonoros (cliques ou bipes) em intervalos
-          perfeitamente regulares para ajudar o músico a manter uma velocidade
-          constante.
+          {t("rythm.metronome.function")}
         </p>
         <br />
         <p>
-          Sem essa referência, é natural que a gente acelere ou atrase o ritmo
-          involuntariamente, dependendo da empolgação ou da dificuldade de uma
-          parte da música.
+          {t("rythm.metronome.problem")}
         </p>
         <br />
         <p>
-          Na prática, ele mede as <strong>Batidas Por Minuto (BPM)</strong>. Se
-          você configurar para 60 BPM, ele soará exatamente uma vez por segundo;
-          se aumentar para 120 BPM, ele soará duas vezes mais rápido.
+          {t("rythm.metronome.measurement")}
         </p>
         <br />
         <p>
-          Usá-lo é essencial para treinar a precisão e garantir que todos os
-          músicos de uma banda estejam "falando a mesma língua" rítmica, criando
-          uma base sólida para qualquer batida.
+          {t("rythm.metronome.importance")}
         </p>
         <br />
         <p>
-          Em cada exercício, vai estar a indicação de quantos BPM você por o
-          metrônomo. Seu objetivo vai ser encaixar todos os movimentos dentro
-          dos 4 bips do metrônomo, sempre se concentrando em encaixar a primeira
-          batida com o primeiro Bip. Comece sempre treinando as batidas (sem o
-          metrônomo) e quando se sentir confortável ative o metrônomo e tente
-          sincronizar.
+          {t("rythm.metronome.practice-instructions")}
         </p>
         <br />
-        <p>Veja o vídeo de como sincronizar o metrônomo com a sua batida.</p>
-        <div className={st.caixavideo}>Vou adicionar o vídeo aqui</div>
+        <p>{t("rythm.metronome.video-instruction")}</p>
+        <div className={st.caixavideo}>{t("rythm.metronome.video-placeholder")}</div>
       </section>
     </main>
   );

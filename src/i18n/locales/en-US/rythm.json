@@ -8,5 +8,58 @@
   "get-start": {
     "title": "Before we begin the action, we need to understand some concepts.",
     "concept-1": "During this module, we will use numerical representations or letters of your fingers. They are represented as follows:"
+  },
+  "finger-notation": {
+    "thumb": "P = Thumb",
+    "index": "I = Index",
+    "middle": "M = Middle",
+    "ring": "A = Ring"
+  },
+  "hand-terminology": {
+    "attack-hand": "Additionally, the hand you use to play the strings (not form chords) will be called the Attack Hand.",
+    "chord-hand": "While the hand you use to form a chord will be called the Chord Hand."
+  },
+  "basic-movements": {
+    "title": "The two main movements are \"Downstroke\" and \"Upstroke\" which will be identified simply as \"Down\" or \"Up\".",
+    "description": "And represented by arrows at each moment they should be applied."
+  },
+  "strumming-directions": {
+    "down-title": "Downstroke",
+    "down-alt": "Arrow down",
+    "up-title": "Upstroke",
+    "up-alt": "Arrow up"
+  },
+  "muted-strumming": {
+    "explanation": "Besides these two indications, we may also encounter muted strumming. This is when you perform a strum up or down, but loosening the chord hand, without completely removing it, leaving it lightly over the strings. This way, the sound of the strings won't come out and you'll perform a percussive strum. This special strum is represented by:",
+    "down-muted-title": "Muted Downstroke",
+    "down-muted-alt": "Muted arrow down",
+    "up-muted-title": "Muted Upstroke",
+    "up-muted-alt": "Muted arrow up",
+    "technique-note": "Normally, for a downstroke, you should typically use the nail of the Index, Middle and Ring fingers (I, M, A) and for upstrokes the Thumb nail (P), although this may vary in some cases.",
+    "conclusion": "There are other techniques, but let's stick to these for now."
+  },
+  "rhythmic-sequences": {
+    "title": "Rhythmic Sequences",
+    "intro": "Finally, let's see some action. Although ideally you should master these strumming techniques and let your creativity interpret the music, there are some \"templates\" you can hold onto at the beginning.",
+    "styles": "There are countless rhythmic sequences used in various music styles. Such as Rock, Country, Reggae and Bolero.",
+    "practice": "Let's see and practice these sequences."
+  },
+  "music-styles": {
+    "rock-pop": "Rock/Pop",
+    "sertanejo": "Country (Guarania)",
+    "reggae": "Reggae",
+    "bolero-intro": "This is a bit different from the others. You'll make the attack, but using the thumb (this time with the bottom part) and the nails of fingers I, M, A (which I'll summarize using just I). This will be indicated above the arrows.",
+    "spacing-note": "Note that between some arrows we have greater spacing. This indicates a longer pause between strums."
+  },
+  "metronome": {
+    "title": "Using the metronome for rhythmic strumming",
+    "definition": "The metronome works like a kind of musical clock.",
+    "function": "It emits sound pulses (clicks or beeps) at perfectly regular intervals to help the musician maintain a constant speed.",
+    "problem": "Without this reference, it's natural that we accelerate or slow down the rhythm involuntarily, depending on excitement or the difficulty of a part of the music.",
+    "measurement": "In practice, it measures Beats Per Minute (BPM). If you set it to 60 BPM, it will sound exactly once per second; if you increase to 120 BPM, it will sound twice as fast.",
+    "importance": "Using it is essential for training precision and ensuring that all band members are \"speaking the same rhythmic language,\" creating a solid foundation for any beat.",
+    "practice-instructions": "In each exercise, there will be an indication of how many BPM you should set the metronome to. Your goal will be to fit all movements within the 4 beeps of the metronome, always focusing on fitting the first strum with the first beep. Always start by practicing the strums (without the metronome) and when you feel comfortable, activate the metronome and try to synchronize.",
+    "video-instruction": "Watch the video on how to synchronize the metronome with your strumming.",
+    "video-placeholder": "I'll add the video here"
   }
 }

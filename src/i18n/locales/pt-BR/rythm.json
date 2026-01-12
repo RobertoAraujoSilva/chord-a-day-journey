@@ -8,5 +8,58 @@
   "get-start": {
     "title": "Antes de começarmos a ação, precisamos entender alguns conceitos.",
     "concept-1": "Durante esse módulo, iremos usar representações numéricas ou com letras de seus dedos. Eles são representados da seguinte forma:"
+  },
+  "finger-notation": {
+    "thumb": "P = Polegar",
+    "index": "I = Indicador",
+    "middle": "M = Médio",
+    "ring": "A = Anelar"
+  },
+  "hand-terminology": {
+    "attack-hand": "Além disso, a mão que você usa para tocar as cordas (não montar acordes) será chamada de Mão de Ataque.",
+    "chord-hand": "Enquanto a mão que você usa para montar um acorde será chamada de Mão de Acordes."
+  },
+  "basic-movements": {
+    "title": "Os dois movimentos principais são a “Descida” e “Subida” que vão ser identificadas simplesmente como “Para baixo” ou “Para cima”.",
+    "description": "E representadas por setas em cada momento que deverá ser aplicada."
+  },
+  "strumming-directions": {
+    "down-title": "Batida para Baixo",
+    "down-alt": "Seta para baixo",
+    "up-title": "Batida para Cima",
+    "up-alt": "Seta para cima"
+  },
+  "muted-strumming": {
+    "explanation": "Além dessas duas indicações também poderemos encontrar a batida abafada. Que você realiza uma batida em para cima ou para baixo, mas afrouxando a mão de acordes, sem tirar completamente, deixando ela levemente sobre as cordas. Dessa forma, o som das cordas não vai sair e você realizar uma batida percussiva. Essa batida especial é representada por:",
+    "down-muted-title": "Batida para Baixo Abafada",
+    "down-muted-alt": "Seta para baixo abafada",
+    "up-muted-title": "Batida para Cima Abafada",
+    "up-muted-alt": "Seta para cima abafada",
+    "technique-note": "Sendo que normalmente para uma batida para baixo, você normalmente deve usar a unha do Indicador, Médio e Anelar (I, M, A) e em batidas para cima a Unha do Polegar (P), embora isso possa variar em alguns casos.",
+    "conclusion": "Existem outras técnicas, mas vamos nos ater a essas nesse primeiro momento."
+  },
+  "rhythmic-sequences": {
+    "title": "Sequências Rítmicas",
+    "intro": "Finalmente, vamos ver alguma ação. Embora o ideal seja você dominar essas técnicas de batidas e deixar sua criatividade interpretar a música, existem alguns “templates” aos quais você pode se apegar nesse início.",
+    "styles": "Existem inúmeras sequências rítmicas que são usadas em diversos estilos de música. Como no Rock, Sertanejo, Reggae e Bolero.",
+    "practice": "Vamos ver e praticar essas sequências."
+  },
+  "music-styles": {
+    "rock-pop": "Rock/Pop",
+    "sertanejo": "Sertanejo (Guarânia)",
+    "reggae": "Reggae",
+    "bolero-intro": "Esse é um pouco diferente dos outros. Você vai fazer o ataque, mas usando o polegar (dessa vez com a parte debaixo) e as unhas dos dedos I, M, A (que irei resumir usando apenas I). Isso estará indicado acima das setas.",
+    "spacing-note": "Note que entre algumas setas temos um espaçamento maior. Isso indica uma pausa maior entre as batidas."
+  },
+  "metronome": {
+    "title": "Uso do metrônomo para batidas rítmicas",
+    "definition": "O metrônomo funciona como uma espécie de relógio musical.",
+    "function": "Ele emite pulsos sonoros (cliques ou bipes) em intervalos perfeitamente regulares para ajudar o músico a manter uma velocidade constante.",
+    "problem": "Sem essa referência, é natural que a gente acelere ou atrase o ritmo involuntariamente, dependendo da empolgação ou da dificuldade de uma parte da música.",
+    "measurement": "Na prática, ele mede as Batidas Por Minuto (BPM). Se você configurar para 60 BPM, ele soará exatamente uma vez por segundo; se aumentar para 120 BPM, ele soará duas vezes mais rápido.",
+    "importance": "Usá-lo é essencial para treinar a precisão e garantir que todos os músicos de uma banda estejam \"falando a mesma língua\" rítmica, criando uma base sólida para qualquer batida.",
+    "practice-instructions": "Em cada exercício, vai estar a indicação de quantos BPM você por o metrônomo. Seu objetivo vai ser encaixar todos os movimentos dentro dos 4 bips do metrônomo, sempre se concentrando em encaixar a primeira batida com o primeiro Bip. Comece sempre treinando as batidas (sem o metrônomo) e quando se sentir confortável ative o metrônomo e tente sincronizar.",
+    "video-instruction": "Veja o vídeo de como sincronizar o metrônomo com a sua batida.",
+    "video-placeholder": "Vou adicionar o vídeo aqui"
   }
 }
