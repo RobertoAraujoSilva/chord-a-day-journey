@@ -20,7 +20,7 @@
     "chord-hand": "Enquanto a mão que você usa para montar um acorde será chamada de Mão de Acordes."
   },
   "basic-movements": {
-    "title": "Os dois movimentos principais são a “Descida” e “Subida” que vão ser identificadas simplesmente como “Para baixo” ou “Para cima”.",
+    "title": "Os dois movimentos principais são a "Descida" e "Subida" que vão ser identificadas simplesmente como "Para baixo" ou "Para cima".",
     "description": "E representadas por setas em cada momento que deverá ser aplicada."
   },
   "strumming-directions": {
@@ -40,7 +40,7 @@
   },
   "rhythmic-sequences": {
     "title": "Sequências Rítmicas",
-    "intro": "Finalmente, vamos ver alguma ação. Embora o ideal seja você dominar essas técnicas de batidas e deixar sua criatividade interpretar a música, existem alguns “templates” aos quais você pode se apegar nesse início.",
+    "intro": "Finalmente, vamos ver alguma ação. Embora o ideal seja você dominar essas técnicas de batidas e deixar sua criatividade interpretar a música, existem alguns "templates" aos quais você pode se apegar nesse início.",
     "styles": "Existem inúmeras sequências rítmicas que são usadas em diversos estilos de música. Como no Rock, Sertanejo, Reggae e Bolero.",
     "practice": "Vamos ver e praticar essas sequências."
   },
@@ -48,8 +48,20 @@
     "rock-pop": "Rock/Pop",
     "sertanejo": "Sertanejo (Guarânia)",
     "reggae": "Reggae",
+    "bolero": "Bolero",
     "bolero-intro": "Esse é um pouco diferente dos outros. Você vai fazer o ataque, mas usando o polegar (dessa vez com a parte debaixo) e as unhas dos dedos I, M, A (que irei resumir usando apenas I). Isso estará indicado acima das setas.",
     "spacing-note": "Note que entre algumas setas temos um espaçamento maior. Isso indica uma pausa maior entre as batidas."
+  },
+  "common": {
+    "or": "OU",
+    "practice_with_metronome": "Pratique com o metrônomo",
+    "bpm_suggestion": "BPM sugerido",
+    "down": "Baixo",
+    "up": "Cima",
+    "muted_down": "Baixo abafado",
+    "muted_up": "Cima abafado",
+    "thumb_down": "Baixo com polegar",
+    "index_down": "Baixo com indicador"
   },
   "metronome": {
     "title": "Uso do metrônomo para batidas rítmicas",
@@ -60,6 +72,9 @@
     "importance": "Usá-lo é essencial para treinar a precisão e garantir que todos os músicos de uma banda estejam \"falando a mesma língua\" rítmica, criando uma base sólida para qualquer batida.",
     "practice-instructions": "Em cada exercício, vai estar a indicação de quantos BPM você por o metrônomo. Seu objetivo vai ser encaixar todos os movimentos dentro dos 4 bips do metrônomo, sempre se concentrando em encaixar a primeira batida com o primeiro Bip. Comece sempre treinando as batidas (sem o metrônomo) e quando se sentir confortável ative o metrônomo e tente sincronizar.",
     "video-instruction": "Veja o vídeo de como sincronizar o metrônomo com a sua batida.",
-    "video-placeholder": "Vou adicionar o vídeo aqui"
+    "video-placeholder": "Vou adicionar o vídeo aqui",
+    "metronome_on": "Metrônomo ligado",
+    "metronome_off": "Metrônomo desligado",
+    "bpm": "BPM"
   }
 }

@@ -48,8 +48,20 @@
     "rock-pop": "Rock/Pop",
     "sertanejo": "Country (Guarania)",
     "reggae": "Reggae",
+    "bolero": "Bolero",
     "bolero-intro": "This is a bit different from the others. You'll make the attack, but using the thumb (this time with the bottom part) and the nails of fingers I, M, A (which I'll summarize using just I). This will be indicated above the arrows.",
     "spacing-note": "Note that between some arrows we have greater spacing. This indicates a longer pause between strums."
+  },
+  "common": {
+    "or": "OR",
+    "practice_with_metronome": "Practice with metronome",
+    "bpm_suggestion": "Suggested BPM",
+    "down": "Down",
+    "up": "Up",
+    "muted_down": "Muted down",
+    "muted_up": "Muted up",
+    "thumb_down": "Thumb down",
+    "index_down": "Index down"
   },
   "metronome": {
     "title": "Using the metronome for rhythmic strumming",
@@ -60,6 +72,9 @@
     "importance": "Using it is essential for training precision and ensuring that all band members are \"speaking the same rhythmic language,\" creating a solid foundation for any beat.",
     "practice-instructions": "In each exercise, there will be an indication of how many BPM you should set the metronome to. Your goal will be to fit all movements within the 4 beeps of the metronome, always focusing on fitting the first strum with the first beep. Always start by practicing the strums (without the metronome) and when you feel comfortable, activate the metronome and try to synchronize.",
     "video-instruction": "Watch the video on how to synchronize the metronome with your strumming.",
-    "video-placeholder": "I'll add the video here"
+    "video-placeholder": "I'll add the video here",
+    "metronome_on": "Metronome on",
+    "metronome_off": "Metronome off",
+    "bpm": "BPM"
   }
 }

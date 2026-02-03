@@ -43,6 +43,15 @@ export interface TranslationObject {
       title: string;
       "concept-1": string;
     };
+    "finger-notation": Record<string, string>;
+    "hand-terminology": Record<string, string>;
+    "basic-movements": Record<string, string>;
+    "strumming-directions": Record<string, string>;
+    "muted-strumming": Record<string, string>;
+    "rhythmic-sequences": Record<string, string>;
+    "music-styles": Record<string, string>;
+    common: Record<string, string>;
+    metronome: Record<string, string>;
   };
 }
 
@@ -75,43 +84,15 @@ export type TranslationKey =
   | `rythm.introduction.concept-3`
   | `rythm.get-start.title`
   | `rythm.get-start.concept-1`
-  | `rythm.finger-notation.thumb`
-  | `rythm.finger-notation.index`
-  | `rythm.finger-notation.middle`
-  | `rythm.finger-notation.ring`
-  | `rythm.hand-terminology.attack-hand`
-  | `rythm.hand-terminology.chord-hand`
-  | `rythm.basic-movements.title`
-  | `rythm.basic-movements.description`
-  | `rythm.strumming-directions.down-title`
-  | `rythm.strumming-directions.down-alt`
-  | `rythm.strumming-directions.up-title`
-  | `rythm.strumming-directions.up-alt`
-  | `rythm.muted-strumming.explanation`
-  | `rythm.muted-strumming.down-muted-title`
-  | `rythm.muted-strumming.down-muted-alt`
-  | `rythm.muted-strumming.up-muted-title`
-  | `rythm.muted-strumming.up-muted-alt`
-  | `rythm.muted-strumming.technique-note`
-  | `rythm.muted-strumming.conclusion`
-  | `rythm.rhythmic-sequences.title`
-  | `rythm.rhythmic-sequences.intro`
-  | `rythm.rhythmic-sequences.styles`
-  | `rythm.rhythmic-sequences.practice`
-  | `rythm.music-styles.rock-pop`
-  | `rythm.music-styles.sertanejo`
-  | `rythm.music-styles.reggae`
-  | `rythm.music-styles.bolero-intro`
-  | `rythm.music-styles.spacing-note`
-  | `rythm.metronome.title`
-  | `rythm.metronome.definition`
-  | `rythm.metronome.function`
-  | `rythm.metronome.problem`
-  | `rythm.metronome.measurement`
-  | `rythm.metronome.importance`
-  | `rythm.metronome.practice-instructions`
-  | `rythm.metronome.video-instruction`
-  | `rythm.metronome.video-placeholder`;
+  | `rythm.finger-notation.${string}`
+  | `rythm.hand-terminology.${string}`
+  | `rythm.basic-movements.${string}`
+  | `rythm.strumming-directions.${string}`
+  | `rythm.muted-strumming.${string}`
+  | `rythm.rhythmic-sequences.${string}`
+  | `rythm.music-styles.${string}`
+  | `rythm.common.${string}`
+  | `rythm.metronome.${string}`;
 
 // Translation function type
 export type TranslationFunction = (
