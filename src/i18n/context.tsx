@@ -133,7 +133,19 @@ export function I18nProvider({ children }: I18nProviderProps) {
             lessons: { intro: {}, chords: {}, instructions: {} },
             content: { titles: {}, descriptions: {}, tips: {}, chords: {}, bonus: {} },
             errors: { loading_failed: 'Failed to load translations' },
-            rythm: { introduction: { title: '', 'concept-1': '', 'concept-2': '', 'concept-3': '' }, 'get-start': { title: '', 'concept-1': '' } }
+            rythm: { 
+              introduction: { title: '', 'concept-1': '', 'concept-2': '', 'concept-3': '' }, 
+              'get-start': { title: '', 'concept-1': '' },
+              'finger-notation': {},
+              'hand-terminology': {},
+              'basic-movements': {},
+              'strumming-directions': {},
+              'muted-strumming': {},
+              'rhythmic-sequences': {},
+              'music-styles': {},
+              common: {},
+              metronome: {}
+            }
           };
           setTranslations(minimalTranslations);
         }
@@ -154,7 +166,19 @@ export function I18nProvider({ children }: I18nProviderProps) {
           lessons: { intro: {}, chords: {}, instructions: {} },
           content: { titles: {}, descriptions: {}, tips: {}, chords: {}, bonus: {} },
           errors: { loading_failed: 'Failed to load translations' },
-          rythm: { introduction: { title: '', 'concept-1': '', 'concept-2': '', 'concept-3': '' }, 'get-start': { title: '', 'concept-1': '' } }
+          rythm: { 
+            introduction: { title: '', 'concept-1': '', 'concept-2': '', 'concept-3': '' }, 
+            'get-start': { title: '', 'concept-1': '' },
+            'finger-notation': {},
+            'hand-terminology': {},
+            'basic-movements': {},
+            'strumming-directions': {},
+            'muted-strumming': {},
+            'rhythmic-sequences': {},
+            'music-styles': {},
+            common: {},
+            metronome: {}
+          }
         };
         setTranslations(minimalTranslations);
       }
