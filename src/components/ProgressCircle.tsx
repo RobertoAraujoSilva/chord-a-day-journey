@@ -22,19 +22,19 @@ export const ProgressCircle = ({
   // Motivational messages based on progress
   const getMotivationalMessage = () => {
     if (completedDays === 0) {
-      return t('ui.motivation.start' as any);
+      return t('ui.motivation.start');
     } else if (completedDays < 5) {
-      return t('ui.motivation.first_steps' as any);
+      return t('ui.motivation.first_steps');
     } else if (completedDays === 10) {
-      return t('ui.motivation.milestone_10' as any);
+      return t('ui.motivation.milestone_10');
     } else if (completedDays === 20) {
-      return t('ui.motivation.milestone_20' as any);
+      return t('ui.motivation.milestone_20');
     } else if (completedDays === 30) {
-      return t('ui.motivation.complete' as any);
+      return t('ui.motivation.complete');
     } else if (completedDays < 15) {
-      return t('ui.motivation.keep_going' as any);
+      return t('ui.motivation.keep_going');
     } else {
-      return t('ui.motivation.almost_there' as any);
+      return t('ui.motivation.almost_there');
     }
   };
 
@@ -127,7 +127,7 @@ export const ProgressCircle = ({
           </p>
           {completedDays < totalDays && (
             <p className="text-sm 2xl:text-base 3xl:text-lg text-gray-600">
-              {t('ui.motivation.remaining' as any, { count: totalDays - completedDays })}
+              {t('ui.motivation.remaining', { count: totalDays - completedDays })}
             </p>
           )}
         </div>

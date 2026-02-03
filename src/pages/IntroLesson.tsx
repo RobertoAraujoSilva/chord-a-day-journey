@@ -24,7 +24,6 @@ export default function IntroLesson() {
         onComplete={markIntroComplete}
         isCompleted={introCompleted}
       />
-      <NavigationPanel />
     </div>
   );
 }

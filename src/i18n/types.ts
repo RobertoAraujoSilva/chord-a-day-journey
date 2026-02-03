@@ -15,7 +15,7 @@ export interface TranslationObject {
     slideshow: Record<string, string>;
   };
   lessons: {
-    intro: Record<string, string>;
+    intro: Record<string, string | Record<string, string>>;
     chords: Record<string, string>;
     instructions: Record<string, string>;
   };
