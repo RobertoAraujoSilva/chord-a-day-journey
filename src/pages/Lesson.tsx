@@ -11,7 +11,7 @@ export default function Lesson() {
     <>
       <NavigationPanel />
       <br />
-      <LessonContent day={Number(day)} />;
+      <LessonContent day={Number(day)} />
     </>
   );
 }
