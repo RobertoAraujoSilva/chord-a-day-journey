@@ -17,6 +17,10 @@ const NotFound = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50">
+      <Helmet>
+        <title>Page not found — Chord a Day Journey</title>
+        <meta name="robots" content="noindex" />
+      </Helmet>
       <Header />
       <div className="flex items-center justify-center pt-20">
         <div className="text-center">
