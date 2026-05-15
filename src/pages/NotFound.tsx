@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { useTranslation } from "@/i18n/context";
 import { Header } from "@/components/Header";
 

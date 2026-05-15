@@ -1,6 +1,7 @@
 import { useTranslation } from "@/i18n/context";
 import { NavigationPanel } from "@/components/NavigationPanel";
 import { StrummingPattern } from "@/components/StrummingPattern";
+import { SEO } from "@/components/SEO";
 import st from "./rythm.module.css";
 
 export default function RythmModule() {
@@ -8,6 +9,11 @@ export default function RythmModule() {
 
   return (
     <main className="flex flex-col gap-6 sm:gap-8">
+      <SEO
+        title="Rhythm Module — Strumming Patterns & Metronome Practice"
+        description="Learn finger notation, basic strumming directions, muted strums, and practice popular rhythmic patterns (Rock, Sertanejo, Reggae, Bolero) with a built-in metronome."
+        path="/RythmModule/rythm"
+      />
       <NavigationPanel />
 
       {/* Seção 1: Introdução */}
