@@ -3,6 +3,7 @@ import { BookOpen } from "lucide-react";
 import { useProgress } from "@/contexts/ProgressContext";
 import { useTranslation } from "@/i18n/context";
 import { NavigationPanel } from "@/components/NavigationPanel";
+import { SEO } from "@/components/SEO";
 
 export default function IntroLesson() {
   const { introCompleted, markIntroComplete } = useProgress();
@@ -10,6 +11,11 @@ export default function IntroLesson() {
 
   return (
     <div className="space-y-8">
+      <SEO
+        title="Intro Lesson — Guitar Anatomy & Posture for Beginners"
+        description="Start here: learn the parts of the guitar, finger naming, and proper posture before your first chord."
+        path="/intro"
+      />
       <NavigationPanel />
       <div className="text-center">
         <div className="flex justify-center gap-2 mb-4">

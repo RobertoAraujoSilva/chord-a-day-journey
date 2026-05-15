@@ -1,0 +1,18 @@
+# Chord a Day Journey
+
+> Learn 30 essential guitar chords in 30 days through short, daily micro-lessons designed for absolute beginners.
+
+The site delivers one chord per day with diagrams, audio, common-mistake tips, and short practical exercises (5–10 min). Available in PT-BR and EN-US.
+
+## Pages
+
+- [Home](/): Daily chord overview, progress tracking, and lesson selector.
+- [Intro Lesson](/intro): Guitar anatomy, finger naming, and posture basics for absolute beginners.
+- [Daily Lesson](/lesson/1): One chord per day with diagram, exercise, and tip (replace `1` with day 1–30).
+- [Rhythm Module](/RythmModule/rythm): Strumming patterns, finger notation, and metronome practice.
+- [Bonus Lesson](/bonus): Extra material after completing the 30-day journey.
+- [Slideshow](/slideshow): Visual review of all chords learned.
+
+## Optional
+
+- [Sitemap](/sitemap.xml)
