@@ -107,10 +107,10 @@ export const AudioPlayer = ({ chordName, className = '' }: AudioPlayerProps) => 
         size="sm"
         onClick={togglePlay}
         disabled={isLoading}
-        className="flex items-center gap-2 bg-orange-50 hover:bg-orange-100 text-orange-700 border-orange-200"
+        className="flex items-center gap-2 rounded-full bg-primary/10 hover:bg-primary/20 text-gold-light border border-primary/40"
       >
         {isLoading ? (
-          <div className="w-4 h-4 border-2 border-orange-400 border-t-transparent rounded-full animate-spin" />
+          <div className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin" />
         ) : isPlaying ? (
           <Pause className="h-4 w-4" />
         ) : (
