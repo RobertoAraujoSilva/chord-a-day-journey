@@ -31,7 +31,21 @@ export default {
         "4xl": "2560px", // QHD
         tv: "3840px", // 4K TVs
       },
+      fontFamily: {
+        display: ['"DM Serif Display"', 'ui-serif', 'Georgia', 'serif'],
+        serif: ['"DM Serif Display"', 'ui-serif', 'Georgia', 'serif'],
+        sans: ['"Fira Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      },
+      backgroundImage: {
+        'gradient-noir': 'var(--gradient-noir)',
+        'gradient-gold': 'var(--gradient-gold)',
+      },
       colors: {
+        gold: {
+          DEFAULT: '#c9a84c',
+          light: '#f0d78c',
+          dark: '#8a6f2a',
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
