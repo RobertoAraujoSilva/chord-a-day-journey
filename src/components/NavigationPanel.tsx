@@ -11,58 +11,33 @@ export function NavigationPanel() {
 
   const isActive = (path: string) => location.pathname === path;
 
+  const baseClass =
+    "flex gap-2 rounded-full px-5 border transition-all duration-300 uppercase tracking-widest text-xs";
+  const activeClass =
+    "bg-gold-gradient text-background border-primary shadow-elegant hover:opacity-90";
+  const idleClass =
+    "bg-card/60 text-foreground border-border hover:border-primary/60 hover:text-gold-light";
+
+  const items = [
+    { path: "/intro", icon: BookOpen, label: t("ui.navigation.review_intro") },
+    { path: "/", icon: Music4, label: t("ui.navigation.home") },
+    { path: "/slideshow", icon: Play, label: t("ui.slideshow.open") },
+    { path: "/RythmModule/rythm", icon: Play, label: t("ui.navigation.go_to_rythm") },
+  ];
+
   return (
-    <div className="flex flex-wrap justify-center gap-4">
-      {/* INTRO */}
-      <Button
-        variant={isActive("/intro") ? "default" : "outline"}
-        onClick={() => navigate("/intro")}
-        className={clsx(
-          "flex gap-2",
-          isActive("/intro") && "bg-blue-500 text-white"
-        )}
-      >
-        <BookOpen className="h-4 w-4" />
-        {t("ui.navigation.review_intro")}
-      </Button>
-      {/* HOME */}
-      <Button
-        variant={isActive("/") ? "default" : "outline"}
-        onClick={() => navigate("/")}
-        className={clsx(
-          "flex gap-2",
-          isActive("/") && "bg-blue-500 text-white"
-        )}
-      >
-        <Music4 className="h-4 w-4" />
-        {t("ui.navigation.home")}
-      </Button>
-
-      {/* SLIDESHOW */}
-      <Button
-        variant={isActive("/slideshow") ? "default" : "outline"}
-        onClick={() => navigate("/slideshow")}
-        className={clsx(
-          "flex gap-2",
-          isActive("/slideshow") && "bg-blue-500 text-white"
-        )}
-      >
-        <Play className="h-4 w-4" />
-        {t("ui.slideshow.open")}
-      </Button>
-
-      {/* Rythm Module */}
-      <Button
-        variant={isActive("/RythmModule/rythm") ? "default" : "outline"}
-        onClick={() => navigate("/RythmModule/rythm")}
-        className={clsx(
-          "flex gap-2",
-          isActive("/RythmModule/rythm") && "bg-blue-500 text-white"
-        )}
-      >
-        <Play className="h-4 w-4" />
-        {t("ui.navigation.go_to_rythm")}
-      </Button>
+    <div className="flex flex-wrap justify-center gap-3">
+      {items.map(({ path, icon: Icon, label }) => (
+        <Button
+          key={path}
+          variant="ghost"
+          onClick={() => navigate(path)}
+          className={clsx(baseClass, isActive(path) ? activeClass : idleClass)}
+        >
+          <Icon className="h-4 w-4" />
+          {label}
+        </Button>
+      ))}
     </div>
   );
 }
