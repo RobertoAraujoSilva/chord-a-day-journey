@@ -172,7 +172,7 @@ export const ChordDiagram = ({ chord }: ChordDiagramProps) => {
       </div>
       
       {/* Legend */}
-      <div className="mt-4 2xl:mt-6 3xl:mt-8 flex flex-wrap justify-center gap-4 2xl:gap-6 3xl:gap-8 text-sm 2xl:text-base 3xl:text-lg text-gray-600">
+      <div className="mt-4 2xl:mt-6 3xl:mt-8 flex flex-wrap justify-center gap-4 2xl:gap-6 3xl:gap-8 text-sm 2xl:text-base 3xl:text-lg text-muted-foreground">
         <div className="flex items-center gap-2">
           <div className="w-4 h-4 2xl:w-6 2xl:h-6 3xl:w-8 3xl:h-8 rounded-full bg-red-500"></div>
           <span>{t('ui.labels.finger_pressed')}</span>

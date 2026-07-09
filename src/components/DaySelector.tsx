@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 import { BookOpen, CheckCircle2, Lock } from 'lucide-react';
 import { useTranslation } from '@/i18n/context';
@@ -11,118 +10,105 @@ interface DaySelectorProps {
   introCompleted?: boolean;
 }
 
-export const DaySelector = ({ 
-  currentDay, 
-  completedDays, 
-  onDaySelect, 
-  includeIntro = false, 
-  introCompleted = false 
+export const DaySelector = ({
+  currentDay,
+  completedDays,
+  onDaySelect,
+  includeIntro = false,
+  introCompleted = false
 }: DaySelectorProps) => {
   const { t } = useTranslation();
 
-  // Calculate the highest accessible day (last completed + 1, or 1 if none completed)
-  const highestAccessibleDay = completedDays.length > 0 
-    ? Math.max(...completedDays) + 1 
+  const highestAccessibleDay = completedDays.length > 0
+    ? Math.max(...completedDays) + 1
     : 1;
 
   return (
-    <div className="mb-6 2xl:mb-8 3xl:mb-12">
-      <h2 className="text-lg 2xl:text-xl 3xl:text-2xl font-semibold text-gray-800 mb-4 2xl:mb-6 3xl:mb-8 text-center">
+    <div className="mb-8 2xl:mb-12">
+      <h2 className="font-display text-2xl 2xl:text-3xl text-gold-light text-center mb-6">
         {t('ui.navigation.select_day')}
       </h2>
-      
-      {/* Responsive Grid Layout with Circular Buttons */}
+
       <div className="grid grid-cols-5 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-2 2xl:gap-3 3xl:gap-4 px-2">
-        {/* Introductory Lesson (Day 0) */}
         {includeIntro && (
           <Button
-            variant={currentDay === 0 ? "default" : "outline"}
+            variant="outline"
             size="sm"
             onClick={() => onDaySelect(0)}
             className={`
-              col-span-2 sm:col-span-2 md:col-span-2 lg:col-span-2
-              min-h-[48px] h-14 2xl:h-18 3xl:h-22
-              rounded-2xl
-              relative transition-all duration-300 flex items-center justify-center gap-1 2xl:gap-2
-              ${currentDay === 0 
-                ? 'bg-gradient-to-br from-blue-500 to-purple-600 text-white shadow-xl scale-105 border-2 border-blue-400 ring-4 ring-blue-200' 
+              col-span-2 min-h-[48px] h-14 2xl:h-16 rounded-2xl
+              relative transition-all duration-300 flex items-center justify-center gap-2
+              border
+              ${currentDay === 0
+                ? 'bg-gold-gradient text-background border-primary shadow-elegant scale-105'
                 : introCompleted
-                ? 'bg-gradient-to-br from-green-100 to-green-200 text-green-800 border-2 border-green-400 hover:scale-105 hover:shadow-lg'
-                : 'bg-white hover:bg-blue-50 border-2 border-gray-300 hover:border-blue-400 hover:scale-105'
+                ? 'bg-primary/10 text-gold-light border-primary/40 hover:bg-primary/20'
+                : 'bg-card text-foreground border-border hover:border-primary/50'
               }
             `}
             aria-label={`${t('ui.labels.intro')}${introCompleted ? ' - Completed' : ''}`}
             aria-current={currentDay === 0 ? 'true' : 'false'}
           >
-            <BookOpen className="h-4 w-4 2xl:h-5 2xl:w-5 3xl:h-6 3xl:w-6 flex-shrink-0" />
-            <span className="text-xs 2xl:text-sm 3xl:text-base font-bold truncate">{t('ui.labels.intro')}</span>
-            {introCompleted && (
-              <CheckCircle2 className="absolute -top-2 -right-2 h-6 w-6 2xl:h-7 2xl:w-7 text-white bg-green-500 rounded-full p-1 shadow-lg" />
+            <BookOpen className="h-4 w-4" />
+            <span className="text-xs 2xl:text-sm font-semibold uppercase tracking-wider">
+              {t('ui.labels.intro')}
+            </span>
+            {introCompleted && currentDay !== 0 && (
+              <CheckCircle2 className="absolute -top-2 -right-2 h-5 w-5 text-background bg-primary rounded-full p-0.5 shadow-soft" />
             )}
           </Button>
         )}
-        
-        {/* Chord Days (1-30) - Circular Buttons */}
+
         {Array.from({ length: 30 }, (_, i) => i + 1).map((day) => {
           const isCompleted = completedDays.includes(day);
           const isCurrent = currentDay === day;
           const isLocked = day > highestAccessibleDay && !isCompleted;
-          
+
           return (
             <Button
               key={day}
-              variant={isCurrent ? "default" : "outline"}
+              variant="outline"
               size="sm"
               onClick={() => !isLocked && onDaySelect(day)}
               disabled={isLocked}
               className={`
-                aspect-square min-h-[48px] h-14 w-14 2xl:h-18 2xl:w-18 3xl:h-22 3xl:w-22
-                rounded-full
-                text-sm 2xl:text-lg 3xl:text-xl font-bold
-                relative transition-all duration-300
-                ${isCurrent 
-                  ? 'bg-gradient-to-br from-orange-500 to-red-600 text-white shadow-xl scale-110 border-2 border-orange-400 ring-4 ring-orange-200' 
+                aspect-square min-h-[48px] h-14 w-14 2xl:h-16 2xl:w-16
+                rounded-full font-display text-lg 2xl:text-xl
+                relative transition-all duration-300 border
+                ${isCurrent
+                  ? 'bg-gold-gradient text-background border-primary shadow-elegant scale-110 ring-2 ring-primary/30 ring-offset-2 ring-offset-background'
                   : isCompleted
-                  ? 'bg-gradient-to-br from-green-100 to-green-200 text-green-800 border-2 border-green-400 hover:scale-110 hover:shadow-lg'
+                  ? 'bg-primary/10 text-gold-light border-primary/40 hover:bg-primary/20 hover:scale-105'
                   : isLocked
-                  ? 'bg-gray-100 text-gray-400 border-2 border-gray-300 cursor-not-allowed opacity-60'
-                  : 'bg-white hover:bg-orange-50 border-2 border-gray-300 hover:border-orange-400 hover:scale-110 hover:shadow-lg'
+                  ? 'bg-card/40 text-muted-foreground border-border/50 cursor-not-allowed opacity-50'
+                  : 'bg-card text-foreground border-border hover:border-primary/60 hover:scale-105'
                 }
               `}
               aria-label={`Day ${day}${isCompleted ? ' - Completed' : ''}${isCurrent ? ' - Current' : ''}${isLocked ? ' - Locked' : ''}`}
               aria-current={isCurrent ? 'true' : 'false'}
               aria-disabled={isLocked}
             >
-              {isLocked ? (
-                <Lock className="h-4 w-4 2xl:h-5 2xl:w-5 3xl:h-6 3xl:w-6" />
-              ) : (
-                day
-              )}
+              {isLocked ? <Lock className="h-4 w-4" /> : day}
               {isCompleted && !isCurrent && (
-                <CheckCircle2 className="absolute -top-2 -right-2 h-6 w-6 2xl:h-7 2xl:w-7 text-white bg-green-500 rounded-full p-1 shadow-lg" />
+                <CheckCircle2 className="absolute -top-1.5 -right-1.5 h-5 w-5 text-background bg-primary rounded-full p-0.5 shadow-soft" />
               )}
             </Button>
           );
         })}
       </div>
-      
-      {/* Legend */}
-      <div className="flex flex-wrap justify-center gap-4 mt-6 text-xs 2xl:text-sm text-gray-600">
-        <div className="flex items-center gap-2">
-          <div className="w-6 h-6 rounded-full bg-gradient-to-br from-orange-500 to-red-600 border-2 border-orange-400"></div>
-          <span>{t('ui.labels.current_day')}</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <div className="w-6 h-6 rounded-full bg-gradient-to-br from-green-100 to-green-200 border-2 border-green-400"></div>
-          <span>{t('ui.labels.completed')}</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <div className="w-6 h-6 rounded-full bg-gray-100 border-2 border-gray-300 flex items-center justify-center">
-            <Lock className="h-3 w-3 text-gray-400" />
-          </div>
-          <span>{t('ui.labels.locked')}</span>
-        </div>
+
+      <div className="flex flex-wrap justify-center gap-6 mt-6 text-xs text-muted-foreground uppercase tracking-widest">
+        <LegendDot className="bg-gold-gradient" label={t('ui.labels.current_day')} />
+        <LegendDot className="bg-primary/20 border border-primary/40" label={t('ui.labels.completed')} />
+        <LegendDot className="bg-card border border-border" label={t('ui.labels.locked')} icon={<Lock className="h-3 w-3 text-muted-foreground" />} />
       </div>
     </div>
   );
 };
+
+const LegendDot = ({ className, label, icon }: { className: string; label: string; icon?: React.ReactNode }) => (
+  <div className="flex items-center gap-2">
+    <div className={`w-5 h-5 rounded-full flex items-center justify-center ${className}`}>{icon}</div>
+    <span>{label}</span>
+  </div>
+);

@@ -1,9 +1,10 @@
 .content {
-  box-shadow: 2px 5px 25px 1px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 24px -12px rgba(0, 0, 0, 0.6);
   padding: 2rem;
-  background-color: #fff;
-  border-radius: 15px;
-  border: 1px solid rgba(255, 196, 0, 0.37);
+  background-color: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  border-radius: 0.75rem;
+  border: 1px solid hsl(var(--border));
 }
 
 .setas {

@@ -26,7 +26,7 @@ export function LanguageSwitcher() {
         <Button
           variant="ghost"
           size="sm"
-          className="flex items-center gap-2 text-white hover:bg-white/10"
+          className="flex items-center gap-2 rounded-full border border-border bg-card/60 text-foreground hover:border-primary/60 hover:text-gold-light"
           aria-label={t('ui.languages.switch_language')}
         >
           <Globe className="h-4 w-4" />
