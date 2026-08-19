@@ -18,7 +18,7 @@ export default function RythmModule() {
 
       {/* Seção 1: Introdução */}
       <section className={st.content}>
-        <h1 className="font-bold text-xl">{t("rythm.introduction.title")}</h1>
+        <h1 className="font-display text-3xl text-gold-light">{t("rythm.introduction.title")}</h1>
         <p className="mt-4">
           {t("rythm.introduction.concept-1")}
           <br />
@@ -28,10 +28,10 @@ export default function RythmModule() {
           {t("rythm.introduction.concept-3")}
         </p>
 
-        <h2 className="font-bold text-xl mt-6">{t("rythm.get-start.title")}</h2>
+        <h2 className="font-display text-2xl text-gold-light mt-8">{t("rythm.get-start.title")}</h2>
         <p className="mt-2">{t("rythm.get-start.concept-1")}</p>
 
-        <ul className="font-bold mt-4 space-y-1">
+        <ul className="mt-4 space-y-1 text-foreground/90">
           <li>{t("rythm.finger-notation.thumb")}</li>
           <li>{t("rythm.finger-notation.index")}</li>
           <li>{t("rythm.finger-notation.middle")}</li>
@@ -51,7 +51,7 @@ export default function RythmModule() {
         {/* Setas básicas */}
         <ul className={st.setas}>
           <li className="flex gap-2 items-center">
-            <h3 className="font-bold text-lg sm:text-2xl">
+            <h3 className="font-display text-lg sm:text-2xl text-gold-light">
               {t("rythm.strumming-directions.down-title")}
             </h3>
             <img
@@ -61,7 +61,7 @@ export default function RythmModule() {
             />
           </li>
           <li className="flex gap-2 items-center">
-            <h3 className="font-bold text-lg sm:text-2xl">
+            <h3 className="font-display text-lg sm:text-2xl text-gold-light">
               {t("rythm.strumming-directions.up-title")}
             </h3>
             <img
@@ -77,7 +77,7 @@ export default function RythmModule() {
         {/* Setas abafadas */}
         <ul className={st.setas}>
           <li className="flex gap-2 items-center">
-            <h3 className="font-bold text-lg sm:text-2xl">
+            <h3 className="font-display text-lg sm:text-2xl text-gold-light">
               {t("rythm.muted-strumming.down-muted-title")}
             </h3>
             <img
@@ -87,7 +87,7 @@ export default function RythmModule() {
             />
           </li>
           <li className="flex gap-2 items-center">
-            <h3 className="font-bold text-lg sm:text-2xl">
+            <h3 className="font-display text-lg sm:text-2xl text-gold-light">
               {t("rythm.muted-strumming.up-muted-title")}
             </h3>
             <img
@@ -104,7 +104,7 @@ export default function RythmModule() {
 
       {/* Seção 2: Sequências Rítmicas */}
       <section className={st.content}>
-        <h1 className="font-bold text-xl">
+        <h1 className="font-display text-3xl text-gold-light">
           {t("rythm.rhythmic-sequences.title")}
         </h1>
         <p className="mt-2">{t("rythm.rhythmic-sequences.intro")}</p>
@@ -112,7 +112,7 @@ export default function RythmModule() {
         <p className="mt-2">{t("rythm.rhythmic-sequences.practice")}</p>
 
         {/* Rock/Pop */}
-        <div className="mt-6 border-t pt-6">
+        <div className="mt-6 border-t border-border/60 pt-6">
           <StrummingPattern
             title={t("rythm.music-styles.rock-pop")}
             bpmSuggestion={100}
@@ -128,7 +128,7 @@ export default function RythmModule() {
         </div>
 
         {/* Sertanejo/Country */}
-        <div className="mt-6 border-t pt-6">
+        <div className="mt-6 border-t border-border/60 pt-6">
           <StrummingPattern
             title={t("rythm.music-styles.sertanejo")}
             bpmSuggestion={80}
@@ -143,7 +143,7 @@ export default function RythmModule() {
         </div>
 
         {/* Reggae */}
-        <div className="mt-6 border-t pt-6">
+        <div className="mt-6 border-t border-border/60 pt-6">
           <StrummingPattern
             title={t("rythm.music-styles.reggae")}
             bpmSuggestion={60}
@@ -158,7 +158,7 @@ export default function RythmModule() {
         </div>
 
         {/* Bolero */}
-        <div className="mt-6 border-t pt-6">
+        <div className="mt-6 border-t border-border/60 pt-6">
           <StrummingPattern
             title={t("rythm.music-styles.bolero")}
             description={t("rythm.music-styles.bolero-intro")}
@@ -179,7 +179,7 @@ export default function RythmModule() {
 
       {/* Seção 3: Metrônomo */}
       <section className={st.content}>
-        <h1 className="font-bold text-xl">{t("rythm.metronome.title")}</h1>
+        <h1 className="font-display text-3xl text-gold-light">{t("rythm.metronome.title")}</h1>
         <p className="mt-4">{t("rythm.metronome.definition")}</p>
         <p className="mt-2">{t("rythm.metronome.function")}</p>
         <p className="mt-4">{t("rythm.metronome.problem")}</p>
