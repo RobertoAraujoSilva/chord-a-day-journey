@@ -1,0 +1,1 @@
+DROP POLICY IF EXISTS "Public can read chord audio" ON storage.objects;
