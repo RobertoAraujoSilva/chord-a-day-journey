@@ -1,8 +1,8 @@
 import { GuitarIntro } from "@/components/GuitarIntro";
-import { BookOpen } from "lucide-react";
 import { useProgress } from "@/contexts/ProgressContext";
 import { useTranslation } from "@/i18n/context";
 import { NavigationPanel } from "@/components/NavigationPanel";
+import { PageHeader } from "@/components/PageHeader";
 import { SEO } from "@/components/SEO";
 
 export default function IntroLesson() {
@@ -16,15 +16,13 @@ export default function IntroLesson() {
         description="Start here: learn the parts of the guitar, finger naming, and proper posture before your first chord."
         path="/intro"
       />
+
+      <PageHeader
+        eyebrow="Day · 0"
+        title={t("ui.navigation.intro_lesson")}
+      />
+
       <NavigationPanel />
-      <div className="text-center">
-        <div className="flex justify-center gap-2 mb-4">
-          <BookOpen className="h-6 w-6 text-orange-600" />
-          <h1 className="text-2xl font-bold">
-            {t("ui.navigation.intro_lesson")}
-          </h1>
-        </div>
-      </div>
 
       <GuitarIntro
         onComplete={markIntroComplete}
