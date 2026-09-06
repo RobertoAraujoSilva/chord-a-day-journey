@@ -88,7 +88,7 @@ export const StrummingPattern = ({
               </span>
             )}
             <img
-              className="w-16 h-16 sm:w-24 sm:h-24 lg:w-[120px] lg:h-[120px] object-contain"
+              className="w-16 h-16 sm:w-24 sm:h-24 lg:w-[120px] lg:h-[120px] object-contain invert opacity-90"
               src={ARROW_IMAGES[arrow.type]}
               alt={getAltText(arrow.type)}
             />
