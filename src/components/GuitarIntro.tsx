@@ -192,7 +192,7 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
       <div className="text-center px-4">
         <div className="flex items-center justify-center gap-3 2xl:gap-4 mb-4 2xl:mb-6">
           <Guitar className="h-8 w-8 2xl:h-10 2xl:w-10 3xl:h-12 3xl:w-12 text-primary" />
-          <h1 className="text-4xl 2xl:text-5xl 3xl:text-6xl font-bold bg-gold-gradient bg-clip-text text-transparent">
+          <h1 className="text-4xl 2xl:text-5xl 3xl:text-6xl font-display text-gold-light">
             {t("lessons.intro.lesson_title")}
           </h1>
         </div>

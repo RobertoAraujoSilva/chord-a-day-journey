@@ -98,7 +98,7 @@ export const LoveMeDoLesson = ({ onBack }: LoveMeDoLessonProps) => {
               <Sparkles className="h-8 w-8 2xl:h-10 2xl:w-10 text-yellow-500 absolute -top-2 -right-2 animate-pulse" />
             </div>
           </div>
-          <h1 className="text-4xl 2xl:text-5xl 3xl:text-6xl font-bold bg-gold-gradient bg-clip-text text-transparent mb-4 2xl:mb-6">
+          <h1 className="text-4xl 2xl:text-5xl 3xl:text-6xl font-display text-gold-light mb-4 2xl:mb-6">
             {t("content.bonus.title")}
           </h1>
           <p className="text-xl 2xl:text-2xl 3xl:text-3xl text-foreground/90 mb-2 2xl:mb-3">

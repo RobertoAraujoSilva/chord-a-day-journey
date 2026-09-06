@@ -77,7 +77,7 @@ export const CompletionCelebration = ({ isOpen, onClose }: CompletionCelebration
             </div>
 
             {/* Congratulations Message */}
-            <h2 className="text-4xl md:text-5xl font-bold bg-gold-gradient bg-clip-text text-transparent mb-4">
+            <h2 className="text-4xl md:text-5xl font-display text-gold-light mb-4">
               🎉 {t('ui.celebration.title')} 🎉
             </h2>
 

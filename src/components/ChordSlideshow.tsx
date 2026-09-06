@@ -19,7 +19,6 @@ import { Metronome } from "@/components/Metronome";
 import { chords } from "@/data/chords";
 import { useTranslation, useI18n } from "@/i18n/context";
 import { playGeneratedChord, stopAllAudio } from "@/utils/audioGenerator";
-import { NavigationPanel } from "./NavigationPanel";
 
 const SPEED_OPTIONS = [
   1000, 2000, 3000, 5000, 7000, 10000, 15000, 20000, 30000,
@@ -251,7 +250,6 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
     >
       {!isFullscreen && (
         <>
-          <NavigationPanel />
           <br />
         </>
       )}
@@ -266,7 +264,7 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
         >
           {/* Header */}
           <div className="text-center mb-6">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold bg-gold-gradient bg-clip-text text-transparent">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-display text-gold-light">
               {t("ui.slideshow.title")}
             </h2>
             <p className="text-muted-foreground mt-2">
