@@ -56,7 +56,7 @@ export const CompletionCelebration = ({ isOpen, onClose }: CompletionCelebration
         )}
 
         {/* Modal Card */}
-        <Card className="max-w-2xl w-full relative animate-scale-in shadow-2xl border-4 border-orange-400">
+        <Card className="max-w-2xl w-full relative animate-scale-in shadow-2xl border-4 border-primary/40">
           <Button
             variant="ghost"
             size="sm"
@@ -71,40 +71,40 @@ export const CompletionCelebration = ({ isOpen, onClose }: CompletionCelebration
             <div className="flex justify-center mb-6">
               <div className="relative">
                 <Trophy className="h-24 w-24 text-yellow-500 animate-bounce" />
-                <Sparkles className="h-8 w-8 text-orange-500 absolute -top-2 -right-2 animate-pulse" />
-                <Sparkles className="h-6 w-6 text-red-500 absolute -bottom-1 -left-1 animate-pulse" />
+                <Sparkles className="h-8 w-8 text-primary absolute -top-2 -right-2 animate-pulse" />
+                <Sparkles className="h-6 w-6 text-destructive absolute -bottom-1 -left-1 animate-pulse" />
               </div>
             </div>
 
             {/* Congratulations Message */}
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold bg-gold-gradient bg-clip-text text-transparent mb-4">
               🎉 {t('ui.celebration.title')} 🎉
             </h2>
 
-            <p className="text-xl md:text-2xl text-gray-700 mb-6 leading-relaxed">
+            <p className="text-xl md:text-2xl text-foreground/90 mb-6 leading-relaxed">
               {t('ui.celebration.message')}
             </p>
 
             {/* Achievement Stats */}
-            <div className="grid grid-cols-3 gap-4 mb-8 bg-gradient-to-br from-orange-50 to-red-50 p-6 rounded-2xl">
+            <div className="grid grid-cols-3 gap-4 mb-8 bg-secondary p-6 rounded-2xl">
               <div>
-                <div className="text-3xl font-bold text-orange-600">30</div>
-                <div className="text-sm text-gray-600">{t('ui.celebration.chords_learned')}</div>
+                <div className="text-3xl font-bold text-primary">30</div>
+                <div className="text-sm text-muted-foreground">{t('ui.celebration.chords_learned')}</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-red-600">30</div>
-                <div className="text-sm text-gray-600">{t('ui.celebration.days_completed')}</div>
+                <div className="text-3xl font-bold text-destructive">30</div>
+                <div className="text-sm text-muted-foreground">{t('ui.celebration.days_completed')}</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-green-600">100%</div>
-                <div className="text-sm text-gray-600">{t('ui.celebration.progress')}</div>
+                <div className="text-3xl font-bold text-primary">100%</div>
+                <div className="text-sm text-muted-foreground">{t('ui.celebration.progress')}</div>
               </div>
             </div>
 
             {/* Motivational Message */}
-            <div className="bg-white p-6 rounded-xl border-2 border-orange-200 mb-6">
-              <Music className="h-8 w-8 text-orange-600 mx-auto mb-3" />
-              <p className="text-lg text-gray-700 leading-relaxed">
+            <div className="bg-card p-6 rounded-xl border-2 border-primary/40 mb-6">
+              <Music className="h-8 w-8 text-primary mx-auto mb-3" />
+              <p className="text-lg text-foreground/90 leading-relaxed">
                 {t('ui.celebration.next_steps')}
               </p>
             </div>
@@ -112,7 +112,7 @@ export const CompletionCelebration = ({ isOpen, onClose }: CompletionCelebration
             {/* Close Button */}
             <Button
               onClick={onClose}
-              className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-12 py-6 text-lg"
+              className="bg-gold-gradient text-background hover:opacity-90 text-background px-12 py-6 text-lg"
             >
               {t('ui.celebration.continue')}
             </Button>

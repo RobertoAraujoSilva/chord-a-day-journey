@@ -191,21 +191,21 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
       {/* Header */}
       <div className="text-center px-4">
         <div className="flex items-center justify-center gap-3 2xl:gap-4 mb-4 2xl:mb-6">
-          <Guitar className="h-8 w-8 2xl:h-10 2xl:w-10 3xl:h-12 3xl:w-12 text-orange-600" />
-          <h1 className="text-4xl 2xl:text-5xl 3xl:text-6xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+          <Guitar className="h-8 w-8 2xl:h-10 2xl:w-10 3xl:h-12 3xl:w-12 text-primary" />
+          <h1 className="text-4xl 2xl:text-5xl 3xl:text-6xl font-bold bg-gold-gradient bg-clip-text text-transparent">
             {t("lessons.intro.lesson_title")}
           </h1>
         </div>
-        <p className="text-lg 2xl:text-xl 3xl:text-2xl text-gray-700 max-w-3xl mx-auto font-medium">
+        <p className="text-lg 2xl:text-xl 3xl:text-2xl text-foreground/90 max-w-3xl mx-auto font-medium">
           {t("lessons.intro.lesson_description")}
         </p>
       </div>
 
       {/* Anatomia do Violão */}
-      <Card className="p-8 2xl:p-10 3xl:p-14 shadow-xl border-2 border-orange-100 bg-white/90 backdrop-blur-sm hover:shadow-2xl transition-shadow">
+      <Card className="p-8 2xl:p-10 3xl:p-14 shadow-xl border-2 border-primary/40 bg-card backdrop-blur-sm hover:shadow-2xl transition-shadow">
         <CardContent className="p-0">
-          <h2 className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-gray-900 mb-6 2xl:mb-8 flex items-center gap-3">
-            <Eye className="h-7 w-7 2xl:h-8 2xl:w-8 3xl:h-10 3xl:w-10 text-orange-600" />
+          <h2 className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-foreground mb-6 2xl:mb-8 flex items-center gap-3">
+            <Eye className="h-7 w-7 2xl:h-8 2xl:w-8 3xl:h-10 3xl:w-10 text-primary" />
             {t("lessons.intro.anatomy_title")}
           </h2>
 
@@ -220,65 +220,65 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
 
           <div className="grid md:grid-cols-2 gap-8 2xl:gap-10">
             <div className="space-y-5 2xl:space-y-7">
-              <h3 className="text-xl 2xl:text-2xl 3xl:text-3xl font-semibold text-gray-900">
+              <h3 className="text-xl 2xl:text-2xl 3xl:text-3xl font-semibold text-foreground">
                 {t("lessons.intro.anatomy_parts")}
               </h3>
               <div className="space-y-4 2xl:space-y-5">
-                <div className="flex items-start gap-4 p-4 2xl:p-5 bg-gray-50 rounded-lg hover:bg-orange-50 transition-colors border border-gray-200 hover:border-orange-200">
-                  <CheckCircle2 className="h-6 w-6 2xl:h-7 2xl:w-7 text-orange-600 flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-4 p-4 2xl:p-5 bg-muted rounded-lg hover:opacity-90 transition-colors border border-border hover:border-primary/40">
+                  <CheckCircle2 className="h-6 w-6 2xl:h-7 2xl:w-7 text-primary flex-shrink-0 mt-0.5" />
                   <div className="text-base 2xl:text-lg 3xl:text-xl">
-                    <strong className="text-gray-900">
+                    <strong className="text-foreground">
                       {t("lessons.intro.body").split(":")[0]}:
                     </strong>
-                    <span className="text-gray-700">
+                    <span className="text-foreground/90">
                       {" "}
                       {t("lessons.intro.body").split(":")[1]}
                     </span>
                   </div>
                 </div>
-                <div className="flex items-start gap-4 p-4 2xl:p-5 bg-gray-50 rounded-lg hover:bg-orange-50 transition-colors border border-gray-200 hover:border-orange-200">
-                  <CheckCircle2 className="h-6 w-6 2xl:h-7 2xl:w-7 text-orange-600 flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-4 p-4 2xl:p-5 bg-muted rounded-lg hover:opacity-90 transition-colors border border-border hover:border-primary/40">
+                  <CheckCircle2 className="h-6 w-6 2xl:h-7 2xl:w-7 text-primary flex-shrink-0 mt-0.5" />
                   <div className="text-base 2xl:text-lg 3xl:text-xl">
-                    <strong className="text-gray-900">
+                    <strong className="text-foreground">
                       {t("lessons.intro.neck").split(":")[0]}:
                     </strong>
-                    <span className="text-gray-700">
+                    <span className="text-foreground/90">
                       {" "}
                       {t("lessons.intro.neck").split(":")[1]}
                     </span>
                   </div>
                 </div>
-                <div className="flex items-start gap-4 p-4 2xl:p-5 bg-gray-50 rounded-lg hover:bg-orange-50 transition-colors border border-gray-200 hover:border-orange-200">
-                  <CheckCircle2 className="h-6 w-6 2xl:h-7 2xl:w-7 text-orange-600 flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-4 p-4 2xl:p-5 bg-muted rounded-lg hover:opacity-90 transition-colors border border-border hover:border-primary/40">
+                  <CheckCircle2 className="h-6 w-6 2xl:h-7 2xl:w-7 text-primary flex-shrink-0 mt-0.5" />
                   <div className="text-base 2xl:text-lg 3xl:text-xl">
-                    <strong className="text-gray-900">
+                    <strong className="text-foreground">
                       {t("lessons.intro.bridge").split(":")[0]}:
                     </strong>
-                    <span className="text-gray-700">
+                    <span className="text-foreground/90">
                       {" "}
                       {t("lessons.intro.bridge").split(":")[1]}
                     </span>
                   </div>
                 </div>
-                <div className="flex items-start gap-4 p-4 2xl:p-5 bg-gray-50 rounded-lg hover:bg-orange-50 transition-colors border border-gray-200 hover:border-orange-200">
-                  <CheckCircle2 className="h-6 w-6 2xl:h-7 2xl:w-7 text-orange-600 flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-4 p-4 2xl:p-5 bg-muted rounded-lg hover:opacity-90 transition-colors border border-border hover:border-primary/40">
+                  <CheckCircle2 className="h-6 w-6 2xl:h-7 2xl:w-7 text-primary flex-shrink-0 mt-0.5" />
                   <div className="text-base 2xl:text-lg 3xl:text-xl">
-                    <strong className="text-gray-900">
+                    <strong className="text-foreground">
                       {t("lessons.intro.headstock").split(":")[0]}:
                     </strong>
-                    <span className="text-gray-700">
+                    <span className="text-foreground/90">
                       {" "}
                       {t("lessons.intro.headstock").split(":")[1]}
                     </span>
                   </div>
                 </div>
-                <div className="flex items-start gap-4 p-4 2xl:p-5 bg-gray-50 rounded-lg hover:bg-orange-50 transition-colors border border-gray-200 hover:border-orange-200">
-                  <CheckCircle2 className="h-6 w-6 2xl:h-7 2xl:w-7 text-orange-600 flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-4 p-4 2xl:p-5 bg-muted rounded-lg hover:opacity-90 transition-colors border border-border hover:border-primary/40">
+                  <CheckCircle2 className="h-6 w-6 2xl:h-7 2xl:w-7 text-primary flex-shrink-0 mt-0.5" />
                   <div className="text-base 2xl:text-lg 3xl:text-xl">
-                    <strong className="text-gray-900">
+                    <strong className="text-foreground">
                       {t("lessons.intro.frets").split(":")[0]}:
                     </strong>
-                    <span className="text-gray-700">
+                    <span className="text-foreground/90">
                       {" "}
                       {t("lessons.intro.frets").split(":")[1]}
                     </span>
@@ -287,7 +287,7 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
               </div>
 
               {/* Checklist item */}
-              <div className="flex items-center gap-4 p-5 2xl:p-6 bg-orange-50 rounded-lg border-2 border-orange-300 hover:bg-orange-100 transition-colors">
+              <div className="flex items-center gap-4 p-5 2xl:p-6 bg-primary rounded-lg border-2 border-primary/40 hover:opacity-90 transition-colors">
                 <Checkbox
                   id="anatomy-check"
                   checked={checklist.anatomy}
@@ -296,18 +296,18 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
                 />
                 <label
                   htmlFor="anatomy-check"
-                  className="text-base 2xl:text-lg 3xl:text-xl font-semibold text-gray-900 cursor-pointer flex-1"
+                  className="text-base 2xl:text-lg 3xl:text-xl font-semibold text-foreground cursor-pointer flex-1"
                 >
                   {t("lessons.intro.checklist_anatomy")}
                 </label>
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-orange-50 to-red-50 p-6 2xl:p-8 rounded-lg border-2 border-orange-200">
-              <h3 className="text-xl 2xl:text-2xl 3xl:text-3xl font-semibold text-gray-900 mb-4">
+            <div className="bg-secondary p-6 2xl:p-8 rounded-lg border-2 border-primary/40">
+              <h3 className="text-xl 2xl:text-2xl 3xl:text-3xl font-semibold text-foreground mb-4">
                 {t("ui.labels.important_tip")}
               </h3>
-              <p className="text-gray-800 text-base 2xl:text-lg 3xl:text-xl leading-relaxed">
+              <p className="text-foreground text-base 2xl:text-lg 3xl:text-xl leading-relaxed">
                 {t("lessons.intro.anatomy_tip")}
               </p>
             </div>
@@ -316,30 +316,30 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
       </Card>
 
       {/* Nome das Cordas */}
-      <Card className="p-8 2xl:p-10 3xl:p-14 shadow-xl border-2 border-orange-100 bg-white/90 backdrop-blur-sm hover:shadow-2xl transition-shadow">
+      <Card className="p-8 2xl:p-10 3xl:p-14 shadow-xl border-2 border-primary/40 bg-card backdrop-blur-sm hover:shadow-2xl transition-shadow">
         <CardContent className="p-0">
-          <h2 className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-gray-900 mb-6 2xl:mb-8 flex items-center gap-3">
-            <Music className="h-7 w-7 2xl:h-8 2xl:w-8 3xl:h-10 3xl:w-10 text-orange-600" />
+          <h2 className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-foreground mb-6 2xl:mb-8 flex items-center gap-3">
+            <Music className="h-7 w-7 2xl:h-8 2xl:w-8 3xl:h-10 3xl:w-10 text-primary" />
             {t("lessons.intro.strings_title")}
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8 2xl:gap-10">
             <div>
-              <h3 className="text-xl 2xl:text-2xl 3xl:text-3xl font-semibold text-gray-900 mb-5 2xl:mb-7">
+              <h3 className="text-xl 2xl:text-2xl 3xl:text-3xl font-semibold text-foreground mb-5 2xl:mb-7">
                 {t("lessons.intro.strings_description")}
               </h3>
 
               <div className="space-y-4 2xl:space-y-5">
                 {/* String 6 - E */}
-                <div className="flex items-center justify-between gap-4 p-4 2xl:p-5 bg-gray-50 rounded-lg hover:bg-orange-50 transition-colors border border-gray-200 hover:border-orange-300">
+                <div className="flex items-center justify-between gap-4 p-4 2xl:p-5 bg-muted rounded-lg hover:opacity-90 transition-colors border border-border hover:border-primary/40">
                   <div className="flex items-center gap-4 flex-1">
-                    <span className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-gray-900 w-10 2xl:w-14">
+                    <span className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-foreground w-10 2xl:w-14">
                       6ª
                     </span>
-                    <span className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-orange-600 w-10">
+                    <span className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-primary w-10">
                       E
                     </span>
-                    <span className="text-gray-800 text-base 2xl:text-lg 3xl:text-xl font-medium">
+                    <span className="text-foreground text-base 2xl:text-lg 3xl:text-xl font-medium">
                       {t("lessons.intro.string_6")}
                     </span>
                   </div>
@@ -348,7 +348,7 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
                     variant="default"
                     onClick={() => playString("E6", STRING_FREQUENCIES.E6)}
                     disabled={playingString === "E6"}
-                    className="flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white border-0 shadow-md hover:shadow-lg transition-all"
+                    className="flex items-center gap-2 bg-primary hover:opacity-90 text-background border-0 shadow-md hover:shadow-lg transition-all"
                   >
                     <Play
                       className="h-4 w-4 2xl:h-5 2xl:w-5"
@@ -361,15 +361,15 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
                 </div>
 
                 {/* String 5 - A */}
-                <div className="flex items-center justify-between gap-4 p-4 2xl:p-5 bg-gray-50 rounded-lg hover:bg-orange-50 transition-colors border border-gray-200 hover:border-orange-300">
+                <div className="flex items-center justify-between gap-4 p-4 2xl:p-5 bg-muted rounded-lg hover:opacity-90 transition-colors border border-border hover:border-primary/40">
                   <div className="flex items-center gap-4 flex-1">
-                    <span className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-gray-900 w-10 2xl:w-14">
+                    <span className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-foreground w-10 2xl:w-14">
                       5ª
                     </span>
-                    <span className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-orange-600 w-10">
+                    <span className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-primary w-10">
                       A
                     </span>
-                    <span className="text-gray-800 text-base 2xl:text-lg 3xl:text-xl font-medium">
+                    <span className="text-foreground text-base 2xl:text-lg 3xl:text-xl font-medium">
                       {t("lessons.intro.string_5")}
                     </span>
                   </div>
@@ -378,7 +378,7 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
                     variant="default"
                     onClick={() => playString("A5", STRING_FREQUENCIES.A5)}
                     disabled={playingString === "A5"}
-                    className="flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white border-0 shadow-md hover:shadow-lg transition-all"
+                    className="flex items-center gap-2 bg-primary hover:opacity-90 text-background border-0 shadow-md hover:shadow-lg transition-all"
                   >
                     <Play
                       className="h-4 w-4 2xl:h-5 2xl:w-5"
@@ -391,15 +391,15 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
                 </div>
 
                 {/* String 4 - D */}
-                <div className="flex items-center justify-between gap-4 p-4 2xl:p-5 bg-gray-50 rounded-lg hover:bg-orange-50 transition-colors border border-gray-200 hover:border-orange-300">
+                <div className="flex items-center justify-between gap-4 p-4 2xl:p-5 bg-muted rounded-lg hover:opacity-90 transition-colors border border-border hover:border-primary/40">
                   <div className="flex items-center gap-4 flex-1">
-                    <span className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-gray-900 w-10 2xl:w-14">
+                    <span className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-foreground w-10 2xl:w-14">
                       4ª
                     </span>
-                    <span className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-orange-600 w-10">
+                    <span className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-primary w-10">
                       D
                     </span>
-                    <span className="text-gray-800 text-base 2xl:text-lg 3xl:text-xl font-medium">
+                    <span className="text-foreground text-base 2xl:text-lg 3xl:text-xl font-medium">
                       {t("lessons.intro.string_4")}
                     </span>
                   </div>
@@ -408,7 +408,7 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
                     variant="default"
                     onClick={() => playString("D4", STRING_FREQUENCIES.D4)}
                     disabled={playingString === "D4"}
-                    className="flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white border-0 shadow-md hover:shadow-lg transition-all"
+                    className="flex items-center gap-2 bg-primary hover:opacity-90 text-background border-0 shadow-md hover:shadow-lg transition-all"
                   >
                     <Play
                       className="h-4 w-4 2xl:h-5 2xl:w-5"
@@ -421,15 +421,15 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
                 </div>
 
                 {/* String 3 - G */}
-                <div className="flex items-center justify-between gap-4 p-4 2xl:p-5 bg-gray-50 rounded-lg hover:bg-orange-50 transition-colors border border-gray-200 hover:border-orange-300">
+                <div className="flex items-center justify-between gap-4 p-4 2xl:p-5 bg-muted rounded-lg hover:opacity-90 transition-colors border border-border hover:border-primary/40">
                   <div className="flex items-center gap-4 flex-1">
-                    <span className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-gray-900 w-10 2xl:w-14">
+                    <span className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-foreground w-10 2xl:w-14">
                       3ª
                     </span>
-                    <span className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-orange-600 w-10">
+                    <span className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-primary w-10">
                       G
                     </span>
-                    <span className="text-gray-800 text-base 2xl:text-lg 3xl:text-xl font-medium">
+                    <span className="text-foreground text-base 2xl:text-lg 3xl:text-xl font-medium">
                       {t("lessons.intro.string_3")}
                     </span>
                   </div>
@@ -438,7 +438,7 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
                     variant="default"
                     onClick={() => playString("G3", STRING_FREQUENCIES.G3)}
                     disabled={playingString === "G3"}
-                    className="flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white border-0 shadow-md hover:shadow-lg transition-all"
+                    className="flex items-center gap-2 bg-primary hover:opacity-90 text-background border-0 shadow-md hover:shadow-lg transition-all"
                   >
                     <Play
                       className="h-4 w-4 2xl:h-5 2xl:w-5"
@@ -451,15 +451,15 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
                 </div>
 
                 {/* String 2 - B */}
-                <div className="flex items-center justify-between gap-4 p-4 2xl:p-5 bg-gray-50 rounded-lg hover:bg-orange-50 transition-colors border border-gray-200 hover:border-orange-300">
+                <div className="flex items-center justify-between gap-4 p-4 2xl:p-5 bg-muted rounded-lg hover:opacity-90 transition-colors border border-border hover:border-primary/40">
                   <div className="flex items-center gap-4 flex-1">
-                    <span className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-gray-900 w-10 2xl:w-14">
+                    <span className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-foreground w-10 2xl:w-14">
                       2ª
                     </span>
-                    <span className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-orange-600 w-10">
+                    <span className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-primary w-10">
                       B
                     </span>
-                    <span className="text-gray-800 text-base 2xl:text-lg 3xl:text-xl font-medium">
+                    <span className="text-foreground text-base 2xl:text-lg 3xl:text-xl font-medium">
                       {t("lessons.intro.string_2")}
                     </span>
                   </div>
@@ -468,7 +468,7 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
                     variant="default"
                     onClick={() => playString("B2", STRING_FREQUENCIES.B2)}
                     disabled={playingString === "B2"}
-                    className="flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white border-0 shadow-md hover:shadow-lg transition-all"
+                    className="flex items-center gap-2 bg-primary hover:opacity-90 text-background border-0 shadow-md hover:shadow-lg transition-all"
                   >
                     <Play
                       className="h-4 w-4 2xl:h-5 2xl:w-5"
@@ -481,15 +481,15 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
                 </div>
 
                 {/* String 1 - E */}
-                <div className="flex items-center justify-between gap-4 p-4 2xl:p-5 bg-gray-50 rounded-lg hover:bg-orange-50 transition-colors border border-gray-200 hover:border-orange-300">
+                <div className="flex items-center justify-between gap-4 p-4 2xl:p-5 bg-muted rounded-lg hover:opacity-90 transition-colors border border-border hover:border-primary/40">
                   <div className="flex items-center gap-4 flex-1">
-                    <span className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-gray-900 w-10 2xl:w-14">
+                    <span className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-foreground w-10 2xl:w-14">
                       1ª
                     </span>
-                    <span className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-orange-600 w-10">
+                    <span className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-primary w-10">
                       E
                     </span>
-                    <span className="text-gray-800 text-base 2xl:text-lg 3xl:text-xl font-medium">
+                    <span className="text-foreground text-base 2xl:text-lg 3xl:text-xl font-medium">
                       {t("lessons.intro.string_1")}
                     </span>
                   </div>
@@ -498,7 +498,7 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
                     variant="default"
                     onClick={() => playString("E1", STRING_FREQUENCIES.E1)}
                     disabled={playingString === "E1"}
-                    className="flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white border-0 shadow-md hover:shadow-lg transition-all"
+                    className="flex items-center gap-2 bg-primary hover:opacity-90 text-background border-0 shadow-md hover:shadow-lg transition-all"
                   >
                     <Play
                       className="h-4 w-4 2xl:h-5 2xl:w-5"
@@ -512,7 +512,7 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
               </div>
 
               {/* Checklist item */}
-              <div className="flex items-center gap-4 p-5 2xl:p-6 bg-orange-50 rounded-lg border-2 border-orange-300 hover:bg-orange-100 transition-colors mt-5">
+              <div className="flex items-center gap-4 p-5 2xl:p-6 bg-primary rounded-lg border-2 border-primary/40 hover:opacity-90 transition-colors mt-5">
                 <Checkbox
                   id="strings-check"
                   checked={checklist.strings}
@@ -521,25 +521,25 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
                 />
                 <label
                   htmlFor="strings-check"
-                  className="text-base 2xl:text-lg 3xl:text-xl font-semibold text-gray-900 cursor-pointer flex-1"
+                  className="text-base 2xl:text-lg 3xl:text-xl font-semibold text-foreground cursor-pointer flex-1"
                 >
                   {t("lessons.intro.checklist_strings")}
                 </label>
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-orange-50 to-red-50 p-6 2xl:p-8 rounded-lg border-2 border-orange-200">
-              <h3 className="text-xl 2xl:text-2xl 3xl:text-3xl font-semibold text-gray-900 mb-4">
+            <div className="bg-secondary p-6 2xl:p-8 rounded-lg border-2 border-primary/40">
+              <h3 className="text-xl 2xl:text-2xl 3xl:text-3xl font-semibold text-foreground mb-4">
                 {t("lessons.intro.strings_mnemonic")}
               </h3>
-              <p className="text-gray-800 text-base 2xl:text-lg 3xl:text-xl mb-4">
+              <p className="text-foreground text-base 2xl:text-lg 3xl:text-xl mb-4">
                 <strong>{t("lessons.intro.strings_phrase")}</strong>
               </p>
-              <p className="text-base 2xl:text-lg text-gray-700 mb-5">
+              <p className="text-base 2xl:text-lg text-foreground/90 mb-5">
                 (E-A-D-G-B-E)
               </p>
-              <div className="mt-4 p-4 2xl:p-5 bg-white rounded-lg border-2 border-orange-200">
-                <p className="text-base 2xl:text-lg 3xl:text-xl text-gray-800 leading-relaxed">
+              <div className="mt-4 p-4 2xl:p-5 bg-card rounded-lg border-2 border-primary/40">
+                <p className="text-base 2xl:text-lg 3xl:text-xl text-foreground leading-relaxed">
                   💡{" "}
                   <strong>
                     {t("ui.labels.important_tip").replace(":", "")}:
@@ -553,10 +553,10 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
       </Card>
 
       {/* Posição Correta */}
-      <Card className="p-8 2xl:p-10 3xl:p-14 shadow-xl border-2 border-orange-100 bg-white/90 backdrop-blur-sm hover:shadow-2xl transition-shadow">
+      <Card className="p-8 2xl:p-10 3xl:p-14 shadow-xl border-2 border-primary/40 bg-card backdrop-blur-sm hover:shadow-2xl transition-shadow">
         <CardContent className="p-0">
-          <h2 className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-gray-900 mb-6 2xl:mb-8 flex items-center gap-3">
-            <Hand className="h-7 w-7 2xl:h-8 2xl:w-8 3xl:h-10 3xl:w-10 text-orange-600" />
+          <h2 className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-foreground mb-6 2xl:mb-8 flex items-center gap-3">
+            <Hand className="h-7 w-7 2xl:h-8 2xl:w-8 3xl:h-10 3xl:w-10 text-primary" />
             {t("lessons.intro.position_title")}
           </h2>
 
@@ -568,7 +568,7 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
                 alt={t("lessons.intro.position_sit")}
                 className="w-full rounded-lg shadow-lg"
               />
-              <p className="text-center text-sm 2xl:text-base text-gray-600 mt-2">
+              <p className="text-center text-sm 2xl:text-base text-muted-foreground mt-2">
                 ✔️ {t("lessons.intro.position_sit")}
               </p>
             </div>
@@ -578,7 +578,7 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
                 alt={t("lessons.intro.position_left_hand")}
                 className="w-full rounded-lg shadow-lg"
               />
-              <p className="text-center text-sm 2xl:text-base text-gray-600 mt-2">
+              <p className="text-center text-sm 2xl:text-base text-muted-foreground mt-2">
                 ✔️ {t("lessons.intro.position_left_hand")}
               </p>
             </div>
@@ -586,30 +586,30 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
 
           <div className="grid md:grid-cols-2 gap-6 2xl:gap-8">
             <div className="space-y-4 2xl:space-y-6">
-              <h3 className="text-lg 2xl:text-xl 3xl:text-2xl font-semibold text-gray-700">
+              <h3 className="text-lg 2xl:text-xl 3xl:text-2xl font-semibold text-foreground/90">
                 {t("lessons.intro.position_how")}
               </h3>
               <ul className="space-y-3 2xl:space-y-4">
-                <li className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
-                  <CheckCircle2 className="h-5 w-5 2xl:h-6 2xl:w-6 text-orange-500 flex-shrink-0 mt-0.5" />
+                <li className="flex items-start gap-3 p-3 bg-muted rounded-lg">
+                  <CheckCircle2 className="h-5 w-5 2xl:h-6 2xl:w-6 text-primary flex-shrink-0 mt-0.5" />
                   <span className="text-sm 2xl:text-base 3xl:text-lg">
                     {t("lessons.intro.position_sit")}
                   </span>
                 </li>
-                <li className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
-                  <CheckCircle2 className="h-5 w-5 2xl:h-6 2xl:w-6 text-orange-500 flex-shrink-0 mt-0.5" />
+                <li className="flex items-start gap-3 p-3 bg-muted rounded-lg">
+                  <CheckCircle2 className="h-5 w-5 2xl:h-6 2xl:w-6 text-primary flex-shrink-0 mt-0.5" />
                   <span className="text-sm 2xl:text-base 3xl:text-lg">
                     {t("lessons.intro.position_leg")}
                   </span>
                 </li>
-                <li className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
-                  <CheckCircle2 className="h-5 w-5 2xl:h-6 2xl:w-6 text-orange-500 flex-shrink-0 mt-0.5" />
+                <li className="flex items-start gap-3 p-3 bg-muted rounded-lg">
+                  <CheckCircle2 className="h-5 w-5 2xl:h-6 2xl:w-6 text-primary flex-shrink-0 mt-0.5" />
                   <span className="text-sm 2xl:text-base 3xl:text-lg">
                     {t("lessons.intro.position_right_arm")}
                   </span>
                 </li>
-                <li className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
-                  <CheckCircle2 className="h-5 w-5 2xl:h-6 2xl:w-6 text-orange-500 flex-shrink-0 mt-0.5" />
+                <li className="flex items-start gap-3 p-3 bg-muted rounded-lg">
+                  <CheckCircle2 className="h-5 w-5 2xl:h-6 2xl:w-6 text-primary flex-shrink-0 mt-0.5" />
                   <span className="text-sm 2xl:text-base 3xl:text-lg">
                     {t("lessons.intro.position_left_hand")}
                   </span>
@@ -617,7 +617,7 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
               </ul>
 
               {/* Checklist item */}
-              <div className="flex items-center gap-3 p-4 bg-orange-50 rounded-lg border-2 border-orange-200">
+              <div className="flex items-center gap-3 p-4 bg-primary rounded-lg border-2 border-primary/40">
                 <Checkbox
                   id="position-check"
                   checked={checklist.position}
@@ -625,7 +625,7 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
                 />
                 <label
                   htmlFor="position-check"
-                  className="text-sm 2xl:text-base font-medium text-gray-700 cursor-pointer"
+                  className="text-sm 2xl:text-base font-medium text-foreground/90 cursor-pointer"
                 >
                   ✓ {t("lessons.intro.checklist_position")}
                 </label>
@@ -633,14 +633,14 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
             </div>
 
             <div className="space-y-4 2xl:space-y-6">
-              <h3 className="text-lg 2xl:text-xl 3xl:text-2xl font-semibold text-gray-700">
+              <h3 className="text-lg 2xl:text-xl 3xl:text-2xl font-semibold text-foreground/90">
                 {t("lessons.intro.position_hands")}
               </h3>
-              <div className="bg-gradient-to-br from-orange-50 to-red-50 p-4 2xl:p-6 rounded-lg">
-                <p className="text-sm 2xl:text-base 3xl:text-lg text-gray-600 mb-3">
+              <div className="bg-secondary p-4 2xl:p-6 rounded-lg">
+                <p className="text-sm 2xl:text-base 3xl:text-lg text-muted-foreground mb-3">
                   <strong>{t("lessons.intro.position_left_desc")}</strong>
                 </p>
-                <p className="text-sm 2xl:text-base 3xl:text-lg text-gray-600">
+                <p className="text-sm 2xl:text-base 3xl:text-lg text-muted-foreground">
                   <strong>{t("lessons.intro.position_right_desc")}</strong>
                 </p>
               </div>
@@ -650,10 +650,10 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
       </Card>
 
       {/* Como Ler Diagramas */}
-      <Card className="p-8 2xl:p-10 3xl:p-14 shadow-xl border-2 border-orange-100 bg-white/90 backdrop-blur-sm hover:shadow-2xl transition-shadow">
+      <Card className="p-8 2xl:p-10 3xl:p-14 shadow-xl border-2 border-primary/40 bg-card backdrop-blur-sm hover:shadow-2xl transition-shadow">
         <CardContent className="p-0">
-          <h2 className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-gray-900 mb-6 2xl:mb-8 flex items-center gap-3">
-            <Volume2 className="h-7 w-7 2xl:h-8 2xl:w-8 3xl:h-10 3xl:w-10 text-orange-600" />
+          <h2 className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-foreground mb-6 2xl:mb-8 flex items-center gap-3">
+            <Volume2 className="h-7 w-7 2xl:h-8 2xl:w-8 3xl:h-10 3xl:w-10 text-primary" />
             {t("lessons.intro.diagrams_title")}
           </h2>
 
@@ -668,30 +668,30 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
 
           <div className="grid md:grid-cols-2 gap-6 2xl:gap-8">
             <div className="space-y-4 2xl:space-y-6">
-              <p className="text-gray-600 text-sm 2xl:text-base 3xl:text-lg">
+              <p className="text-muted-foreground text-sm 2xl:text-base 3xl:text-lg">
                 {t("lessons.intro.diagrams_description")}
               </p>
               <ul className="space-y-3 2xl:space-y-4">
-                <li className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
-                  <CheckCircle2 className="h-5 w-5 2xl:h-6 2xl:w-6 text-orange-500 flex-shrink-0 mt-0.5" />
+                <li className="flex items-start gap-3 p-3 bg-muted rounded-lg">
+                  <CheckCircle2 className="h-5 w-5 2xl:h-6 2xl:w-6 text-primary flex-shrink-0 mt-0.5" />
                   <span className="text-sm 2xl:text-base 3xl:text-lg">
                     <strong>{t("lessons.intro.diagrams_vertical")}</strong>
                   </span>
                 </li>
-                <li className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
-                  <CheckCircle2 className="h-5 w-5 2xl:h-6 2xl:w-6 text-orange-500 flex-shrink-0 mt-0.5" />
+                <li className="flex items-start gap-3 p-3 bg-muted rounded-lg">
+                  <CheckCircle2 className="h-5 w-5 2xl:h-6 2xl:w-6 text-primary flex-shrink-0 mt-0.5" />
                   <span className="text-sm 2xl:text-base 3xl:text-lg">
                     <strong>{t("lessons.intro.diagrams_horizontal")}</strong>
                   </span>
                 </li>
-                <li className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
-                  <CheckCircle2 className="h-5 w-5 2xl:h-6 2xl:w-6 text-orange-500 flex-shrink-0 mt-0.5" />
+                <li className="flex items-start gap-3 p-3 bg-muted rounded-lg">
+                  <CheckCircle2 className="h-5 w-5 2xl:h-6 2xl:w-6 text-primary flex-shrink-0 mt-0.5" />
                   <span className="text-sm 2xl:text-base 3xl:text-lg">
                     <strong>{t("lessons.intro.diagrams_dots")}</strong>
                   </span>
                 </li>
-                <li className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
-                  <CheckCircle2 className="h-5 w-5 2xl:h-6 2xl:w-6 text-orange-500 flex-shrink-0 mt-0.5" />
+                <li className="flex items-start gap-3 p-3 bg-muted rounded-lg">
+                  <CheckCircle2 className="h-5 w-5 2xl:h-6 2xl:w-6 text-primary flex-shrink-0 mt-0.5" />
                   <span className="text-sm 2xl:text-base 3xl:text-lg">
                     <strong>{t("lessons.intro.diagrams_numbers")}</strong>
                   </span>
@@ -699,7 +699,7 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
               </ul>
 
               {/* Checklist item */}
-              <div className="flex items-center gap-3 p-4 bg-orange-50 rounded-lg border-2 border-orange-200">
+              <div className="flex items-center gap-3 p-4 bg-primary rounded-lg border-2 border-primary/40">
                 <Checkbox
                   id="diagrams-check"
                   checked={checklist.diagrams}
@@ -707,18 +707,18 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
                 />
                 <label
                   htmlFor="diagrams-check"
-                  className="text-sm 2xl:text-base font-medium text-gray-700 cursor-pointer"
+                  className="text-sm 2xl:text-base font-medium text-foreground/90 cursor-pointer"
                 >
                   ✓ {t("lessons.intro.checklist_diagrams")}
                 </label>
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-orange-50 to-red-50 p-4 2xl:p-6 rounded-lg">
-              <h3 className="text-lg 2xl:text-xl 3xl:text-2xl font-semibold text-gray-700 mb-3">
+            <div className="bg-secondary p-4 2xl:p-6 rounded-lg">
+              <h3 className="text-lg 2xl:text-xl 3xl:text-2xl font-semibold text-foreground/90 mb-3">
                 {t("ui.labels.important_tip").replace(":", "")}:
               </h3>
-              <p className="text-gray-600 text-sm 2xl:text-base 3xl:text-lg">
+              <p className="text-muted-foreground text-sm 2xl:text-base 3xl:text-lg">
                 {t("lessons.intro.diagrams_tip")}
               </p>
             </div>
@@ -730,13 +730,13 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
       <div className="text-center space-y-6 2xl:space-y-8">
         {/* Progress Indicator */}
         {!isCompleted && (
-          <Card className="max-w-2xl mx-auto bg-gradient-to-br from-orange-50 to-amber-50 border-2 border-orange-300 shadow-lg">
+          <Card className="max-w-2xl mx-auto bg-gradient-to-br from-primary to-amber-50 border-2 border-primary/40 shadow-lg">
             <CardContent className="p-6 2xl:p-8">
               <div className="flex items-center justify-between mb-4">
-                <span className="text-base 2xl:text-lg font-bold text-gray-900">
+                <span className="text-base 2xl:text-lg font-bold text-foreground">
                   📋 Progresso da Lição:
                 </span>
-                <span className="text-2xl 2xl:text-3xl font-bold text-orange-600">
+                <span className="text-2xl 2xl:text-3xl font-bold text-primary">
                   {checkedCount}/4
                 </span>
               </div>
@@ -749,28 +749,28 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
               <div className="grid grid-cols-2 gap-3 mb-4">
                 <div
                   className={`flex items-center gap-2 text-sm 2xl:text-base ${
-                    checklist.anatomy ? "text-green-700" : "text-gray-500"
+                    checklist.anatomy ? "text-primary" : "text-muted-foreground"
                   }`}
                 >
                   {checklist.anatomy ? "✅" : "⬜"} Anatomia do Violão
                 </div>
                 <div
                   className={`flex items-center gap-2 text-sm 2xl:text-base ${
-                    checklist.strings ? "text-green-700" : "text-gray-500"
+                    checklist.strings ? "text-primary" : "text-muted-foreground"
                   }`}
                 >
                   {checklist.strings ? "✅" : "⬜"} Nome das Cordas
                 </div>
                 <div
                   className={`flex items-center gap-2 text-sm 2xl:text-base ${
-                    checklist.position ? "text-green-700" : "text-gray-500"
+                    checklist.position ? "text-primary" : "text-muted-foreground"
                   }`}
                 >
                   {checklist.position ? "✅" : "⬜"} Posição Correta
                 </div>
                 <div
                   className={`flex items-center gap-2 text-sm 2xl:text-base ${
-                    checklist.diagrams ? "text-green-700" : "text-gray-500"
+                    checklist.diagrams ? "text-primary" : "text-muted-foreground"
                   }`}
                 >
                   {checklist.diagrams ? "✅" : "⬜"} Ler Diagramas
@@ -780,11 +780,11 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
               <div
                 className={`p-4 rounded-lg border-2 ${
                   allChecked
-                    ? "bg-green-50 border-green-300"
-                    : "bg-amber-50 border-amber-300"
+                    ? "bg-primary/20 border-primary/40"
+                    : "bg-secondary border-primary/40"
                 }`}
               >
-                <p className="text-sm 2xl:text-base font-semibold text-gray-900">
+                <p className="text-sm 2xl:text-base font-semibold text-foreground">
                   {allChecked
                     ? "🎉 Tudo pronto! Clique no botão abaixo para continuar."
                     : `⚠️ Marque ${4 - checkedCount} ${
@@ -804,8 +804,8 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
             disabled={isCompleted || !allChecked}
             className={`px-8 2xl:px-12 py-6 2xl:py-8 text-lg 2xl:text-xl 3xl:text-2xl font-bold transition-all shadow-lg ${
               allChecked && !isCompleted
-                ? "bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white hover:shadow-xl hover:scale-105 cursor-pointer"
-                : "bg-gray-300 text-gray-500 cursor-not-allowed opacity-60"
+                ? "bg-gold-gradient text-background hover:opacity-90 text-background hover:shadow-xl hover:scale-105 cursor-pointer"
+                : "bg-muted text-muted-foreground cursor-not-allowed opacity-60"
             }`}
           >
             {isCompleted
@@ -813,34 +813,34 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
               : t("ui.buttons.complete_intro")}
           </Button>
           {!allChecked && !isCompleted && (
-            <div className="absolute -top-3 -right-3 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full animate-pulse">
+            <div className="absolute -top-3 -right-3 bg-destructive/20 text-background text-xs font-bold px-3 py-1 rounded-full animate-pulse">
               🔒 Bloqueado
             </div>
           )}
         </div>
 
         {!allChecked && !isCompleted && (
-          <p className="text-sm 2xl:text-base text-amber-700 bg-amber-50 border border-amber-200 rounded-lg p-4 max-w-lg mx-auto">
+          <p className="text-sm 2xl:text-base text-primary bg-secondary border border-primary/40 rounded-lg p-4 max-w-lg mx-auto">
             💡 <strong>Dica:</strong> {t("lessons.intro.checklist_hint")}
           </p>
         )}
 
         {isCompleted && (
           <div className="space-y-4 2xl:space-y-6">
-            <p className="text-green-600 text-lg 2xl:text-xl font-medium">
+            <p className="text-primary text-lg 2xl:text-xl font-medium">
               ✅ {t("lessons.intro.congratulations")}
             </p>
 
             {/* Next Lesson Preview */}
-            <Card className="max-w-md mx-auto bg-gradient-to-br from-blue-50 to-purple-50 border-2 border-blue-200">
+            <Card className="max-w-md mx-auto bg-gradient-to-br from-blue-50 to-purple-50 border-2 border-accent/40">
               <CardContent className="p-6 2xl:p-8">
                 <div className="flex items-center gap-3 mb-3">
-                  <ArrowRight className="h-6 w-6 2xl:h-7 2xl:w-7 text-blue-600" />
-                  <h3 className="text-xl 2xl:text-2xl font-bold text-gray-800">
+                  <ArrowRight className="h-6 w-6 2xl:h-7 2xl:w-7 text-accent" />
+                  <h3 className="text-xl 2xl:text-2xl font-bold text-foreground">
                     {t("lessons.intro.next_lesson_title")}
                   </h3>
                 </div>
-                <p className="text-gray-700 text-base 2xl:text-lg">
+                <p className="text-foreground/90 text-base 2xl:text-lg">
                   {t("lessons.intro.next_lesson_preview")}
                 </p>
               </CardContent>

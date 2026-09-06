@@ -257,7 +257,7 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
       )}
 
       <Card
-        className={`shadow-2xl border-0 bg-white/90 backdrop-blur-sm overflow-hidden ${
+        className={`shadow-2xl border-0 bg-card backdrop-blur-sm overflow-hidden ${
           isFullscreen ? "w-full max-w-5xl" : ""
         }`}
       >
@@ -266,7 +266,7 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
         >
           {/* Header */}
           <div className="text-center mb-6">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold bg-gold-gradient bg-clip-text text-transparent">
               {t("ui.slideshow.title")}
             </h2>
             <p className="text-muted-foreground mt-2">
@@ -281,7 +281,7 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
           {isPlaying && (
             <div className="w-full h-2 bg-secondary rounded-full mb-6 overflow-hidden">
               <div
-                className="h-full bg-gradient-to-r from-orange-500 to-red-500 rounded-full transition-all duration-75 ease-linear"
+                className="h-full bg-gold-gradient rounded-full transition-all duration-75 ease-linear"
                 style={{ width: `${progress}%` }}
               />
             </div>
@@ -308,10 +308,10 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
                 onClick={() => setCurrentIndex(index)}
                 className={`w-2.5 h-2.5 rounded-full transition-all duration-200 ${
                   index === currentIndex
-                    ? "bg-orange-500 scale-125"
+                    ? "bg-primary scale-125"
                     : index < currentIndex
-                    ? "bg-orange-300"
-                    : "bg-gray-300"
+                    ? "bg-primary"
+                    : "bg-muted"
                 }`}
                 aria-label={`Go to chord ${index + 1}`}
               />
@@ -335,8 +335,8 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
                 onClick={() => setIsPlaying(!isPlaying)}
                 className={`h-14 w-14 rounded-full ${
                   isPlaying
-                    ? "bg-red-500 hover:bg-red-600"
-                    : "bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600"
+                    ? "bg-destructive/20 hover:bg-destructive/20"
+                    : "bg-gold-gradient text-background hover:opacity-90"
                 }`}
               >
                 {isPlaying ? (
@@ -371,7 +371,7 @@ export const ChordSlideshow = ({ onClose }: ChordSlideshowProps) => {
                 onClick={toggleSound}
                 className={`h-10 w-10 ${
                   soundEnabled
-                    ? "bg-orange-500 hover:bg-orange-600 text-white"
+                    ? "bg-primary hover:opacity-90 text-background"
                     : ""
                 }`}
                 title={
