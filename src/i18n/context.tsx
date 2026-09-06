@@ -189,7 +189,9 @@ export function I18nProvider({ children }: I18nProviderProps) {
         setTranslations(minimalTranslations);
       }
     } finally {
-      setIsLoading(false);
+      if (requestId === latestRequest.current) {
+        setIsLoading(false);
+      }
     }
   }
 
