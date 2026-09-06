@@ -311,7 +311,7 @@ Somebody new...`}
         </Card>
 
         {/* Final Message */}
-        <Card className="p-6 2xl:p-8 3xl:p-10 shadow-xl border-4 border-primary/40 bg-gradient-to-br from-green-50 to-yellow-50 backdrop-blur-sm">
+        <Card className="p-6 2xl:p-8 3xl:p-10 shadow-xl border-4 border-primary/40 bg-secondary backdrop-blur-sm">
           <CardContent className="p-0 text-center">
             <p className="text-xl 2xl:text-2xl 3xl:text-3xl font-bold text-foreground leading-relaxed">
               {t("content.bonus.final_message")}

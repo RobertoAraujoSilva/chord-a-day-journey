@@ -730,7 +730,7 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
       <div className="text-center space-y-6 2xl:space-y-8">
         {/* Progress Indicator */}
         {!isCompleted && (
-          <Card className="max-w-2xl mx-auto bg-gradient-to-br from-primary to-amber-50 border-2 border-primary/40 shadow-lg">
+          <Card className="max-w-2xl mx-auto bg-secondary border-2 border-primary/40 shadow-lg">
             <CardContent className="p-6 2xl:p-8">
               <div className="flex items-center justify-between mb-4">
                 <span className="text-base 2xl:text-lg font-bold text-foreground">
@@ -832,7 +832,7 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
             </p>
 
             {/* Next Lesson Preview */}
-            <Card className="max-w-md mx-auto bg-gradient-to-br from-blue-50 to-purple-50 border-2 border-accent/40">
+            <Card className="max-w-md mx-auto bg-secondary border-2 border-accent/40">
               <CardContent className="p-6 2xl:p-8">
                 <div className="flex items-center gap-3 mb-3">
                   <ArrowRight className="h-6 w-6 2xl:h-7 2xl:w-7 text-accent" />
