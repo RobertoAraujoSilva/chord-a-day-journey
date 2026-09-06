@@ -17,7 +17,7 @@ export default function Slideshow() {
         path="/slideshow"
       />
 
-      <PageHeader eyebrow="30 · Chords" title={t("ui.slideshow.open")} />
+      <PageHeader eyebrow={t("ui.hero.chords_eyebrow")} title={t("ui.slideshow.open")} />
 
       <NavigationPanel />
 
