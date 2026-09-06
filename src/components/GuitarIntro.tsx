@@ -821,7 +821,8 @@ export const GuitarIntro = ({ onComplete, isCompleted }: GuitarIntroProps) => {
 
         {!allChecked && !isCompleted && (
           <p className="text-sm 2xl:text-base text-primary bg-secondary border border-primary/40 rounded-lg p-4 max-w-lg mx-auto">
-            💡 <strong>Dica:</strong> {t("lessons.intro.checklist_hint")}
+            💡 <strong>{t("ui.labels.important_tip")}:</strong>{" "}
+            {t("lessons.intro.checklist_hint")}
           </p>
         )}
 
