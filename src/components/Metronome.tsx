@@ -127,10 +127,10 @@ export const Metronome = ({ isActive, onToggle, beatsPerMeasure = 4, labels }: M
             className={`w-4 h-4 rounded-full transition-all duration-100 ${
               isActive && currentBeat === index
                 ? index === 0
-                  ? 'bg-orange-500 scale-125 shadow-lg shadow-orange-500/50'
-                  : 'bg-orange-400 scale-110'
-                : 'bg-gray-300'
-            } ${isActive && isFlashing && currentBeat === index ? 'ring-2 ring-orange-300' : ''}`}
+                  ? 'bg-primary scale-125 shadow-lg shadow-primary/40'
+                  : 'bg-primary scale-110'
+                : 'bg-muted'
+            } ${isActive && isFlashing && currentBeat === index ? 'ring-2 ring-primary' : ''}`}
           />
         ))}
       </div>
@@ -141,7 +141,7 @@ export const Metronome = ({ isActive, onToggle, beatsPerMeasure = 4, labels }: M
           variant={isActive ? "default" : "ghost"}
           size="icon"
           onClick={onToggle}
-          className={`h-10 w-10 ${isActive ? 'bg-orange-500 hover:bg-orange-600 text-white' : ''}`}
+          className={`h-10 w-10 ${isActive ? 'bg-primary hover:opacity-90 text-background' : ''}`}
           title={isActive ? l.metronome_on : l.metronome_off}
         >
           {isActive ? <Timer className="h-5 w-5" /> : <TimerOff className="h-5 w-5" />}

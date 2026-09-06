@@ -55,7 +55,7 @@ export default function RythmModule() {
               {t("rythm.strumming-directions.down-title")}
             </h3>
             <img
-              className="w-20 h-20 sm:w-[120px] sm:h-[120px] object-contain"
+              className="w-20 h-20 sm:w-[120px] sm:h-[120px] object-contain invert opacity-90"
               src="/setas/seta_baixo.png"
               alt={t("rythm.strumming-directions.down-alt")}
             />
@@ -65,7 +65,7 @@ export default function RythmModule() {
               {t("rythm.strumming-directions.up-title")}
             </h3>
             <img
-              className="w-20 h-20 sm:w-[120px] sm:h-[120px] object-contain"
+              className="w-20 h-20 sm:w-[120px] sm:h-[120px] object-contain invert opacity-90"
               src="/setas/seta_cima.png"
               alt={t("rythm.strumming-directions.up-alt")}
             />
@@ -81,7 +81,7 @@ export default function RythmModule() {
               {t("rythm.muted-strumming.down-muted-title")}
             </h3>
             <img
-              className="w-20 h-20 sm:w-[120px] sm:h-[120px] object-contain"
+              className="w-20 h-20 sm:w-[120px] sm:h-[120px] object-contain invert opacity-90"
               src="/setas/seta_baixo_ab.png"
               alt={t("rythm.muted-strumming.down-muted-alt")}
             />
@@ -91,7 +91,7 @@ export default function RythmModule() {
               {t("rythm.muted-strumming.up-muted-title")}
             </h3>
             <img
-              className="w-20 h-20 sm:w-[120px] sm:h-[120px] object-contain"
+              className="w-20 h-20 sm:w-[120px] sm:h-[120px] object-contain invert opacity-90"
               src="/setas/seta_cima_ab.png"
               alt={t("rythm.muted-strumming.up-muted-alt")}
             />

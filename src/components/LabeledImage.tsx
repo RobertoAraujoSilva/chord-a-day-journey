@@ -80,8 +80,8 @@ export const LabeledImage = ({
           key={idx}
           className={`
             absolute
-            bg-orange-500/90
-            text-white
+            bg-primary/90
+            text-background
             px-2 py-0.5
             2xl:px-2.5 2xl:py-1
             3xl:px-3 3xl:py-1
@@ -90,7 +90,7 @@ export const LabeledImage = ({
             font-bold
             shadow-lg
             border-2 border-white
-            hover:bg-orange-600
+            hover:opacity-90
             hover:scale-110
             transition-all
             pointer-events-none

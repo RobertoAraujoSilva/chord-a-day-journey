@@ -124,7 +124,7 @@ export const AudioPlayer = ({ chordName, className = '' }: AudioPlayerProps) => 
           variant="ghost"
           size="sm"
           onClick={toggleMute}
-          className="text-gray-500 hover:text-gray-700"
+          className="text-muted-foreground hover:text-foreground/90"
         >
           {isMuted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
         </Button>

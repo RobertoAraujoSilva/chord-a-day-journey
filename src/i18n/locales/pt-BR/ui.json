@@ -98,5 +98,11 @@
     "metronome_on": "Metrônomo ligado",
     "metronome_off": "Metrônomo desligado",
     "bpm": "BPM"
+  },
+  "hero": {
+    "eyebrow": "30 · Dias · 30 · Acordes",
+    "title": "Um acorde por dia. Uma vida de música.",
+    "chords_eyebrow": "30 · Acordes",
+    "day_zero": "Dia · 0"
   }
 }

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useEffect, useRef, ReactNode } from 'react';
 import { 
   Locale, 
   TranslationObject, 
@@ -47,6 +47,9 @@ export function I18nProvider({ children }: I18nProviderProps) {
   const [translations, setTranslations] = useState<TranslationObject>({} as TranslationObject);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  // Guards against out-of-order translation loads (race between the default
+  // locale load and the detected/saved locale load).
+  const latestRequest = useRef(0);
 
   // Initialize language on mount
   useEffect(() => {
@@ -87,17 +90,20 @@ export function I18nProvider({ children }: I18nProviderProps) {
    * Load translations for a specific language
    */
   async function loadLanguageTranslations(locale: Locale) {
+    const requestId = ++latestRequest.current;
     setIsLoading(true);
     setError(null);
     
     try {
       const loadedTranslations = await loadTranslations(locale);
+      if (requestId !== latestRequest.current) return;
       
       // Validate translation completeness (skip validation to avoid type issues)
       // The validation is optional and we proceed with available translations
       
       setTranslations(loadedTranslations);
     } catch (error) {
+      if (requestId !== latestRequest.current) return;
       const errorMessage = error instanceof Error ? error.message : 'Unknown error';
       console.error(`Failed to load translations for ${locale}:`, error);
       
@@ -128,7 +134,8 @@ export function I18nProvider({ children }: I18nProviderProps) {
               difficulty: {},
               motivation: {},
               celebration: {},
-              slideshow: {}
+              slideshow: {},
+              hero: {}
             },
             lessons: { intro: {}, chords: {}, instructions: {} },
             content: { titles: {}, descriptions: {}, tips: {}, chords: {}, bonus: {} },
@@ -161,7 +168,8 @@ export function I18nProvider({ children }: I18nProviderProps) {
             difficulty: {},
             motivation: {},
             celebration: {},
-            slideshow: {}
+            slideshow: {},
+            hero: {}
           },
           lessons: { intro: {}, chords: {}, instructions: {} },
           content: { titles: {}, descriptions: {}, tips: {}, chords: {}, bonus: {} },
@@ -183,7 +191,9 @@ export function I18nProvider({ children }: I18nProviderProps) {
         setTranslations(minimalTranslations);
       }
     } finally {
-      setIsLoading(false);
+      if (requestId === latestRequest.current) {
+        setIsLoading(false);
+      }
     }
   }
 

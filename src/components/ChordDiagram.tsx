@@ -21,7 +21,7 @@ export const ChordDiagram = ({ chord }: ChordDiagramProps) => {
   return (
     <div className="flex flex-col items-center">
       {/* Fretboard */}
-      <div className="relative bg-amber-100 p-4 2xl:p-6 3xl:p-8 rounded-lg border-2 border-amber-200">
+      <div className="relative bg-secondary p-4 2xl:p-6 3xl:p-8 rounded-lg border-2 border-primary/40">
         <svg 
           viewBox="0 0 200 220" 
           className="w-64 2xl:w-80 3xl:w-96 h-56 2xl:h-72 3xl:h-80 overflow-visible"
@@ -174,15 +174,15 @@ export const ChordDiagram = ({ chord }: ChordDiagramProps) => {
       {/* Legend */}
       <div className="mt-4 2xl:mt-6 3xl:mt-8 flex flex-wrap justify-center gap-4 2xl:gap-6 3xl:gap-8 text-sm 2xl:text-base 3xl:text-lg text-muted-foreground">
         <div className="flex items-center gap-2">
-          <div className="w-4 h-4 2xl:w-6 2xl:h-6 3xl:w-8 3xl:h-8 rounded-full bg-red-500"></div>
+          <div className="w-4 h-4 2xl:w-6 2xl:h-6 3xl:w-8 3xl:h-8 rounded-full bg-destructive/20"></div>
           <span>{t('ui.labels.finger_pressed')}</span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="w-4 h-4 2xl:w-6 2xl:h-6 3xl:w-8 3xl:h-8 rounded-full border-2 2xl:border-3 3xl:border-4 border-green-500"></div>
+          <div className="w-4 h-4 2xl:w-6 2xl:h-6 3xl:w-8 3xl:h-8 rounded-full border-2 2xl:border-3 3xl:border-4 border-primary/40"></div>
           <span>{t('ui.labels.open_string')}</span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="w-4 h-4 2xl:w-6 2xl:h-6 3xl:w-8 3xl:h-8 flex items-center justify-center text-red-500 font-bold text-lg 2xl:text-xl 3xl:text-2xl">×</div>
+          <div className="w-4 h-4 2xl:w-6 2xl:h-6 3xl:w-8 3xl:h-8 flex items-center justify-center text-destructive font-bold text-lg 2xl:text-xl 3xl:text-2xl">×</div>
           <span>{t('ui.labels.do_not_play')}</span>
         </div>
       </div>

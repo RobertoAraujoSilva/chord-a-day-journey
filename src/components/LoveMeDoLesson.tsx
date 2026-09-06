@@ -45,7 +45,7 @@ export const LoveMeDoLesson = ({ onBack }: LoveMeDoLessonProps) => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50">
+    <div className="min-h-screen bg-noir">
       {/* Confetti Effect */}
       {showConfetti && (
         <div className="fixed inset-0 pointer-events-none z-50">
@@ -94,66 +94,66 @@ export const LoveMeDoLesson = ({ onBack }: LoveMeDoLessonProps) => {
         <div className="text-center mb-8 2xl:mb-12 3xl:mb-16">
           <div className="flex justify-center mb-4">
             <div className="relative">
-              <Music className="h-16 w-16 2xl:h-20 2xl:w-20 3xl:h-24 3xl:w-24 text-orange-600 animate-bounce" />
+              <Music className="h-16 w-16 2xl:h-20 2xl:w-20 3xl:h-24 3xl:w-24 text-primary animate-bounce" />
               <Sparkles className="h-8 w-8 2xl:h-10 2xl:w-10 text-yellow-500 absolute -top-2 -right-2 animate-pulse" />
             </div>
           </div>
-          <h1 className="text-4xl 2xl:text-5xl 3xl:text-6xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-4 2xl:mb-6">
+          <h1 className="text-4xl 2xl:text-5xl 3xl:text-6xl font-display text-gold-light mb-4 2xl:mb-6">
             {t("content.bonus.title")}
           </h1>
-          <p className="text-xl 2xl:text-2xl 3xl:text-3xl text-gray-700 mb-2 2xl:mb-3">
+          <p className="text-xl 2xl:text-2xl 3xl:text-3xl text-foreground/90 mb-2 2xl:mb-3">
             {t("content.bonus.subtitle")}
           </p>
-          <p className="text-lg 2xl:text-xl 3xl:text-2xl text-gray-600 max-w-4xl mx-auto">
+          <p className="text-lg 2xl:text-xl 3xl:text-2xl text-muted-foreground max-w-4xl mx-auto">
             {t("content.bonus.description")}
           </p>
         </div>
 
         {/* Why Perfect Section */}
-        <Card className="p-6 2xl:p-8 3xl:p-10 shadow-xl border-2 border-orange-200 bg-white/90 backdrop-blur-sm mb-8 2xl:mb-12 3xl:mb-16">
+        <Card className="p-6 2xl:p-8 3xl:p-10 shadow-xl border-2 border-primary/40 bg-card backdrop-blur-sm mb-8 2xl:mb-12 3xl:mb-16">
           <CardContent className="p-0">
-            <p className="text-base 2xl:text-lg 3xl:text-xl text-gray-700 leading-relaxed">
+            <p className="text-base 2xl:text-lg 3xl:text-xl text-foreground/90 leading-relaxed">
               {t("content.bonus.why_perfect")}
             </p>
           </CardContent>
         </Card>
 
         {/* Chord Review Diagrams */}
-        <Card className="p-6 2xl:p-8 3xl:p-10 shadow-xl border-2 border-orange-200 bg-white/90 backdrop-blur-sm mb-8 2xl:mb-12 3xl:mb-16">
+        <Card className="p-6 2xl:p-8 3xl:p-10 shadow-xl border-2 border-primary/40 bg-card backdrop-blur-sm mb-8 2xl:mb-12 3xl:mb-16">
           <CardContent className="p-0">
-            <h2 className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-gray-800 mb-4 2xl:mb-6 text-center">
+            <h2 className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-foreground mb-4 2xl:mb-6 text-center">
               {t("content.bonus.chord_review")}
             </h2>
-            <p className="text-center text-gray-600 mb-6 2xl:mb-8 text-base 2xl:text-lg 3xl:text-xl">
+            <p className="text-center text-muted-foreground mb-6 2xl:mb-8 text-base 2xl:text-lg 3xl:text-xl">
               {t("content.bonus.chord_review_desc")}
             </p>
 
             {/* Chord Diagrams Grid */}
             <div className="grid md:grid-cols-3 gap-6 2xl:gap-8 3xl:gap-12 mb-6 2xl:mb-8">
               <div className="flex flex-col items-center">
-                <h3 className="text-xl 2xl:text-2xl 3xl:text-3xl font-bold text-gray-800 mb-4">
+                <h3 className="text-xl 2xl:text-2xl 3xl:text-3xl font-bold text-foreground mb-4">
                   G
                 </h3>
                 <ChordDiagram chord={GChord} />
-                <p className="mt-4 text-sm 2xl:text-base 3xl:text-lg text-gray-600 font-mono">
+                <p className="mt-4 text-sm 2xl:text-base 3xl:text-lg text-muted-foreground font-mono">
                   {t("content.bonus.chord_g")}
                 </p>
               </div>
               <div className="flex flex-col items-center">
-                <h3 className="text-xl 2xl:text-2xl 3xl:text-3xl font-bold text-gray-800 mb-4">
+                <h3 className="text-xl 2xl:text-2xl 3xl:text-3xl font-bold text-foreground mb-4">
                   C
                 </h3>
                 <ChordDiagram chord={CChord} />
-                <p className="mt-4 text-sm 2xl:text-base 3xl:text-lg text-gray-600 font-mono">
+                <p className="mt-4 text-sm 2xl:text-base 3xl:text-lg text-muted-foreground font-mono">
                   {t("content.bonus.chord_c")}
                 </p>
               </div>
               <div className="flex flex-col items-center">
-                <h3 className="text-xl 2xl:text-2xl 3xl:text-3xl font-bold text-gray-800 mb-4">
+                <h3 className="text-xl 2xl:text-2xl 3xl:text-3xl font-bold text-foreground mb-4">
                   D
                 </h3>
                 <ChordDiagram chord={DChord} />
-                <p className="mt-4 text-sm 2xl:text-base 3xl:text-lg text-gray-600 font-mono">
+                <p className="mt-4 text-sm 2xl:text-base 3xl:text-lg text-muted-foreground font-mono">
                   {t("content.bonus.chord_d")}
                 </p>
               </div>
@@ -166,43 +166,43 @@ export const LoveMeDoLesson = ({ onBack }: LoveMeDoLessonProps) => {
           <img
             src={lovemedoChordG}
             alt="Love Me Do - G Chord"
-            className="w-full rounded-lg shadow-xl border-2 border-orange-200"
+            className="w-full rounded-lg shadow-xl border-2 border-primary/40"
           />
           <img
             src={lovemedoChordC}
             alt="Love Me Do - C Chord"
-            className="w-full rounded-lg shadow-xl border-2 border-orange-200"
+            className="w-full rounded-lg shadow-xl border-2 border-primary/40"
           />
           <img
             src={lovemedoChordD}
             alt="Love Me Do - D Chord"
-            className="w-full rounded-lg shadow-xl border-2 border-orange-200"
+            className="w-full rounded-lg shadow-xl border-2 border-primary/40"
           />
         </div>
 
         {/* How to Play Section */}
-        <Card className="p-6 2xl:p-8 3xl:p-10 shadow-xl border-2 border-orange-200 bg-white/90 backdrop-blur-sm mb-8 2xl:mb-12 3xl:mb-16">
+        <Card className="p-6 2xl:p-8 3xl:p-10 shadow-xl border-2 border-primary/40 bg-card backdrop-blur-sm mb-8 2xl:mb-12 3xl:mb-16">
           <CardContent className="p-0">
-            <h2 className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-gray-800 mb-4 2xl:mb-6">
+            <h2 className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-foreground mb-4 2xl:mb-6">
               {t("content.bonus.how_to_play")}
             </h2>
 
             <div className="space-y-4 2xl:space-y-6 3xl:space-y-8">
               <div>
-                <p className="text-base 2xl:text-lg 3xl:text-xl text-gray-700 mb-2">
+                <p className="text-base 2xl:text-lg 3xl:text-xl text-foreground/90 mb-2">
                   <strong>{t("content.bonus.no_capo")}</strong>
                 </p>
               </div>
 
               <div>
-                <p className="text-base 2xl:text-lg 3xl:text-xl text-gray-700 mb-2">
+                <p className="text-base 2xl:text-lg 3xl:text-xl text-foreground/90 mb-2">
                   <strong>{t("content.bonus.strumming_pattern")}</strong>{" "}
                   {t("content.bonus.strumming_pattern_desc")}
                 </p>
               </div>
 
               <div>
-                <p className="text-base 2xl:text-lg 3xl:text-xl text-gray-700">
+                <p className="text-base 2xl:text-lg 3xl:text-xl text-foreground/90">
                   <strong>{t("content.bonus.structure")}</strong>
                 </p>
               </div>
@@ -211,12 +211,12 @@ export const LoveMeDoLesson = ({ onBack }: LoveMeDoLessonProps) => {
         </Card>
 
         {/* Verse/Chorus Section */}
-        <Card className="p-6 2xl:p-8 3xl:p-10 shadow-xl border-2 border-orange-200 bg-white/90 backdrop-blur-sm mb-8 2xl:mb-12 3xl:mb-16">
+        <Card className="p-6 2xl:p-8 3xl:p-10 shadow-xl border-2 border-primary/40 bg-card backdrop-blur-sm mb-8 2xl:mb-12 3xl:mb-16">
           <CardContent className="p-0">
-            <h3 className="text-xl 2xl:text-2xl 3xl:text-3xl font-bold text-gray-800 mb-4 2xl:mb-6">
+            <h3 className="text-xl 2xl:text-2xl 3xl:text-3xl font-bold text-foreground mb-4 2xl:mb-6">
               {t("content.bonus.verse_chorus")}
             </h3>
-            <div className="bg-gray-50 p-6 2xl:p-8 3xl:p-10 rounded-lg font-mono text-sm 2xl:text-base 3xl:text-lg leading-relaxed whitespace-pre-line">
+            <div className="bg-muted p-6 2xl:p-8 3xl:p-10 rounded-lg font-mono text-sm 2xl:text-base 3xl:text-lg leading-relaxed whitespace-pre-line">
               {`G          C
 Love, love me do
 G             C
@@ -232,12 +232,12 @@ So please... love me do
         </Card>
 
         {/* Bridge Section */}
-        <Card className="p-6 2xl:p-8 3xl:p-10 shadow-xl border-2 border-orange-200 bg-white/90 backdrop-blur-sm mb-8 2xl:mb-12 3xl:mb-16">
+        <Card className="p-6 2xl:p-8 3xl:p-10 shadow-xl border-2 border-primary/40 bg-card backdrop-blur-sm mb-8 2xl:mb-12 3xl:mb-16">
           <CardContent className="p-0">
-            <h3 className="text-xl 2xl:text-2xl 3xl:text-3xl font-bold text-gray-800 mb-4 2xl:mb-6">
+            <h3 className="text-xl 2xl:text-2xl 3xl:text-3xl font-bold text-foreground mb-4 2xl:mb-6">
               {t("content.bonus.bridge")}
             </h3>
-            <div className="bg-gray-50 p-6 2xl:p-8 3xl:p-10 rounded-lg font-mono text-sm 2xl:text-base 3xl:text-lg leading-relaxed whitespace-pre-line">
+            <div className="bg-muted p-6 2xl:p-8 3xl:p-10 rounded-lg font-mono text-sm 2xl:text-base 3xl:text-lg leading-relaxed whitespace-pre-line">
               {`D          C
 Someone to love
 G
@@ -247,39 +247,39 @@ Somebody new...`}
         </Card>
 
         {/* Harmonica Riff Section */}
-        <Card className="p-6 2xl:p-8 3xl:p-10 shadow-xl border-2 border-orange-200 bg-white/90 backdrop-blur-sm mb-8 2xl:mb-12 3xl:mb-16">
+        <Card className="p-6 2xl:p-8 3xl:p-10 shadow-xl border-2 border-primary/40 bg-card backdrop-blur-sm mb-8 2xl:mb-12 3xl:mb-16">
           <CardContent className="p-0">
-            <h3 className="text-xl 2xl:text-2xl 3xl:text-3xl font-bold text-gray-800 mb-4 2xl:mb-6">
+            <h3 className="text-xl 2xl:text-2xl 3xl:text-3xl font-bold text-foreground mb-4 2xl:mb-6">
               {t("content.bonus.harmonica_riff")}
             </h3>
-            <p className="text-base 2xl:text-lg 3xl:text-xl text-gray-700 leading-relaxed">
+            <p className="text-base 2xl:text-lg 3xl:text-xl text-foreground/90 leading-relaxed">
               {t("content.bonus.harmonica_riff_desc")}
             </p>
           </CardContent>
         </Card>
 
         {/* Important Tips Section */}
-        <Card className="p-6 2xl:p-8 3xl:p-10 shadow-xl border-2 border-orange-200 bg-white/90 backdrop-blur-sm mb-8 2xl:mb-12 3xl:mb-16">
+        <Card className="p-6 2xl:p-8 3xl:p-10 shadow-xl border-2 border-primary/40 bg-card backdrop-blur-sm mb-8 2xl:mb-12 3xl:mb-16">
           <CardContent className="p-0">
-            <h2 className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-gray-800 mb-4 2xl:mb-6">
+            <h2 className="text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-foreground mb-4 2xl:mb-6">
               {t("content.bonus.important_tips")}
             </h2>
             <ul className="space-y-3 2xl:space-y-4 3xl:space-y-5">
               <li className="flex items-start gap-3">
-                <span className="text-orange-600 font-bold text-xl">•</span>
-                <p className="text-base 2xl:text-lg 3xl:text-xl text-gray-700">
+                <span className="text-primary font-bold text-xl">•</span>
+                <p className="text-base 2xl:text-lg 3xl:text-xl text-foreground/90">
                   {t("content.bonus.tip_1")}
                 </p>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-orange-600 font-bold text-xl">•</span>
-                <p className="text-base 2xl:text-lg 3xl:text-xl text-gray-700">
+                <span className="text-primary font-bold text-xl">•</span>
+                <p className="text-base 2xl:text-lg 3xl:text-xl text-foreground/90">
                   {t("content.bonus.tip_2")}
                 </p>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-orange-600 font-bold text-xl">•</span>
-                <p className="text-base 2xl:text-lg 3xl:text-xl text-gray-700">
+                <span className="text-primary font-bold text-xl">•</span>
+                <p className="text-base 2xl:text-lg 3xl:text-xl text-foreground/90">
                   {t("content.bonus.tip_3")}
                 </p>
               </li>
@@ -288,32 +288,32 @@ Somebody new...`}
         </Card>
 
         {/* Audio Player Section */}
-        <Card className="p-6 2xl:p-8 3xl:p-10 shadow-xl border-2 border-orange-200 bg-white/90 backdrop-blur-sm mb-8 2xl:mb-12 3xl:mb-16">
+        <Card className="p-6 2xl:p-8 3xl:p-10 shadow-xl border-2 border-primary/40 bg-card backdrop-blur-sm mb-8 2xl:mb-12 3xl:mb-16">
           <CardContent className="p-0">
-            <h3 className="text-xl 2xl:text-2xl 3xl:text-3xl font-bold text-gray-800 mb-4 2xl:mb-6 text-center">
+            <h3 className="text-xl 2xl:text-2xl 3xl:text-3xl font-bold text-foreground mb-4 2xl:mb-6 text-center">
               {t("content.bonus.play_audio")}
             </h3>
             <div className="flex justify-center gap-4 2xl:gap-6">
               <div className="flex flex-col items-center">
                 <AudioPlayer chordName="G" className="mb-2" />
-                <span className="text-sm 2xl:text-base text-gray-600">G</span>
+                <span className="text-sm 2xl:text-base text-muted-foreground">G</span>
               </div>
               <div className="flex flex-col items-center">
                 <AudioPlayer chordName="C" className="mb-2" />
-                <span className="text-sm 2xl:text-base text-gray-600">C</span>
+                <span className="text-sm 2xl:text-base text-muted-foreground">C</span>
               </div>
               <div className="flex flex-col items-center">
                 <AudioPlayer chordName="D" className="mb-2" />
-                <span className="text-sm 2xl:text-base text-gray-600">D</span>
+                <span className="text-sm 2xl:text-base text-muted-foreground">D</span>
               </div>
             </div>
           </CardContent>
         </Card>
 
         {/* Final Message */}
-        <Card className="p-6 2xl:p-8 3xl:p-10 shadow-xl border-4 border-green-400 bg-gradient-to-br from-green-50 to-yellow-50 backdrop-blur-sm">
+        <Card className="p-6 2xl:p-8 3xl:p-10 shadow-xl border-4 border-primary/40 bg-secondary backdrop-blur-sm">
           <CardContent className="p-0 text-center">
-            <p className="text-xl 2xl:text-2xl 3xl:text-3xl font-bold text-gray-800 leading-relaxed">
+            <p className="text-xl 2xl:text-2xl 3xl:text-3xl font-bold text-foreground leading-relaxed">
               {t("content.bonus.final_message")}
             </p>
           </CardContent>

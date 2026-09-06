@@ -98,5 +98,11 @@
     "metronome_on": "Metronome on",
     "metronome_off": "Metronome off",
     "bpm": "BPM"
+  },
+  "hero": {
+    "eyebrow": "30 · Days · 30 · Chords",
+    "title": "One chord a day. A lifetime of music.",
+    "chords_eyebrow": "30 · Chords",
+    "day_zero": "Day · 0"
   }
 }

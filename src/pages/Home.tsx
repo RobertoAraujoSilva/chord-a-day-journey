@@ -2,6 +2,7 @@ import { ProgressCircle } from "@/components/ProgressCircle";
 import { DaySelector } from "@/components/DaySelector";
 import { NavigationPanel } from "@/components/NavigationPanel";
 import { SEO } from "@/components/SEO";
+import { useTranslation } from "@/i18n/context";
 
 import { useNavigate } from "react-router-dom";
 import { useProgress } from "@/contexts/ProgressContext";
@@ -10,6 +11,7 @@ import { LessonContent } from "@/components/LessonContent";
 
 export default function Home() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const { currentDay, completedDays, introCompleted, streak, setCurrentDay } =
     useProgress();
 
@@ -37,10 +39,10 @@ export default function Home() {
       {/* Hero */}
       <section className="text-center max-w-3xl mx-auto pt-2">
         <p className="text-[11px] uppercase tracking-[0.35em] text-primary">
-          30 · Days · 30 · Chords
+          {t("ui.hero.eyebrow")}
         </p>
         <h2 className="mt-3 font-display text-4xl sm:text-5xl 2xl:text-6xl text-gold-light leading-tight">
-          One chord a day. A lifetime of music.
+          {t("ui.hero.title")}
         </h2>
         <div className="mt-5 mx-auto h-px w-24 bg-gradient-to-r from-transparent via-primary to-transparent" />
       </section>

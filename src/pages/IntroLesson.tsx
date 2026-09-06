@@ -18,7 +18,7 @@ export default function IntroLesson() {
       />
 
       <PageHeader
-        eyebrow="Day · 0"
+        eyebrow={t("ui.hero.day_zero")}
         title={t("ui.navigation.intro_lesson")}
       />
 
