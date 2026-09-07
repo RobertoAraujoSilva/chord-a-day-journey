@@ -50,6 +50,11 @@ export function LessonContent({ day }: LessonContentProps) {
                 {chord.name}
               </h1>
 
+              <p className="mt-2 text-lg sm:text-xl italic text-muted-foreground">
+                {fullName}
+              </p>
+
+
               <div className="mt-4 flex justify-center">
                 <AudioPlayer chordName={chord.name} />
               </div>
