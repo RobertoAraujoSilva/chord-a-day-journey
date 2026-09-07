@@ -23,11 +23,14 @@ export function LessonContent({ day }: LessonContentProps) {
   const chord = chords[day - 1];
   const { completedDays, markDayComplete } = useProgress();
   const { t } = useTranslation();
+  const { translations } = useI18n();
   const navigate = useNavigate();
 
   if (!chord) return null;
 
   const isDone = completedDays.includes(day);
+  const fullName =
+    translations?.content?.chords?.[chord.name]?.fullName || chord.name;
 
   return (
     <div className="space-y-8">
