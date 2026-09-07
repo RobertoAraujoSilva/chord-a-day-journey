@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { chords } from "@/data/chords";
+import { useI18n } from "@/i18n/context";
 import {
   Calendar,
   Music,
@@ -22,11 +23,14 @@ export function LessonContent({ day }: LessonContentProps) {
   const chord = chords[day - 1];
   const { completedDays, markDayComplete } = useProgress();
   const { t } = useTranslation();
+  const { translations } = useI18n();
   const navigate = useNavigate();
 
   if (!chord) return null;
 
   const isDone = completedDays.includes(day);
+  const fullName =
+    translations?.content?.chords?.[chord.name]?.fullName || chord.name;
 
   return (
     <div className="space-y-8">
@@ -45,6 +49,11 @@ export function LessonContent({ day }: LessonContentProps) {
               <h1 className="mt-3 font-display text-6xl 2xl:text-7xl text-gold-light leading-none">
                 {chord.name}
               </h1>
+
+              <p className="mt-2 text-lg sm:text-xl italic text-muted-foreground">
+                {fullName}
+              </p>
+
 
               <div className="mt-4 flex justify-center">
                 <AudioPlayer chordName={chord.name} />
