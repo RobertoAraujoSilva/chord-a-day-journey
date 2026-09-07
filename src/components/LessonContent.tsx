@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { chords } from "@/data/chords";
+import { useI18n } from "@/i18n/context";
 import {
   Calendar,
   Music,
