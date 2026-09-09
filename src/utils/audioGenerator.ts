@@ -95,7 +95,7 @@ function getChordFrequencies(chordName: string): number[] {
     return CHORD_FREQUENCIES[chordMap[normalized]];
   }
   
-  console.warn(`Chord "${name}" (normalized: "${normalized}") not found, using default frequencies`);
+  console.warn(`Chord "${chordName}" (normalized: "${normalized}") not found, using default frequencies`);
   return DEFAULT_FREQUENCIES;
 }
 
@@ -127,15 +127,16 @@ function createPluckedString(
     outputData[i] = noiseData[i] * 0.5;
   }
   
-  // Aplicar Karplus-Strong: média dos samples anteriores com decay
+  // Aplicar Karplus-Strong: média dos dois samples anteriores (média = 0.5 cada)
+  // multiplicada por um fator de decaimento próximo de 1 para a corda sustentar
   const decayFactor = 0.996; // Controla quanto tempo a corda vibra
-  const dampingFactor = 0.5; // Simula amortecimento da corda
-  
+
   for (let i = bufferSize; i < outputData.length; i++) {
     const prev1 = outputData[i - bufferSize];
-    const prev2 = outputData[i - bufferSize + 1] || prev1;
-    outputData[i] = decayFactor * dampingFactor * (prev1 + prev2);
+    const prev2 = outputData[i - bufferSize + 1] ?? prev1;
+    outputData[i] = decayFactor * 0.5 * (prev1 + prev2);
   }
+
   
   // Criar source e conectar
   const source = ctx.createBufferSource();
