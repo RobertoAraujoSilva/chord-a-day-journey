@@ -7,7 +7,7 @@ import { defineMcp } from "npm:@lovable.dev/mcp-js@2.0.4";
 
 // src/lib/mcp/tools/list-chords.ts
 import { defineTool } from "npm:@lovable.dev/mcp-js@2.0.4";
-import { z } from "npm:zod@^3.23.8";
+import { z } from "npm:zod@^3.25.76";
 
 // src/data/chords.ts
 var chords = [
@@ -758,7 +758,7 @@ var list_chords_default = defineTool({
 
 // src/lib/mcp/tools/get-chord.ts
 import { defineTool as defineTool2, ToolError } from "npm:@lovable.dev/mcp-js@2.0.4";
-import { z as z2 } from "npm:zod@^3.23.8";
+import { z as z2 } from "npm:zod@^3.25.76";
 var get_chord_default = defineTool2({
   name: "get_chord",
   title: "Get how to play a chord",
@@ -794,7 +794,7 @@ var get_chord_default = defineTool2({
 
 // src/lib/mcp/tools/get-daily-practice.ts
 import { defineTool as defineTool3, ToolError as ToolError2 } from "npm:@lovable.dev/mcp-js@2.0.4";
-import { z as z3 } from "npm:zod@^3.23.8";
+import { z as z3 } from "npm:zod@^3.25.76";
 var PATTERNS = [
   { name: "Down only", notation: "D D D D", bpm: 60 },
   { name: "Down, down-up", notation: "D  D U", bpm: 70 },
