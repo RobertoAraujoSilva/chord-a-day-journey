@@ -62,21 +62,17 @@ export function stringByString(chord: Chord): string[] {
 export function asciiDiagram(chord: Chord): string {
   const header = chord.fingering
     .map((fret) => (fret === "x" ? "x" : fret === "0" ? "o" : " "))
-    .join("  ");
+    .join("--");
   const pressed = chord.fingering
     .map((f) => (f === "x" || f === "0" ? 0 : Number(f)))
     .filter((f) => f > 0);
   const maxFret = pressed.length ? Math.max(...pressed) : 3;
-  const rows: string[] = [`${header}`, "=================="];
+  const rows = [header, "=================="];
   for (let fret = 1; fret <= Math.max(3, maxFret); fret++) {
-    const cells = chord.fingering.map((f) =>
-      Number(f) === fret ? chord.fingers[chord.fingering.indexOf(f)] || "*" : "|",
-    );
     const line = chord.fingering
       .map((f, i) => (Number(f) === fret ? chord.fingers[i] || "*" : "|"))
       .join("--");
     rows.push(`${line}  ${fret}`);
-    void cells;
   }
   return rows.join("\n");
 }
