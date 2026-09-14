@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "sdk_version": "2.0.4",
+  "path": "/functions/v1/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "chord-a-day-journey",
+      "version": "0.1.0",
+      "title": "chord-a-day-journey"
+    },
+    "tools": [
+      {
+        "name": "list_chords",
+        "title": "List the 30-day chord journey",
+        "description": "List every guitar chord in the 30-day journey, in learning order, with its day number, full name and difficulty.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "locale": {
+              "type": "string",
+              "enum": [
+                "en-US",
+                "pt-BR"
+              ],
+              "description": "Language of the chord names and difficulty labels. Defaults to en-US."
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_chord",
+        "title": "Get how to play a chord",
+        "description": "Get everything needed to play one chord: which string each finger presses, an ASCII diagram, a beginner tip and famous songs that use it.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Chord name as shown in the app, e.g. Em, Am, C, G, Dm."
+            },
+            "locale": {
+              "type": "string",
+              "enum": [
+                "en-US",
+                "pt-BR"
+              ],
+              "description": "Language of the explanation text. Defaults to en-US."
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_daily_practice",
+        "title": "Get a day's practice routine",
+        "description": "Get the 5-10 minute routine for one day of the journey: today's chord, the chords to review, a strumming pattern with a suggested BPM, and a common mistake to avoid.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "day": {
+              "type": "integer",
+              "description": "Day of the journey, from 1 to 30."
+            },
+            "locale": {
+              "type": "string",
+              "enum": [
+                "en-US",
+                "pt-BR"
+              ],
+              "description": "Language of the explanation text. Defaults to en-US."
+            }
+          },
+          "required": [
+            "day"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
