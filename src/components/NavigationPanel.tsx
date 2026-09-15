@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { BookOpen, Play, Music4 } from "lucide-react";
+import { BookOpen, Play, Music4, Gauge } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useTranslation } from "@/i18n/context";
 import clsx from "clsx";
@@ -23,6 +23,7 @@ export function NavigationPanel() {
     { path: "/", icon: Music4, label: t("ui.navigation.home") },
     { path: "/slideshow", icon: Play, label: t("ui.slideshow.open") },
     { path: "/RythmModule/rythm", icon: Play, label: t("ui.navigation.go_to_rythm") },
+    { path: "/afinador", icon: Gauge, label: t("ui.navigation.go_to_tuner") },
   ];
 
   return (

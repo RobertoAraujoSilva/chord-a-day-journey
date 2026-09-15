@@ -15,6 +15,7 @@ import BonusLesson from "./pages/BonusLesson";
 import Slideshow from "./pages/Slideshow";
 import NotFound from "./pages/NotFound";
 import RythmModule from "./pages/RythmModule/rythm";
+import Tuner from "./pages/Tuner";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +34,7 @@ const App = () => (
             <Route path="/bonus" element={<BonusLesson />} />
             <Route path="/slideshow" element={<Slideshow />} />
             <Route path="/RythmModule/rythm" element={<RythmModule />} />
+            <Route path="/afinador" element={<Tuner />} />
           </Route>
 
           <Route path="*" element={<NotFound />} />
