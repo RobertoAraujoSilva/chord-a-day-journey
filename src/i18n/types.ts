@@ -69,6 +69,7 @@ export type TranslationKey =
   | `ui.celebration.${string}`
   | `ui.slideshow.${string}`
   | `ui.hero.${string}`
+  | `ui.tuner.${string}`
   | `lessons.intro.${string}`
   | `lessons.chords.${string}`
   | `lessons.instructions.${string}`

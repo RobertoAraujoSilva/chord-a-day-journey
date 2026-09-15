@@ -135,7 +135,8 @@ export function I18nProvider({ children }: I18nProviderProps) {
               motivation: {},
               celebration: {},
               slideshow: {},
-              hero: {}
+              hero: {},
+              tuner: {}
             },
             lessons: { intro: {}, chords: {}, instructions: {} },
             content: { titles: {}, descriptions: {}, tips: {}, chords: {}, bonus: {} },
@@ -169,7 +170,8 @@ export function I18nProvider({ children }: I18nProviderProps) {
             motivation: {},
             celebration: {},
             slideshow: {},
-            hero: {}
+            hero: {},
+              tuner: {}
           },
           lessons: { intro: {}, chords: {}, instructions: {} },
           content: { titles: {}, descriptions: {}, tips: {}, chords: {}, bonus: {} },
