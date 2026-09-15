@@ -257,3 +257,25 @@ export function stopAllAudio(): void {
     audioContext = null;
   }
 }
+
+/** Toca uma única nota (usado pelo afinador como som de referência). */
+export async function playNote(frequency: number, duration: number = 2.5): Promise<void> {
+  const ctx = getAudioContext();
+
+  if (ctx.state === 'suspended') {
+    await ctx.resume();
+  }
+
+  const now = ctx.currentTime;
+
+  const masterGain = ctx.createGain();
+  masterGain.gain.setValueAtTime(0.8, now);
+  masterGain.connect(ctx.destination);
+
+  createPluckedString(ctx, frequency, now, duration, masterGain);
+  createHarmonics(ctx, frequency, now, duration, masterGain);
+
+  return new Promise((resolve) => {
+    setTimeout(resolve, (duration + 0.2) * 1000);
+  });
+}
