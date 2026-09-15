@@ -14,6 +14,7 @@ export interface TranslationObject {
     celebration: Record<string, string>;
     slideshow: Record<string, string>;
     hero: Record<string, string>;
+    tuner: Record<string, string>;
   };
   lessons: {
     intro: Record<string, string | Record<string, string>>;
