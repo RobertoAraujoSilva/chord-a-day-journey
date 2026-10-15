@@ -9,8 +9,8 @@ describe('Header Component i18n Migration', () => {
     const headerContent = readFileSync(headerPath, 'utf-8');
 
     // Verify that the component uses translation keys
-    expect(headerContent).toContain("t('ui.header.title')");
-    expect(headerContent).toContain("t('ui.header.subtitle')");
+    expect(headerContent).toMatch(/t\(\s*["']ui\.header\.title["']\s*\)/);
+    expect(headerContent).toMatch(/t\(\s*["']ui\.header\.subtitle["']\s*\)/);
     
     // Verify that the component imports useTranslation
     expect(headerContent).toContain("import { useTranslation }");

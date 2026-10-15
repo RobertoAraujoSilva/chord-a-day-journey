@@ -4,6 +4,7 @@ import { NavigationPanel } from "@/components/NavigationPanel";
 import { PageHeader } from "@/components/PageHeader";
 import { SEO } from "@/components/SEO";
 import { PitchMeter } from "@/components/tuner/PitchMeter";
+import { ShareButtons } from "@/components/tuner/ShareButtons";
 import { StringButtons } from "@/components/tuner/StringButtons";
 import { useMicrophonePitch } from "@/hooks/useMicrophonePitch";
 import { closestString } from "@/data/tuning";
@@ -80,6 +81,10 @@ export default function Tuner() {
             </li>
           ))}
         </ul>
+      </section>
+
+      <section className="surface-card rounded-3xl border border-border/60 p-5 sm:p-8">
+        <ShareButtons />
       </section>
     </div>
   );
