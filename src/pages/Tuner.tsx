@@ -82,6 +82,10 @@ export default function Tuner() {
           ))}
         </ul>
       </section>
+
+      <section className="surface-card rounded-3xl border border-border/60 p-5 sm:p-8">
+        <ShareButtons />
+      </section>
     </div>
   );
 }
