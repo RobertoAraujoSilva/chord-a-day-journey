@@ -73,7 +73,7 @@ export function ShareButtons() {
           type="button"
           onClick={() => void handleCopy()}
           className={clsx(
-            "inline-flex items-center gap-2 rounded-full border px-6 py-3 uppercase tracking-widest text-xs transition-all duration-300",
+            "inline-flex items-center gap-2 rounded-full border px-6 py-3 uppercase tracking-widest text-xs",
             "focus:outline-none focus-visible:ring-2 focus-visible:ring-primary",
             copyState === "copied"
               ? "bg-gold-gradient text-background border-primary shadow-elegant"
