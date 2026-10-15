@@ -47,7 +47,14 @@
     "tip_1": "As tarraxas são as peças que ficam na ponta do braço. Girar apertando deixa o som mais agudo; soltando, mais grave.",
     "tip_2": "Toque só uma corda por vez e deixe ela soar. Se tocar várias, o afinador se confunde.",
     "tip_3": "Gire a tarraxa bem devagar, um pouquinho de cada vez, e toque a corda de novo para conferir.",
-    "tip_4": "Procure um lugar silencioso e comece pela corda mais grossa (6ª) até a mais fina (1ª)."
+    "tip_4": "Procure um lugar silencioso e comece pela corda mais grossa (6ª) até a mais fina (1ª).",
+    "share_title": "Compartilhar o afinador",
+    "share_hint": "Mande o link para quem está começando a afinar com você.",
+    "share_whatsapp": "Compartilhar no WhatsApp",
+    "share_copy": "Copiar link",
+    "share_copied": "Link copiado!",
+    "share_failed": "Não deu para copiar. Selecione o endereço lá em cima no navegador.",
+    "share_message": "Afine seu violão com o afinador do 30 Acordes em 30 Dias 🎸"
   },
   "buttons": {
     "start": "Começar",

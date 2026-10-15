@@ -47,7 +47,14 @@
     "tip_1": "Tuning pegs sit at the end of the neck. Tightening raises the pitch; loosening lowers it.",
     "tip_2": "Play only one string at a time and let it ring. Several strings at once confuse the tuner.",
     "tip_3": "Turn the peg very slowly, a little at a time, then play the string again to check.",
-    "tip_4": "Find a quiet spot and start from the thickest string (6th) to the thinnest (1st)."
+    "tip_4": "Find a quiet spot and start from the thickest string (6th) to the thinnest (1st).",
+    "share_title": "Share the tuner",
+    "share_hint": "Send the link to someone who is tuning along with you.",
+    "share_whatsapp": "Share on WhatsApp",
+    "share_copy": "Copy link",
+    "share_copied": "Link copied!",
+    "share_failed": "Couldn't copy it. Select the address up in your browser bar.",
+    "share_message": "Tune your guitar with the 30 Chords in 30 Days tuner 🎸"
   },
   "buttons": {
     "start": "Start",
