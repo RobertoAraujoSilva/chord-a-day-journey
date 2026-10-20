@@ -54,6 +54,10 @@ export interface TranslationObject {
     "music-styles": Record<string, string>;
     common: Record<string, string>;
     metronome: Record<string, string>;
+    page?: Record<string, string>;
+    tips?: Record<string, Record<string, string>>;
+    "sync-steps"?: Record<string, string>;
+    "daily-practice"?: Record<string, string>;
   };
 }
 
@@ -96,7 +100,11 @@ export type TranslationKey =
   | `rythm.rhythmic-sequences.${string}`
   | `rythm.music-styles.${string}`
   | `rythm.common.${string}`
-  | `rythm.metronome.${string}`;
+  | `rythm.metronome.${string}`
+  | `rythm.page.${string}`
+  | `rythm.tips.${string}`
+  | `rythm.sync-steps.${string}`
+  | `rythm.daily-practice.${string}`;
 
 // Translation function type
 export type TranslationFunction = (

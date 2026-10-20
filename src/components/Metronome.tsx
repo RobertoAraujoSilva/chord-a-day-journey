@@ -3,11 +3,23 @@ import { Timer, TimerOff } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const BPM_OPTIONS = [40, 60, 80, 100, 120, 140, 160];
+const DEFAULT_BPM = 80;
+
+export const bpmIndexFor = (bpm: number = DEFAULT_BPM): number => {
+  let best = 0;
+  BPM_OPTIONS.forEach((option, index) => {
+    if (Math.abs(option - bpm) < Math.abs(BPM_OPTIONS[best] - bpm)) best = index;
+  });
+  return best;
+};
+
+export const bpmAt = (index: number): number => BPM_OPTIONS[index];
 
 interface MetronomeProps {
   isActive: boolean;
   onToggle: () => void;
   beatsPerMeasure?: number;
+  initialBpm?: number;
   labels?: {
     metronome_on: string;
     metronome_off: string;
@@ -48,14 +60,14 @@ const playClick = (isAccent: boolean = false) => {
   }
 };
 
-export const Metronome = ({ isActive, onToggle, beatsPerMeasure = 4, labels }: MetronomeProps) => {
+export const Metronome = ({ isActive, onToggle, beatsPerMeasure = 4, initialBpm, labels }: MetronomeProps) => {
   const defaultLabels = {
     metronome_on: 'Metronome on',
     metronome_off: 'Metronome off',
     bpm: 'BPM'
   };
   const l = labels || defaultLabels;
-  const [bpmIndex, setBpmIndex] = useState(2); // Default: 80 BPM
+  const [bpmIndex, setBpmIndex] = useState(() => bpmIndexFor(initialBpm));
   const [currentBeat, setCurrentBeat] = useState(0);
   const [isFlashing, setIsFlashing] = useState(false);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -124,14 +136,16 @@ export const Metronome = ({ isActive, onToggle, beatsPerMeasure = 4, labels }: M
         {Array.from({ length: beatsPerMeasure }).map((_, index) => (
           <div
             key={index}
-            className={`w-4 h-4 rounded-full transition-all duration-100 ${
+            className={`w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center rounded-full text-xs font-bold transition-all duration-100 ${
               isActive && currentBeat === index
                 ? index === 0
-                  ? 'bg-primary scale-125 shadow-lg shadow-primary/40'
-                  : 'bg-primary scale-110'
-                : 'bg-muted'
+                  ? 'bg-primary text-background scale-125 shadow-lg shadow-primary/40'
+                  : 'bg-primary text-background scale-110'
+                : 'bg-muted text-muted-foreground'
             } ${isActive && isFlashing && currentBeat === index ? 'ring-2 ring-primary' : ''}`}
-          />
+          >
+            {index + 1}
+          </div>
         ))}
       </div>
 

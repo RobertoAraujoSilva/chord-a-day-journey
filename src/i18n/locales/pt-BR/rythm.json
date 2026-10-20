@@ -61,7 +61,9 @@
     "muted_down": "Baixo abafado",
     "muted_up": "Cima abafado",
     "thumb_down": "Baixo com polegar",
-    "index_down": "Baixo com indicador"
+    "index_down": "Baixo com indicador",
+    "mistake_label": "Erro comum",
+    "tip_label": "Dica prática"
   },
   "metronome": {
     "title": "Uso do metrônomo para batidas rítmicas",
@@ -71,10 +73,47 @@
     "measurement": "Na prática, ele mede as Batidas Por Minuto (BPM). Se você configurar para 60 BPM, ele soará exatamente uma vez por segundo; se aumentar para 120 BPM, ele soará duas vezes mais rápido.",
     "importance": "Usá-lo é essencial para treinar a precisão e garantir que todos os músicos de uma banda estejam \"falando a mesma língua\" rítmica, criando uma base sólida para qualquer batida.",
     "practice-instructions": "Em cada exercício, vai estar a indicação de quantos BPM você por o metrônomo. Seu objetivo vai ser encaixar todos os movimentos dentro dos 4 bips do metrônomo, sempre se concentrando em encaixar a primeira batida com o primeiro Bip. Comece sempre treinando as batidas (sem o metrônomo) e quando se sentir confortável ative o metrônomo e tente sincronizar.",
-    "video-instruction": "Veja o vídeo de como sincronizar o metrônomo com a sua batida.",
-    "video-placeholder": "Vou adicionar o vídeo aqui",
     "metronome_on": "Metrônomo ligado",
     "metronome_off": "Metrônomo desligado",
     "bpm": "BPM"
+  },
+  "page": {
+    "eyebrow": "Mão de ataque",
+    "subtitle": "Aprenda as batidas básicas e pratique no tempo, 5 minutos por dia."
+  },
+  "tips": {
+    "rock-pop": {
+      "mistake": "Acelerar nas batidas para cima e perder o tempo.",
+      "tip": "Diga em voz alta \"baixo, baixo, cima, cima, baixo, cima\" enquanto toca."
+    },
+    "sertanejo": {
+      "mistake": "Bater forte demais e travar o pulso.",
+      "tip": "Deixe o pulso solto, como se estivesse sacudindo água da mão."
+    },
+    "reggae": {
+      "mistake": "Tirar a mão de acordes das cordas na batida abafada.",
+      "tip": "Só afrouxe os dedos: eles continuam encostados nas cordas."
+    },
+    "bolero": {
+      "mistake": "Usar o polegar e o indicador com a mesma força.",
+      "tip": "O polegar marca o tempo forte; o indicador vem mais leve."
+    }
+  },
+  "sync-steps": {
+    "title": "Como sincronizar com o metrônomo",
+    "step_1": "Toque a batida devagar, sem metrônomo, até sair sem pensar.",
+    "step_2": "Ligue o metrônomo no BPM sugerido e só escute 4 bips.",
+    "step_3": "Faça a primeira batida junto com o bip 1 (o mais forte).",
+    "step_4": "Se perder o tempo, pare, respire e recomece no bip 1."
+  },
+  "daily-practice": {
+    "title": "Treino de hoje",
+    "what": "O que praticar hoje",
+    "what_text": "Toque o Rock/Pop no acorde G por 1 minuto a 60 BPM. Depois troque para C sem parar a mão de ataque.",
+    "duration": "Tempo: 3 minutos",
+    "challenge": "Desafio opcional",
+    "challenge_text": "Consegue manter a batida a 100 BPM trocando entre G e C a cada 4 bips?",
+    "motivation": "Você não precisa tocar perfeito, só com constância. Se doer, pare. Dor não é progresso.",
+    "back": "Voltar às lições"
   }
 }
