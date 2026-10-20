@@ -2,6 +2,11 @@ import { useTranslation } from "@/i18n/context";
 import { NavigationPanel } from "@/components/NavigationPanel";
 import { StrummingPattern } from "@/components/StrummingPattern";
 import { SEO } from "@/components/SEO";
+import { PageHeader } from "@/components/PageHeader";
+import { RhythmPracticeSteps } from "@/components/RhythmPracticeSteps";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { Clock, Target, Trophy } from "lucide-react";
 import st from "./rythm.module.css";
 
 export default function RythmModule() {
@@ -15,10 +20,15 @@ export default function RythmModule() {
         path="/RythmModule/rythm"
       />
       <NavigationPanel />
+      <PageHeader
+        eyebrow={t("rythm.page.eyebrow")}
+        title={t("rythm.introduction.title")}
+        subtitle={t("rythm.page.subtitle")}
+      />
 
       {/* Seção 1: Introdução */}
       <section className={st.content}>
-        <h1 className="font-display text-3xl text-gold-light">{t("rythm.introduction.title")}</h1>
+        <h2 className="font-display text-3xl text-gold-light">{t("rythm.introduction.title")}</h2>
         <p className="mt-4">
           {t("rythm.introduction.concept-1")}
           <br />
@@ -115,6 +125,8 @@ export default function RythmModule() {
         <div className="mt-6 border-t border-border/60 pt-6">
           <StrummingPattern
             title={t("rythm.music-styles.rock-pop")}
+            mistake={t("rythm.tips.rock-pop.mistake")}
+            tip={t("rythm.tips.rock-pop.tip")}
             bpmSuggestion={100}
             arrows={[
               { type: "down" },
@@ -131,6 +143,8 @@ export default function RythmModule() {
         <div className="mt-6 border-t border-border/60 pt-6">
           <StrummingPattern
             title={t("rythm.music-styles.sertanejo")}
+            mistake={t("rythm.tips.sertanejo.mistake")}
+            tip={t("rythm.tips.sertanejo.tip")}
             bpmSuggestion={80}
             arrows={[
               { type: "down" },
@@ -146,6 +160,8 @@ export default function RythmModule() {
         <div className="mt-6 border-t border-border/60 pt-6">
           <StrummingPattern
             title={t("rythm.music-styles.reggae")}
+            mistake={t("rythm.tips.reggae.mistake")}
+            tip={t("rythm.tips.reggae.tip")}
             bpmSuggestion={60}
             arrows={[
               { type: "down-muted" },
@@ -161,6 +177,8 @@ export default function RythmModule() {
         <div className="mt-6 border-t border-border/60 pt-6">
           <StrummingPattern
             title={t("rythm.music-styles.bolero")}
+            mistake={t("rythm.tips.bolero.mistake")}
+            tip={t("rythm.tips.bolero.tip")}
             description={t("rythm.music-styles.bolero-intro")}
             bpmSuggestion={60}
             arrows={[
@@ -186,9 +204,36 @@ export default function RythmModule() {
         <p className="mt-4">{t("rythm.metronome.measurement")}</p>
         <p className="mt-4">{t("rythm.metronome.importance")}</p>
         <p className="mt-4">{t("rythm.metronome.practice-instructions")}</p>
-        <p className="mt-4">{t("rythm.metronome.video-instruction")}</p>
-        <div className={st.caixavideo}>
-          {t("rythm.metronome.video-placeholder")}
+        <RhythmPracticeSteps />
+      </section>
+
+      <section className={st.content}>
+        <h2 className="font-display text-3xl text-gold-light">{t("rythm.daily-practice.title")}</h2>
+        <div className="mt-6 grid gap-4 md:grid-cols-2">
+          <div className="rounded-lg border border-primary/40 bg-muted/40 p-5">
+            <div className="flex items-center gap-2 text-primary">
+              <Target className="h-5 w-5" aria-hidden />
+              <h3 className="font-bold text-foreground">{t("rythm.daily-practice.what")}</h3>
+            </div>
+            <p className="mt-3 text-foreground/90">{t("rythm.daily-practice.what_text")}</p>
+            <p className="mt-3 flex items-center gap-2 text-sm text-muted-foreground">
+              <Clock className="h-4 w-4" aria-hidden />
+              {t("rythm.daily-practice.duration")}
+            </p>
+          </div>
+          <div className="rounded-lg border border-border/60 bg-muted/40 p-5">
+            <div className="flex items-center gap-2 text-primary">
+              <Trophy className="h-5 w-5" aria-hidden />
+              <h3 className="font-bold text-foreground">{t("rythm.daily-practice.challenge")}</h3>
+            </div>
+            <p className="mt-3 text-foreground/90">{t("rythm.daily-practice.challenge_text")}</p>
+          </div>
+        </div>
+        <p className="mt-6 text-center italic text-muted-foreground">{t("rythm.daily-practice.motivation")}</p>
+        <div className="mt-6 flex justify-center">
+          <Button asChild>
+            <Link to="/">{t("rythm.daily-practice.back")}</Link>
+          </Button>
         </div>
       </section>
     </main>
