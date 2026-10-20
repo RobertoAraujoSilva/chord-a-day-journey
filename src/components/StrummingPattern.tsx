@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { AlertTriangle, Lightbulb } from 'lucide-react';
 import { Metronome } from '@/components/Metronome';
 import { useTranslation } from '@/i18n/context';
 
@@ -15,7 +16,9 @@ interface StrummingPatternProps {
   bpmSuggestion?: number;
   description?: string;
   showMetronome?: boolean;
-  showOr?: { afterIndex: number }; // Mostra "OU" após o índice especificado
+  showOr?: { afterIndex: number };
+  mistake?: string;
+  tip?: string;
 }
 
 const ARROW_IMAGES: Record<ArrowType, string> = {
@@ -34,6 +37,8 @@ export const StrummingPattern = ({
   description,
   showMetronome = true,
   showOr,
+  mistake,
+  tip,
 }: StrummingPatternProps) => {
   const [metronomeActive, setMetronomeActive] = useState(false);
   const { t } = useTranslation();
@@ -96,6 +101,29 @@ export const StrummingPattern = ({
         ))}
       </ul>
 
+      {(mistake || tip) && (
+        <div className="grid gap-3 md:grid-cols-2">
+          {mistake && (
+            <div className="flex gap-3 rounded-lg border border-border/60 bg-muted/40 p-4">
+              <AlertTriangle className="h-5 w-5 shrink-0 text-primary" aria-hidden />
+              <p className="text-sm">
+                <strong className="block text-foreground">{t('rythm.common.mistake_label')}</strong>
+                <span className="text-muted-foreground">{mistake}</span>
+              </p>
+            </div>
+          )}
+          {tip && (
+            <div className="flex gap-3 rounded-lg border border-border/60 bg-muted/40 p-4">
+              <Lightbulb className="h-5 w-5 shrink-0 text-primary" aria-hidden />
+              <p className="text-sm">
+                <strong className="block text-foreground">{t('rythm.common.tip_label')}</strong>
+                <span className="text-muted-foreground">{tip}</span>
+              </p>
+            </div>
+          )}
+        </div>
+      )}
+
       {/* Metronome */}
       {showMetronome && (
         <div className="mt-4 flex flex-col items-center gap-2">
@@ -105,6 +133,7 @@ export const StrummingPattern = ({
           <Metronome
             isActive={metronomeActive}
             onToggle={() => setMetronomeActive(!metronomeActive)}
+            initialBpm={bpmSuggestion}
             labels={{
               metronome_on: t('rythm.metronome.metronome_on'),
               metronome_off: t('rythm.metronome.metronome_off'),

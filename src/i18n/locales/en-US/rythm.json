@@ -61,7 +61,9 @@
     "muted_down": "Muted down",
     "muted_up": "Muted up",
     "thumb_down": "Thumb down",
-    "index_down": "Index down"
+    "index_down": "Index down",
+    "mistake_label": "Common mistake",
+    "tip_label": "Practical tip"
   },
   "metronome": {
     "title": "Using the metronome for rhythmic strumming",
@@ -71,10 +73,47 @@
     "measurement": "In practice, it measures Beats Per Minute (BPM). If you set it to 60 BPM, it will sound exactly once per second; if you increase to 120 BPM, it will sound twice as fast.",
     "importance": "Using it is essential for training precision and ensuring that all band members are \"speaking the same rhythmic language,\" creating a solid foundation for any beat.",
     "practice-instructions": "In each exercise, there will be an indication of how many BPM you should set the metronome to. Your goal will be to fit all movements within the 4 beeps of the metronome, always focusing on fitting the first strum with the first beep. Always start by practicing the strums (without the metronome) and when you feel comfortable, activate the metronome and try to synchronize.",
-    "video-instruction": "Watch the video on how to synchronize the metronome with your strumming.",
-    "video-placeholder": "I'll add the video here",
     "metronome_on": "Metronome on",
     "metronome_off": "Metronome off",
     "bpm": "BPM"
+  },
+  "page": {
+    "eyebrow": "Attack hand",
+    "subtitle": "Learn the basic strums and practice in time, 5 minutes a day."
+  },
+  "tips": {
+    "rock-pop": {
+      "mistake": "Rushing the upstrokes and losing the beat.",
+      "tip": "Say \"down, down, up, up, down, up\" out loud while you play."
+    },
+    "sertanejo": {
+      "mistake": "Strumming too hard and locking your wrist.",
+      "tip": "Keep your wrist loose, like shaking water off your hand."
+    },
+    "reggae": {
+      "mistake": "Lifting the chord hand off the strings on the muted strum.",
+      "tip": "Just relax your fingers: they stay touching the strings."
+    },
+    "bolero": {
+      "mistake": "Playing thumb and index with the same strength.",
+      "tip": "The thumb marks the strong beat; the index comes in lighter."
+    }
+  },
+  "sync-steps": {
+    "title": "How to sync with the metronome",
+    "step_1": "Play the strum slowly, without the metronome, until it feels natural.",
+    "step_2": "Turn the metronome on at the suggested BPM and just listen to 4 beeps.",
+    "step_3": "Play your first strum together with beep 1 (the strongest one).",
+    "step_4": "If you lose the beat, stop, breathe and restart on beep 1."
+  },
+  "daily-practice": {
+    "title": "Today's practice",
+    "what": "What to practice today",
+    "what_text": "Play Rock/Pop on the G chord for 1 minute at 60 BPM. Then switch to C without stopping your attack hand.",
+    "duration": "Time: 3 minutes",
+    "challenge": "Optional challenge",
+    "challenge_text": "Can you keep the strum at 100 BPM switching between G and C every 4 beeps?",
+    "motivation": "You don't need to play perfectly, just consistently. If it hurts, stop. Pain is not progress.",
+    "back": "Back to lessons"
   }
 }
